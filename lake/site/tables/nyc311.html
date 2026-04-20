@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas Lake - nyc311</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 32px;
+      line-height: 1.45;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 12px 0 24px;
+    }
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+    }
+    .muted {
+      color: #6b7280;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    .hero-stats {
+      display: grid;
+      gap: 12px;
+    }
+    .stat-box, .metric-chip {
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .stat-box .label, .metric-chip .label, .link-list .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .stat-box .value, .metric-chip .value {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111827;
+    }
+    .section {
+      margin-top: 24px;
+    }
+    .section-copy, .lead, .subtle {
+      color: #4b5563;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #0f766e;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    h1, h2, h3, h4 {
+      color: #111827;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .dataset-card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .card-top {
+      margin-bottom: 14px;
+    }
+    .card-top h3 {
+      margin: 0 0 4px;
+    }
+    .subtle {
+      margin: 0;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .card-section {
+      margin-top: 14px;
+    }
+    .card-section p {
+      margin: 0;
+    }
+    .card-section h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+    .link-list, .geo-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .link-list li, .geo-list li {
+      margin: 6px 0;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      background: #f3f4f6;
+      padding: 8px 10px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 0;
+    }
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .compact-meta {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f8fafc;
+      padding: 10px 12px;
+    }
+    .compact-meta .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .compact-meta .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .card-action {
+      margin-top: 16px;
+      font-weight: 600;
+    }
+    .action-panel {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .action-button {
+      border: 0;
+      border-radius: 999px;
+      background: #0f766e;
+      color: #ffffff;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .action-button:hover {
+      background: #115e59;
+    }
+    .action-detail {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .status-card {
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .status-card .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+    .status-card .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .inline-report {
+      margin-top: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .inline-report summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #111827;
+    }
+    .is-hidden {
+      display: none;
+    }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.2fr) minmax(240px, 0.8fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .bar-chart {
+      display: grid;
+      gap: 10px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 180px) minmax(140px, 1fr) 56px;
+      gap: 10px;
+      align-items: center;
+    }
+    .bar-label, .bar-value {
+      font-size: 13px;
+      color: #374151;
+    }
+    .bar-track {
+      background: #e5e7eb;
+      border-radius: 999px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      background: #0f766e;
+      height: 100%;
+      border-radius: 999px;
+    }
+    a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<p><a href='../index.html'>&larr; Back to index</a></p><h1>nyc311</h1><h2>Basic Info</h2><table><tr><th>Dataset</th><td>nyc311</td></tr><tr><th>Source Title</th><td>311 Service Requests from 2010 to 2019</td></tr><tr><th>Source Dataset ID</th><td>76ig-c548</td></tr><tr><th>Rows</th><td>1000</td></tr><tr><th>Columns</th><td>44</td></tr><tr><th>Description</th><td>311 responds to thousands of inquiries, comments and requests from customers every single day. This dataset represents only service requests that can be directed to specific agencies.  
+
+This dataset is updated daily and expected values for many fields will change over time.  The lists of expected values associated with each column are not exhaustive.
+
+Each row of data contains information about the service request, including complaint type, responding agency, and geographic location.  However the data does not reveal any personally identifying information about the customer who made the request.
+
+For data from 2020-present see: https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9/about_data</td></tr><tr><th>Rows Updated</th><td>2025-12-24 13:19:08</td></tr><tr><th>View Modified</th><td>2025-12-26 14:48:21</td></tr><tr><th>Contains</th><td>zip5, address, city, borough_code, bbl, borough, x_coord, y_coord</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>1000</td></tr><tr><th>Profiled Rows</th><td>1000</td></tr><tr><th>Columns</th><td>44</td></tr><tr><th>Spatial Columns</th><td>13</td></tr><tr><th>Temporal Columns</th><td>4</td></tr><tr><th>Categorical Columns</th><td>11</td></tr><tr><th>Numerical Columns</th><td>6</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial, temporal</td></tr><tr><th>Attribute Keywords</th><td>unique_key, unique, key, created_date, created, date, closed_date, closed, date, agency, agency_name, agency</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>unique_key</th><th>created_date</th><th>closed_date</th><th>agency</th><th>agency_name</th><th>complaint_type</th><th>descriptor</th><th>descriptor_2</th><th>location_type</th><th>incident_zip</th><th>incident_address</th><th>street_name</th><th>cross_street_1</th><th>cross_street_2</th><th>intersection_street_1</th><th>intersection_street_2</th><th>address_type</th><th>city</th><th>landmark</th><th>facility_type</th><th>status</th><th>due_date</th><th>resolution_description</th><th>resolution_action_updated_date</th><th>community_board</th><th>council_district</th><th>police_precinct</th><th>bbl</th><th>borough</th><th>x_coordinate_state_plane</th><th>y_coordinate_state_plane</th><th>open_data_channel_type</th><th>park_facility_name</th><th>park_borough</th><th>vehicle_type</th><th>taxi_company_borough</th><th>taxi_pick_up_location</th><th>bridge_highway_name</th><th>bridge_highway_direction</th><th>road_ramp</th><th>bridge_highway_segment</th><th>latitude</th><th>longitude</th><th>location</th></tr></thead><tbody><tr><td>45278137</td><td>2019-12-31T23:59:11.000</td><td>2020-01-01T03:07:18.000</td><td>NYPD</td><td>New York City Police Department</td><td>Noise - Commercial</td><td>Banging/Pounding</td><td></td><td>Club/Bar/Restaurant</td><td>11229</td><td>3939 EMMONS AVENUE</td><td>EMMONS AVENUE</td><td>PLUMB    3 STREET</td><td>BELT PARKWAY EXIT    9 WESTBOUND</td><td>PLUMB    3 STREET</td><td>BELT PARKWAY EXIT    9 WESTBOUND</td><td></td><td>BROOKLYN</td><td>EMMONS AVENUE</td><td></td><td>Closed</td><td></td><td>Your request can not be processed at this time because of insufficient contact information. Please create a new Service Request on NYC.gov and provide more detailed contact information.</td><td>2020-01-01T03:07:32.000</td><td>15 BROOKLYN</td><td>48</td><td>Precinct 61</td><td>3088440010</td><td>BROOKLYN</td><td>1004321</td><td>152444</td><td>ONLINE</td><td>Unspecified</td><td>BROOKLYN</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>40.58507695307629</td><td>-73.92773945669528</td><td>POINT (-73.927739456695 40.585076953076)</td></tr><tr><td>45281589</td><td>2019-12-31T23:58:54.000</td><td>2020-01-01T05:37:03.000</td><td>NYPD</td><td>New York City Police Department</td><td>Noise - Residential</td><td>Loud Music/Party</td><td></td><td>Residential Building/House</td><td>10025</td><td>865 COLUMBUS AVENUE</td><td>COLUMBUS AVENUE</td><td>WEST  100 STREET</td><td>WEST  103 STREET</td><td>WEST  100 STREET</td><td>WEST  103 STREET</td><td></td><td>NEW YORK</td><td>COLUMBUS AVENUE</td><td></td><td>Closed</td><td></td><td>The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.</td><td>2020-01-01T05:37:11.000</td><td>07 MANHATTAN</td><td>07</td><td>Precinct 24</td><td>1018360001</td><td>MANHATTAN</td><td>994065</td><td>229622</td><td>PHONE</td><td>Unspecified</td><td>MANHATTAN</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>40.79692992181987</td><td>-73.96455113216999</td><td>POINT (-73.96455113217 40.79692992182)</td></tr><tr><td>45283574</td><td>2019-12-31T23:58:03.000</td><td>2020-01-01T01:26:50.000</td><td>NYPD</td><td>New York City Police Department</td><td>Noise - Residential</td><td>Loud Music/Party</td><td></td><td>Residential Building/House</td><td>10040</td><td>558 WEST  192 STREET</td><td>WEST  192 STREET</td><td>AUDUBON AVENUE</td><td>ST NICHOLAS AVENUE</td><td>AUDUBON AVENUE</td><td>ST NICHOLAS AVENUE</td><td></td><td>NEW YORK</td><td>WEST  192 STREET</td><td></td><td>Closed</td><td></td><td>The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.</td><td>2020-01-01T01:26:51.000</td><td>12 MANHATTAN</td><td>10</td><td>Precinct 34</td><td></td><td>MANHATTAN</td><td>1004136</td><td>251120</td><td>MOBILE</td><td>Unspecified</td><td>MANHATTAN</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>40.855918860412444</td><td>-73.9281139621785</td><td>POINT (-73.928113962178 40.855918860412)</td></tr><tr><td>45278249</td><td>2019-12-31T23:57:19.000</td><td>2020-01-01T09:33:55.000</td><td>NYPD</td><td>New York City Police Department</td><td>Noise - Residential</td><td>Loud Music/Party</td><td></td><td>Residential Building/House</td><td>11372</td><td>35-18 91 STREET</td><td>91 STREET</td><td>35 AVENUE</td><td>37 AVENUE</td><td>35 AVENUE</td><td>37 AVENUE</td><td></td><td>JACKSON HEIGHTS</td><td>91 STREET</td><td></td><td>Closed</td><td></td><td>The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.</td><td>2020-01-01T09:33:59.000</td><td>03 QUEENS</td><td>25</td><td>Precinct 115</td><td>4014640015</td><td>QUEENS</td><td>1018532</td><td>213397</td><td>ONLINE</td><td>Unspecified</td><td>QUEENS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>40.752335548300096</td><td>-73.87626643726503</td><td>POINT (-73.876266437265 40.7523355483)</td></tr><tr><td>45282332</td><td>2019-12-31T23:56:52.000</td><td>2020-01-01T03:06:36.000</td><td>NYPD</td><td>New York City Police Department</td><td>Blocked Driveway</td><td>No Access</td><td></td><td>Street/Sidewalk</td><td>11226</td><td>2310 CORTELYOU ROAD</td><td>CORTELYOU ROAD</td><td>EAST   23 STREET</td><td>BEDFORD AVENUE</td><td>EAST   23 STREET</td><td>BEDFORD AVENUE</td><td></td><td>BROOKLYN</td><td>CORTELYOU ROAD</td><td></td><td>Closed</td><td></td><td>The Police Department responded to the complaint and took action to fix the condition.</td><td>2020-01-01T03:06:39.000</td><td>14 BROOKLYN</td><td>40</td><td>Precinct 70</td><td>3051670072</td><td>BROOKLYN</td><td>996621</td><td>173959</td><td>PHONE</td><td>Unspecified</td><td>BROOKLYN</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>40.6441452622389</td><td>-73.95542192797127</td><td>POINT (-73.955421927971 40.644145262239)</td></tr><tr><td>45281053</td><td>2019-12-31T23:56:34.000</td><td>2020-01-01T02:47:53.000</td><td>NYPD</td><td>New York City Police Department</td><td>Noise - Street/Sidewalk</td><td>Loud Music/Party</td><td></td><td>Street/Sidewalk</td><td>10128</td><td>EAST   89 STREET</td><td>EAST   89 STREET</td><td>2 AVENUE</td><td>1 AVENUE</td><td>2 AVENUE</td><td>1 AVENUE</td><td></td><td></td><td></td><td></td><td>Closed</td><td></td><td>The Police Department responded to the complaint and took action to fix the condition.</td><td>2020-01-01T02:47:55.000</td><td>Unspecified MANHATTAN</td><td></td><td>Precinct 19</td><td></td><td>MANHATTAN</td><td></td><td></td><td>PHONE</td><td>Unspecified</td><td>MANHATTAN</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>45281555</td><td>2019-12-31T23:56:34.000</td><td>2020-01-01T08:22:26.000</td><td>NYPD</td><td>New York City Police Department</td><td>Noise - Residential</td><td>Loud Music/Party</td><td></td><td>Residential Building/House</td><td>11375</td><td>72-72 112 STREET</td><td>112 STREET</td><td>72 DRIVE</td><td>73 AVENUE</td><td>72 DRIVE</td><td>73 AVENUE</td><td></td><td>FOREST HILLS</td><td>112 STREET</td><td></td><td>Closed</td><td></td><td>The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.</td><td>2020-01-01T08:22:27.000</td><td>06 QUEENS</td><td>29</td><td>Precinct 112</td><td>4022380019</td><td>QUEENS</td><td>1029210</td><td>201634</td><td>PHONE</td><td>Unspecified</td><td>QUEENS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>40.72000122760082</td><td>-73.83780516418167</td><td>POINT (-73.837805164182 40.720001227601)</td></tr><tr><td>45282921</td><td>2019-12-31T23:56:32.000</td><td>2020-01-01T02:18:56.000</td><td>NYPD</td><td>New York City Police Department</td><td>Noise - Residential</td><td>Loud Music/Party</td><td></td><td>Residential Building/House</td><td>11433</td><td>168-70 93 AVENUE</td><td>93 AVENUE</td><td>168 PLACE</td><td>170 STREET</td><td>168 PLACE</td><td>170 STREET</td><td></td><td>JAMAICA</td><td>93 AVENUE</td><td></td><td>Closed</td><td></td><td>The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.</td><td>2020-01-01T02:18:59.000</td><td>12 QUEENS</td><td>27</td><td>Precinct 103</td><td>4102170035</td><td>QUEENS</td><td>1042375</td><td>196254</td><td>MOBILE</td><td>Unspecified</td><td>QUEENS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>40.705157748543606</td><td>-73.79035855780899</td><td>POINT (-73.790358557809 40.705157748544)</td></tr><tr><td>45283114</td><td>2019-12-31T23:56:28.000</td><td>2020-01-01T05:58:35.000</td><td>NYPD</td><td>New York City Police Department</td><td>Noise - Residential</td><td>Loud Music/Party</td><td></td><td>Residential Building/House</td><td>11373</td><td>42-21 KETCHAM STREET</td><td>KETCHAM STREET</td><td>BAXTER AVENUE</td><td>PETTIT AVENUE</td><td>BAXTER AVENUE</td><td>PETTIT AVENUE</td><td></td><td>ELMHURST</td><td>KETCHAM STREET</td><td></td><td>Closed</td><td></td><td>The Police Department responded to the complaint and with the information available observed no evidence of the violation at that time.</td><td>2020-01-01T05:58:40.000</td><td>04 QUEENS</td><td>25</td><td>Precinct 110</td><td>4015070028</td><td>QUEENS</td><td>1016502</td><td>210694</td><td>PHONE</td><td>Unspecified</td><td>QUEENS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>40.74492413777687</td><td>-73.88360624316624</td><td>POINT (-73.883606243166 40.744924137777)</td></tr><tr><td>45281055</td><td>2019-12-31T23:55:56.000</td><td>2020-01-01T11:01:07.000</td><td>NYPD</td><td>New York City Police Department</td><td>Noise - Street/Sidewalk</td><td>Loud Talking</td><td></td><td>Street/Sidewalk</td><td>11435</td><td>85-85 148 STREET</td><td>148 STREET</td><td>85 DRIVE</td><td>86 AVENUE</td><td>85 DRIVE</td><td>86 AVENUE</td><td></td><td>JAMAICA</td><td>148 STREET</td><td></td><td>Closed</td><td></td><td>The Police Department responded to the complaint and determined that police action was not necessary.</td><td>2020-01-01T11:01:08.000</td><td>08 QUEENS</td><td>24</td><td>Precinct 107</td><td>4097260059</td><td>QUEENS</td><td>1036916</td><td>197511</td><td>MOBILE</td><td>Unspecified</td><td>QUEENS</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>40.708642084220266</td><td>-73.81003782483123</td><td>POINT (-73.810037824831 40.70864208422)</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>35</span></div><div class='bar-row'><span class='bar-label'>calendar_date</span><div class='bar-track'><div class='bar-fill' style='width:11%'></div></div><span class='bar-value'>4</span></div><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:11%'></div></div><span class='bar-value'>4</span></div><div class='bar-row'><span class='bar-label'>point</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>text</td><td>35</td></tr><tr><td>calendar_date</td><td>4</td></tr><tr><td>number</td><td>4</td></tr><tr><td>point</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>23</span></div><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:35%'></div></div><span class='bar-value'>8</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:26%'></div></div><span class='bar-value'>6</span></div><div class='bar-row'><span class='bar-label'>bbl</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>city</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>longitude</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>point</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>x_coord</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>y_coord</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>zip_code</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>23</td></tr><tr><td>address</td><td>8</td></tr><tr><td>borough_code</td><td>6</td></tr><tr><td>bbl</td><td>1</td></tr><tr><td>city</td><td>1</td></tr><tr><td>longitude</td><td>1</td></tr><tr><td>point</td><td>1</td></tr><tr><td>x_coord</td><td>1</td></tr><tr><td>y_coord</td><td>1</td></tr><tr><td>zip_code</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>unique_key</td><td>Integer</td><td>text</td><td>Integer</td><td></td><td></td><td></td><td>Unique identifier of a Service Request (SR) in the open data set.</td></tr><tr><td>created_date</td><td>Text</td><td>calendar_date</td><td>Text</td><td>DateTime</td><td></td><td></td><td>The date and time that a Customer submits a Service Request. </td></tr><tr><td>closed_date</td><td>Text</td><td>calendar_date</td><td>Text</td><td>DateTime</td><td></td><td></td><td>The date and time that an Agency closes a Service Request. </td></tr><tr><td>agency</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Acronym of responding City Government Agency or entity responding to 311 Service Request. </td></tr><tr><td>agency_name</td><td>Text</td><td>text</td><td>Text</td><td>Text</td><td></td><td></td><td>Full agency name of responding City Government Agency, or entity responding to 311 service request. </td></tr><tr><td>complaint_type</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>This is the first level of a hierarchy identifying the topic of the incident or condition.</td></tr><tr><td>descriptor</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>A second level of detail about the Problem (formerly Complaint Type), and provides further detail on the incident or condition. </td></tr><tr><td>descriptor_2</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>A third level of detail about the Problem (formerly Complaint Type) beyond the Problem Detail (formerly Descriptor). </td></tr><tr><td>location_type</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Describes the type of location used in the address information</td></tr><tr><td>incident_zip</td><td>zip5</td><td>text</td><td>Text</td><td>address</td><td>zip5</td><td>0.99</td><td>Zip code of the incident address</td></tr><tr><td>incident_address</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.9414817690849304</td><td>House number and street name of incident address</td></tr><tr><td>street_name</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.7451354265213013</td><td>Street name of incident address </td></tr><tr><td>cross_street_1</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.855475127696991</td><td>First Cross street based on the geo validated incident location.</td></tr><tr><td>cross_street_2</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.8448694348335266</td><td>Second Cross Street based on the geo validated incident location</td></tr><tr><td>intersection_street_1</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.7906873822212219</td><td>First intersecting street based on geo validated incident location</td></tr><tr><td>intersection_street_2</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.7583731412887573</td><td>Second intersecting street based on geo validated incident location</td></tr><tr><td>address_type</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Type of information available about the incident location. </td></tr><tr><td>city</td><td>city</td><td>text</td><td>Text</td><td>Enumeration, AdministrativeArea</td><td>city</td><td>0.95</td><td>Second intersecting street based on geo validated incident location</td></tr><tr><td>landmark</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.7142277359962463</td><td>If the incident location is identified as a Landmark the name of the landmark will display here</td></tr><tr><td>facility_type</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>If applicable, this field describes the type of city facility associated to the service request</td></tr><tr><td>status</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Current status of the service request submitted</td></tr><tr><td>due_date</td><td>Text</td><td>calendar_date</td><td>Text</td><td>DateTime</td><td></td><td></td><td>Date when responding agency is expected to update the SR.  This is based on the Complaint Type and internal Service Level Agreements (SLAs).</td></tr><tr><td>resolution_description</td><td>Text</td><td>text</td><td>Text</td><td>Text</td><td></td><td></td><td>Describes the last action taken on the service request by the responding agency. May describe next or future steps.</td></tr><tr><td>resolution_action_updated_date</td><td>Text</td><td>calendar_date</td><td>Text</td><td>DateTime</td><td></td><td></td><td>Date when responding agency last updated the service request.</td></tr><tr><td>community_board</td><td>borough_code</td><td>text</td><td>Text</td><td>Enumeration, AdministrativeArea</td><td>borough_code</td><td>0.95</td><td>Community boards are local representative bodies. There are 59 community boards throughout the City, each representing a distinct geography. </td></tr><tr><td>council_district</td><td>borough_code</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td>The City Council district where the service request is located.</td></tr><tr><td>police_precinct</td><td>borough_code</td><td>text</td><td>Text</td><td>Enumeration, AdministrativeArea</td><td>borough_code</td><td>0.95</td><td>The NYPD precinct where the service request is located</td></tr><tr><td>bbl</td><td>bbl</td><td>text</td><td>Integer</td><td>identifier</td><td>bbl</td><td>0.99</td><td>Parcel number that identifies the location of the building or property associated with the service request</td></tr><tr><td>borough</td><td>borough</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough</td><td>0.7024458050727844</td><td>One of New York City&#x27;s five boroughs</td></tr><tr><td>x_coordinate_state_plane</td><td>x_coord</td><td>number</td><td>Float</td><td></td><td>x_coord</td><td>0.9541614651679993</td><td>Geo validated,  Y coordinate of the incident location.</td></tr><tr><td>y_coordinate_state_plane</td><td>y_coord</td><td>number</td><td>Float</td><td></td><td>y_coord</td><td>0.95</td><td>Geo validated,  Y coordinate of the incident location.</td></tr><tr><td>open_data_channel_type</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Indicates how the service request was submitted to 311.  </td></tr><tr><td>park_facility_name</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>If the incident location is a Parks Dept facility and service requests pertains to a facility managed by NYC Parks (DPR), the name of the facility will appear here</td></tr><tr><td>park_borough</td><td>borough</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough</td><td>0.6036695837974548</td><td>The borough of incident if the service request is pertaining to a NYC Parks Dept facility (DPR)</td></tr><tr><td>vehicle_type</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>&quot;Data provided if service request pertains to a vehicle managed by the Taxi and Limousine Commision (TLC).  &quot;</td></tr><tr><td>taxi_company_borough</td><td>borough_code</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td>Data provided if service request pertains to a vehicle managed by the Taxi and Limousine Commision (TLC). </td></tr><tr><td>taxi_pick_up_location</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.8870421648025513</td><td>If the incident pertains a vehicle managed by the Taxi and Limousine Commision (TLC), this field displays the taxi pick up location</td></tr><tr><td>bridge_highway_name</td><td>MissingData</td><td>text</td><td>MissingData</td><td></td><td></td><td></td><td>&quot;If the incident is identified as a Bridge/Highway, the name will be displayed here.  &quot;</td></tr><tr><td>bridge_highway_direction</td><td>MissingData</td><td>text</td><td>MissingData</td><td></td><td></td><td></td><td>If the incident is identified as a Bridge/Highway, the direction where the issue took place would be displayed here.</td></tr><tr><td>road_ramp</td><td>MissingData</td><td>text</td><td>MissingData</td><td></td><td></td><td></td><td>If the incident location was Bridge/Highway this column differentiates if the issue was on the Road or the Ramp.</td></tr><tr><td>bridge_highway_segment</td><td>MissingData</td><td>text</td><td>MissingData</td><td></td><td></td><td></td><td>Additional information on the section of the Bridge/Highway were the incident took place.</td></tr><tr><td>latitude</td><td>Float</td><td>number</td><td>Float</td><td>latitude</td><td></td><td></td><td>Geo based Latitude of the incident location in decimal degrees.</td></tr><tr><td>longitude</td><td>longitude</td><td>number</td><td>Float</td><td>longitude</td><td>longitude</td><td>0.9483489394187927</td><td>Geo based Longitude of the incident location in decimal degrees. </td></tr><tr><td>location</td><td>point</td><td>point</td><td>GeoCoordinates</td><td></td><td>point</td><td>0.9752859473228455</td><td>The combined geo-based latitude &amp; longitude of the incident location. </td></tr></tbody></table></div><h2>Files</h2><table><tr><th>Raw Data</th><td><a href='../../../data/nyc311.csv'>Raw CSV</a></td></tr><tr><th>Final Metadata</th><td><a href='../../../output/metadata_nyc311_wrapped.json'>Final metadata JSON</a></td></tr><tr><th>Final Geo Results</th><td><a href='../../../output/geo_classifier_results_nyc311_wrapped.csv'>Final geo results CSV</a></td></tr><tr><th>Summary</th><td><a href='../../tables/nyc311/summary.json'>Summary JSON</a></td></tr></table><script>
+function toggleLakePanel(id) {
+  const node = document.getElementById(id);
+  if (!node) return;
+  node.classList.toggle('is-hidden');
+}
+</script></body></html>

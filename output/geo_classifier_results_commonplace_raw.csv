@@ -1,0 +1,7 @@
+dataset_name,name,label,confidence,wrapper_reason
+commonplace,the_geom,point,0.9726014733314514,
+commonplace,bin,x_coord,0.6132326722145081,
+commonplace,facility_domains,borough_code,0.6028605699539185,
+commonplace,boroughcode,borough_code,0.7457291483879089,
+commonplace,modified_by,borough_code,0.6220013499259949,
+commonplace,primaryaddresspointid,x_coord,0.7395761609077454,

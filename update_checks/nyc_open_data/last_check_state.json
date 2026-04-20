@@ -1,0 +1,2654 @@
+{
+  "checked_at": "2026-04-20T16:25:37+00:00",
+  "remote_state": {
+    "bike_routes": {
+      "title": "New York City Bike Routes",
+      "description": "The New York City Department of Transportation (NYC DOT) builds and manages bicycle facilities across the five boroughs, alongside other City agencies, New York State, and external partners. This dataset contain records of the current and historic network of designated bicycle routes and facilities, including bicycle facility type and relevant street information represented as line segments. Additional information about NYC DOT's commitment to safe all-ages and abilities bicycling, along with data about the growth of bicycling in NYC and PDF maps of the current network can be found at: https://www.nyc.gov/html/dot/html/bicyclists/bicyclists.shtml",
+      "category": null,
+      "tags": [
+        "bike",
+        "bicycle",
+        "bikes",
+        "bicycles",
+        "lanes",
+        "routes",
+        "paths",
+        "network",
+        "greenway",
+        "greenways",
+        "green wave",
+        "bikeway",
+        "bikeways",
+        "cycle",
+        "cycletrack",
+        "track"
+      ],
+      "rows_updated_at": 1755531962,
+      "view_last_modified": 1755531980,
+      "column_count": 25,
+      "columns": [
+        {
+          "fieldName": "the_geom",
+          "name": "the_geom",
+          "dataTypeName": "multiline",
+          "position": 1,
+          "description": "Geometry column used for mapping"
+        },
+        {
+          "fieldName": "segmentid",
+          "name": "segmentid",
+          "dataTypeName": "number",
+          "position": 2,
+          "description": "From LION 23C. A number of up to seven digits that identifies each segment of a street or a non-street feature represented in the LION file. Nonstandard Segment IDs reflect a difference in geometry from LION 23C and existing conditions."
+        },
+        {
+          "fieldName": "bikeid",
+          "name": "bikeid",
+          "dataTypeName": "number",
+          "position": 4,
+          "description": "A unique number that corresponds to one or more LION segments that share all other attributes."
+        },
+        {
+          "fieldName": "prevbikeid",
+          "name": "prevbikeid",
+          "dataTypeName": "text",
+          "position": 5,
+          "description": "A unique number that identifies the related record of a Bike ID that has been superseded."
+        },
+        {
+          "fieldName": "status",
+          "name": "status",
+          "dataTypeName": "text",
+          "position": 6,
+          "description": "Indicates whether a record represents a current (i.e. existing) bicycle facility or a retired (i.e. historic) one."
+        },
+        {
+          "fieldName": "boro",
+          "name": "boro",
+          "dataTypeName": "number",
+          "position": 7,
+          "description": "A 1-digit code identifying the borough in which the left side of the street segment is located."
+        },
+        {
+          "fieldName": "street",
+          "name": "street",
+          "dataTypeName": "text",
+          "position": 8,
+          "description": "Name of the street or facility."
+        },
+        {
+          "fieldName": "fromstreet",
+          "name": "fromstreet",
+          "dataTypeName": "text",
+          "position": 9,
+          "description": "The street, when available, or where no street is present a park, waterfront line, land mark, or nearest street adjacent to the beginning of the facility route."
+        },
+        {
+          "fieldName": "tostreet",
+          "name": "tostreet",
+          "dataTypeName": "text",
+          "position": 10,
+          "description": "The street, when available, or where no street is present a park, waterfront line, land mark, or nearest street adjacent to the end of the facility route."
+        },
+        {
+          "fieldName": "onoffst",
+          "name": "onoffst",
+          "dataTypeName": "text",
+          "position": 11,
+          "description": "Indicates whether a bicycle facility is on-street or off-street."
+        },
+        {
+          "fieldName": "facilitycl",
+          "name": "facilitycl",
+          "dataTypeName": "text",
+          "position": 12,
+          "description": "The HIGHEST facility class found along a segment."
+        },
+        {
+          "fieldName": "allclasses",
+          "name": "allclasses",
+          "dataTypeName": "text",
+          "position": 13,
+          "description": "Lists ALL bicycle facility classes (separated by commas) that are present on a given segment."
+        },
+        {
+          "fieldName": "bikedir",
+          "name": "bikedir",
+          "dataTypeName": "text",
+          "position": 14,
+          "description": "Travel direction based on LION geometry."
+        },
+        {
+          "fieldName": "lanecount",
+          "name": "lanecount",
+          "dataTypeName": "number",
+          "position": 15,
+          "description": "The number of bike lanes on a segment in any direction."
+        },
+        {
+          "fieldName": "ft_facilit",
+          "name": "ft_facilit",
+          "dataTypeName": "text",
+          "position": 16,
+          "description": "From-To Facility. Type of bicycle facility in the direction of the STARTpoint TO ENDpoint of the segment."
+        },
+        {
+          "fieldName": "tf_facilit",
+          "name": "tf_facilit",
+          "dataTypeName": "text",
+          "position": 17,
+          "description": "To-From Facility. Type of bicycle facility in the direction of the ENDpoint TO STARTpoint of the segment."
+        },
+        {
+          "fieldName": "ft2facilit",
+          "name": "ft2facilit",
+          "dataTypeName": "text",
+          "position": 18,
+          "description": "From-To Facility 2. (On segments with lane counts of 3 or greater, or multiple parallel bicycle facilities) Type of bicycle facility in the direction of the STARTpoint TO ENDpoint of the segment."
+        },
+        {
+          "fieldName": "tf2facilit",
+          "name": "tf2facilit",
+          "dataTypeName": "text",
+          "position": 19,
+          "description": "To-From Facility 2. (On segments with lane counts of 3 or greater, or multiple parallel bicycle facilities) Type of bicycle facility in the direction of the ENDpoint TO STARTpoint of the segment."
+        },
+        {
+          "fieldName": "instdate",
+          "name": "instdate",
+          "dataTypeName": "calendar_date",
+          "position": 20,
+          "description": "Install Date. The approximate or exact date when the installation or modification of a bicycle facility was completed."
+        },
+        {
+          "fieldName": "ret_date",
+          "name": "ret_date",
+          "dataTypeName": "calendar_date",
+          "position": 21,
+          "description": "Retired Date. The date when a BIKE ID or a bike facility was removed or superseded by a new facility or Bike ID."
+        },
+        {
+          "fieldName": "grnwy",
+          "name": "grnwy",
+          "dataTypeName": "text",
+          "position": 22,
+          "description": "Greenway. Indicates the presence of a greenway alignment.\n"
+        },
+        {
+          "fieldName": "gwsystem",
+          "name": "gwsystem",
+          "dataTypeName": "text",
+          "position": 23,
+          "description": "Greenway System Name"
+        },
+        {
+          "fieldName": "gwsys2",
+          "name": "gwsys2",
+          "dataTypeName": "text",
+          "position": 24,
+          "description": "Secondary Greenway System Name, if an alignment includes two greenway systems.\n"
+        },
+        {
+          "fieldName": "spur",
+          "name": "spur",
+          "dataTypeName": "text",
+          "position": 25,
+          "description": "Greenway Spur Name, if the bikeway includes a secondary alignment.\n"
+        },
+        {
+          "fieldName": "gwyjuris",
+          "name": "gwyjuris",
+          "dataTypeName": "text",
+          "position": 26,
+          "description": "Greenway Jurisdiction\n"
+        }
+      ]
+    },
+    "child_care": {
+      "title": "Active NYC Health Code Regulated Child Care Programs",
+      "description": "This is an official NYC Health Department dataset. the Health Department does not endorse datasets using this data that may be created by others.\n\nThis dataset lists active child care programs regulated under NYC Health Code Article 47 (Group Day Care) and Article 43 (School-based Child Care). \n\nHealth Code Article 47: https://www.nyc.gov/assets/doh/downloads/pdf/about/healthcode/health-code-article47.pdf\n\nHealth Code Article 43: https://www.nyc.gov/assets/doh/downloads/pdf/about/healthcode/health-code-article43.pdf\n\nThese data can be used to map NYC Health Code regulated child care programs and filter by attributes, such as location, ages served, facility type. It can also be used to answer questions such as how many group child care (GCC) programs are in a specific ZIP code.\n\nOnly active group child care (GCC) and school-based child care (SBCC) programs are displayed in this dataset. Child care programs with a 'preliminary', 'suspended', or 'closed' status are not included.",
+      "category": "Health",
+      "tags": [
+        "child care",
+        "day care",
+        "group day care"
+      ],
+      "rows_updated_at": 1776553209,
+      "view_last_modified": 1776639603,
+      "column_count": 20,
+      "columns": [
+        {
+          "fieldName": "dcid",
+          "name": "DCID",
+          "dataTypeName": "text",
+          "position": 1,
+          "description": "Unique Identifier for the child Care programs"
+        },
+        {
+          "fieldName": "permit_number",
+          "name": "Permit Number",
+          "dataTypeName": "text",
+          "position": 2,
+          "description": "Permit number for a group child care program"
+        },
+        {
+          "fieldName": "program_name",
+          "name": "Program Name",
+          "dataTypeName": "text",
+          "position": 3,
+          "description": "Name of the child care program"
+        },
+        {
+          "fieldName": "facility_type",
+          "name": "Facility Type",
+          "dataTypeName": "text",
+          "position": 4,
+          "description": "Describes whether the program is a group child care (GCC), or a School Based Child Care (SBCC), regulated under NYC Health Code Article 43"
+        },
+        {
+          "fieldName": "program_type",
+          "name": "Program Type",
+          "dataTypeName": "text",
+          "position": 5,
+          "description": "Program Type based on age of accepted attendees"
+        },
+        {
+          "fieldName": "address",
+          "name": "Street Address",
+          "dataTypeName": "text",
+          "position": 6,
+          "description": "Building and street address for the child care program"
+        },
+        {
+          "fieldName": "borough",
+          "name": "Borough",
+          "dataTypeName": "text",
+          "position": 7,
+          "description": "Borough the Center is located in"
+        },
+        {
+          "fieldName": "zipcode",
+          "name": "Zip Code",
+          "dataTypeName": "text",
+          "position": 8,
+          "description": "U.S. Postal ZIP code of the program"
+        },
+        {
+          "fieldName": "phone",
+          "name": "Phone Number",
+          "dataTypeName": "text",
+          "position": 9,
+          "description": "Phone Number"
+        },
+        {
+          "fieldName": "age_range",
+          "name": "Child Age Range",
+          "dataTypeName": "text",
+          "position": 10,
+          "description": "This field represents the possible age range of children enrolled in the program"
+        },
+        {
+          "fieldName": "capacity",
+          "name": "Children Allowed in Care",
+          "dataTypeName": "text",
+          "position": 11,
+          "description": "The maximum number of children that the program can care for based on the square footage of class and play rooms, the number of toilets and sinks, and overall estimates from the NYC Department of Buildings"
+        },
+        {
+          "fieldName": "administer_medication",
+          "name": "Administer Medication",
+          "dataTypeName": "text",
+          "position": 12,
+          "description": "Indicates whether a program has staff qualified to administer medication"
+        },
+        {
+          "fieldName": "bin",
+          "name": "BIN",
+          "dataTypeName": "text",
+          "position": 13,
+          "description": "Department of Buildings (DOB) Building Identification Number"
+        },
+        {
+          "fieldName": "bbl",
+          "name": "BBL",
+          "dataTypeName": "text",
+          "position": 14,
+          "description": "Borough Block Lot"
+        },
+        {
+          "fieldName": "community_board",
+          "name": "Community Board",
+          "dataTypeName": "text",
+          "position": 15,
+          "description": "Community Board of the location of the building"
+        },
+        {
+          "fieldName": "council_district",
+          "name": "Council District",
+          "dataTypeName": "text",
+          "position": 16,
+          "description": "Council District of the location of the building"
+        },
+        {
+          "fieldName": "census_tract",
+          "name": "Census Tract",
+          "dataTypeName": "text",
+          "position": 17,
+          "description": "The 2020 Census Tract of the location of the building"
+        },
+        {
+          "fieldName": "nta_code",
+          "name": "NTA Code",
+          "dataTypeName": "text",
+          "position": 18,
+          "description": "NTA (Neighborhood Tabulation Area) code of the location of the building"
+        },
+        {
+          "fieldName": "latitude",
+          "name": "Latitude",
+          "dataTypeName": "number",
+          "position": 19,
+          "description": "Latitude of the location of the building"
+        },
+        {
+          "fieldName": "longitude",
+          "name": "Longitude",
+          "dataTypeName": "number",
+          "position": 20,
+          "description": "Longitude of the location of the building"
+        }
+      ]
+    },
+    "commonplace": {
+      "title": "CommonPlace",
+      "description": "The Points Of Interest points are a compilation of what the different city agencies consider to be a Common Place or Place/Point of Interest.\r\n\r\nPreviously posted versions of the data are retained to comply with Local Law 106 of 2015 and can be provided upon request made to Open Data.",
+      "category": "City Government",
+      "tags": [
+        "doitt",
+        "doitt gis",
+        "gis",
+        "places",
+        "common",
+        "interest"
+      ],
+      "rows_updated_at": 1775909624,
+      "view_last_modified": 1747151565,
+      "column_count": 21,
+      "columns": [
+        {
+          "fieldName": "the_geom",
+          "name": "the_geom",
+          "dataTypeName": "point",
+          "position": 1,
+          "description": ""
+        },
+        {
+          "fieldName": "segmentid",
+          "name": "SEGMENTID",
+          "dataTypeName": "number",
+          "position": 2,
+          "description": ""
+        },
+        {
+          "fieldName": "complexid",
+          "name": "COMPLEXID",
+          "dataTypeName": "number",
+          "position": 3,
+          "description": ""
+        },
+        {
+          "fieldName": "saftype",
+          "name": "SAFTYPE",
+          "dataTypeName": "text",
+          "position": 4,
+          "description": ""
+        },
+        {
+          "fieldName": "placeid",
+          "name": "PLACEID",
+          "dataTypeName": "number",
+          "position": 6,
+          "description": ""
+        },
+        {
+          "fieldName": "bin",
+          "name": "BIN",
+          "dataTypeName": "number",
+          "position": 8,
+          "description": ""
+        },
+        {
+          "fieldName": "source",
+          "name": "SOURCE",
+          "dataTypeName": "text",
+          "position": 13,
+          "description": ""
+        },
+        {
+          "fieldName": "objectid",
+          "name": "OBJECTID",
+          "dataTypeName": "number",
+          "position": 14,
+          "description": null
+        },
+        {
+          "fieldName": "sosindicator",
+          "name": "SOS INDICATOR",
+          "dataTypeName": "text",
+          "position": 15,
+          "description": null
+        },
+        {
+          "fieldName": "facility_domains",
+          "name": "FACILITY DOMAINS",
+          "dataTypeName": "text",
+          "position": 16,
+          "description": null
+        },
+        {
+          "fieldName": "boroughcode",
+          "name": "BOROUGH CODE",
+          "dataTypeName": "text",
+          "position": 17,
+          "description": null
+        },
+        {
+          "fieldName": "sourceid",
+          "name": "SOURCE ID",
+          "dataTypeName": "text",
+          "position": 18,
+          "description": null
+        },
+        {
+          "fieldName": "created_by",
+          "name": "CREATED_BY",
+          "dataTypeName": "text",
+          "position": 19,
+          "description": null
+        },
+        {
+          "fieldName": "created_date",
+          "name": "CREATED_DATE",
+          "dataTypeName": "date",
+          "position": 20,
+          "description": null
+        },
+        {
+          "fieldName": "modified_by",
+          "name": "MODIFIED_BY",
+          "dataTypeName": "text",
+          "position": 21,
+          "description": null
+        },
+        {
+          "fieldName": "modified_date",
+          "name": "MODIFIED_DATE",
+          "dataTypeName": "date",
+          "position": 22,
+          "description": null
+        },
+        {
+          "fieldName": "facility_type",
+          "name": "FACILITY TYPE",
+          "dataTypeName": "number",
+          "position": 23,
+          "description": null
+        },
+        {
+          "fieldName": "b7sc",
+          "name": "B7SC",
+          "dataTypeName": "text",
+          "position": 24,
+          "description": null
+        },
+        {
+          "fieldName": "primaryaddresspointid",
+          "name": "PRIMARY ADDRESS POINT ID",
+          "dataTypeName": "number",
+          "position": 25,
+          "description": null
+        },
+        {
+          "fieldName": "feature_name",
+          "name": "FEATURE NAME",
+          "dataTypeName": "text",
+          "position": 26,
+          "description": null
+        },
+        {
+          "fieldName": "security_level",
+          "name": "SECURITY LEVEL",
+          "dataTypeName": "number",
+          "position": 27,
+          "description": null
+        }
+      ]
+    },
+    "farmers_markets": {
+      "title": "NYC Farmers Markets",
+      "description": "Annual list of farmers markets across the five boroughs that have varying vendors, products, and EBT acceptance.",
+      "category": "Health",
+      "tags": [
+        "farmer",
+        "markets",
+        "food",
+        "boxes"
+      ],
+      "rows_updated_at": 1772134228,
+      "view_last_modified": 1772134244,
+      "column_count": 13,
+      "columns": [
+        {
+          "fieldName": "year",
+          "name": "Year",
+          "dataTypeName": "number",
+          "position": 1,
+          "description": "Calendar year of the report"
+        },
+        {
+          "fieldName": "marketname",
+          "name": "Market Name",
+          "dataTypeName": "text",
+          "position": 2,
+          "description": "Name of the farmers market site"
+        },
+        {
+          "fieldName": "borough",
+          "name": "Borough",
+          "dataTypeName": "text",
+          "position": 3,
+          "description": "Borough in which site is located"
+        },
+        {
+          "fieldName": "streetaddress",
+          "name": "Street Address",
+          "dataTypeName": "text",
+          "position": 4,
+          "description": "Site Address "
+        },
+        {
+          "fieldName": "community_district",
+          "name": "Community District",
+          "dataTypeName": "text",
+          "position": 5,
+          "description": "Community District where the site is located"
+        },
+        {
+          "fieldName": "latitude",
+          "name": "Latitude",
+          "dataTypeName": "number",
+          "position": 6,
+          "description": "Site lattitude coordinate"
+        },
+        {
+          "fieldName": "longitude",
+          "name": "Longitude",
+          "dataTypeName": "number",
+          "position": 7,
+          "description": "Site longitude coordinate"
+        },
+        {
+          "fieldName": "daysoperation",
+          "name": "Days of Operation",
+          "dataTypeName": "text",
+          "position": 8,
+          "description": "Days of the week when the market is open"
+        },
+        {
+          "fieldName": "hoursoperations",
+          "name": "Hours of Operations",
+          "dataTypeName": "text",
+          "position": 9,
+          "description": "Hours when the market is open"
+        },
+        {
+          "fieldName": "season_begin",
+          "name": "Season Dates",
+          "dataTypeName": "calendar_date",
+          "position": 10,
+          "description": "Range of dates when the market is open"
+        },
+        {
+          "fieldName": "accepts_ebt",
+          "name": "Accepts EBT",
+          "dataTypeName": "text",
+          "position": 11,
+          "description": "Locations accepts EBT (Yes or No)"
+        },
+        {
+          "fieldName": "open_year_round",
+          "name": "Open Year-Round",
+          "dataTypeName": "text",
+          "position": 12,
+          "description": "Site is Year round (Yes or No)"
+        },
+        {
+          "fieldName": "nyc_dept_of_health_cooking",
+          "name": "Stellar Cooking Demonstrations",
+          "dataTypeName": "text",
+          "position": 13,
+          "description": "Location offers a nutrition workshop onsite (Yes or No)"
+        }
+      ]
+    },
+    "hydrants": {
+      "title": "Hydrants",
+      "description": "NYCDEP Citywide Hydrants",
+      "category": "Environment",
+      "tags": [
+        "2018od4a-video"
+      ],
+      "rows_updated_at": 1766071828,
+      "view_last_modified": 1766071809,
+      "column_count": 8,
+      "columns": [
+        {
+          "fieldName": "the_geom",
+          "name": "the_geom",
+          "dataTypeName": "point",
+          "position": 1,
+          "description": ""
+        },
+        {
+          "fieldName": "boro",
+          "name": "BORO",
+          "dataTypeName": "number",
+          "position": 2,
+          "description": ""
+        },
+        {
+          "fieldName": "unitid",
+          "name": "UNITID",
+          "dataTypeName": "text",
+          "position": 3,
+          "description": ""
+        },
+        {
+          "fieldName": "point_x",
+          "name": "POINT_X",
+          "dataTypeName": "number",
+          "position": 4,
+          "description": ""
+        },
+        {
+          "fieldName": "point_y",
+          "name": "POINT_Y",
+          "dataTypeName": "number",
+          "position": 5,
+          "description": ""
+        },
+        {
+          "fieldName": "cb",
+          "name": "CB",
+          "dataTypeName": "text",
+          "position": 6,
+          "description": ""
+        },
+        {
+          "fieldName": "latitude",
+          "name": "LATITUDE",
+          "dataTypeName": "number",
+          "position": 7,
+          "description": ""
+        },
+        {
+          "fieldName": "longitude",
+          "name": "LONGITUDE",
+          "dataTypeName": "number",
+          "position": 8,
+          "description": ""
+        }
+      ]
+    },
+    "libraries": {
+      "title": "LIBRARY",
+      "description": "Library",
+      "category": "Business",
+      "tags": [
+        "doitt gis",
+        "doittgis",
+        "library"
+      ],
+      "rows_updated_at": 1466610774,
+      "view_last_modified": 1706899543,
+      "column_count": 13,
+      "columns": [
+        {
+          "fieldName": "the_geom",
+          "name": "the_geom",
+          "dataTypeName": "point",
+          "position": 1,
+          "description": null
+        },
+        {
+          "fieldName": "name",
+          "name": "NAME",
+          "dataTypeName": "text",
+          "position": 2,
+          "description": null
+        },
+        {
+          "fieldName": "streetname",
+          "name": "STREETNAME",
+          "dataTypeName": "text",
+          "position": 3,
+          "description": null
+        },
+        {
+          "fieldName": "housenum",
+          "name": "HOUSENUM",
+          "dataTypeName": "text",
+          "position": 4,
+          "description": null
+        },
+        {
+          "fieldName": "city",
+          "name": "CITY",
+          "dataTypeName": "text",
+          "position": 5,
+          "description": null
+        },
+        {
+          "fieldName": "zip",
+          "name": "ZIP",
+          "dataTypeName": "text",
+          "position": 6,
+          "description": null
+        },
+        {
+          "fieldName": "url",
+          "name": "URL",
+          "dataTypeName": "text",
+          "position": 7,
+          "description": null
+        },
+        {
+          "fieldName": "bin",
+          "name": "BIN",
+          "dataTypeName": "number",
+          "position": 8,
+          "description": null
+        },
+        {
+          "fieldName": "bbl",
+          "name": "BBL",
+          "dataTypeName": "text",
+          "position": 9,
+          "description": null
+        },
+        {
+          "fieldName": "x",
+          "name": "X",
+          "dataTypeName": "number",
+          "position": 10,
+          "description": null
+        },
+        {
+          "fieldName": "y",
+          "name": "Y",
+          "dataTypeName": "number",
+          "position": 11,
+          "description": null
+        },
+        {
+          "fieldName": "system",
+          "name": "SYSTEM",
+          "dataTypeName": "text",
+          "position": 12,
+          "description": null
+        },
+        {
+          "fieldName": "borocode",
+          "name": "BOROCODE",
+          "dataTypeName": "number",
+          "position": 13,
+          "description": null
+        }
+      ]
+    },
+    "nyc311": {
+      "title": "311 Service Requests from 2010 to 2019",
+      "description": "311 responds to thousands of inquiries, comments and requests from customers every single day. This dataset represents only service requests that can be directed to specific agencies.  \n\nThis dataset is updated daily and expected values for many fields will change over time.  The lists of expected values associated with each column are not exhaustive.\n\nEach row of data contains information about the service request, including complaint type, responding agency, and geographic location.  However the data does not reveal any personally identifying information about the customer who made the request.\n\nFor data from 2020-present see: https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9/about_data",
+      "category": "Social Services",
+      "tags": [
+        "311",
+        "311 service requests"
+      ],
+      "rows_updated_at": 1766600348,
+      "view_last_modified": 1766778501,
+      "column_count": 48,
+      "columns": [
+        {
+          "fieldName": "unique_key",
+          "name": "Unique Key",
+          "dataTypeName": "text",
+          "position": 1,
+          "description": "Unique identifier of a Service Request (SR) in the open data set."
+        },
+        {
+          "fieldName": "created_date",
+          "name": "Created Date",
+          "dataTypeName": "calendar_date",
+          "position": 2,
+          "description": "The date and time that a Customer submits a Service Request. "
+        },
+        {
+          "fieldName": "closed_date",
+          "name": "Closed Date",
+          "dataTypeName": "calendar_date",
+          "position": 3,
+          "description": "The date and time that an Agency closes a Service Request. "
+        },
+        {
+          "fieldName": "agency",
+          "name": "Agency",
+          "dataTypeName": "text",
+          "position": 4,
+          "description": "Acronym of responding City Government Agency or entity responding to 311 Service Request. "
+        },
+        {
+          "fieldName": "agency_name",
+          "name": "Agency Name",
+          "dataTypeName": "text",
+          "position": 5,
+          "description": "Full agency name of responding City Government Agency, or entity responding to 311 service request. "
+        },
+        {
+          "fieldName": "complaint_type",
+          "name": "Problem (formerly Complaint Type)",
+          "dataTypeName": "text",
+          "position": 6,
+          "description": "This is the first level of a hierarchy identifying the topic of the incident or condition."
+        },
+        {
+          "fieldName": "descriptor",
+          "name": "Problem Detail (formerly Descriptor)",
+          "dataTypeName": "text",
+          "position": 7,
+          "description": "A second level of detail about the Problem (formerly Complaint Type), and provides further detail on the incident or condition. "
+        },
+        {
+          "fieldName": "descriptor_2",
+          "name": "Additional Details",
+          "dataTypeName": "text",
+          "position": 8,
+          "description": "A third level of detail about the Problem (formerly Complaint Type) beyond the Problem Detail (formerly Descriptor). "
+        },
+        {
+          "fieldName": "location_type",
+          "name": "Location Type",
+          "dataTypeName": "text",
+          "position": 9,
+          "description": "Describes the type of location used in the address information"
+        },
+        {
+          "fieldName": "incident_zip",
+          "name": "Incident Zip",
+          "dataTypeName": "text",
+          "position": 10,
+          "description": "Zip code of the incident address"
+        },
+        {
+          "fieldName": "incident_address",
+          "name": "Incident Address",
+          "dataTypeName": "text",
+          "position": 11,
+          "description": "House number and street name of incident address"
+        },
+        {
+          "fieldName": "street_name",
+          "name": "Street Name",
+          "dataTypeName": "text",
+          "position": 12,
+          "description": "Street name of incident address "
+        },
+        {
+          "fieldName": "cross_street_1",
+          "name": "Cross Street 1",
+          "dataTypeName": "text",
+          "position": 13,
+          "description": "First Cross street based on the geo validated incident location."
+        },
+        {
+          "fieldName": "cross_street_2",
+          "name": "Cross Street 2",
+          "dataTypeName": "text",
+          "position": 14,
+          "description": "Second Cross Street based on the geo validated incident location"
+        },
+        {
+          "fieldName": "intersection_street_1",
+          "name": "Intersection Street 1",
+          "dataTypeName": "text",
+          "position": 15,
+          "description": "First intersecting street based on geo validated incident location"
+        },
+        {
+          "fieldName": "intersection_street_2",
+          "name": "Intersection Street 2",
+          "dataTypeName": "text",
+          "position": 16,
+          "description": "Second intersecting street based on geo validated incident location"
+        },
+        {
+          "fieldName": "address_type",
+          "name": "Address Type",
+          "dataTypeName": "text",
+          "position": 17,
+          "description": "Type of information available about the incident location. "
+        },
+        {
+          "fieldName": "city",
+          "name": "City",
+          "dataTypeName": "text",
+          "position": 18,
+          "description": "Second intersecting street based on geo validated incident location"
+        },
+        {
+          "fieldName": "landmark",
+          "name": "Landmark",
+          "dataTypeName": "text",
+          "position": 19,
+          "description": "If the incident location is identified as a Landmark the name of the landmark will display here"
+        },
+        {
+          "fieldName": "facility_type",
+          "name": "Facility Type",
+          "dataTypeName": "text",
+          "position": 20,
+          "description": "If applicable, this field describes the type of city facility associated to the service request"
+        },
+        {
+          "fieldName": "status",
+          "name": "Status",
+          "dataTypeName": "text",
+          "position": 21,
+          "description": "Current status of the service request submitted"
+        },
+        {
+          "fieldName": "due_date",
+          "name": "Due Date",
+          "dataTypeName": "calendar_date",
+          "position": 22,
+          "description": "Date when responding agency is expected to update the SR.  This is based on the Complaint Type and internal Service Level Agreements (SLAs)."
+        },
+        {
+          "fieldName": "resolution_description",
+          "name": "Resolution Description",
+          "dataTypeName": "text",
+          "position": 23,
+          "description": "Describes the last action taken on the service request by the responding agency. May describe next or future steps."
+        },
+        {
+          "fieldName": "resolution_action_updated_date",
+          "name": "Resolution Action Updated Date",
+          "dataTypeName": "calendar_date",
+          "position": 24,
+          "description": "Date when responding agency last updated the service request."
+        },
+        {
+          "fieldName": "community_board",
+          "name": "Community Board",
+          "dataTypeName": "text",
+          "position": 25,
+          "description": "Community boards are local representative bodies. There are 59 community boards throughout the City, each representing a distinct geography. "
+        },
+        {
+          "fieldName": "council_district",
+          "name": "Council District",
+          "dataTypeName": "text",
+          "position": 26,
+          "description": "The City Council district where the service request is located."
+        },
+        {
+          "fieldName": "police_precinct",
+          "name": "Police Precinct",
+          "dataTypeName": "text",
+          "position": 27,
+          "description": "The NYPD precinct where the service request is located"
+        },
+        {
+          "fieldName": "bbl",
+          "name": "BBL",
+          "dataTypeName": "text",
+          "position": 28,
+          "description": "Parcel number that identifies the location of the building or property associated with the service request"
+        },
+        {
+          "fieldName": "borough",
+          "name": "Borough",
+          "dataTypeName": "text",
+          "position": 29,
+          "description": "One of New York City's five boroughs"
+        },
+        {
+          "fieldName": "x_coordinate_state_plane",
+          "name": "X Coordinate (State Plane)",
+          "dataTypeName": "number",
+          "position": 30,
+          "description": "Geo validated,  Y coordinate of the incident location."
+        },
+        {
+          "fieldName": "y_coordinate_state_plane",
+          "name": "Y Coordinate (State Plane)",
+          "dataTypeName": "number",
+          "position": 31,
+          "description": "Geo validated,  Y coordinate of the incident location."
+        },
+        {
+          "fieldName": "open_data_channel_type",
+          "name": "Open Data Channel Type",
+          "dataTypeName": "text",
+          "position": 32,
+          "description": "Indicates how the service request was submitted to 311.  "
+        },
+        {
+          "fieldName": "park_facility_name",
+          "name": "Park Facility Name",
+          "dataTypeName": "text",
+          "position": 33,
+          "description": "If the incident location is a Parks Dept facility and service requests pertains to a facility managed by NYC Parks (DPR), the name of the facility will appear here"
+        },
+        {
+          "fieldName": "park_borough",
+          "name": "Park Borough",
+          "dataTypeName": "text",
+          "position": 34,
+          "description": "The borough of incident if the service request is pertaining to a NYC Parks Dept facility (DPR)"
+        },
+        {
+          "fieldName": "vehicle_type",
+          "name": "Vehicle Type",
+          "dataTypeName": "text",
+          "position": 35,
+          "description": "\"Data provided if service request pertains to a vehicle managed by the Taxi and Limousine Commision (TLC).  \""
+        },
+        {
+          "fieldName": "taxi_company_borough",
+          "name": "Taxi Company Borough",
+          "dataTypeName": "text",
+          "position": 36,
+          "description": "Data provided if service request pertains to a vehicle managed by the Taxi and Limousine Commision (TLC). "
+        },
+        {
+          "fieldName": "taxi_pick_up_location",
+          "name": "Taxi Pick Up Location",
+          "dataTypeName": "text",
+          "position": 37,
+          "description": "If the incident pertains a vehicle managed by the Taxi and Limousine Commision (TLC), this field displays the taxi pick up location"
+        },
+        {
+          "fieldName": "bridge_highway_name",
+          "name": "Bridge Highway Name",
+          "dataTypeName": "text",
+          "position": 38,
+          "description": "\"If the incident is identified as a Bridge/Highway, the name will be displayed here.  \""
+        },
+        {
+          "fieldName": "bridge_highway_direction",
+          "name": "Bridge Highway Direction",
+          "dataTypeName": "text",
+          "position": 39,
+          "description": "If the incident is identified as a Bridge/Highway, the direction where the issue took place would be displayed here."
+        },
+        {
+          "fieldName": "road_ramp",
+          "name": "Road Ramp",
+          "dataTypeName": "text",
+          "position": 40,
+          "description": "If the incident location was Bridge/Highway this column differentiates if the issue was on the Road or the Ramp."
+        },
+        {
+          "fieldName": "bridge_highway_segment",
+          "name": "Bridge Highway Segment",
+          "dataTypeName": "text",
+          "position": 41,
+          "description": "Additional information on the section of the Bridge/Highway were the incident took place."
+        },
+        {
+          "fieldName": "latitude",
+          "name": "Latitude",
+          "dataTypeName": "number",
+          "position": 42,
+          "description": "Geo based Latitude of the incident location in decimal degrees."
+        },
+        {
+          "fieldName": "longitude",
+          "name": "Longitude",
+          "dataTypeName": "number",
+          "position": 43,
+          "description": "Geo based Longitude of the incident location in decimal degrees. "
+        },
+        {
+          "fieldName": "location",
+          "name": "Location",
+          "dataTypeName": "point",
+          "position": 44,
+          "description": "The combined geo-based latitude & longitude of the incident location. "
+        },
+        {
+          "fieldName": ":@computed_region_f5dn_yrer",
+          "name": "Community Districts",
+          "dataTypeName": "number",
+          "position": 45,
+          "description": "This column was automatically created in order to record in what polygon from the dataset 'Community Districts' (f5dn-yrer) the point in column 'location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens."
+        },
+        {
+          "fieldName": ":@computed_region_yeji_bk3q",
+          "name": "Borough Boundaries",
+          "dataTypeName": "number",
+          "position": 46,
+          "description": "This column was automatically created in order to record in what polygon from the dataset 'Borough Boundaries' (yeji-bk3q) the point in column 'location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens."
+        },
+        {
+          "fieldName": ":@computed_region_sbqj_enih",
+          "name": "Police Precincts",
+          "dataTypeName": "number",
+          "position": 47,
+          "description": "This column was automatically created in order to record in what polygon from the dataset 'Police Precincts' (sbqj-enih) the point in column 'location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens."
+        },
+        {
+          "fieldName": ":@computed_region_92fq_4b7q",
+          "name": "City Council Districts",
+          "dataTypeName": "number",
+          "position": 48,
+          "description": "This column was automatically created in order to record in what polygon from the dataset 'City Council Districts' (92fq-4b7q) the point in column 'location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens."
+        }
+      ]
+    },
+    "ped_counts": {
+      "title": "Bi-Annual Pedestrian Counts",
+      "description": "An index of pedestrian volumes tracking the long-term trends of neighborhood commercial corridors. Data is collected at 114 locations, including 100 on-street locations (primarily retail corridors), 13 East River and Harlem River bridge locations, and the Hudson River Greenway. Screenline sampling is conducted during May and September on the sidewalk, mid-block (or mid-bridge) on both sides of street where applicable. Pedestrian volumes at 50 sample locations around the City are combined to create the Pedestrian Volume Index for the Mayor’s Management Report.\r\n\r\n\r\nClick here for metadata - http://www.nyc.gov/html/dot/downloads/pdf/bi-annual-ped-count-readme.pdf",
+      "category": "Transportation",
+      "tags": null,
+      "rows_updated_at": 1759426839,
+      "view_last_modified": 1759426838,
+      "column_count": 113,
+      "columns": [
+        {
+          "fieldName": "the_geom",
+          "name": "the_geom",
+          "dataTypeName": "point",
+          "position": 1,
+          "description": null
+        },
+        {
+          "fieldName": "objectid",
+          "name": "OBJECTID",
+          "dataTypeName": "number",
+          "position": 2,
+          "description": ""
+        },
+        {
+          "fieldName": "loc",
+          "name": "Loc",
+          "dataTypeName": "number",
+          "position": 3,
+          "description": ""
+        },
+        {
+          "fieldName": "borough",
+          "name": "Borough",
+          "dataTypeName": "text",
+          "position": 4,
+          "description": ""
+        },
+        {
+          "fieldName": "street_nam",
+          "name": "Street_Nam",
+          "dataTypeName": "text",
+          "position": 5,
+          "description": null
+        },
+        {
+          "fieldName": "from_stree",
+          "name": "From_Stree",
+          "dataTypeName": "text",
+          "position": 6,
+          "description": null
+        },
+        {
+          "fieldName": "to_street",
+          "name": "To_Street",
+          "dataTypeName": "text",
+          "position": 7,
+          "description": null
+        },
+        {
+          "fieldName": "iex",
+          "name": "Iex",
+          "dataTypeName": "text",
+          "position": 8,
+          "description": ""
+        },
+        {
+          "fieldName": "may_07_am",
+          "name": "May07_AM",
+          "dataTypeName": "number",
+          "position": 9,
+          "description": null
+        },
+        {
+          "fieldName": "may_07_pm",
+          "name": "May07_PM",
+          "dataTypeName": "number",
+          "position": 10,
+          "description": null
+        },
+        {
+          "fieldName": "may_07_md",
+          "name": "May07_MD",
+          "dataTypeName": "number",
+          "position": 11,
+          "description": null
+        },
+        {
+          "fieldName": "sept_07_am",
+          "name": "Sept07_AM",
+          "dataTypeName": "number",
+          "position": 12,
+          "description": null
+        },
+        {
+          "fieldName": "sept_07_pm",
+          "name": "Sept07_PM",
+          "dataTypeName": "number",
+          "position": 13,
+          "description": null
+        },
+        {
+          "fieldName": "sept_07_md",
+          "name": "Sept07_MD",
+          "dataTypeName": "number",
+          "position": 14,
+          "description": null
+        },
+        {
+          "fieldName": "may_08_am",
+          "name": "May08_AM",
+          "dataTypeName": "number",
+          "position": 15,
+          "description": null
+        },
+        {
+          "fieldName": "may_08_pm",
+          "name": "May08_PM",
+          "dataTypeName": "number",
+          "position": 16,
+          "description": null
+        },
+        {
+          "fieldName": "may_08_md",
+          "name": "May08_MD",
+          "dataTypeName": "number",
+          "position": 17,
+          "description": null
+        },
+        {
+          "fieldName": "sept_08_am",
+          "name": "Sept08_AM",
+          "dataTypeName": "number",
+          "position": 18,
+          "description": null
+        },
+        {
+          "fieldName": "sept_08_pm",
+          "name": "Sept08_PM",
+          "dataTypeName": "number",
+          "position": 19,
+          "description": null
+        },
+        {
+          "fieldName": "sept_08_md",
+          "name": "Sept08_MD",
+          "dataTypeName": "number",
+          "position": 20,
+          "description": null
+        },
+        {
+          "fieldName": "may_09_am",
+          "name": "May09_AM",
+          "dataTypeName": "number",
+          "position": 21,
+          "description": null
+        },
+        {
+          "fieldName": "may_09_pm",
+          "name": "May09_PM",
+          "dataTypeName": "number",
+          "position": 22,
+          "description": null
+        },
+        {
+          "fieldName": "may_09_md",
+          "name": "May09_MD",
+          "dataTypeName": "number",
+          "position": 23,
+          "description": null
+        },
+        {
+          "fieldName": "sept_09_am",
+          "name": "Sept09_AM",
+          "dataTypeName": "number",
+          "position": 24,
+          "description": null
+        },
+        {
+          "fieldName": "sept_09_pm",
+          "name": "Sept09_PM",
+          "dataTypeName": "number",
+          "position": 25,
+          "description": null
+        },
+        {
+          "fieldName": "sept_09_md",
+          "name": "Sept09_MD",
+          "dataTypeName": "number",
+          "position": 26,
+          "description": null
+        },
+        {
+          "fieldName": "may_10_am",
+          "name": "May10_AM",
+          "dataTypeName": "number",
+          "position": 27,
+          "description": null
+        },
+        {
+          "fieldName": "may_10_pm",
+          "name": "May10_PM",
+          "dataTypeName": "number",
+          "position": 28,
+          "description": null
+        },
+        {
+          "fieldName": "may_10_md",
+          "name": "May10_MD",
+          "dataTypeName": "number",
+          "position": 29,
+          "description": null
+        },
+        {
+          "fieldName": "sept_10_am",
+          "name": "Sept10_AM",
+          "dataTypeName": "number",
+          "position": 30,
+          "description": null
+        },
+        {
+          "fieldName": "sept_10_pm",
+          "name": "Sept10_PM",
+          "dataTypeName": "number",
+          "position": 31,
+          "description": null
+        },
+        {
+          "fieldName": "sept_10_md",
+          "name": "Sept10_MD",
+          "dataTypeName": "number",
+          "position": 32,
+          "description": null
+        },
+        {
+          "fieldName": "may_11_am",
+          "name": "May11_AM",
+          "dataTypeName": "number",
+          "position": 33,
+          "description": null
+        },
+        {
+          "fieldName": "may_11_pm",
+          "name": "May11_PM",
+          "dataTypeName": "number",
+          "position": 34,
+          "description": null
+        },
+        {
+          "fieldName": "may_11_md",
+          "name": "May11_MD",
+          "dataTypeName": "number",
+          "position": 35,
+          "description": null
+        },
+        {
+          "fieldName": "sept_11_am",
+          "name": "Sept11_AM",
+          "dataTypeName": "number",
+          "position": 36,
+          "description": null
+        },
+        {
+          "fieldName": "sept_11_pm",
+          "name": "Sept11_PM",
+          "dataTypeName": "number",
+          "position": 37,
+          "description": null
+        },
+        {
+          "fieldName": "sept_11_md",
+          "name": "Sept11_MD",
+          "dataTypeName": "number",
+          "position": 38,
+          "description": null
+        },
+        {
+          "fieldName": "may_12_am",
+          "name": "May12_AM",
+          "dataTypeName": "number",
+          "position": 39,
+          "description": null
+        },
+        {
+          "fieldName": "may_12_pm",
+          "name": "May12_PM",
+          "dataTypeName": "number",
+          "position": 40,
+          "description": null
+        },
+        {
+          "fieldName": "may_12_md",
+          "name": "May12_MD",
+          "dataTypeName": "number",
+          "position": 41,
+          "description": null
+        },
+        {
+          "fieldName": "sept_12_am",
+          "name": "Sept12_AM",
+          "dataTypeName": "number",
+          "position": 42,
+          "description": null
+        },
+        {
+          "fieldName": "sept_12_pm",
+          "name": "Sept12_PM",
+          "dataTypeName": "number",
+          "position": 43,
+          "description": null
+        },
+        {
+          "fieldName": "sept_12_md",
+          "name": "Sept12_MD",
+          "dataTypeName": "number",
+          "position": 44,
+          "description": null
+        },
+        {
+          "fieldName": "may_13_am",
+          "name": "May13_AM",
+          "dataTypeName": "number",
+          "position": 45,
+          "description": null
+        },
+        {
+          "fieldName": "may_13_pm",
+          "name": "May13_PM",
+          "dataTypeName": "number",
+          "position": 46,
+          "description": null
+        },
+        {
+          "fieldName": "may_13_md",
+          "name": "May13_MD",
+          "dataTypeName": "number",
+          "position": 47,
+          "description": null
+        },
+        {
+          "fieldName": "sept_13_am",
+          "name": "Sept13_AM",
+          "dataTypeName": "number",
+          "position": 48,
+          "description": null
+        },
+        {
+          "fieldName": "sept_13_pm",
+          "name": "Sept13_PM",
+          "dataTypeName": "number",
+          "position": 49,
+          "description": null
+        },
+        {
+          "fieldName": "sept_13_md",
+          "name": "Sept13_MD",
+          "dataTypeName": "number",
+          "position": 50,
+          "description": null
+        },
+        {
+          "fieldName": "may_14_am",
+          "name": "May14_AM",
+          "dataTypeName": "number",
+          "position": 51,
+          "description": null
+        },
+        {
+          "fieldName": "may_14_pm",
+          "name": "May14_PM",
+          "dataTypeName": "number",
+          "position": 52,
+          "description": null
+        },
+        {
+          "fieldName": "may_14_md",
+          "name": "May14_MD",
+          "dataTypeName": "number",
+          "position": 53,
+          "description": null
+        },
+        {
+          "fieldName": "sept_14_am",
+          "name": "Sept14_AM",
+          "dataTypeName": "number",
+          "position": 54,
+          "description": null
+        },
+        {
+          "fieldName": "sept_14_pm",
+          "name": "Sept14_PM",
+          "dataTypeName": "number",
+          "position": 55,
+          "description": null
+        },
+        {
+          "fieldName": "sept_14_md",
+          "name": "Sept14_MD",
+          "dataTypeName": "number",
+          "position": 56,
+          "description": null
+        },
+        {
+          "fieldName": "may_15_am",
+          "name": "May15_AM",
+          "dataTypeName": "number",
+          "position": 57,
+          "description": null
+        },
+        {
+          "fieldName": "may_15_pm",
+          "name": "May15_PM",
+          "dataTypeName": "number",
+          "position": 58,
+          "description": null
+        },
+        {
+          "fieldName": "may_15_md",
+          "name": "May15_MD",
+          "dataTypeName": "number",
+          "position": 59,
+          "description": null
+        },
+        {
+          "fieldName": "sept_15_am",
+          "name": "Sept15_AM",
+          "dataTypeName": "number",
+          "position": 60,
+          "description": null
+        },
+        {
+          "fieldName": "sept_15_pm",
+          "name": "Sept15_PM",
+          "dataTypeName": "number",
+          "position": 61,
+          "description": null
+        },
+        {
+          "fieldName": "sept_15_md",
+          "name": "Sept15_MD",
+          "dataTypeName": "number",
+          "position": 62,
+          "description": null
+        },
+        {
+          "fieldName": "may_16_am",
+          "name": "May16_AM",
+          "dataTypeName": "number",
+          "position": 63,
+          "description": null
+        },
+        {
+          "fieldName": "may_16_pm",
+          "name": "May16_PM",
+          "dataTypeName": "number",
+          "position": 64,
+          "description": null
+        },
+        {
+          "fieldName": "may_16_md",
+          "name": "May16_MD",
+          "dataTypeName": "number",
+          "position": 65,
+          "description": null
+        },
+        {
+          "fieldName": "sept_16_am",
+          "name": "Sept16_AM",
+          "dataTypeName": "number",
+          "position": 66,
+          "description": null
+        },
+        {
+          "fieldName": "sept_16_pm",
+          "name": "Sept16_PM",
+          "dataTypeName": "number",
+          "position": 67,
+          "description": null
+        },
+        {
+          "fieldName": "sept_16_md",
+          "name": "Sept16_MD",
+          "dataTypeName": "number",
+          "position": 68,
+          "description": null
+        },
+        {
+          "fieldName": "may_17_am",
+          "name": "May17_AM",
+          "dataTypeName": "number",
+          "position": 69,
+          "description": null
+        },
+        {
+          "fieldName": "may_17_pm",
+          "name": "May17_PM",
+          "dataTypeName": "number",
+          "position": 70,
+          "description": null
+        },
+        {
+          "fieldName": "may_17_md",
+          "name": "May17_MD",
+          "dataTypeName": "number",
+          "position": 71,
+          "description": null
+        },
+        {
+          "fieldName": "sept_17_am",
+          "name": "Sept17_AM",
+          "dataTypeName": "number",
+          "position": 72,
+          "description": null
+        },
+        {
+          "fieldName": "sept_17_pm",
+          "name": "Sept17_PM",
+          "dataTypeName": "number",
+          "position": 73,
+          "description": null
+        },
+        {
+          "fieldName": "sept_17_md",
+          "name": "Sept17_MD",
+          "dataTypeName": "number",
+          "position": 74,
+          "description": null
+        },
+        {
+          "fieldName": "may_18_am",
+          "name": "May18_AM",
+          "dataTypeName": "number",
+          "position": 75,
+          "description": null
+        },
+        {
+          "fieldName": "may_18_pm",
+          "name": "May18_PM",
+          "dataTypeName": "number",
+          "position": 76,
+          "description": null
+        },
+        {
+          "fieldName": "may_18_md",
+          "name": "May18_MD",
+          "dataTypeName": "number",
+          "position": 77,
+          "description": null
+        },
+        {
+          "fieldName": "sept_18_am",
+          "name": "Sept18_AM",
+          "dataTypeName": "number",
+          "position": 78,
+          "description": null
+        },
+        {
+          "fieldName": "sept_18_pm",
+          "name": "Sept18_PM",
+          "dataTypeName": "number",
+          "position": 79,
+          "description": null
+        },
+        {
+          "fieldName": "sept_18_md",
+          "name": "Sept18_MD",
+          "dataTypeName": "number",
+          "position": 80,
+          "description": null
+        },
+        {
+          "fieldName": "may_19_am",
+          "name": "May19_AM",
+          "dataTypeName": "number",
+          "position": 81,
+          "description": null
+        },
+        {
+          "fieldName": "may_19_pm",
+          "name": "May19_PM",
+          "dataTypeName": "number",
+          "position": 82,
+          "description": null
+        },
+        {
+          "fieldName": "may_19_md",
+          "name": "May19_MD",
+          "dataTypeName": "number",
+          "position": 83,
+          "description": null
+        },
+        {
+          "fieldName": "oct_20_am",
+          "name": "Oct20_AM",
+          "dataTypeName": "number",
+          "position": 84,
+          "description": null
+        },
+        {
+          "fieldName": "oct_20_pm",
+          "name": "Oct20_PM",
+          "dataTypeName": "number",
+          "position": 85,
+          "description": null
+        },
+        {
+          "fieldName": "oct_20_md",
+          "name": "Oct20_MD",
+          "dataTypeName": "number",
+          "position": 86,
+          "description": null
+        },
+        {
+          "fieldName": "may_21_am",
+          "name": "May21_AM",
+          "dataTypeName": "number",
+          "position": 87,
+          "description": null
+        },
+        {
+          "fieldName": "may_21_pm",
+          "name": "May21_PM",
+          "dataTypeName": "number",
+          "position": 88,
+          "description": null
+        },
+        {
+          "fieldName": "may_21_md",
+          "name": "May21_MD",
+          "dataTypeName": "number",
+          "position": 89,
+          "description": null
+        },
+        {
+          "fieldName": "oct_21_am",
+          "name": "Oct21_AM",
+          "dataTypeName": "number",
+          "position": 90,
+          "description": ""
+        },
+        {
+          "fieldName": "oct_21_pm",
+          "name": "Oct21_PM",
+          "dataTypeName": "number",
+          "position": 91,
+          "description": ""
+        },
+        {
+          "fieldName": "oct_21_md",
+          "name": "Oct21_MD",
+          "dataTypeName": "number",
+          "position": 92,
+          "description": ""
+        },
+        {
+          "fieldName": "may_22_am",
+          "name": "May22_AM",
+          "dataTypeName": "number",
+          "position": 93,
+          "description": ""
+        },
+        {
+          "fieldName": "may_22_p_m",
+          "name": "May22_pM",
+          "dataTypeName": "number",
+          "position": 94,
+          "description": ""
+        },
+        {
+          "fieldName": "may_22_md",
+          "name": "May22_MD",
+          "dataTypeName": "number",
+          "position": 95,
+          "description": ""
+        },
+        {
+          "fieldName": "oct_22_am",
+          "name": "Oct22_AM",
+          "dataTypeName": "number",
+          "position": 96,
+          "description": ""
+        },
+        {
+          "fieldName": "oct_22_pm",
+          "name": "Oct22_PM",
+          "dataTypeName": "number",
+          "position": 97,
+          "description": ""
+        },
+        {
+          "fieldName": "oct_22_md",
+          "name": "Oct22_MD",
+          "dataTypeName": "number",
+          "position": 98,
+          "description": ""
+        },
+        {
+          "fieldName": "may_23_am",
+          "name": "May23_AM",
+          "dataTypeName": "number",
+          "position": 99,
+          "description": ""
+        },
+        {
+          "fieldName": "may_23_p_m",
+          "name": "May23_pM",
+          "dataTypeName": "number",
+          "position": 100,
+          "description": ""
+        },
+        {
+          "fieldName": "may_23_md",
+          "name": "May23_MD",
+          "dataTypeName": "number",
+          "position": 101,
+          "description": ""
+        },
+        {
+          "fieldName": "oct_23_am",
+          "name": "Oct23_AM",
+          "dataTypeName": "number",
+          "position": 102,
+          "description": ""
+        },
+        {
+          "fieldName": "oct_23_pm",
+          "name": "Oct23_PM",
+          "dataTypeName": "number",
+          "position": 103,
+          "description": ""
+        },
+        {
+          "fieldName": "oct_23_md",
+          "name": "Oct23_MD",
+          "dataTypeName": "number",
+          "position": 104,
+          "description": ""
+        },
+        {
+          "fieldName": "june_24_am",
+          "name": "June24_AM",
+          "dataTypeName": "number",
+          "position": 105,
+          "description": ""
+        },
+        {
+          "fieldName": "june_24_pm",
+          "name": "June24_PM",
+          "dataTypeName": "number",
+          "position": 106,
+          "description": ""
+        },
+        {
+          "fieldName": "june_24_md",
+          "name": "June24_MD",
+          "dataTypeName": "number",
+          "position": 107,
+          "description": ""
+        },
+        {
+          "fieldName": "oct24_am",
+          "name": "Oct24_AM",
+          "dataTypeName": "number",
+          "position": 108,
+          "description": "October 2024 Counts"
+        },
+        {
+          "fieldName": "oct24_pm",
+          "name": "Oct24_PM",
+          "dataTypeName": "number",
+          "position": 109,
+          "description": "October 2024 PM Counts"
+        },
+        {
+          "fieldName": "oct24_md",
+          "name": "Oct24_MD",
+          "dataTypeName": "text",
+          "position": 110,
+          "description": "October 2024 Midday Counts"
+        },
+        {
+          "fieldName": "may25_am",
+          "name": "May25_AM",
+          "dataTypeName": "number",
+          "position": 111,
+          "description": ""
+        },
+        {
+          "fieldName": "may25_pm",
+          "name": "May25_PM",
+          "dataTypeName": "number",
+          "position": 112,
+          "description": ""
+        },
+        {
+          "fieldName": "may25_md",
+          "name": "May25_MD",
+          "dataTypeName": "number",
+          "position": 113,
+          "description": ""
+        }
+      ]
+    },
+    "play_areas": {
+      "title": "Schoolyard to Playgrounds",
+      "description": "The Schoolyards to Playgrounds initiative began with PlaNYC 2007 as a way to expand public use at existing City facilities and improve access to open spaces during non-school hours which includes weekends, holidays, and during the summer. \n \nNYC Parks, in collaboration with the Department of Education (DOE) and the nonprofit Trust for Public Land have improved hundreds of DOE operated schoolyards through capital improvements, including play equipment, painted sports surfaces, trees, and benches.\n \nThe program is an important approach to reaching the city’s target to getting more New Yorkers within walking distance to open-space. In many neighborhoods, these DOE schoolyards are one of the few resources that can be improved and provide publicly accessible open space.\n \nEach record in this dataset represents a participating DOE Schoolyard at the time of the dataset's publication. The schoolyard's boundaries have been drawn in whole or part using secondary data. Data accuracy is limited by the scale and accuracy of the original sources. Site-specific conditions should be field-verified. \n \n For more information on the Schoolyard to Playgrounds program, visit: https://www.nycgovparks.org/greening/planyc/schoolyards\n \nThis dataset may be updated throughout the year as school's join or exit the program.\n\nData Dictionary: https://docs.google.com/spreadsheets/d/10yVRhmdIAS1g8c3L0jC4XxSTptdIf5wESL5ks1e6Gto/edit?usp=sharing",
+      "category": null,
+      "tags": null,
+      "rows_updated_at": 1776520805,
+      "view_last_modified": 1776520804,
+      "column_count": 14,
+      "columns": [
+        {
+          "fieldName": "acres",
+          "name": "ACRES",
+          "dataTypeName": "number",
+          "position": 1,
+          "description": ""
+        },
+        {
+          "fieldName": "address",
+          "name": "ADDRESS",
+          "dataTypeName": "text",
+          "position": 2,
+          "description": ""
+        },
+        {
+          "fieldName": "borough",
+          "name": "BOROUGH",
+          "dataTypeName": "text",
+          "position": 3,
+          "description": ""
+        },
+        {
+          "fieldName": "communityboard",
+          "name": "COMMUNITYBOARD",
+          "dataTypeName": "number",
+          "position": 4,
+          "description": ""
+        },
+        {
+          "fieldName": "councildistrict",
+          "name": "COUNCILDISTRICT",
+          "dataTypeName": "number",
+          "position": 5,
+          "description": ""
+        },
+        {
+          "fieldName": "dsfbldgcode",
+          "name": "DSFBldgCode",
+          "dataTypeName": "text",
+          "position": 6,
+          "description": ""
+        },
+        {
+          "fieldName": "gispropnum",
+          "name": "GISPROPNUM",
+          "dataTypeName": "text",
+          "position": 7,
+          "description": ""
+        },
+        {
+          "fieldName": "jurisdiction",
+          "name": "JURISDICTION",
+          "dataTypeName": "text",
+          "position": 8,
+          "description": ""
+        },
+        {
+          "fieldName": "location",
+          "name": "LOCATION",
+          "dataTypeName": "text",
+          "position": 9,
+          "description": ""
+        },
+        {
+          "fieldName": "nys_assembly",
+          "name": "NYS_ASSEMBLY",
+          "dataTypeName": "number",
+          "position": 10,
+          "description": ""
+        },
+        {
+          "fieldName": "nys_senate",
+          "name": "NYS_SENATE",
+          "dataTypeName": "number",
+          "position": 11,
+          "description": ""
+        },
+        {
+          "fieldName": "us_congress",
+          "name": "US_CONGRESS",
+          "dataTypeName": "number",
+          "position": 12,
+          "description": ""
+        },
+        {
+          "fieldName": "zipcode",
+          "name": "ZIPCODE",
+          "dataTypeName": "number",
+          "position": 13,
+          "description": ""
+        },
+        {
+          "fieldName": "multipolygon",
+          "name": "multipolygon",
+          "dataTypeName": "multipolygon",
+          "position": 14,
+          "description": ""
+        }
+      ]
+    },
+    "street_trees": {
+      "title": "2015 Street Tree Census - Tree Data",
+      "description": "Street tree data from the TreesCount! 2015 Street Tree Census, conducted by volunteers and staff organized by NYC Parks & Recreation and partner organizations. Tree data collected includes tree species, diameter and perception of health. Accompanying blockface data is available indicating status of data collection and data release citywide.\n\nThe 2015 tree census was the third decadal street tree census and largest citizen science initiative in NYC Parks’ history. Data collection ran from May 2015 to October 2016 and the results of the census show that there are 666,134 trees planted along NYC's streets. The data collected as part of the census represents a snapshot in time of trees under NYC Parks' jurisdiction.\n\nThe census data formed the basis of our operational database, the Forestry Management System (ForMS) which is used daily by our foresters and other staff for inventory and asset management: https://data.cityofnewyork.us/browse?sortBy=most_accessed&utf8=%E2%9C%93&Data-Collection_Data-Collection=Forestry+Management+System+%28ForMS%29\n\nTo learn more about the data collected and managed in ForMS, please refer to this user guide:\nhttps://docs.google.com/document/d/1PVPWFi-WExkG3rvnagQDoBbqfsGzxCKNmR6n678nUeU/edit. For information on the city's current tree population, use the ForMS datasets.",
+      "category": "Environment",
+      "tags": [
+        "parks",
+        "trees",
+        "treescount",
+        "census",
+        "dpr",
+        "nycopendata",
+        "2018od4a-report"
+      ],
+      "rows_updated_at": 1507124486,
+      "view_last_modified": 1731421699,
+      "column_count": 45,
+      "columns": [
+        {
+          "fieldName": "tree_id",
+          "name": "tree_id",
+          "dataTypeName": "number",
+          "position": 1,
+          "description": "Unique identification number for each tree point."
+        },
+        {
+          "fieldName": "block_id",
+          "name": "block_id",
+          "dataTypeName": "number",
+          "position": 2,
+          "description": "Identifier linking each tree to the block in the blockface table/shapefile that it is mapped on."
+        },
+        {
+          "fieldName": "created_at",
+          "name": "created_at",
+          "dataTypeName": "calendar_date",
+          "position": 3,
+          "description": "The date tree points were collected in the census software."
+        },
+        {
+          "fieldName": "tree_dbh",
+          "name": "tree_dbh",
+          "dataTypeName": "number",
+          "position": 4,
+          "description": "Diameter of the tree, measured at approximately 54\" / 137cm above the ground. Data was collected for both living and dead trees; for stumps, use stump_diam"
+        },
+        {
+          "fieldName": "stump_diam",
+          "name": "stump_diam",
+          "dataTypeName": "number",
+          "position": 5,
+          "description": "Diameter of stump measured through the center, rounded to the nearest inch."
+        },
+        {
+          "fieldName": "curb_loc",
+          "name": "curb_loc",
+          "dataTypeName": "text",
+          "position": 6,
+          "description": "Location of tree bed in relationship to the curb; trees are either along the curb (OnCurb) or offset from the curb (OffsetFromCurb)"
+        },
+        {
+          "fieldName": "status",
+          "name": "status",
+          "dataTypeName": "text",
+          "position": 7,
+          "description": "Indicates whether the tree is alive, standing dead, or a stump."
+        },
+        {
+          "fieldName": "health",
+          "name": "health",
+          "dataTypeName": "text",
+          "position": 8,
+          "description": "Indicates the user's perception of tree health."
+        },
+        {
+          "fieldName": "spc_latin",
+          "name": "spc_latin",
+          "dataTypeName": "text",
+          "position": 9,
+          "description": "Scientific name for species, e.g. \"Acer rubrum\""
+        },
+        {
+          "fieldName": "spc_common",
+          "name": "spc_common",
+          "dataTypeName": "text",
+          "position": 10,
+          "description": "Common name for species, e.g. \"red maple\""
+        },
+        {
+          "fieldName": "steward",
+          "name": "steward",
+          "dataTypeName": "text",
+          "position": 11,
+          "description": "Indicates the number of unique signs of stewardship observed for this tree. Not recorded for stumps or dead trees."
+        },
+        {
+          "fieldName": "guards",
+          "name": "guards",
+          "dataTypeName": "text",
+          "position": 12,
+          "description": "Indicates whether a guard is present, and if the user felt it was a helpful or harmful guard. Not recorded for dead trees and stumps."
+        },
+        {
+          "fieldName": "sidewalk",
+          "name": "sidewalk",
+          "dataTypeName": "text",
+          "position": 13,
+          "description": "Indicates whether one of the sidewalk flags immediately adjacent to the tree was damaged, cracked, or lifted. Not recorded for dead trees and stumps."
+        },
+        {
+          "fieldName": "user_type",
+          "name": "user_type",
+          "dataTypeName": "text",
+          "position": 14,
+          "description": "This field describes the category of user who collected this tree point's data."
+        },
+        {
+          "fieldName": "problems",
+          "name": "problems",
+          "dataTypeName": "text",
+          "position": 15,
+          "description": null
+        },
+        {
+          "fieldName": "root_stone",
+          "name": "root_stone",
+          "dataTypeName": "text",
+          "position": 16,
+          "description": "Indicates the presence of a root problem caused by paving stones in tree bed"
+        },
+        {
+          "fieldName": "root_grate",
+          "name": "root_grate",
+          "dataTypeName": "text",
+          "position": 17,
+          "description": "Indicates the presence of a root problem caused by metal grates in tree bed"
+        },
+        {
+          "fieldName": "root_other",
+          "name": "root_other",
+          "dataTypeName": "text",
+          "position": 18,
+          "description": "Indicates the presence of other root problems"
+        },
+        {
+          "fieldName": "trunk_wire",
+          "name": "trunk_wire",
+          "dataTypeName": "text",
+          "position": 19,
+          "description": "Indicates the presence of a trunk problem caused by wires or rope wrapped around the trunk"
+        },
+        {
+          "fieldName": "trnk_light",
+          "name": "trnk_light",
+          "dataTypeName": "text",
+          "position": 20,
+          "description": "Indicates the presence of a trunk problem caused by lighting installed on the tree"
+        },
+        {
+          "fieldName": "trnk_other",
+          "name": "trnk_other",
+          "dataTypeName": "text",
+          "position": 21,
+          "description": "Indicates the presence of other trunk problems"
+        },
+        {
+          "fieldName": "brch_light",
+          "name": "brch_light",
+          "dataTypeName": "text",
+          "position": 22,
+          "description": "Indicates the presence of a branch problem caused by lights (usually string lights) or wires in the branches"
+        },
+        {
+          "fieldName": "brch_shoe",
+          "name": "brch_shoe",
+          "dataTypeName": "text",
+          "position": 23,
+          "description": "Indicates the presence of a branch problem caused by sneakers in the branches"
+        },
+        {
+          "fieldName": "brch_other",
+          "name": "brch_other",
+          "dataTypeName": "text",
+          "position": 24,
+          "description": "Indicates the presence of other branch problems"
+        },
+        {
+          "fieldName": "address",
+          "name": "address",
+          "dataTypeName": "text",
+          "position": 25,
+          "description": "Nearest estimated address to tree"
+        },
+        {
+          "fieldName": "zipcode",
+          "name": "postcode",
+          "dataTypeName": "number",
+          "position": 26,
+          "description": "Five-digit zipcode in which tree is located"
+        },
+        {
+          "fieldName": "zip_city",
+          "name": "zip_city",
+          "dataTypeName": "text",
+          "position": 27,
+          "description": "City as derived from zipcode. This is often (but not always) the same as borough."
+        },
+        {
+          "fieldName": "cb_num",
+          "name": "community board",
+          "dataTypeName": "number",
+          "position": 28,
+          "description": "Community board in which tree point is located"
+        },
+        {
+          "fieldName": "borocode",
+          "name": "borocode",
+          "dataTypeName": "number",
+          "position": 29,
+          "description": "Code for borough in which tree point is located:\n1 (Manhattan), 2 (Bronx), 3 (Brooklyn), 4 (Queens), 5 (Staten Island)\n"
+        },
+        {
+          "fieldName": "boroname",
+          "name": "borough",
+          "dataTypeName": "text",
+          "position": 30,
+          "description": "Name of borough in which tree point is located"
+        },
+        {
+          "fieldName": "cncldist",
+          "name": "cncldist",
+          "dataTypeName": "number",
+          "position": 31,
+          "description": "Council district in which tree point is located"
+        },
+        {
+          "fieldName": "st_assem",
+          "name": "st_assem",
+          "dataTypeName": "number",
+          "position": 32,
+          "description": "State Assembly District in which tree point is located"
+        },
+        {
+          "fieldName": "st_senate",
+          "name": "st_senate",
+          "dataTypeName": "number",
+          "position": 33,
+          "description": "State Senate District in which tree point is located"
+        },
+        {
+          "fieldName": "nta",
+          "name": "nta",
+          "dataTypeName": "text",
+          "position": 34,
+          "description": "This is the NTA Code corresponding to the neighborhood tabulation area from the 2010 US Census that the tree point falls into."
+        },
+        {
+          "fieldName": "nta_name",
+          "name": "nta_name",
+          "dataTypeName": "text",
+          "position": 35,
+          "description": "This is the NTA name corresponding to the neighborhood tabulation area from the 2010 US Census that the tree point falls into."
+        },
+        {
+          "fieldName": "boro_ct",
+          "name": "boro_ct",
+          "dataTypeName": "number",
+          "position": 36,
+          "description": "This is the boro_ct identifyer for the census tract that the tree point falls into."
+        },
+        {
+          "fieldName": "state",
+          "name": "state",
+          "dataTypeName": "text",
+          "position": 37,
+          "description": "All features given value 'New York'"
+        },
+        {
+          "fieldName": "latitude",
+          "name": "latitude",
+          "dataTypeName": "number",
+          "position": 38,
+          "description": "Latitude of point, in decimal degrees"
+        },
+        {
+          "fieldName": "longitude",
+          "name": "longitude",
+          "dataTypeName": "number",
+          "position": 39,
+          "description": "Longitude of point, in decimal degrees"
+        },
+        {
+          "fieldName": "x_sp",
+          "name": "x_sp",
+          "dataTypeName": "number",
+          "position": 40,
+          "description": "X coordinate, in state plane. Units are feet."
+        },
+        {
+          "fieldName": "y_sp",
+          "name": "y_sp",
+          "dataTypeName": "number",
+          "position": 41,
+          "description": "Y coordinate, in state plane. Units are feet"
+        },
+        {
+          "fieldName": "council_district",
+          "name": "council district",
+          "dataTypeName": "number",
+          "position": 42,
+          "description": null
+        },
+        {
+          "fieldName": "census_tract",
+          "name": "census tract",
+          "dataTypeName": "number",
+          "position": 43,
+          "description": null
+        },
+        {
+          "fieldName": "bin",
+          "name": "bin",
+          "dataTypeName": "number",
+          "position": 44,
+          "description": null
+        },
+        {
+          "fieldName": "bbl",
+          "name": "bbl",
+          "dataTypeName": "number",
+          "position": 45,
+          "description": null
+        }
+      ]
+    },
+    "wifi_hotspots": {
+      "title": "NYC Wi-Fi Hotspot Locations",
+      "description": "NYC Wi-Fi Hotspot Locations Wi-Fi Providers: \r\nCityBridge, LLC (Free Beta): LinkNYC 1 gigabyte (GB), Free Wi-Fi Internet Kiosks\r\nSpot On Networks (Free) NYC HOUSING AUTHORITY (NYCHA) Properties\r\nFiberless (Free): Wi-Fi access on Governors Island Free - up to 5 Mbps for users as the part of Governors Island Trust Governors Island Connectivity Challenge\r\nAT&T (Free): Wi-Fi access is free for all users at all times. \r\nPartners: In several parks, the NYC partner organizations provide publicly accessible Wi-Fi. Visit these parks to learn more information about their Wi-Fi service and how to connect. \r\nCable (Limited-Free): In NYC Parks provided by NYC DoITT Cable television franchisees. \r\nALTICEUSA previously known as “Cablevision” and SPECTRUM previously known as “Time Warner Cable” (Limited Free) Connect for 3 free 10 minute sessions every 30 days or purchase a 99 cent day pass through midnight. Wi-Fi service is free at all times to Cablevision’s Optimum Online and Time Warner Cable broadband subscribers. \r\nWi-Fi Provider: Chelsea Wi-Fi (Free) Wi-Fi access is free for all users at all times. \r\nChelsea Improvement Company has partnered with Google to provide Wi-Fi a free wireless Internet zone, a broadband region bounded by West 19th Street, Gansevoort Street, Eighth Avenue, and the High Line Park. \r\nWi-Fi Provider: Downtown Brooklyn Wi-Fi (Free) \r\nThe Downtown Brooklyn Partnership - the New York City Economic Development Corporation to provide Wi-Fi to the area bordered by Schermerhorn Street, Cadman Plaza West, Flatbush Avenue, and Tillary Street, along with select public spaces in the NYCHA Ingersoll and Whitman Houses. \r\nWi-Fi Provider: Manhattan Downtown Alliance Wi-Fi (Free) \r\nLower Manhattan Several public spaces all along Water Street, Front Street and the East River Esplanade south of Fulton Street and in several other locations throughout Lower Manhattan. \r\nWi-Fi Provider: Harlem Wi-Fi (Free) \r\nThe network will extend 95 city blocks, from 110th to 138th Streets between Frederick Douglass Boulevard and Madison Avenue is the free outdoor public wireless network. \r\nWi-Fi Provider: Transit Wireless (Free) \r\nWi-Fi Services in the New York City subway system is available in certain underground stations. For more information visit http://www.transitwireless.com/stations/. \r\nWi-Fi Provider: Public Pay Telephone Franchisees (Free) \r\nUsing existing payphone infrastructure, the City of New York has teamed up with private partners to provide free Wi-Fi service at public payphone kiosks across the five boroughs at no cost to taxpayers. \r\nWi-Fi Provider: New York Public Library \r\nUsing Wireless Internet Access (Wi-Fi): All Library locations offer free wireless access (Wi-Fi) in public areas at all times the libraries are open. \r\nConnecting to the Library's Wireless Network \r\n•You must have a computer or other device equipped with an 802.11b-compatible wireless card. \r\n•Using your computer's network utilities, look for the wireless network named \"NYPL.\" \r\n•The \"NYPL\" wireless network does not require a password to connect. \r\nLimitations and Disclaimers Regarding Wireless Access \r\n•The Library's wireless network is not secure. Information sent from or to your laptop can be captured by anyone else with a wireless device and the appropriate software, within three hundred feet. \r\n•Library staff is not able to provide technical assistance and no guarantee can be provided that you will be able to make a wireless connection. \r\n•The Library assumes no responsibility for the safety of equipment or for laptop configurations, security, or data files resulting from connection to the Library's network",
+      "category": "City Government",
+      "tags": null,
+      "rows_updated_at": 1569515080,
+      "view_last_modified": 1663960987,
+      "column_count": 34,
+      "columns": [
+        {
+          "fieldName": "objectid",
+          "name": "OBJECTID",
+          "dataTypeName": "number",
+          "position": 1,
+          "description": "Identification number automatically generated by map software ArcMap.\n"
+        },
+        {
+          "fieldName": "borough",
+          "name": "Borough",
+          "dataTypeName": "text",
+          "position": 2,
+          "description": "Borough of New York City.                MN = Manhattan                                  BX = Bronx                                           BK = Brooklyn                                     QU = Queens                                       SI = Staten Island\n"
+        },
+        {
+          "fieldName": "type",
+          "name": "Type",
+          "dataTypeName": "text",
+          "position": 3,
+          "description": "Type of WiFi provided by franchise.\n"
+        },
+        {
+          "fieldName": "provider",
+          "name": "Provider",
+          "dataTypeName": "text",
+          "position": 4,
+          "description": "Franchise who is providing the Wifi connection.\n"
+        },
+        {
+          "fieldName": "name",
+          "name": "Name",
+          "dataTypeName": "text",
+          "position": 5,
+          "description": "The name of the location where the WiFi is located.\n"
+        },
+        {
+          "fieldName": "location",
+          "name": "Location",
+          "dataTypeName": "text",
+          "position": 6,
+          "description": "A brief description of where the WiFi point is.\n"
+        },
+        {
+          "fieldName": "latitude",
+          "name": "Latitude",
+          "dataTypeName": "number",
+          "position": 7,
+          "description": "Latitude: Points that fall North or South of the Equator, expressed in degrees.\n"
+        },
+        {
+          "fieldName": "longitude",
+          "name": "Longitude",
+          "dataTypeName": "number",
+          "position": 8,
+          "description": "Longitude: Points that fall East or West of the Prime Meridian, expressed in degrees.\n"
+        },
+        {
+          "fieldName": "x",
+          "name": "X",
+          "dataTypeName": "number",
+          "position": 9,
+          "description": "X-Coordinate: A horizontal value where a point is located.\n"
+        },
+        {
+          "fieldName": "y",
+          "name": "Y",
+          "dataTypeName": "number",
+          "position": 10,
+          "description": "Y-Coordinate: A vertical value where a point is located.\n"
+        },
+        {
+          "fieldName": "location_t",
+          "name": "Location_T",
+          "dataTypeName": "text",
+          "position": 11,
+          "description": "The type of location that a WiFi hotspot is present in.\n"
+        },
+        {
+          "fieldName": "remarks",
+          "name": "Remarks",
+          "dataTypeName": "text",
+          "position": 12,
+          "description": "Comments describing a specific hotspot or location.\n"
+        },
+        {
+          "fieldName": "city",
+          "name": "City",
+          "dataTypeName": "text",
+          "position": 13,
+          "description": "The city in which a hotspot is located.\n"
+        },
+        {
+          "fieldName": "ssid",
+          "name": "SSID",
+          "dataTypeName": "text",
+          "position": 14,
+          "description": "The name of the WiFi seen on people's devices.\n"
+        },
+        {
+          "fieldName": "sourceid",
+          "name": "SourceID",
+          "dataTypeName": "text",
+          "position": 15,
+          "description": "A LinkNYC Kiosk's unique identification number.\n"
+        },
+        {
+          "fieldName": "activated",
+          "name": "Activated",
+          "dataTypeName": "calendar_date",
+          "position": 16,
+          "description": "The approximated date that this Wi-Fi site went active\n"
+        },
+        {
+          "fieldName": "borocode",
+          "name": "BoroCode",
+          "dataTypeName": "number",
+          "position": 17,
+          "description": "The New York City borough where the hotspots are located.\n"
+        },
+        {
+          "fieldName": "boroname",
+          "name": "Borough Name",
+          "dataTypeName": "text",
+          "position": 18,
+          "description": "The New York City borough where the hotspots are located.\n"
+        },
+        {
+          "fieldName": "ntacode",
+          "name": "Neighborhood Tabulation Area Code (NTACODE)",
+          "dataTypeName": "text",
+          "position": 19,
+          "description": "Four (4) digit code assigned to neighborhoods to differentiate NYC's five boroughs."
+        },
+        {
+          "fieldName": "ntaname",
+          "name": "Neighborhood Tabulation Area (NTA)",
+          "dataTypeName": "text",
+          "position": 20,
+          "description": "Neighborhood identifiers to differentiate NYC's five boroughs."
+        },
+        {
+          "fieldName": "coundist",
+          "name": "Council Distrcit",
+          "dataTypeName": "number",
+          "position": 21,
+          "description": "NYC City Council District number\n"
+        },
+        {
+          "fieldName": "zip",
+          "name": "Postcode",
+          "dataTypeName": "number",
+          "position": 22,
+          "description": "United States Postal Service Zip Code (5-digits).\n"
+        },
+        {
+          "fieldName": "borocd",
+          "name": "BoroCD",
+          "dataTypeName": "number",
+          "position": 23,
+          "description": "New York City Borough plus Community Board Numbers.                \n"
+        },
+        {
+          "fieldName": "ct2010",
+          "name": "Census Tract",
+          "dataTypeName": "number",
+          "position": 24,
+          "description": "2010 U.S. Census data based on location.\n"
+        },
+        {
+          "fieldName": "bctcb2010",
+          "name": "BCTCB2010",
+          "dataTypeName": "number",
+          "position": 25,
+          "description": "Combined value of Borough CD and Census 2010.\n"
+        },
+        {
+          "fieldName": "bin",
+          "name": "BIN",
+          "dataTypeName": "number",
+          "position": 26,
+          "description": "Building Identification Number.\n"
+        },
+        {
+          "fieldName": "bbl",
+          "name": "BBL",
+          "dataTypeName": "number",
+          "position": 27,
+          "description": "Borough Block Lot.\n"
+        },
+        {
+          "fieldName": "doitt_id",
+          "name": "DOITT_ID",
+          "dataTypeName": "number",
+          "position": 28,
+          "description": "Identification number automatically generated by GIS Developer map sites.\n"
+        },
+        {
+          "fieldName": "location_lat_long",
+          "name": "Location (Lat, Long)",
+          "dataTypeName": "location",
+          "position": 29,
+          "description": "Combination of the lat and long  values\n"
+        },
+        {
+          "fieldName": ":@computed_region_efsh_h5xi",
+          "name": "Zip Codes",
+          "dataTypeName": "number",
+          "position": 34,
+          "description": null
+        },
+        {
+          "fieldName": ":@computed_region_f5dn_yrer",
+          "name": "Community Districts",
+          "dataTypeName": "number",
+          "position": 35,
+          "description": null
+        },
+        {
+          "fieldName": ":@computed_region_yeji_bk3q",
+          "name": "Borough Boundaries",
+          "dataTypeName": "number",
+          "position": 36,
+          "description": null
+        },
+        {
+          "fieldName": ":@computed_region_92fq_4b7q",
+          "name": "City Council Districts",
+          "dataTypeName": "number",
+          "position": 37,
+          "description": null
+        },
+        {
+          "fieldName": ":@computed_region_sbqj_enih",
+          "name": "Police Precincts",
+          "dataTypeName": "number",
+          "position": 38,
+          "description": null
+        }
+      ]
+    }
+  }
+}

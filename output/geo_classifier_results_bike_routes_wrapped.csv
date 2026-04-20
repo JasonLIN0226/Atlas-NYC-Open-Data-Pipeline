@@ -1,0 +1,4 @@
+dataset_name,name,label,confidence,wrapper_reason
+bike_routes,the_geom,multi-line,0.9182242751121521,
+bike_routes,boro,borough_code,0.95,admin_name_and_values
+bike_routes,street,address,0.7772088646888733,

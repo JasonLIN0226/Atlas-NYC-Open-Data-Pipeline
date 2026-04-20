@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas Lake - libraries</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 32px;
+      line-height: 1.45;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 12px 0 24px;
+    }
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+    }
+    .muted {
+      color: #6b7280;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    .hero-stats {
+      display: grid;
+      gap: 12px;
+    }
+    .stat-box, .metric-chip {
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .stat-box .label, .metric-chip .label, .link-list .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .stat-box .value, .metric-chip .value {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111827;
+    }
+    .section {
+      margin-top: 24px;
+    }
+    .section-copy, .lead, .subtle {
+      color: #4b5563;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #0f766e;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    h1, h2, h3, h4 {
+      color: #111827;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .dataset-card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .card-top {
+      margin-bottom: 14px;
+    }
+    .card-top h3 {
+      margin: 0 0 4px;
+    }
+    .subtle {
+      margin: 0;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .card-section {
+      margin-top: 14px;
+    }
+    .card-section p {
+      margin: 0;
+    }
+    .card-section h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+    .link-list, .geo-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .link-list li, .geo-list li {
+      margin: 6px 0;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      background: #f3f4f6;
+      padding: 8px 10px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 0;
+    }
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .compact-meta {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f8fafc;
+      padding: 10px 12px;
+    }
+    .compact-meta .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .compact-meta .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .card-action {
+      margin-top: 16px;
+      font-weight: 600;
+    }
+    .action-panel {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .action-button {
+      border: 0;
+      border-radius: 999px;
+      background: #0f766e;
+      color: #ffffff;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .action-button:hover {
+      background: #115e59;
+    }
+    .action-detail {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .status-card {
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .status-card .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+    .status-card .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .inline-report {
+      margin-top: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .inline-report summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #111827;
+    }
+    .is-hidden {
+      display: none;
+    }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.2fr) minmax(240px, 0.8fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .bar-chart {
+      display: grid;
+      gap: 10px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 180px) minmax(140px, 1fr) 56px;
+      gap: 10px;
+      align-items: center;
+    }
+    .bar-label, .bar-value {
+      font-size: 13px;
+      color: #374151;
+    }
+    .bar-track {
+      background: #e5e7eb;
+      border-radius: 999px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      background: #0f766e;
+      height: 100%;
+      border-radius: 999px;
+    }
+    a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<p><a href='../index.html'>&larr; Back to index</a></p><h1>libraries</h1><h2>Basic Info</h2><table><tr><th>Dataset</th><td>libraries</td></tr><tr><th>Source Title</th><td>LIBRARY</td></tr><tr><th>Source Dataset ID</th><td>feuq-due4</td></tr><tr><th>Rows</th><td>216</td></tr><tr><th>Columns</th><td>13</td></tr><tr><th>Description</th><td>Library</td></tr><tr><th>Rows Updated</th><td>2016-06-22 11:52:54</td></tr><tr><th>View Modified</th><td>2024-02-02 13:45:43</td></tr><tr><th>Contains</th><td>point, address, city, zip5, bin, bbl, x_coord, y_coord</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>216</td></tr><tr><th>Profiled Rows</th><td>216</td></tr><tr><th>Columns</th><td>13</td></tr><tr><th>Spatial Columns</th><td>6</td></tr><tr><th>Categorical Columns</th><td>1</td></tr><tr><th>Numerical Columns</th><td>4</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial</td></tr><tr><th>Attribute Keywords</th><td>the_geom, the, geom, name, streetname, housenum, city, zip, url, bin, bbl, x</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>the_geom</th><th>name</th><th>streetname</th><th>housenum</th><th>city</th><th>zip</th><th>url</th><th>bin</th><th>bbl</th><th>x</th><th>y</th><th>system</th><th>borocode</th></tr></thead><tbody><tr><td>POINT (-73.95353074430393 40.80297988196676)</td><td>115th Street</td><td>West 115th Street</td><td>203</td><td>New York</td><td>10026</td><td>http://www.nypl.org/locations/115th-street</td><td>1055236</td><td>1018310026</td><td>997115.12977</td><td>231827.652864</td><td>NYPL</td><td>1</td></tr><tr><td>POINT (-73.9348475633247 40.80301816141575)</td><td>125th Street</td><td>East 125th Street</td><td>224</td><td>New York</td><td>10035</td><td>http://www.nypl.org/locations/125th-street</td><td>1054674</td><td>1017890037</td><td>1002287.604</td><td>231844.894956</td><td>NYPL</td><td>1</td></tr><tr><td>POINT (-73.97736329270697 40.76080689474172)</td><td>53rd Street</td><td>West 53rd Street</td><td>18</td><td>New York</td><td>10019</td><td>http://www.nypl.org/locations/53rd-street</td><td>1089376</td><td>1012687503</td><td>990521</td><td>216460</td><td>NYPL</td><td>1</td></tr><tr><td>POINT (-73.9693817046576 40.7621860177235)</td><td>58th Street</td><td>East 58th Street</td><td>127</td><td>New York</td><td>10022</td><td>http://www.nypl.org/locations/58th-street</td><td>1037165</td><td>1013130005</td><td>992731.946935</td><td>216963.13174</td><td>NYPL</td><td>1</td></tr><tr><td>POINT (-73.95954994584243 40.764915006253425)</td><td>67th Street</td><td>East 67th Street</td><td>328</td><td>New York</td><td>10065</td><td>http://www.nypl.org/locations/67th-street</td><td>1044749</td><td>1014410038</td><td>995455.102906</td><td>217958.496876</td><td>NYPL</td><td>1</td></tr><tr><td>POINT (-73.9518056716208 40.785959798621555)</td><td>96th Street</td><td>East 96th Street</td><td>112</td><td>New York</td><td>10128</td><td>http://www.nypl.org/locations/96th-street</td><td>1048501</td><td>1015240064</td><td>997596.132088</td><td>225626.905751</td><td>NYPL</td><td>1</td></tr><tr><td>POINT (-73.94345827853815 40.79421476546373)</td><td>Aguilar</td><td>East 110th Street</td><td>174</td><td>New York</td><td>10029</td><td>http://www.nypl.org/locations/aguilar</td><td>1052167</td><td>1016370141</td><td>999905.778015</td><td>228635.855591</td><td>NYPL</td><td>1</td></tr><tr><td>POINT (-73.86322248483968 40.866804429026935)</td><td>Allerton</td><td>Barnes Avenue</td><td>2740</td><td>Bronx</td><td>10467</td><td>http://www.nypl.org/locations/allerton</td><td>2053752</td><td>2045130016</td><td>1022080.87479</td><td>255107.424218</td><td>NYPL</td><td>2</td></tr><tr><td>POINT (-73.99335691118674 40.74046545561088)</td><td>Andrew Heiskell Braille and Talking Book</td><td>West 20th Street</td><td>40</td><td>New York</td><td>10011</td><td>http://www.nypl.org/locations/heiskell</td><td>1076145</td><td>1008217501</td><td>986090.883117</td><td>209048.217124</td><td>NYPL</td><td>1</td></tr><tr><td>POINT (-74.0157487123272 40.715690873439094)</td><td>Battery Park City Library</td><td>North End Avenue</td><td>175</td><td>New York</td><td>10282</td><td>http://www.nypl.org/locations/battery-park-city</td><td>1087518</td><td>1000167516</td><td>979884.211806</td><td>200022.388889</td><td>NYPL</td><td>1</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>8</span></div><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:50%'></div></div><span class='bar-value'>4</span></div><div class='bar-row'><span class='bar-label'>point</span><div class='bar-track'><div class='bar-fill' style='width:12%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>text</td><td>8</td></tr><tr><td>number</td><td>4</td></tr><tr><td>point</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>3</span></div><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:67%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>bbl</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>bin</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>city</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>point</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>x_coord</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>y_coord</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>zip_code</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>address</td><td>3</td></tr><tr><td>non_spatial</td><td>2</td></tr><tr><td>bbl</td><td>1</td></tr><tr><td>bin</td><td>1</td></tr><tr><td>borough_code</td><td>1</td></tr><tr><td>city</td><td>1</td></tr><tr><td>point</td><td>1</td></tr><tr><td>x_coord</td><td>1</td></tr><tr><td>y_coord</td><td>1</td></tr><tr><td>zip_code</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>the_geom</td><td>point</td><td>point</td><td>GeoCoordinates</td><td></td><td>point</td><td>0.9762949347496033</td><td></td></tr><tr><td>name</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.8409149646759033</td><td></td></tr><tr><td>streetname</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.8029259443283081</td><td></td></tr><tr><td>housenum</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td></td></tr><tr><td>city</td><td>city</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>city</td><td>0.95</td><td></td></tr><tr><td>zip</td><td>zip5</td><td>text</td><td>Text</td><td>address</td><td>zip5</td><td>0.99</td><td></td></tr><tr><td>url</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.6851733326911926</td><td></td></tr><tr><td>bin</td><td>bin</td><td>number</td><td>Integer</td><td>identifier</td><td>bin</td><td>0.99</td><td></td></tr><tr><td>bbl</td><td>bbl</td><td>text</td><td>Integer</td><td>identifier</td><td>bbl</td><td>0.99</td><td></td></tr><tr><td>x</td><td>x_coord</td><td>number</td><td>Float</td><td></td><td>x_coord</td><td>0.95</td><td></td></tr><tr><td>y</td><td>y_coord</td><td>number</td><td>Float</td><td></td><td>y_coord</td><td>0.95</td><td></td></tr><tr><td>system</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td></td></tr><tr><td>borocode</td><td>borough_code</td><td>number</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.7537620067596436</td><td></td></tr></tbody></table></div><h2>Files</h2><table><tr><th>Raw Data</th><td><a href='../../../data/libraries.csv'>Raw CSV</a></td></tr><tr><th>Final Metadata</th><td><a href='../../../output/metadata_libraries_wrapped.json'>Final metadata JSON</a></td></tr><tr><th>Final Geo Results</th><td><a href='../../../output/geo_classifier_results_libraries_wrapped.csv'>Final geo results CSV</a></td></tr><tr><th>Summary</th><td><a href='../../tables/libraries/summary.json'>Summary JSON</a></td></tr></table><script>
+function toggleLakePanel(id) {
+  const node = document.getElementById(id);
+  if (!node) return;
+  node.classList.toggle('is-hidden');
+}
+</script></body></html>

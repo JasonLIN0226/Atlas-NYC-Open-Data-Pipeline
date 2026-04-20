@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas Lake - farmers_markets</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 32px;
+      line-height: 1.45;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 12px 0 24px;
+    }
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+    }
+    .muted {
+      color: #6b7280;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    .hero-stats {
+      display: grid;
+      gap: 12px;
+    }
+    .stat-box, .metric-chip {
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .stat-box .label, .metric-chip .label, .link-list .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .stat-box .value, .metric-chip .value {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111827;
+    }
+    .section {
+      margin-top: 24px;
+    }
+    .section-copy, .lead, .subtle {
+      color: #4b5563;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #0f766e;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    h1, h2, h3, h4 {
+      color: #111827;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .dataset-card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .card-top {
+      margin-bottom: 14px;
+    }
+    .card-top h3 {
+      margin: 0 0 4px;
+    }
+    .subtle {
+      margin: 0;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .card-section {
+      margin-top: 14px;
+    }
+    .card-section p {
+      margin: 0;
+    }
+    .card-section h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+    .link-list, .geo-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .link-list li, .geo-list li {
+      margin: 6px 0;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      background: #f3f4f6;
+      padding: 8px 10px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 0;
+    }
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .compact-meta {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f8fafc;
+      padding: 10px 12px;
+    }
+    .compact-meta .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .compact-meta .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .card-action {
+      margin-top: 16px;
+      font-weight: 600;
+    }
+    .action-panel {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .action-button {
+      border: 0;
+      border-radius: 999px;
+      background: #0f766e;
+      color: #ffffff;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .action-button:hover {
+      background: #115e59;
+    }
+    .action-detail {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .status-card {
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .status-card .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+    .status-card .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .inline-report {
+      margin-top: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .inline-report summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #111827;
+    }
+    .is-hidden {
+      display: none;
+    }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.2fr) minmax(240px, 0.8fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .bar-chart {
+      display: grid;
+      gap: 10px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 180px) minmax(140px, 1fr) 56px;
+      gap: 10px;
+      align-items: center;
+    }
+    .bar-label, .bar-value {
+      font-size: 13px;
+      color: #374151;
+    }
+    .bar-track {
+      background: #e5e7eb;
+      border-radius: 999px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      background: #0f766e;
+      height: 100%;
+      border-radius: 999px;
+    }
+    a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<p><a href='../index.html'>&larr; Back to index</a></p><h1>farmers_markets</h1><h2>Basic Info</h2><table><tr><th>Dataset</th><td>farmers_markets</td></tr><tr><th>Source Title</th><td>NYC Farmers Markets</td></tr><tr><th>Source Dataset ID</th><td>8vwk-6iz2</td></tr><tr><th>Rows</th><td>2115</td></tr><tr><th>Columns</th><td>13</td></tr><tr><th>Description</th><td>Annual list of farmers markets across the five boroughs that have varying vendors, products, and EBT acceptance.</td></tr><tr><th>Rows Updated</th><td>2026-02-26 14:30:28</td></tr><tr><th>View Modified</th><td>2026-02-26 14:30:44</td></tr><tr><th>Contains</th><td>address, borough, borough_code, longitude</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>2115</td></tr><tr><th>Profiled Rows</th><td>2115</td></tr><tr><th>Columns</th><td>13</td></tr><tr><th>Spatial Columns</th><td>5</td></tr><tr><th>Temporal Columns</th><td>2</td></tr><tr><th>Categorical Columns</th><td>4</td></tr><tr><th>Numerical Columns</th><td>1</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial, temporal</td></tr><tr><th>Attribute Keywords</th><td>year, marketname, borough, streetaddress, community_district, community, district, latitude, longitude, daysoperation, hoursoperations, season_begin</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>year</th><th>marketname</th><th>borough</th><th>streetaddress</th><th>community_district</th><th>latitude</th><th>longitude</th><th>daysoperation</th><th>hoursoperations</th><th>season_begin</th><th>accepts_ebt</th><th>open_year_round</th><th>nyc_dept_of_health_cooking</th></tr></thead><tbody><tr><td>2025</td><td>175th Street Greenmarket</td><td>Manhattan</td><td>W. 175th St. bet. Wadsworth Ave. &amp; Broadway</td><td>112</td><td>40.845948</td><td>-73.937811</td><td>Thursday</td><td>8 a.m. - 4p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>2025</td><td>4th Ave Sunset Park Greenmarket</td><td>Brooklyn</td><td>4th Ave. 60th St.</td><td>307</td><td>40.647975</td><td>-74.003744</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>2025</td><td>57th Street Greenmarket</td><td>Manhattan</td><td>57th St. &amp; 10th Ave.</td><td>104</td><td>40.769117</td><td>-73.988559</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>2025</td><td>79th Street Greenmarket</td><td>Manhattan</td><td>79th St. &amp; Columbus Ave.</td><td>107</td><td>40.782295</td><td>-73.975244</td><td>Sunday</td><td>9 a.m. - 4 p.m</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>7th Ave Sunset Park Greenmarket</td><td>Brooklyn</td><td>7th Ave. &amp; 44th St.</td><td>307</td><td>40.645841</td><td>-74.002402</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>82nd Street Greenmarket</td><td>Manhattan</td><td>82nd St. bet. 1st &amp; York Aves</td><td>108</td><td>40.774292</td><td>-73.951262</td><td>Saturday</td><td>9 a.m. - 2:30 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>97th Street Greenmarket</td><td>Manhattan</td><td>97th St. bet. Columbus &amp; Amsterdam Aves</td><td>107</td><td>40.794003</td><td>-73.96807</td><td>Friday</td><td>8 a.m. - 2 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>Abingdon Square Park Greenmarket</td><td>Manhattan</td><td>Hudson St. &amp; W 12th St.</td><td>102</td><td>40.737553</td><td>-74.005687</td><td>Saturday</td><td>8 a.m. - 2 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>Bartel-Pritchard Square Greenmarket</td><td>Brooklyn</td><td>Prospect Park W at 15th St.</td><td>355</td><td>40.661354</td><td>-73.96968</td><td>Wednesday &amp; Sunday (starting 5/5)</td><td>8 a.m. - 2 p.m. (W); 9 a.m. - 2 p.m. (SU)</td><td></td><td>Yes</td><td>Yes (Wednesday)</td><td>No</td></tr><tr><td>2025</td><td>Bay Ridge Greenmarket</td><td>Brooklyn</td><td>3rd Ave. &amp; 95th St.</td><td>310</td><td>40.61781</td><td>-74.03338</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>9</span></div><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>3</span></div><div class='bar-row'><span class='bar-label'>calendar_date</span><div class='bar-track'><div class='bar-fill' style='width:11%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>text</td><td>9</td></tr><tr><td>number</td><td>3</td></tr><tr><td>calendar_date</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>8</span></div><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:25%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:25%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>longitude</span><div class='bar-track'><div class='bar-fill' style='width:12%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>8</td></tr><tr><td>address</td><td>2</td></tr><tr><td>borough_code</td><td>2</td></tr><tr><td>longitude</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>year</td><td>Text</td><td>number</td><td>Text</td><td>DateTime</td><td></td><td></td><td>Calendar year of the report</td></tr><tr><td>marketname</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.8787002563476562</td><td>Name of the farmers market site</td></tr><tr><td>borough</td><td>borough</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough</td><td>0.7746084332466125</td><td>Borough in which site is located</td></tr><tr><td>streetaddress</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.9543495774269104</td><td>Site Address </td></tr><tr><td>community_district</td><td>borough_code</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td>Community District where the site is located</td></tr><tr><td>latitude</td><td>Float</td><td>number</td><td>Float</td><td>latitude</td><td></td><td></td><td>Site lattitude coordinate</td></tr><tr><td>longitude</td><td>longitude</td><td>number</td><td>Float</td><td>longitude</td><td>longitude</td><td>0.9568933248519897</td><td>Site longitude coordinate</td></tr><tr><td>daysoperation</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Days of the week when the market is open</td></tr><tr><td>hoursoperations</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>Hours when the market is open</td></tr><tr><td>season_begin</td><td>Text</td><td>calendar_date</td><td>Text</td><td>DateTime</td><td></td><td></td><td>Range of dates when the market is open</td></tr><tr><td>accepts_ebt</td><td>Text</td><td>text</td><td>Text</td><td>Boolean, Enumeration</td><td></td><td></td><td>Locations accepts EBT (Yes or No)</td></tr><tr><td>open_year_round</td><td>Text</td><td>text</td><td>Text</td><td>Boolean, Enumeration</td><td></td><td></td><td>Site is Year round (Yes or No)</td></tr><tr><td>nyc_dept_of_health_cooking</td><td>Text</td><td>text</td><td>Text</td><td>Boolean, Enumeration</td><td></td><td></td><td>Location offers a nutrition workshop onsite (Yes or No)</td></tr></tbody></table></div><h2>Files</h2><table><tr><th>Raw Data</th><td><a href='../../../data/farmers_markets.csv'>Raw CSV</a></td></tr><tr><th>Final Metadata</th><td><a href='../../../output/metadata_farmers_markets_wrapped.json'>Final metadata JSON</a></td></tr><tr><th>Final Geo Results</th><td><a href='../../../output/geo_classifier_results_farmers_markets_wrapped.csv'>Final geo results CSV</a></td></tr><tr><th>Summary</th><td><a href='../../tables/farmers_markets/summary.json'>Summary JSON</a></td></tr></table><script>
+function toggleLakePanel(id) {
+  const node = document.getElementById(id);
+  if (!node) return;
+  node.classList.toggle('is-hidden');
+}
+</script></body></html>

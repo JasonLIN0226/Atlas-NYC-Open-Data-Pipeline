@@ -1,0 +1,6 @@
+dataset_name,name,label,confidence,wrapper_reason
+ped_counts,the_geom,point,0.9736306667327881,
+ped_counts,borough,borough,0.7768158912658691,
+ped_counts,street_nam,address,0.8422063589096069,
+ped_counts,from_stree,address,0.8170910477638245,
+ped_counts,to_street,address,0.6890887022018433,

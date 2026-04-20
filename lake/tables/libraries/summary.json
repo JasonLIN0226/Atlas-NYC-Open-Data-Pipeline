@@ -1,0 +1,17 @@
+{
+  "dataset_name": "libraries",
+  "row_count": 216,
+  "column_count": 13,
+  "geo_labels_wrapped": [
+    "address",
+    "bbl",
+    "bin",
+    "borough_code",
+    "city",
+    "point",
+    "x_coord",
+    "y_coord",
+    "zip5"
+  ],
+  "wrapper_changed_count": 6
+}

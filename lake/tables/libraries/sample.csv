@@ -1,0 +1,11 @@
+the_geom,name,streetname,housenum,city,zip,url,bin,bbl,x,y,system,borocode
+POINT (-73.95353074430393 40.80297988196676),115th Street,West 115th Street,203,New York,10026,http://www.nypl.org/locations/115th-street,1055236,1018310026,997115.12977,231827.652864,NYPL,1
+POINT (-73.9348475633247 40.80301816141575),125th Street,East 125th Street,224,New York,10035,http://www.nypl.org/locations/125th-street,1054674,1017890037,1002287.604,231844.894956,NYPL,1
+POINT (-73.97736329270697 40.76080689474172),53rd Street,West 53rd Street,18,New York,10019,http://www.nypl.org/locations/53rd-street,1089376,1012687503,990521,216460,NYPL,1
+POINT (-73.9693817046576 40.7621860177235),58th Street,East 58th Street,127,New York,10022,http://www.nypl.org/locations/58th-street,1037165,1013130005,992731.946935,216963.13174,NYPL,1
+POINT (-73.95954994584243 40.764915006253425),67th Street,East 67th Street,328,New York,10065,http://www.nypl.org/locations/67th-street,1044749,1014410038,995455.102906,217958.496876,NYPL,1
+POINT (-73.9518056716208 40.785959798621555),96th Street,East 96th Street,112,New York,10128,http://www.nypl.org/locations/96th-street,1048501,1015240064,997596.132088,225626.905751,NYPL,1
+POINT (-73.94345827853815 40.79421476546373),Aguilar,East 110th Street,174,New York,10029,http://www.nypl.org/locations/aguilar,1052167,1016370141,999905.778015,228635.855591,NYPL,1
+POINT (-73.86322248483968 40.866804429026935),Allerton,Barnes Avenue,2740,Bronx,10467,http://www.nypl.org/locations/allerton,2053752,2045130016,1022080.87479,255107.424218,NYPL,2
+POINT (-73.99335691118674 40.74046545561088),Andrew Heiskell Braille and Talking Book,West 20th Street,40,New York,10011,http://www.nypl.org/locations/heiskell,1076145,1008217501,986090.883117,209048.217124,NYPL,1
+POINT (-74.0157487123272 40.715690873439094),Battery Park City Library,North End Avenue,175,New York,10282,http://www.nypl.org/locations/battery-park-city,1087518,1000167516,979884.211806,200022.388889,NYPL,1

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas Lake - play_areas</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 32px;
+      line-height: 1.45;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 12px 0 24px;
+    }
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+    }
+    .muted {
+      color: #6b7280;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    .hero-stats {
+      display: grid;
+      gap: 12px;
+    }
+    .stat-box, .metric-chip {
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .stat-box .label, .metric-chip .label, .link-list .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .stat-box .value, .metric-chip .value {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111827;
+    }
+    .section {
+      margin-top: 24px;
+    }
+    .section-copy, .lead, .subtle {
+      color: #4b5563;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #0f766e;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    h1, h2, h3, h4 {
+      color: #111827;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .dataset-card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .card-top {
+      margin-bottom: 14px;
+    }
+    .card-top h3 {
+      margin: 0 0 4px;
+    }
+    .subtle {
+      margin: 0;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .card-section {
+      margin-top: 14px;
+    }
+    .card-section p {
+      margin: 0;
+    }
+    .card-section h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+    .link-list, .geo-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .link-list li, .geo-list li {
+      margin: 6px 0;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      background: #f3f4f6;
+      padding: 8px 10px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 0;
+    }
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .compact-meta {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f8fafc;
+      padding: 10px 12px;
+    }
+    .compact-meta .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .compact-meta .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .card-action {
+      margin-top: 16px;
+      font-weight: 600;
+    }
+    .action-panel {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .action-button {
+      border: 0;
+      border-radius: 999px;
+      background: #0f766e;
+      color: #ffffff;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .action-button:hover {
+      background: #115e59;
+    }
+    .action-detail {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .status-card {
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .status-card .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+    .status-card .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .inline-report {
+      margin-top: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .inline-report summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #111827;
+    }
+    .is-hidden {
+      display: none;
+    }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.2fr) minmax(240px, 0.8fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .bar-chart {
+      display: grid;
+      gap: 10px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 180px) minmax(140px, 1fr) 56px;
+      gap: 10px;
+      align-items: center;
+    }
+    .bar-label, .bar-value {
+      font-size: 13px;
+      color: #374151;
+    }
+    .bar-track {
+      background: #e5e7eb;
+      border-radius: 999px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      background: #0f766e;
+      height: 100%;
+      border-radius: 999px;
+    }
+    a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<p><a href='../index.html'>&larr; Back to index</a></p><h1>play_areas</h1><h2>Basic Info</h2><table><tr><th>Dataset</th><td>play_areas</td></tr><tr><th>Source Title</th><td>Schoolyard to Playgrounds</td></tr><tr><th>Source Dataset ID</th><td>bbtf-6p3c</td></tr><tr><th>Rows</th><td>300</td></tr><tr><th>Columns</th><td>14</td></tr><tr><th>Description</th><td>The Schoolyards to Playgrounds initiative began with PlaNYC 2007 as a way to expand public use at existing City facilities and improve access to open spaces during non-school hours which includes weekends, holidays, and during the summer. 
+ 
+NYC Parks, in collaboration with the Department of Education (DOE) and the nonprofit Trust for Public Land have improved hundreds of DOE operated schoolyards through capital improvements, including play equipment, painted sports surfaces, trees, and benches.
+ 
+The program is an important approach to reaching the city’s target to getting more New Yorkers within walking distance to open-space. In many neighborhoods, these DOE schoolyards are one of the few resources that can be improved and provide publicly accessible open space.
+ 
+Each record in this dataset represents a participating DOE Schoolyard at the time of the dataset&#x27;s publication. The schoolyard&#x27;s boundaries have been drawn in whole or part using secondary data. Data accuracy is limited by the scale and accuracy of the original sources. Site-specific conditions should be field-verified. 
+ 
+ For more information on the Schoolyard to Playgrounds program, visit: https://www.nycgovparks.org/greening/planyc/schoolyards
+ 
+This dataset may be updated throughout the year as school&#x27;s join or exit the program.
+
+Data Dictionary: https://docs.google.com/spreadsheets/d/10yVRhmdIAS1g8c3L0jC4XxSTptdIf5wESL5ks1e6Gto/edit?usp=sharing</td></tr><tr><th>Rows Updated</th><td>2026-04-18 10:00:05</td></tr><tr><th>View Modified</th><td>2026-04-18 10:00:04</td></tr><tr><th>Contains</th><td>address, borough_code, zip5, multi-polygon</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>300</td></tr><tr><th>Profiled Rows</th><td>300</td></tr><tr><th>Columns</th><td>14</td></tr><tr><th>Spatial Columns</th><td>3</td></tr><tr><th>Categorical Columns</th><td>2</td></tr><tr><th>Numerical Columns</th><td>7</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial</td></tr><tr><th>Attribute Keywords</th><td>acres, address, borough, communityboard, councildistrict, dsfbldgcode, gispropnum, jurisdiction, location, nys_assembly, nys, assembly</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>acres</th><th>address</th><th>borough</th><th>communityboard</th><th>councildistrict</th><th>dsfbldgcode</th><th>gispropnum</th><th>jurisdiction</th><th>location</th><th>nys_assembly</th><th>nys_senate</th><th>us_congress</th><th>zipcode</th><th>multipolygon</th></tr></thead><tbody><tr><td>0.29665657</td><td>2781 Pitkin Ave.</td><td>B</td><td>305</td><td>42</td><td>K159</td><td>BS116</td><td>DOE</td><td>Hemlock St. bet. Gelnmore Ave. and Pitkin Ave.</td><td>54</td><td>19</td><td>7</td><td>11208</td><td>MULTIPOLYGON (((-73.87008742266957 40.67613119607209, -73.87007432121518 40.676078189527786, -73.86934430300663 40.676183396774704, -73.8694076372941 40.67643813903446, -73.86982764364568 40.676376956676066, -73.86977522382294 40.67617915400547, -73.87008742266957 40.67613119607209)))</td></tr><tr><td>1.08704398</td><td>45-10 94 STREET</td><td>Q</td><td>404</td><td>25</td><td>Q744</td><td>QS085</td><td>DOE</td><td>94 St. bet. 46 Ave. and Alstyne Ave.</td><td>39</td><td>13</td><td>6</td><td>11373</td><td>MULTIPOLYGON (((-73.87052757641499 40.74282358006543, -73.87063018224065 40.743294365599404, -73.87079965142733 40.74325752965445, -73.87085437719355 40.74323760516228, -73.87086357063417 40.74325787149346, -73.87108286415213 40.74319346520755, -73.87112118859744 40.74317325207644, -73.87113429860827 40.743203377025694, -73.87142425607612 40.74311408705682, -73.87143254651927 40.743130554893185, -73.87159465601194 40.743083469888205, -73.87163046268853 40.74316116959752, -73.87211026812409 40.74302587348524, -73.87207732159274 40.74296043661461, -73.87203762980313 40.742962907640084, -73.87204110209466 40.74287738846775, -73.87052757641499 40.74282358006543)))</td></tr><tr><td>0.18425263</td><td>1654 BENSON AVENUE</td><td>B</td><td>311</td><td>47</td><td>K163</td><td>BS111</td><td>DOE</td><td>17 Ave. bet. Benson Ave. and Rutherford Pl.</td><td>10</td><td>3</td><td>4</td><td>11214</td><td>MULTIPOLYGON (((-74.00745001682682 40.60680094265964, -74.00757241009426 40.60669388424657, -74.00722538893282 40.606490014967996, -74.00706095144639 40.60664786052479, -74.00722298835178 40.606755337623916, -74.00726537529157 40.60671821724995, -74.00738565665392 40.6067979967044, -74.00740996617195 40.606776707707965, -74.00745001682682 40.60680094265964)))</td></tr><tr><td>1.89666706</td><td>48-10 31 AVENUE</td><td>Q</td><td>401</td><td>26</td><td>Q445</td><td>QS084</td><td>DOE</td><td>Broadway, Newtown Rd. bet. 48 St. and 49 St.</td><td>34</td><td>12</td><td>7</td><td>11103</td><td>MULTIPOLYGON (((-73.91109861856829 40.756636692109936, -73.91098927929856 40.75677133411436, -73.91160023502975 40.75705821845921, -73.91160497614686 40.75705238141865, -73.91210502607458 40.756436599427154, -73.91226313548773 40.75624189557169, -73.91206216390542 40.75583867870825, -73.91183370959595 40.75573147628258, -73.91109861856829 40.756636692109936)))</td></tr><tr><td>0.28203609</td><td>610 EAST 12 STREET</td><td>M</td><td>103</td><td>2</td><td>M061</td><td>MS023</td><td>DOE</td><td>E. 12 St. bet. Ave. B and Ave. C</td><td>74</td><td>27</td><td>10</td><td>10009</td><td>MULTIPOLYGON (((-73.97763035957115 40.727438796678825, -73.97800291051152 40.727595906386995, -73.97818444532368 40.72734533651867, -73.97781164769816 40.7271890224941, -73.97763035957115 40.727438796678825)))</td></tr><tr><td>0.46995628</td><td>525 EAST HOUSTON STREET</td><td>M</td><td>103</td><td>2</td><td>M092</td><td>MS027</td><td>DOE</td><td>E. Houston St. bet. Baruch Pl. and Mangin St.</td><td>74</td><td>27</td><td>10</td><td>10002</td><td>MULTIPOLYGON (((-73.97578695189935 40.71849100028038, -73.97562323051146 40.718809241957054, -73.97633795404663 40.718953388903444, -73.97643721155062 40.71875925302435, -73.97609423314417 40.71864995947163, -73.97612387088614 40.71859234829562, -73.97578695189935 40.71849100028038)))</td></tr><tr><td>0.48497169</td><td>730 EAST 12 STREET</td><td>M</td><td>103</td><td>2</td><td>M034</td><td>MS026</td><td>DOE</td><td>Ave D between E 12 St. and E. 10 St.</td><td>74</td><td>27</td><td>10</td><td>10009</td><td>MULTIPOLYGON (((-73.9748227125527 40.72556967890546, -73.97466179114882 40.72579116253218, -73.97502750655117 40.72594555546123, -73.97496353134156 40.7260332628542, -73.97521909724671 40.726141153194504, -73.97544447506056 40.725832164791754, -73.9748227125527 40.72556967890546)))</td></tr><tr><td>0.71903318</td><td>370 W. 120 St.</td><td>M</td><td>110</td><td>9</td><td>M180</td><td>MS013</td><td>DOE</td><td>Manhattan Ave., Morningside Ave., W. 119 St., and W. 120 St.</td><td>70</td><td>30</td><td>13</td><td>10026</td><td>MULTIPOLYGON (((-73.95512300121526 40.80758532098713, -73.95544626766164 40.80772184933349, -73.95581488673827 40.80722317913276, -73.95548837952943 40.80708478742633, -73.95512300121526 40.80758532098713)), ((-73.95613162357283 40.807766714736736, -73.95637597099825 40.80786748405059, -73.95660148912019 40.80755657492058, -73.95636483366465 40.807456271847116, -73.95613162357283 40.807766714736736)))</td></tr><tr><td>0.15264453</td><td>5105 Fort Hamilton Parkway</td><td>B</td><td>312</td><td>44</td><td>K160</td><td>BS117</td><td>DOE</td><td>51 St. bet. Ft. Hamilton Parkway and 11 Ave.</td><td>48</td><td>22</td><td>10</td><td>11219</td><td>MULTIPOLYGON (((-73.99848141206897 40.63694814860354, -73.99869976796461 40.63708056176622, -73.99881537352488 40.6369691922509, -73.99876782411387 40.63694054804839, -73.99886557227269 40.63684638089951, -73.99869420805268 40.636743149904795, -73.99848141206897 40.63694814860354)))</td></tr><tr><td>1.12380846</td><td>616 Quincy Street</td><td>B</td><td>303</td><td>36</td><td>K308</td><td>BS119</td><td>DOE</td><td>Quincy St. bet. Lewis Ave. and Stuyvesant Ave.</td><td>56</td><td>25</td><td>8</td><td>11221</td><td>MULTIPOLYGON (((-73.93396916395689 40.68878850007447, -73.93482519116226 40.688691693880294, -73.93471033738062 40.688128109841614, -73.93388096575215 40.688226041736506, -73.93393436487968 40.68849896046517, -73.93391300662782 40.68850148314739, -73.93396916395689 40.68878850007447)))</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>7</span></div><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:86%'></div></div><span class='bar-value'>6</span></div><div class='bar-row'><span class='bar-label'>multipolygon</span><div class='bar-track'><div class='bar-fill' style='width:14%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>number</td><td>7</td></tr><tr><td>text</td><td>6</td></tr><tr><td>multipolygon</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>7</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:43%'></div></div><span class='bar-value'>3</span></div><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:29%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>multi-polygon</span><div class='bar-track'><div class='bar-fill' style='width:14%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>zip_code</span><div class='bar-track'><div class='bar-fill' style='width:14%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>7</td></tr><tr><td>borough_code</td><td>3</td></tr><tr><td>address</td><td>2</td></tr><tr><td>multi-polygon</td><td>1</td></tr><tr><td>zip_code</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>acres</td><td>Float</td><td>number</td><td>Float</td><td></td><td></td><td></td><td></td></tr><tr><td>address</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.9416104555130005</td><td></td></tr><tr><td>borough</td><td>borough_code</td><td>text</td><td>Text</td><td>Enumeration, AdministrativeArea</td><td>borough_code</td><td>0.95</td><td></td></tr><tr><td>communityboard</td><td>borough_code</td><td>number</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td></td></tr><tr><td>councildistrict</td><td>borough_code</td><td>number</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td></td></tr><tr><td>dsfbldgcode</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td></td></tr><tr><td>gispropnum</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td></td></tr><tr><td>jurisdiction</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td></td></tr><tr><td>location</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.9389908313751221</td><td></td></tr><tr><td>nys_assembly</td><td>Integer</td><td>number</td><td>Integer</td><td></td><td></td><td></td><td></td></tr><tr><td>nys_senate</td><td>Integer</td><td>number</td><td>Integer</td><td></td><td></td><td></td><td></td></tr><tr><td>us_congress</td><td>Integer</td><td>number</td><td>Integer</td><td></td><td></td><td></td><td></td></tr><tr><td>zipcode</td><td>zip5</td><td>number</td><td>Text</td><td>address</td><td>zip5</td><td>0.99</td><td></td></tr><tr><td>multipolygon</td><td>multi-polygon</td><td>multipolygon</td><td>GeoShape</td><td></td><td>multi-polygon</td><td>0.9170850515365601</td><td></td></tr></tbody></table></div><h2>Files</h2><table><tr><th>Raw Data</th><td><a href='../../../data/play_areas.csv'>Raw CSV</a></td></tr><tr><th>Final Metadata</th><td><a href='../../../output/metadata_play_areas_wrapped.json'>Final metadata JSON</a></td></tr><tr><th>Final Geo Results</th><td><a href='../../../output/geo_classifier_results_play_areas_wrapped.csv'>Final geo results CSV</a></td></tr><tr><th>Summary</th><td><a href='../../tables/play_areas/summary.json'>Summary JSON</a></td></tr></table><script>
+function toggleLakePanel(id) {
+  const node = document.getElementById(id);
+  if (!node) return;
+  node.classList.toggle('is-hidden');
+}
+</script></body></html>

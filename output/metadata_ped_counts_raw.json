@@ -1,0 +1,3539 @@
+{
+  "size": 95163,
+  "nb_rows": 114,
+  "nb_profiled_rows": 114,
+  "nb_columns": 113,
+  "columns": [
+    {
+      "name": "the_geom",
+      "structural_type": "http://schema.org/GeoCoordinates",
+      "semantic_types": [],
+      "geo_classifier": {
+        "label": "point",
+        "confidence": 0.9736306667327881,
+        "source": "ml+validated"
+      }
+    },
+    {
+      "name": "objectid",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [
+        "http://schema.org/identifier"
+      ],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 57.5,
+      "stddev": 32.90769920044041,
+      "coverage": [
+        {
+          "range": {
+            "gte": 2.0,
+            "lte": 38.0
+          }
+        },
+        {
+          "range": {
+            "gte": 41.0,
+            "lte": 76.0
+          }
+        },
+        {
+          "range": {
+            "gte": 79.0,
+            "lte": 113.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "loc",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 57.5,
+      "stddev": 32.90769920044041,
+      "coverage": [
+        {
+          "range": {
+            "gte": 2.0,
+            "lte": 38.0
+          }
+        },
+        {
+          "range": {
+            "gte": 41.0,
+            "lte": 76.0
+          }
+        },
+        {
+          "range": {
+            "gte": 79.0,
+            "lte": 113.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "borough",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/AdministrativeArea"
+      ],
+      "geo_classifier": {
+        "label": "borough",
+        "confidence": 0.7768158912658691,
+        "source": "ml+validated"
+      }
+    },
+    {
+      "name": "street_nam",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/address"
+      ],
+      "geo_classifier": {
+        "label": "address",
+        "confidence": 0.8422063589096069,
+        "source": "ml"
+      }
+    },
+    {
+      "name": "from_stree",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/address"
+      ],
+      "geo_classifier": {
+        "label": "address",
+        "confidence": 0.8170910477638245,
+        "source": "ml"
+      }
+    },
+    {
+      "name": "to_street",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/address"
+      ],
+      "geo_classifier": {
+        "label": "address",
+        "confidence": 0.6890887022018433,
+        "source": "ml"
+      }
+    },
+    {
+      "name": "iex",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/Boolean",
+        "http://schema.org/Enumeration"
+      ],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 2
+    },
+    {
+      "name": "may_07_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 1919.5438596491229,
+      "stddev": 2291.073444649491,
+      "coverage": [
+        {
+          "range": {
+            "gte": 49.0,
+            "lte": 1946.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2593.0,
+            "lte": 5730.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_07_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 5210.973684210527,
+      "stddev": 5358.230919531815,
+      "coverage": [
+        {
+          "range": {
+            "gte": 107.0,
+            "lte": 5240.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5940.0,
+            "lte": 12311.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_07_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2992.5,
+      "stddev": 3016.53068778537,
+      "coverage": [
+        {
+          "range": {
+            "gte": 34.0,
+            "lte": 2286.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2519.0,
+            "lte": 6239.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_07_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2074.2105263157896,
+      "stddev": 2408.628941271631,
+      "coverage": [
+        {
+          "range": {
+            "gte": 64.0,
+            "lte": 1920.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2933.0,
+            "lte": 5724.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_07_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 5656.184210526316,
+      "stddev": 6039.5615873853685,
+      "coverage": [
+        {
+          "range": {
+            "gte": 136.0,
+            "lte": 5867.0
+          }
+        },
+        {
+          "range": {
+            "gte": 8401.0,
+            "lte": 15554.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_07_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 3313.5087719298244,
+      "stddev": 3561.6913714359994,
+      "coverage": [
+        {
+          "range": {
+            "gte": 68.0,
+            "lte": 3309.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4111.0,
+            "lte": 8643.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_08_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 111,
+      "mean": 1925.8947368421052,
+      "stddev": 2291.952731243164,
+      "coverage": [
+        {
+          "range": {
+            "gte": 45.0,
+            "lte": 2102.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3000.0,
+            "lte": 6842.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_08_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 5832.728070175439,
+      "stddev": 6717.788919720076,
+      "coverage": [
+        {
+          "range": {
+            "gte": 70.0,
+            "lte": 5128.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6034.0,
+            "lte": 15315.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_08_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 3089.3508771929824,
+      "stddev": 3400.1562992517484,
+      "coverage": [
+        {
+          "range": {
+            "gte": 76.0,
+            "lte": 3073.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3553.0,
+            "lte": 7927.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_08_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 2021.701754385965,
+      "stddev": 2219.08659860362,
+      "coverage": [
+        {
+          "range": {
+            "gte": 54.0,
+            "lte": 1598.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1951.0,
+            "lte": 4316.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5006.0,
+            "lte": 11051.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_08_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 5583.412280701755,
+      "stddev": 6023.710900618916,
+      "coverage": [
+        {
+          "range": {
+            "gte": 147.0,
+            "lte": 5803.0
+          }
+        },
+        {
+          "range": {
+            "gte": 7309.0,
+            "lte": 15167.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_08_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 3046.4824561403507,
+      "stddev": 3219.88351438114,
+      "coverage": [
+        {
+          "range": {
+            "gte": 73.0,
+            "lte": 3420.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4035.0,
+            "lte": 9169.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_09_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 1812.2631578947369,
+      "stddev": 2173.523850972867,
+      "coverage": [
+        {
+          "range": {
+            "gte": 37.0,
+            "lte": 1727.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2519.0,
+            "lte": 5539.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_09_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 5158.368421052632,
+      "stddev": 5540.4448017382165,
+      "coverage": [
+        {
+          "range": {
+            "gte": 110.0,
+            "lte": 5009.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5501.0,
+            "lte": 13802.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_09_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2781.09649122807,
+      "stddev": 2659.002797413789,
+      "coverage": [
+        {
+          "range": {
+            "gte": 63.0,
+            "lte": 3131.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3984.0,
+            "lte": 7472.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_09_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 2071.40350877193,
+      "stddev": 2496.7258901437312,
+      "coverage": [
+        {
+          "range": {
+            "gte": 54.0,
+            "lte": 2387.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2718.0,
+            "lte": 6160.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_09_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 5682.1578947368425,
+      "stddev": 6040.713028058027,
+      "coverage": [
+        {
+          "range": {
+            "gte": 151.0,
+            "lte": 5651.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6649.0,
+            "lte": 15500.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_09_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2886.684210526316,
+      "stddev": 2744.251984222401,
+      "coverage": [
+        {
+          "range": {
+            "gte": 79.0,
+            "lte": 2762.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3102.0,
+            "lte": 6584.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_10_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2014.622807017544,
+      "stddev": 2439.4532368068794,
+      "coverage": [
+        {
+          "range": {
+            "gte": 62.0,
+            "lte": 2224.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3201.0,
+            "lte": 7210.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_10_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 5630.19298245614,
+      "stddev": 5839.895311001689,
+      "coverage": [
+        {
+          "range": {
+            "gte": 149.0,
+            "lte": 5832.0
+          }
+        },
+        {
+          "range": {
+            "gte": 7372.0,
+            "lte": 14219.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_10_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 3068.4122807017543,
+      "stddev": 2683.0142770261914,
+      "coverage": [
+        {
+          "range": {
+            "gte": 71.0,
+            "lte": 2093.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2498.0,
+            "lte": 5390.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6305.0,
+            "lte": 12727.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_10_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 2016.3947368421052,
+      "stddev": 2213.6866314086915,
+      "coverage": [
+        {
+          "range": {
+            "gte": 77.0,
+            "lte": 1659.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2162.0,
+            "lte": 4941.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_10_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 5583.3859649122805,
+      "stddev": 5728.261872427033,
+      "coverage": [
+        {
+          "range": {
+            "gte": 205.0,
+            "lte": 6014.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6977.0,
+            "lte": 14738.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_10_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 110,
+      "mean": 2891.1052631578946,
+      "stddev": 2637.1063300400333,
+      "coverage": [
+        {
+          "range": {
+            "gte": 79.0,
+            "lte": 2894.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3412.0,
+            "lte": 7602.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_11_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 1969.3245614035088,
+      "stddev": 2147.544213525268,
+      "coverage": [
+        {
+          "range": {
+            "gte": 71.0,
+            "lte": 2506.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3285.0,
+            "lte": 6058.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_11_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 5965.587719298245,
+      "stddev": 6033.464212225018,
+      "coverage": [
+        {
+          "range": {
+            "gte": 87.0,
+            "lte": 5859.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6391.0,
+            "lte": 13185.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_11_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 3176.1315789473683,
+      "stddev": 2803.7096432028648,
+      "coverage": [
+        {
+          "range": {
+            "gte": 70.0,
+            "lte": 2968.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3383.0,
+            "lte": 7261.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_11_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2154.90350877193,
+      "stddev": 2594.534427252453,
+      "coverage": [
+        {
+          "range": {
+            "gte": 91.0,
+            "lte": 2582.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3240.0,
+            "lte": 6362.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_11_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 5552.377192982456,
+      "stddev": 5313.695628742622,
+      "coverage": [
+        {
+          "range": {
+            "gte": 119.0,
+            "lte": 4926.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5290.0,
+            "lte": 11867.0
+          }
+        },
+        {
+          "range": {
+            "gte": 13426.0,
+            "lte": 27249.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_11_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 3101.4298245614036,
+      "stddev": 2939.827328051703,
+      "coverage": [
+        {
+          "range": {
+            "gte": 102.0,
+            "lte": 2670.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3331.0,
+            "lte": 6962.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_12_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 111,
+      "mean": 1950.4122807017543,
+      "stddev": 2249.1254706343534,
+      "coverage": [
+        {
+          "range": {
+            "gte": 79.0,
+            "lte": 2607.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3337.0,
+            "lte": 8083.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_12_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 3715.1754385964914,
+      "stddev": 3923.7678572121813,
+      "coverage": [
+        {
+          "range": {
+            "gte": 118.0,
+            "lte": 4213.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4993.0,
+            "lte": 9640.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_12_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 3149.719298245614,
+      "stddev": 2887.2556796728304,
+      "coverage": [
+        {
+          "range": {
+            "gte": 109.0,
+            "lte": 3274.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3775.0,
+            "lte": 8328.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_12_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 2168.0526315789475,
+      "stddev": 2453.903656447143,
+      "coverage": [
+        {
+          "range": {
+            "gte": 102.0,
+            "lte": 2704.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3472.0,
+            "lte": 7362.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_12_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 5794.473684210527,
+      "stddev": 5851.622204546878,
+      "coverage": [
+        {
+          "range": {
+            "gte": 161.0,
+            "lte": 5951.0
+          }
+        },
+        {
+          "range": {
+            "gte": 7426.0,
+            "lte": 15077.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_12_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 3384.535087719298,
+      "stddev": 3032.3402611341576,
+      "coverage": [
+        {
+          "range": {
+            "gte": 120.0,
+            "lte": 3530.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3851.0,
+            "lte": 8447.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_13_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 2081.0087719298244,
+      "stddev": 2247.3947470450894,
+      "coverage": [
+        {
+          "range": {
+            "gte": 134.0,
+            "lte": 2710.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3758.0,
+            "lte": 7478.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_13_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 5934.0526315789475,
+      "stddev": 5727.920322883351,
+      "coverage": [
+        {
+          "range": {
+            "gte": 220.0,
+            "lte": 5814.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6527.0,
+            "lte": 13639.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_13_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 3508.5175438596493,
+      "stddev": 3131.2861833395104,
+      "coverage": [
+        {
+          "range": {
+            "gte": 163.0,
+            "lte": 3825.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4363.0,
+            "lte": 9577.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_13_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 2195.2719298245615,
+      "stddev": 2380.453989890163,
+      "coverage": [
+        {
+          "range": {
+            "gte": 123.0,
+            "lte": 2674.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3758.0,
+            "lte": 8232.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_13_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 5853.8421052631575,
+      "stddev": 5807.062784712731,
+      "coverage": [
+        {
+          "range": {
+            "gte": 309.0,
+            "lte": 6054.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6701.0,
+            "lte": 13493.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_13_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 3362.6929824561403,
+      "stddev": 2908.83464676689,
+      "coverage": [
+        {
+          "range": {
+            "gte": 166.0,
+            "lte": 3695.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4070.0,
+            "lte": 8076.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_14_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 111,
+      "mean": 2160.342105263158,
+      "stddev": 2549.001138488687,
+      "coverage": [
+        {
+          "range": {
+            "gte": 124.0,
+            "lte": 2585.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3479.0,
+            "lte": 8140.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_14_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 5961.798245614035,
+      "stddev": 5804.752641691547,
+      "coverage": [
+        {
+          "range": {
+            "gte": 233.0,
+            "lte": 5959.0
+          }
+        },
+        {
+          "range": {
+            "gte": 7410.0,
+            "lte": 17127.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_14_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 3344.7105263157896,
+      "stddev": 3067.33639156386,
+      "coverage": [
+        {
+          "range": {
+            "gte": 134.0,
+            "lte": 3080.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3828.0,
+            "lte": 8567.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_14_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 2180.5526315789475,
+      "stddev": 2440.8202428192517,
+      "coverage": [
+        {
+          "range": {
+            "gte": 123.0,
+            "lte": 1985.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2346.0,
+            "lte": 5338.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_14_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 5688.964912280701,
+      "stddev": 5618.1210740137685,
+      "coverage": [
+        {
+          "range": {
+            "gte": 267.0,
+            "lte": 5356.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6707.0,
+            "lte": 14418.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_14_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2927.4736842105262,
+      "stddev": 2771.4979267680155,
+      "coverage": [
+        {
+          "range": {
+            "gte": 159.0,
+            "lte": 3265.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3740.0,
+            "lte": 7966.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_15_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 109,
+      "mean": 2202.5087719298244,
+      "stddev": 2642.3899444147346,
+      "coverage": [
+        {
+          "range": {
+            "gte": 133.0,
+            "lte": 2584.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3462.0,
+            "lte": 8382.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_15_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 6032.859649122807,
+      "stddev": 6338.73155150587,
+      "coverage": [
+        {
+          "range": {
+            "gte": 234.0,
+            "lte": 5964.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6715.0,
+            "lte": 15263.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_15_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 3668.6491228070176,
+      "stddev": 5360.405111985894,
+      "coverage": [
+        {
+          "range": {
+            "gte": 151.0,
+            "lte": 4512.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5430.0,
+            "lte": 12417.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_15_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2189.5175438596493,
+      "stddev": 2238.716562270321,
+      "coverage": [
+        {
+          "range": {
+            "gte": 84.0,
+            "lte": 2005.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2256.0,
+            "lte": 4622.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5651.0,
+            "lte": 10197.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_15_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 5870.745614035088,
+      "stddev": 5613.283319793349,
+      "coverage": [
+        {
+          "range": {
+            "gte": 239.0,
+            "lte": 5667.0
+          }
+        },
+        {
+          "range": {
+            "gte": 7037.0,
+            "lte": 13831.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_15_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 2958.09649122807,
+      "stddev": 2587.9611800869056,
+      "coverage": [
+        {
+          "range": {
+            "gte": 165.0,
+            "lte": 3308.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3956.0,
+            "lte": 7254.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_16_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 111,
+      "mean": 2218.8947368421054,
+      "stddev": 2568.6576717292837,
+      "coverage": [
+        {
+          "range": {
+            "gte": 109.0,
+            "lte": 2540.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3134.0,
+            "lte": 7257.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_16_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 6248.271929824561,
+      "stddev": 6825.769429393815,
+      "coverage": [
+        {
+          "range": {
+            "gte": 231.0,
+            "lte": 5309.0
+          }
+        },
+        {
+          "range": {
+            "gte": 7296.0,
+            "lte": 16529.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_16_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 3361.842105263158,
+      "stddev": 3128.0778459234307,
+      "coverage": [
+        {
+          "range": {
+            "gte": 123.0,
+            "lte": 3542.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3960.0,
+            "lte": 9351.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_16_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 2203.1052631578946,
+      "stddev": 2221.504399261278,
+      "coverage": [
+        {
+          "range": {
+            "gte": 130.0,
+            "lte": 2024.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2289.0,
+            "lte": 4758.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5458.0,
+            "lte": 11099.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_16_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 5897.7807017543855,
+      "stddev": 6193.795983076811,
+      "coverage": [
+        {
+          "range": {
+            "gte": 216.0,
+            "lte": 5930.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6911.0,
+            "lte": 16376.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_16_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 3253.9824561403507,
+      "stddev": 3044.3204294037764,
+      "coverage": [
+        {
+          "range": {
+            "gte": 200.0,
+            "lte": 3362.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4522.0,
+            "lte": 8578.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_17_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 2222.1666666666665,
+      "stddev": 2403.4562682989963,
+      "coverage": [
+        {
+          "range": {
+            "gte": 109.0,
+            "lte": 1962.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2227.0,
+            "lte": 4816.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5733.0,
+            "lte": 11874.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_17_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 6087.096491228071,
+      "stddev": 5937.980104274485,
+      "coverage": [
+        {
+          "range": {
+            "gte": 224.0,
+            "lte": 6610.0
+          }
+        },
+        {
+          "range": {
+            "gte": 7407.0,
+            "lte": 16330.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_17_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 3220.3070175438597,
+      "stddev": 2852.3779526366416,
+      "coverage": [
+        {
+          "range": {
+            "gte": 144.0,
+            "lte": 3232.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3420.0,
+            "lte": 6683.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_17_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 2271.3859649122805,
+      "stddev": 2435.7664253990492,
+      "coverage": [
+        {
+          "range": {
+            "gte": 169.0,
+            "lte": 2783.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3807.0,
+            "lte": 8551.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_17_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 5853.640350877193,
+      "stddev": 5786.564775146678,
+      "coverage": [
+        {
+          "range": {
+            "gte": 277.0,
+            "lte": 5315.0
+          }
+        },
+        {
+          "range": {
+            "gte": 7010.0,
+            "lte": 12806.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_17_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 3211.6754385964914,
+      "stddev": 3139.9248244873356,
+      "coverage": [
+        {
+          "range": {
+            "gte": 210.0,
+            "lte": 3572.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4176.0,
+            "lte": 8216.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_18_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2187.3947368421054,
+      "stddev": 2501.308315972113,
+      "coverage": [
+        {
+          "range": {
+            "gte": 111.0,
+            "lte": 2209.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2938.0,
+            "lte": 6266.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_18_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 6058.754385964912,
+      "stddev": 6534.561095559791,
+      "coverage": [
+        {
+          "range": {
+            "gte": 216.0,
+            "lte": 5591.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6451.0,
+            "lte": 15500.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_18_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 3245.3508771929824,
+      "stddev": 2872.836271928187,
+      "coverage": [
+        {
+          "range": {
+            "gte": 160.0,
+            "lte": 3287.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3630.0,
+            "lte": 7929.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_18_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 111,
+      "mean": 2248.684210526316,
+      "stddev": 2609.574110966746,
+      "coverage": [
+        {
+          "range": {
+            "gte": 124.0,
+            "lte": 2520.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3324.0,
+            "lte": 8834.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_18_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 114,
+      "mean": 5796.254385964912,
+      "stddev": 6197.691348342774,
+      "coverage": [
+        {
+          "range": {
+            "gte": 202.0,
+            "lte": 5535.0
+          }
+        },
+        {
+          "range": {
+            "gte": 6723.0,
+            "lte": 14682.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "sept_18_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 3151.5701754385964,
+      "stddev": 2986.290176289845,
+      "coverage": [
+        {
+          "range": {
+            "gte": 115.0,
+            "lte": 2708.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2967.0,
+            "lte": 7179.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_19_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 50,
+      "mean": 1170.6842105263158,
+      "stddev": 2188.6380941797006,
+      "coverage": [
+        {
+          "range": {
+            "gte": 0.0,
+            "lte": 1952.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2527.0,
+            "lte": 6275.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_19_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 50,
+      "mean": 3335.535087719298,
+      "stddev": 5185.06122919712,
+      "coverage": [
+        {
+          "range": {
+            "gte": 0.0,
+            "lte": 4187.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4692.0,
+            "lte": 16061.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_19_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 51,
+      "mean": 1864.6929824561403,
+      "stddev": 2681.467643200215,
+      "coverage": [
+        {
+          "range": {
+            "gte": 0.0,
+            "lte": 1537.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2479.0,
+            "lte": 7468.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_20_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 92,
+      "mean": 612.4473684210526,
+      "stddev": 580.4398829820647,
+      "coverage": [
+        {
+          "range": {
+            "gte": 0.0,
+            "lte": 540.0
+          }
+        },
+        {
+          "range": {
+            "gte": 589.0,
+            "lte": 1357.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_20_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 94,
+      "mean": 1928.938596491228,
+      "stddev": 1780.6012255133887,
+      "coverage": [
+        {
+          "range": {
+            "gte": 0.0,
+            "lte": 2132.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2443.0,
+            "lte": 5290.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_20_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 90,
+      "mean": 1507.2543859649122,
+      "stddev": 1349.521837420109,
+      "coverage": [
+        {
+          "range": {
+            "gte": 0.0,
+            "lte": 1103.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1252.0,
+            "lte": 2713.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3144.0,
+            "lte": 5287.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_21_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 110,
+      "mean": 924.9912280701755,
+      "stddev": 837.0732166892521,
+      "coverage": [
+        {
+          "range": {
+            "gte": 64.0,
+            "lte": 1033.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1233.0,
+            "lte": 2360.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_21_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2989.254385964912,
+      "stddev": 2545.9442732128527,
+      "coverage": [
+        {
+          "range": {
+            "gte": 116.0,
+            "lte": 3195.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3669.0,
+            "lte": 7625.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_21_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 1815.6491228070176,
+      "stddev": 1459.5816030056571,
+      "coverage": [
+        {
+          "range": {
+            "gte": 34.0,
+            "lte": 1444.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1660.0,
+            "lte": 3452.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_21_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 109,
+      "mean": 1298.8947368421052,
+      "stddev": 1167.0355334299331,
+      "coverage": [
+        {
+          "range": {
+            "gte": 43.0,
+            "lte": 1495.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1747.0,
+            "lte": 3591.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_21_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 109,
+      "mean": 3380.5,
+      "stddev": 2973.2825183978944,
+      "coverage": [
+        {
+          "range": {
+            "gte": 0.0,
+            "lte": 2685.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3135.0,
+            "lte": 6394.0
+          }
+        },
+        {
+          "range": {
+            "gte": 7261.0,
+            "lte": 16622.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_21_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 110,
+      "mean": 2348.7017543859647,
+      "stddev": 2103.689111052732,
+      "coverage": [
+        {
+          "range": {
+            "gte": 0.0,
+            "lte": 1600.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1843.0,
+            "lte": 4151.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4613.0,
+            "lte": 11739.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_22_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 1492.9122807017543,
+      "stddev": 1546.8188780294,
+      "coverage": [
+        {
+          "range": {
+            "gte": 62.0,
+            "lte": 1705.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2143.0,
+            "lte": 5111.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_22_p_m",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 4189.745614035088,
+      "stddev": 4085.0760387421587,
+      "coverage": [
+        {
+          "range": {
+            "gte": 115.0,
+            "lte": 3010.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3784.0,
+            "lte": 8784.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_22_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2682.6052631578946,
+      "stddev": 2570.856706203584,
+      "coverage": [
+        {
+          "range": {
+            "gte": 73.0,
+            "lte": 2756.0
+          }
+        },
+        {
+          "range": {
+            "gte": 3231.0,
+            "lte": 6970.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_22_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 111,
+      "mean": 1460.9122807017543,
+      "stddev": 1523.7254585413605,
+      "coverage": [
+        {
+          "range": {
+            "gte": 46.0,
+            "lte": 1662.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2021.0,
+            "lte": 3984.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_22_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 110,
+      "mean": 3690.754385964912,
+      "stddev": 3688.050843927323,
+      "coverage": [
+        {
+          "range": {
+            "gte": 0.0,
+            "lte": 3801.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4277.0,
+            "lte": 9664.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_22_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2752.9912280701756,
+      "stddev": 2470.6237279655134,
+      "coverage": [
+        {
+          "range": {
+            "gte": 76.0,
+            "lte": 2600.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2885.0,
+            "lte": 6327.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_23_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 110,
+      "mean": 1611.2456140350878,
+      "stddev": 1596.9713031806543,
+      "coverage": [
+        {
+          "range": {
+            "gte": 91.0,
+            "lte": 1779.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2128.0,
+            "lte": 3959.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_23_p_m",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 111,
+      "mean": 4582.131578947368,
+      "stddev": 4278.63449588226,
+      "coverage": [
+        {
+          "range": {
+            "gte": 160.0,
+            "lte": 3882.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4589.0,
+            "lte": 9555.0
+          }
+        },
+        {
+          "range": {
+            "gte": 10946.0,
+            "lte": 19358.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may_23_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 110,
+      "mean": 2671.6666666666665,
+      "stddev": 2587.1113426783945,
+      "coverage": [
+        {
+          "range": {
+            "gte": 57.0,
+            "lte": 2457.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2693.0,
+            "lte": 6324.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_23_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 111,
+      "mean": 1571.9122807017543,
+      "stddev": 1544.7105705248769,
+      "coverage": [
+        {
+          "range": {
+            "gte": 33.0,
+            "lte": 1404.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1770.0,
+            "lte": 3608.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_23_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 4229.359649122807,
+      "stddev": 4052.6761423178336,
+      "coverage": [
+        {
+          "range": {
+            "gte": 53.0,
+            "lte": 4224.0
+          }
+        },
+        {
+          "range": {
+            "gte": 4935.0,
+            "lte": 10249.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct_23_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 110,
+      "mean": 2583.035087719298,
+      "stddev": 2521.4332735876274,
+      "coverage": [
+        {
+          "range": {
+            "gte": 22.0,
+            "lte": 1913.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2204.0,
+            "lte": 4884.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5806.0,
+            "lte": 13164.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "june_24_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 108,
+      "mean": 1557.7543859649122,
+      "stddev": 1651.0310683922798,
+      "coverage": [
+        {
+          "range": {
+            "gte": 71.0,
+            "lte": 1793.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2021.0,
+            "lte": 4313.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "june_24_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 110,
+      "mean": 4391.254385964912,
+      "stddev": 4252.7964026397185,
+      "coverage": [
+        {
+          "range": {
+            "gte": 141.0,
+            "lte": 4641.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5882.0,
+            "lte": 11567.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "june_24_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 112,
+      "mean": 2336.2280701754385,
+      "stddev": 2216.747542523108,
+      "coverage": [
+        {
+          "range": {
+            "gte": 73.0,
+            "lte": 2448.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2809.0,
+            "lte": 6101.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct24_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 111,
+      "mean": 1681.359649122807,
+      "stddev": 1651.1657823574067,
+      "coverage": [
+        {
+          "range": {
+            "gte": 84.0,
+            "lte": 1989.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2259.0,
+            "lte": 4145.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct24_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 4615.201754385965,
+      "stddev": 4421.495998279761,
+      "coverage": [
+        {
+          "range": {
+            "gte": 162.0,
+            "lte": 4990.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5453.0,
+            "lte": 11656.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "oct24_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2983.5087719298244,
+      "stddev": 2868.352627168197,
+      "coverage": [
+        {
+          "range": {
+            "gte": 65.0,
+            "lte": 2364.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2999.0,
+            "lte": 6680.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may25_am",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 111,
+      "mean": 1628.2543859649122,
+      "stddev": 1671.6845365300678,
+      "coverage": [
+        {
+          "range": {
+            "gte": 64.0,
+            "lte": 1830.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2110.0,
+            "lte": 4287.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may25_pm",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 4475.228070175439,
+      "stddev": 4364.206535537256,
+      "coverage": [
+        {
+          "range": {
+            "gte": 133.0,
+            "lte": 5136.0
+          }
+        },
+        {
+          "range": {
+            "gte": 5989.0,
+            "lte": 11258.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "may25_md",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 113,
+      "mean": 2738.0526315789475,
+      "stddev": 2248.591784823065,
+      "coverage": [
+        {
+          "range": {
+            "gte": 66.0,
+            "lte": 2469.0
+          }
+        },
+        {
+          "range": {
+            "gte": 2700.0,
+            "lte": 6203.0
+          }
+        }
+      ]
+    }
+  ],
+  "nb_spatial_columns": 5,
+  "nb_categorical_columns": 1,
+  "nb_numerical_columns": 107,
+  "types": [
+    "categorical",
+    "numerical",
+    "spatial"
+  ],
+  "spatial_coverage": [
+    {
+      "type": "point",
+      "column_names": [
+        "the_geom"
+      ],
+      "column_indexes": [
+        0
+      ],
+      "geohashes4": [
+        {
+          "hash": "1211303202320031",
+          "number": 1
+        },
+        {
+          "hash": "1211303202320001",
+          "number": 1
+        },
+        {
+          "hash": "1211303202320320",
+          "number": 1
+        },
+        {
+          "hash": "1211303202212220",
+          "number": 1
+        },
+        {
+          "hash": "1211303202212223",
+          "number": 1
+        },
+        {
+          "hash": "1211303202212201",
+          "number": 1
+        },
+        {
+          "hash": "1211303202213200",
+          "number": 1
+        },
+        {
+          "hash": "1211303202231123",
+          "number": 1
+        },
+        {
+          "hash": "1211303202231101",
+          "number": 1
+        },
+        {
+          "hash": "1211303202230311",
+          "number": 1
+        },
+        {
+          "hash": "1211303202233011",
+          "number": 1
+        },
+        {
+          "hash": "1211303202203322",
+          "number": 1
+        },
+        {
+          "hash": "1211303202203301",
+          "number": 1
+        },
+        {
+          "hash": "1211303202203021",
+          "number": 1
+        },
+        {
+          "hash": "1211303202203211",
+          "number": 1
+        },
+        {
+          "hash": "1211303202203201",
+          "number": 1
+        },
+        {
+          "hash": "1211303202203202",
+          "number": 1
+        },
+        {
+          "hash": "1211303202202312",
+          "number": 1
+        },
+        {
+          "hash": "1211303202202201",
+          "number": 1
+        },
+        {
+          "hash": "1211302313023330",
+          "number": 1
+        },
+        {
+          "hash": "1211302313022132",
+          "number": 1
+        },
+        {
+          "hash": "1211302313021123",
+          "number": 1
+        },
+        {
+          "hash": "1211302313021031",
+          "number": 1
+        },
+        {
+          "hash": "1211302313033203",
+          "number": 1
+        },
+        {
+          "hash": "1211302313003200",
+          "number": 1
+        },
+        {
+          "hash": "1211302313211201",
+          "number": 1
+        },
+        {
+          "hash": "1211302313211220",
+          "number": 1
+        },
+        {
+          "hash": "1211302313211212",
+          "number": 1
+        },
+        {
+          "hash": "1211302313211130",
+          "number": 2
+        },
+        {
+          "hash": "1211302313211133",
+          "number": 2
+        },
+        {
+          "hash": "1211302313211331",
+          "number": 1
+        },
+        {
+          "hash": "1211302313210310",
+          "number": 1
+        },
+        {
+          "hash": "1211302313212002",
+          "number": 1
+        },
+        {
+          "hash": "1211302313212000",
+          "number": 1
+        },
+        {
+          "hash": "1211302313201320",
+          "number": 1
+        },
+        {
+          "hash": "1211302313202223",
+          "number": 1
+        },
+        {
+          "hash": "1211302313202000",
+          "number": 1
+        },
+        {
+          "hash": "1211302313230111",
+          "number": 1
+        },
+        {
+          "hash": "1211302313233131",
+          "number": 1
+        },
+        {
+          "hash": "1211302313303000",
+          "number": 1
+        },
+        {
+          "hash": "1211302313302033",
+          "number": 1
+        },
+        {
+          "hash": "1211302313302130",
+          "number": 1
+        },
+        {
+          "hash": "1211302313300002",
+          "number": 1
+        },
+        {
+          "hash": "1211302313300013",
+          "number": 1
+        },
+        {
+          "hash": "1211302313300031",
+          "number": 1
+        },
+        {
+          "hash": "1211302313300113",
+          "number": 1
+        },
+        {
+          "hash": "1211302313300102",
+          "number": 1
+        },
+        {
+          "hash": "1211302313300121",
+          "number": 2
+        },
+        {
+          "hash": "1211302313300313",
+          "number": 1
+        },
+        {
+          "hash": "1211302313301021",
+          "number": 1
+        },
+        {
+          "hash": "1211302313301131",
+          "number": 1
+        },
+        {
+          "hash": "1211302313301103",
+          "number": 1
+        },
+        {
+          "hash": "1211302313311122",
+          "number": 1
+        },
+        {
+          "hash": "1211302313311311",
+          "number": 1
+        },
+        {
+          "hash": "1211302313311320",
+          "number": 1
+        },
+        {
+          "hash": "1211302313311202",
+          "number": 1
+        },
+        {
+          "hash": "1211302313311200",
+          "number": 1
+        },
+        {
+          "hash": "1211302313311220",
+          "number": 1
+        },
+        {
+          "hash": "1211302313311022",
+          "number": 2
+        },
+        {
+          "hash": "1211302313311023",
+          "number": 1
+        },
+        {
+          "hash": "1211302313311012",
+          "number": 1
+        },
+        {
+          "hash": "1211302313310301",
+          "number": 1
+        },
+        {
+          "hash": "1211302313310311",
+          "number": 2
+        },
+        {
+          "hash": "1211302313310313",
+          "number": 3
+        },
+        {
+          "hash": "1211302313310330",
+          "number": 2
+        },
+        {
+          "hash": "1211302313310131",
+          "number": 1
+        },
+        {
+          "hash": "1211302313310120",
+          "number": 2
+        },
+        {
+          "hash": "1211302313310123",
+          "number": 1
+        },
+        {
+          "hash": "1211302313310001",
+          "number": 1
+        },
+        {
+          "hash": "1211302313312033",
+          "number": 1
+        },
+        {
+          "hash": "1211302313312122",
+          "number": 1
+        },
+        {
+          "hash": "1211302313312111",
+          "number": 1
+        },
+        {
+          "hash": "1211302313313222",
+          "number": 1
+        },
+        {
+          "hash": "1211302313330300",
+          "number": 1
+        },
+        {
+          "hash": "1211302313330302",
+          "number": 1
+        },
+        {
+          "hash": "1211302313333222",
+          "number": 3
+        },
+        {
+          "hash": "1211302313323201",
+          "number": 1
+        },
+        {
+          "hash": "1211302313323210",
+          "number": 1
+        },
+        {
+          "hash": "1211302313323110",
+          "number": 1
+        },
+        {
+          "hash": "1211302313320033",
+          "number": 1
+        },
+        {
+          "hash": "1211302313320030",
+          "number": 1
+        },
+        {
+          "hash": "1211302313320012",
+          "number": 1
+        },
+        {
+          "hash": "1211302313322333",
+          "number": 1
+        },
+        {
+          "hash": "1211302313122320",
+          "number": 2
+        },
+        {
+          "hash": "1211302313122323",
+          "number": 1
+        },
+        {
+          "hash": "1211302313122321",
+          "number": 2
+        },
+        {
+          "hash": "1211302313122332",
+          "number": 1
+        },
+        {
+          "hash": "1211302313123220",
+          "number": 1
+        },
+        {
+          "hash": "1211302312310323",
+          "number": 1
+        },
+        {
+          "hash": "1211302312313001",
+          "number": 1
+        },
+        {
+          "hash": "1211302312112211",
+          "number": 1
+        },
+        {
+          "hash": "1211302312111021",
+          "number": 1
+        },
+        {
+          "hash": "1211302331100302",
+          "number": 2
+        },
+        {
+          "hash": "1211302331100330",
+          "number": 1
+        },
+        {
+          "hash": "1211302331100211",
+          "number": 1
+        },
+        {
+          "hash": "1211302331100223",
+          "number": 1
+        },
+        {
+          "hash": "1211302331100033",
+          "number": 1
+        },
+        {
+          "hash": "1211302331113021",
+          "number": 1
+        },
+        {
+          "hash": "1211302331111201",
+          "number": 1
+        },
+        {
+          "hash": "1211302330113313",
+          "number": 1
+        }
+      ],
+      "ranges": [
+        {
+          "range": {
+            "type": "envelope",
+            "coordinates": [
+              [
+                -74.10857607699721,
+                40.731436017707075
+              ],
+              [
+                -73.94255463338305,
+                40.58754340485192
+              ]
+            ]
+          }
+        },
+        {
+          "range": {
+            "type": "envelope",
+            "coordinates": [
+              [
+                -73.98934552114228,
+                40.873547359000106
+              ],
+              [
+                -73.88956389732787,
+                40.75045405486473
+              ]
+            ]
+          }
+        },
+        {
+          "range": {
+            "type": "envelope",
+            "coordinates": [
+              [
+                -73.90192709081789,
+                40.76247070217481
+              ],
+              [
+                -73.77114917957029,
+                40.6925963247586
+              ]
+            ]
+          }
+        }
+      ],
+      "number": 114
+    }
+  ],
+  "attribute_keywords": [
+    "the_geom",
+    "the",
+    "geom",
+    "objectid",
+    "loc",
+    "borough",
+    "street_nam",
+    "street",
+    "nam",
+    "from_stree",
+    "from",
+    "stree",
+    "to_street",
+    "to",
+    "street",
+    "iex",
+    "may_07_am",
+    "may",
+    "07",
+    "am",
+    "may_07_pm",
+    "may",
+    "07",
+    "pm",
+    "may_07_md",
+    "may",
+    "07",
+    "md",
+    "sept_07_am",
+    "sept",
+    "07",
+    "am",
+    "sept_07_pm",
+    "sept",
+    "07",
+    "pm",
+    "sept_07_md",
+    "sept",
+    "07",
+    "md",
+    "may_08_am",
+    "may",
+    "08",
+    "am",
+    "may_08_pm",
+    "may",
+    "08",
+    "pm",
+    "may_08_md",
+    "may",
+    "08",
+    "md",
+    "sept_08_am",
+    "sept",
+    "08",
+    "am",
+    "sept_08_pm",
+    "sept",
+    "08",
+    "pm",
+    "sept_08_md",
+    "sept",
+    "08",
+    "md",
+    "may_09_am",
+    "may",
+    "09",
+    "am",
+    "may_09_pm",
+    "may",
+    "09",
+    "pm",
+    "may_09_md",
+    "may",
+    "09",
+    "md",
+    "sept_09_am",
+    "sept",
+    "09",
+    "am",
+    "sept_09_pm",
+    "sept",
+    "09",
+    "pm",
+    "sept_09_md",
+    "sept",
+    "09",
+    "md",
+    "may_10_am",
+    "may",
+    "10",
+    "am",
+    "may_10_pm",
+    "may",
+    "10",
+    "pm",
+    "may_10_md",
+    "may",
+    "10",
+    "md",
+    "sept_10_am",
+    "sept",
+    "10",
+    "am",
+    "sept_10_pm",
+    "sept",
+    "10",
+    "pm",
+    "sept_10_md",
+    "sept",
+    "10",
+    "md",
+    "may_11_am",
+    "may",
+    "11",
+    "am",
+    "may_11_pm",
+    "may",
+    "11",
+    "pm",
+    "may_11_md",
+    "may",
+    "11",
+    "md",
+    "sept_11_am",
+    "sept",
+    "11",
+    "am",
+    "sept_11_pm",
+    "sept",
+    "11",
+    "pm",
+    "sept_11_md",
+    "sept",
+    "11",
+    "md",
+    "may_12_am",
+    "may",
+    "12",
+    "am",
+    "may_12_pm",
+    "may",
+    "12",
+    "pm",
+    "may_12_md",
+    "may",
+    "12",
+    "md",
+    "sept_12_am",
+    "sept",
+    "12",
+    "am",
+    "sept_12_pm",
+    "sept",
+    "12",
+    "pm",
+    "sept_12_md",
+    "sept",
+    "12",
+    "md",
+    "may_13_am",
+    "may",
+    "13",
+    "am",
+    "may_13_pm",
+    "may",
+    "13",
+    "pm",
+    "may_13_md",
+    "may",
+    "13",
+    "md",
+    "sept_13_am",
+    "sept",
+    "13",
+    "am",
+    "sept_13_pm",
+    "sept",
+    "13",
+    "pm",
+    "sept_13_md",
+    "sept",
+    "13",
+    "md",
+    "may_14_am",
+    "may",
+    "14",
+    "am",
+    "may_14_pm",
+    "may",
+    "14",
+    "pm",
+    "may_14_md",
+    "may",
+    "14",
+    "md",
+    "sept_14_am",
+    "sept",
+    "14",
+    "am",
+    "sept_14_pm",
+    "sept",
+    "14",
+    "pm",
+    "sept_14_md",
+    "sept",
+    "14",
+    "md",
+    "may_15_am",
+    "may",
+    "15",
+    "am",
+    "may_15_pm",
+    "may",
+    "15",
+    "pm",
+    "may_15_md",
+    "may",
+    "15",
+    "md",
+    "sept_15_am",
+    "sept",
+    "15",
+    "am",
+    "sept_15_pm",
+    "sept",
+    "15",
+    "pm",
+    "sept_15_md",
+    "sept",
+    "15",
+    "md",
+    "may_16_am",
+    "may",
+    "16",
+    "am",
+    "may_16_pm",
+    "may",
+    "16",
+    "pm",
+    "may_16_md",
+    "may",
+    "16",
+    "md",
+    "sept_16_am",
+    "sept",
+    "16",
+    "am",
+    "sept_16_pm",
+    "sept",
+    "16",
+    "pm",
+    "sept_16_md",
+    "sept",
+    "16",
+    "md",
+    "may_17_am",
+    "may",
+    "17",
+    "am",
+    "may_17_pm",
+    "may",
+    "17",
+    "pm",
+    "may_17_md",
+    "may",
+    "17",
+    "md",
+    "sept_17_am",
+    "sept",
+    "17",
+    "am",
+    "sept_17_pm",
+    "sept",
+    "17",
+    "pm",
+    "sept_17_md",
+    "sept",
+    "17",
+    "md",
+    "may_18_am",
+    "may",
+    "18",
+    "am",
+    "may_18_pm",
+    "may",
+    "18",
+    "pm",
+    "may_18_md",
+    "may",
+    "18",
+    "md",
+    "sept_18_am",
+    "sept",
+    "18",
+    "am",
+    "sept_18_pm",
+    "sept",
+    "18",
+    "pm",
+    "sept_18_md",
+    "sept",
+    "18",
+    "md",
+    "may_19_am",
+    "may",
+    "19",
+    "am",
+    "may_19_pm",
+    "may",
+    "19",
+    "pm",
+    "may_19_md",
+    "may",
+    "19",
+    "md",
+    "oct_20_am",
+    "oct",
+    "20",
+    "am",
+    "oct_20_pm",
+    "oct",
+    "20",
+    "pm",
+    "oct_20_md",
+    "oct",
+    "20",
+    "md",
+    "may_21_am",
+    "may",
+    "21",
+    "am",
+    "may_21_pm",
+    "may",
+    "21",
+    "pm",
+    "may_21_md",
+    "may",
+    "21",
+    "md",
+    "oct_21_am",
+    "oct",
+    "21",
+    "am",
+    "oct_21_pm",
+    "oct",
+    "21",
+    "pm",
+    "oct_21_md",
+    "oct",
+    "21",
+    "md",
+    "may_22_am",
+    "may",
+    "22",
+    "am",
+    "may_22_p_m",
+    "may",
+    "22",
+    "p",
+    "m",
+    "may_22_md",
+    "may",
+    "22",
+    "md",
+    "oct_22_am",
+    "oct",
+    "22",
+    "am",
+    "oct_22_pm",
+    "oct",
+    "22",
+    "pm",
+    "oct_22_md",
+    "oct",
+    "22",
+    "md",
+    "may_23_am",
+    "may",
+    "23",
+    "am",
+    "may_23_p_m",
+    "may",
+    "23",
+    "p",
+    "m",
+    "may_23_md",
+    "may",
+    "23",
+    "md",
+    "oct_23_am",
+    "oct",
+    "23",
+    "am",
+    "oct_23_pm",
+    "oct",
+    "23",
+    "pm",
+    "oct_23_md",
+    "oct",
+    "23",
+    "md",
+    "june_24_am",
+    "june",
+    "24",
+    "am",
+    "june_24_pm",
+    "june",
+    "24",
+    "pm",
+    "june_24_md",
+    "june",
+    "24",
+    "md",
+    "oct24_am",
+    "oct",
+    "24",
+    "am",
+    "oct24_pm",
+    "oct",
+    "24",
+    "pm",
+    "oct24_md",
+    "oct",
+    "24",
+    "md",
+    "may25_am",
+    "may",
+    "25",
+    "am",
+    "may25_pm",
+    "may",
+    "25",
+    "pm",
+    "may25_md",
+    "may",
+    "25",
+    "md"
+  ],
+  "_profiling_times": {
+    "steps": {
+      "1_load_data": 0.015977084171026945,
+      "2_geo_batch_predict": 1.1994999996386468,
+      "3_process_columns": 1.5474179168231785,
+      "4_latlong_pairing": 0.00010150019079446793,
+      "5_spatial_coverage": 0.008959250058978796,
+      "6_temporal_coverage": 1.3125129044055939e-05
+    },
+    "total": 5.118708041962236
+  },
+  "dataset_name": "ped_counts",
+  "output_mode": "raw"
+}

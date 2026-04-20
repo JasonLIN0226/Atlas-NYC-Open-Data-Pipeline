@@ -1,0 +1,18 @@
+{
+  "dataset_name": "nyc311",
+  "row_count": 1000,
+  "column_count": 44,
+  "geo_labels_wrapped": [
+    "address",
+    "bbl",
+    "borough",
+    "borough_code",
+    "city",
+    "longitude",
+    "point",
+    "x_coord",
+    "y_coord",
+    "zip5"
+  ],
+  "wrapper_changed_count": 8
+}

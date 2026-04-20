@@ -1,0 +1,15 @@
+{
+  "dataset_name": "child_care",
+  "row_count": 2734,
+  "column_count": 20,
+  "geo_labels_wrapped": [
+    "address",
+    "bbl",
+    "bin",
+    "borough",
+    "borough_code",
+    "longitude",
+    "zip5"
+  ],
+  "wrapper_changed_count": 5
+}

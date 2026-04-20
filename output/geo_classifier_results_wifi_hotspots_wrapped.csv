@@ -1,0 +1,16 @@
+dataset_name,name,label,confidence,wrapper_reason
+wifi_hotspots,borough,borough_code,0.6277474761009216,
+wifi_hotspots,location,address,0.9270782470703125,
+wifi_hotspots,latitude,latitude,0.6101157665252686,
+wifi_hotspots,longitude,longitude,0.9536051750183105,
+wifi_hotspots,x,x_coord,0.6721897721290588,
+wifi_hotspots,y,y_coord,0.95,y_coord_xy_pair
+wifi_hotspots,city,city,0.95,city_name_and_values
+wifi_hotspots,borocode,borough_code,0.7853758335113525,
+wifi_hotspots,boroname,borough_code,0.95,admin_name_and_values
+wifi_hotspots,ntacode,borough_code,0.95,admin_name_and_values
+wifi_hotspots,ntaname,borough_code,0.95,admin_name_and_values
+wifi_hotspots,coundist,borough_code,0.95,admin_name_and_values
+wifi_hotspots,zip,zip5,0.99,zip_name_and_pattern
+wifi_hotspots,borocd,borough_code,0.95,admin_name_and_values
+wifi_hotspots,location_lat_long,longitude,0.8310436010360718,

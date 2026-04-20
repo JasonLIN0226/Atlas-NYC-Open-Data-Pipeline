@@ -1,0 +1,12 @@
+{
+  "dataset_name": "hydrants",
+  "row_count": 5000,
+  "column_count": 8,
+  "geo_labels_wrapped": [
+    "borough_code",
+    "latitude",
+    "longitude",
+    "point"
+  ],
+  "wrapper_changed_count": 1
+}

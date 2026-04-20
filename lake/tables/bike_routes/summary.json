@@ -1,0 +1,11 @@
+{
+  "dataset_name": "bike_routes",
+  "row_count": 5000,
+  "column_count": 25,
+  "geo_labels_wrapped": [
+    "address",
+    "borough_code",
+    "multi-line"
+  ],
+  "wrapper_changed_count": 2
+}

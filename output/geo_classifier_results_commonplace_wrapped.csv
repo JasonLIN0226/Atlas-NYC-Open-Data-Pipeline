@@ -1,0 +1,4 @@
+dataset_name,name,label,confidence,wrapper_reason
+commonplace,the_geom,point,0.9726014733314514,
+commonplace,bin,bin,0.99,bin_name_and_pattern
+commonplace,boroughcode,borough_code,0.7457291483879089,

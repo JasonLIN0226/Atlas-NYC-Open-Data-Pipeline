@@ -1,0 +1,596 @@
+{
+  "size": 287675,
+  "nb_rows": 2115,
+  "nb_profiled_rows": 2115,
+  "nb_columns": 13,
+  "columns": [
+    {
+      "name": "year",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/DateTime"
+      ],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 17
+    },
+    {
+      "name": "marketname",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/address"
+      ],
+      "geo_classifier": {
+        "label": "address",
+        "confidence": 0.8787002563476562,
+        "source": "ml"
+      }
+    },
+    {
+      "name": "borough",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/AdministrativeArea"
+      ],
+      "geo_classifier": {
+        "label": "borough",
+        "confidence": 0.7746084332466125,
+        "source": "ml+validated"
+      }
+    },
+    {
+      "name": "streetaddress",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/address"
+      ],
+      "geo_classifier": {
+        "label": "address",
+        "confidence": 0.9543495774269104,
+        "source": "ml"
+      }
+    },
+    {
+      "name": "community_district",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "missing_values_ratio": 0.4033096926713948,
+      "num_distinct_values": 62,
+      "mean": 248.50079239302696,
+      "stddev": 116.4647144594044,
+      "coverage": [
+        {
+          "range": {
+            "gte": 101.0,
+            "lte": 112.0
+          }
+        },
+        {
+          "range": {
+            "gte": 201.0,
+            "lte": 212.0
+          }
+        },
+        {
+          "range": {
+            "gte": 301.0,
+            "lte": 501.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "latitude",
+      "structural_type": "http://schema.org/Float",
+      "semantic_types": [
+        "http://schema.org/latitude"
+      ],
+      "unclean_values_ratio": 0.0,
+      "missing_values_ratio": 0.40283687943262414,
+      "mean": 14.410406688407294,
+      "stddev": 48.230846249366714,
+      "coverage": [
+        {
+          "range": {
+            "gte": -74.01186697,
+            "lte": -73.8036027959
+          }
+        },
+        {
+          "range": {
+            "gte": 40.593313,
+            "lte": 40.726054
+          }
+        },
+        {
+          "range": {
+            "gte": 40.745293,
+            "lte": 40.884532
+          }
+        }
+      ]
+    },
+    {
+      "name": "longitude",
+      "structural_type": "http://schema.org/Float",
+      "semantic_types": [
+        "http://schema.org/longitude"
+      ],
+      "geo_classifier": {
+        "label": "longitude",
+        "confidence": 0.9568933248519897,
+        "source": "ml+validated"
+      },
+      "mean": -46.98379695887508,
+      "stddev": 48.56204546627953,
+      "coverage": [
+        {
+          "range": {
+            "gte": -74.011631125861,
+            "lte": -73.802314
+          }
+        },
+        {
+          "range": {
+            "gte": 40.61728571,
+            "lte": 40.87887971
+          }
+        }
+      ]
+    },
+    {
+      "name": "daysoperation",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/Enumeration"
+      ],
+      "missing_values_ratio": 0.4033096926713948,
+      "num_distinct_values": 75
+    },
+    {
+      "name": "hoursoperations",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [],
+      "missing_values_ratio": 0.4033096926713948,
+      "num_distinct_values": 226
+    },
+    {
+      "name": "season_begin",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/DateTime"
+      ],
+      "missing_values_ratio": 0.9985815602836879,
+      "num_distinct_values": 4
+    },
+    {
+      "name": "accepts_ebt",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/Boolean",
+        "http://schema.org/Enumeration"
+      ],
+      "missing_values_ratio": 0.4033096926713948,
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 4
+    },
+    {
+      "name": "open_year_round",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/Boolean",
+        "http://schema.org/Enumeration"
+      ],
+      "missing_values_ratio": 0.4033096926713948,
+      "unclean_values_ratio": 0.0018912529550827422,
+      "num_distinct_values": 9
+    },
+    {
+      "name": "nyc_dept_of_health_cooking",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/Boolean",
+        "http://schema.org/Enumeration"
+      ],
+      "missing_values_ratio": 0.40283687943262414,
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 4
+    }
+  ],
+  "nb_spatial_columns": 5,
+  "nb_temporal_columns": 2,
+  "nb_categorical_columns": 4,
+  "nb_numerical_columns": 1,
+  "types": [
+    "categorical",
+    "numerical",
+    "spatial",
+    "temporal"
+  ],
+  "spatial_coverage": [
+    {
+      "type": "latlong",
+      "column_names": [
+        "latitude",
+        "longitude"
+      ],
+      "column_indexes": [
+        5,
+        6
+      ],
+      "geohashes4": [
+        {
+          "hash": "121130320221",
+          "number": 50
+        },
+        {
+          "hash": "121130320220",
+          "number": 142
+        },
+        {
+          "hash": "121130320223",
+          "number": 69
+        },
+        {
+          "hash": "121130320222",
+          "number": 13
+        },
+        {
+          "hash": "121130320232",
+          "number": 57
+        },
+        {
+          "hash": "121130322000",
+          "number": 1
+        },
+        {
+          "hash": "121130231320",
+          "number": 45
+        },
+        {
+          "hash": "121130231321",
+          "number": 88
+        },
+        {
+          "hash": "121130231323",
+          "number": 74
+        },
+        {
+          "hash": "121130231331",
+          "number": 78
+        },
+        {
+          "hash": "121130231330",
+          "number": 109
+        },
+        {
+          "hash": "121130231333",
+          "number": 29
+        },
+        {
+          "hash": "121130231332",
+          "number": 33
+        },
+        {
+          "hash": "121130231313",
+          "number": 7
+        },
+        {
+          "hash": "121130231312",
+          "number": 29
+        },
+        {
+          "hash": "121130231302",
+          "number": 23
+        },
+        {
+          "hash": "121130231300",
+          "number": 12
+        },
+        {
+          "hash": "121130231303",
+          "number": 7
+        },
+        {
+          "hash": "121130231231",
+          "number": 12
+        },
+        {
+          "hash": "121130231211",
+          "number": 8
+        },
+        {
+          "hash": "121130233110",
+          "number": 27
+        },
+        {
+          "hash": "121130233111",
+          "number": 12
+        },
+        {
+          "hash": "121130233113",
+          "number": 8
+        },
+        {
+          "hash": "121130233112",
+          "number": 1
+        },
+        {
+          "hash": "121130233101",
+          "number": 6
+        },
+        {
+          "hash": "121130233011",
+          "number": 22
+        },
+        {
+          "hash": "123332233323",
+          "number": 4
+        },
+        {
+          "hash": "303312013101",
+          "number": 1
+        },
+        {
+          "hash": "301332013321",
+          "number": 1
+        },
+        {
+          "hash": "301332120001",
+          "number": 1
+        },
+        {
+          "hash": "200323121101",
+          "number": 54
+        },
+        {
+          "hash": "200323121100",
+          "number": 8
+        },
+        {
+          "hash": "200323121113",
+          "number": 4
+        },
+        {
+          "hash": "200323121110",
+          "number": 16
+        },
+        {
+          "hash": "200323121112",
+          "number": 12
+        },
+        {
+          "hash": "200323121111",
+          "number": 4
+        },
+        {
+          "hash": "200323103322",
+          "number": 35
+        },
+        {
+          "hash": "200323103323",
+          "number": 20
+        },
+        {
+          "hash": "200323103320",
+          "number": 25
+        },
+        {
+          "hash": "200323103321",
+          "number": 19
+        },
+        {
+          "hash": "200323103330",
+          "number": 25
+        },
+        {
+          "hash": "200323103333",
+          "number": 4
+        },
+        {
+          "hash": "200323103332",
+          "number": 9
+        },
+        {
+          "hash": "200323103331",
+          "number": 2
+        },
+        {
+          "hash": "200323103302",
+          "number": 4
+        },
+        {
+          "hash": "200323103233",
+          "number": 12
+        },
+        {
+          "hash": "200323103231",
+          "number": 6
+        },
+        {
+          "hash": "200323103230",
+          "number": 5
+        },
+        {
+          "hash": "200323103202",
+          "number": 2
+        },
+        {
+          "hash": "200323103221",
+          "number": 1
+        },
+        {
+          "hash": "200323112223",
+          "number": 1
+        },
+        {
+          "hash": "200323112222",
+          "number": 11
+        },
+        {
+          "hash": "200323112220",
+          "number": 2
+        },
+        {
+          "hash": "200323112221",
+          "number": 1
+        },
+        {
+          "hash": "200323112203",
+          "number": 3
+        },
+        {
+          "hash": "200323112202",
+          "number": 3
+        },
+        {
+          "hash": "200323130002",
+          "number": 2
+        }
+      ],
+      "ranges": [
+        {
+          "range": {
+            "type": "envelope",
+            "coordinates": [
+              [
+                -74.011631125861,
+                40.8797
+              ],
+              [
+                -73.802314,
+                40.609951
+              ]
+            ]
+          }
+        },
+        {
+          "range": {
+            "type": "envelope",
+            "coordinates": [
+              [
+                40.61728571,
+                -73.8036027959
+              ],
+              [
+                40.8727862821,
+                -74.01186697
+              ]
+            ]
+          }
+        }
+      ],
+      "number": 1259
+    }
+  ],
+  "temporal_coverage": [
+    {
+      "type": "datetime",
+      "column_names": [
+        "year"
+      ],
+      "column_indexes": [
+        0
+      ],
+      "column_types": [
+        "http://schema.org/DateTime"
+      ],
+      "ranges": [
+        {
+          "range": {
+            "gte": 1230768000.0,
+            "lte": 1356998400.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1388534400.0,
+            "lte": 1514764800.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1546300800.0,
+            "lte": 1735689600.0
+          }
+        }
+      ],
+      "temporal_resolution": "year"
+    },
+    {
+      "type": "datetime",
+      "column_names": [
+        "season_begin"
+      ],
+      "column_indexes": [
+        9
+      ],
+      "column_types": [
+        "http://schema.org/DateTime"
+      ],
+      "ranges": [
+        {
+          "range": {
+            "gte": 1593561600.0,
+            "lte": 1593561600.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1655337600.0,
+            "lte": 1655337600.0
+          }
+        },
+        {
+          "range": {
+            "gte": 1655424000.0,
+            "lte": 1655424000.0
+          }
+        }
+      ],
+      "temporal_resolution": "day"
+    }
+  ],
+  "attribute_keywords": [
+    "year",
+    "marketname",
+    "borough",
+    "streetaddress",
+    "community_district",
+    "community",
+    "district",
+    "latitude",
+    "longitude",
+    "daysoperation",
+    "hoursoperations",
+    "season_begin",
+    "season",
+    "begin",
+    "accepts_ebt",
+    "accepts",
+    "ebt",
+    "open_year_round",
+    "open",
+    "year",
+    "round",
+    "nyc_dept_of_health_cooking",
+    "nyc",
+    "dept",
+    "of",
+    "health",
+    "cooking"
+  ],
+  "_profiling_times": {
+    "steps": {
+      "1_load_data": 0.0126154157333076,
+      "2_geo_batch_predict": 0.18538941629230976,
+      "3_process_columns": 0.30655966605991125,
+      "4_latlong_pairing": 4.354212433099747e-05,
+      "5_spatial_coverage": 0.01859687501564622,
+      "6_temporal_coverage": 0.012646500021219254
+    },
+    "total": 3.045020875055343
+  },
+  "dataset_name": "farmers_markets",
+  "output_mode": "raw"
+}

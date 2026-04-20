@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas Lake - hydrants</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 32px;
+      line-height: 1.45;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 12px 0 24px;
+    }
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+    }
+    .muted {
+      color: #6b7280;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    .hero-stats {
+      display: grid;
+      gap: 12px;
+    }
+    .stat-box, .metric-chip {
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .stat-box .label, .metric-chip .label, .link-list .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .stat-box .value, .metric-chip .value {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111827;
+    }
+    .section {
+      margin-top: 24px;
+    }
+    .section-copy, .lead, .subtle {
+      color: #4b5563;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #0f766e;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    h1, h2, h3, h4 {
+      color: #111827;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .dataset-card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .card-top {
+      margin-bottom: 14px;
+    }
+    .card-top h3 {
+      margin: 0 0 4px;
+    }
+    .subtle {
+      margin: 0;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .card-section {
+      margin-top: 14px;
+    }
+    .card-section p {
+      margin: 0;
+    }
+    .card-section h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+    .link-list, .geo-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .link-list li, .geo-list li {
+      margin: 6px 0;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      background: #f3f4f6;
+      padding: 8px 10px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 0;
+    }
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .compact-meta {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f8fafc;
+      padding: 10px 12px;
+    }
+    .compact-meta .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .compact-meta .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .card-action {
+      margin-top: 16px;
+      font-weight: 600;
+    }
+    .action-panel {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .action-button {
+      border: 0;
+      border-radius: 999px;
+      background: #0f766e;
+      color: #ffffff;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .action-button:hover {
+      background: #115e59;
+    }
+    .action-detail {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .status-card {
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .status-card .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+    .status-card .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .inline-report {
+      margin-top: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .inline-report summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #111827;
+    }
+    .is-hidden {
+      display: none;
+    }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.2fr) minmax(240px, 0.8fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .bar-chart {
+      display: grid;
+      gap: 10px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 180px) minmax(140px, 1fr) 56px;
+      gap: 10px;
+      align-items: center;
+    }
+    .bar-label, .bar-value {
+      font-size: 13px;
+      color: #374151;
+    }
+    .bar-track {
+      background: #e5e7eb;
+      border-radius: 999px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      background: #0f766e;
+      height: 100%;
+      border-radius: 999px;
+    }
+    a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<p><a href='../index.html'>&larr; Back to index</a></p><h1>hydrants</h1><h2>Basic Info</h2><table><tr><th>Dataset</th><td>hydrants</td></tr><tr><th>Source Title</th><td>Hydrants</td></tr><tr><th>Source Dataset ID</th><td>5bgh-vtsn</td></tr><tr><th>Rows</th><td>5000</td></tr><tr><th>Columns</th><td>8</td></tr><tr><th>Description</th><td>NYCDEP Citywide Hydrants</td></tr><tr><th>Rows Updated</th><td>2025-12-18 10:30:28</td></tr><tr><th>View Modified</th><td>2025-12-18 10:30:09</td></tr><tr><th>Contains</th><td>point, borough_code, latitude, longitude</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>5000</td></tr><tr><th>Profiled Rows</th><td>5000</td></tr><tr><th>Columns</th><td>8</td></tr><tr><th>Spatial Columns</th><td>3</td></tr><tr><th>Numerical Columns</th><td>4</td></tr><tr><th>Dataset Types</th><td>numerical, spatial</td></tr><tr><th>Attribute Keywords</th><td>the_geom, the, geom, boro, unitid, point_x, point, x, point_y, point, y, cb</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>the_geom</th><th>boro</th><th>unitid</th><th>point_x</th><th>point_y</th><th>cb</th><th>latitude</th><th>longitude</th></tr></thead><tbody><tr><td>POINT (-73.79456804377382 40.77221777714884)</td><td>4</td><td>H425919a</td><td>1041150.586</td><td>220683.273</td><td>407</td><td>40.7722168</td><td>-73.79457092</td></tr><tr><td>POINT (-73.91289250895464 40.64434661766513)</td><td>3</td><td>H325449</td><td>1008423.396</td><td>174041.245</td><td>318</td><td>40.64434814</td><td>-73.9128952</td></tr><tr><td>POINT (-73.95303997851815 40.72505714515936)</td><td>3</td><td>H307276</td><td>997266.219</td><td>203437.906</td><td>301</td><td>40.72505569</td><td>-73.95304108</td></tr><tr><td>POINT (-73.99463256503688 40.69398892775767)</td><td>3</td><td>H301843</td><td>985738.421</td><td>192115.373</td><td>302</td><td>40.6939888</td><td>-73.99462891</td></tr><tr><td>POINT (-73.93569187481359 40.73528872722269)</td><td>4</td><td>H439410</td><td>1002071.97</td><td>207168.6435</td><td>402</td><td>40.73529053</td><td>-73.93569183</td></tr><tr><td>POINT (-73.91147293739287 40.63402697951728)</td><td>3</td><td>H328476</td><td>1008821.144</td><td>170281.918</td><td>318</td><td>40.63402557</td><td>-73.91147614</td></tr><tr><td>POINT (-73.94400116043501 40.6773924260893)</td><td>3</td><td>H315750</td><td>999782.669</td><td>186073.704</td><td>308</td><td>40.67739105</td><td>-73.94400024</td></tr><tr><td>POINT (-74.14396635619805 40.56425342130275)</td><td>5</td><td>H509011</td><td>944249.62625</td><td>144882.07825</td><td>503</td><td>40.56425476</td><td>-74.14396667</td></tr><tr><td>POINT (-73.72485402779134 40.75377740880686)</td><td>4</td><td>H417730</td><td>1060481.036</td><td>214017.841</td><td>411</td><td>40.75377655</td><td>-73.72485352</td></tr><tr><td>POINT (-73.72888277862388 40.695674559216215)</td><td>4</td><td>H403465</td><td>1059430.365</td><td>192845.796</td><td>413</td><td>40.6956749</td><td>-73.72888184</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>5</span></div><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:40%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>point</span><div class='bar-track'><div class='bar-fill' style='width:20%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>number</td><td>5</td></tr><tr><td>text</td><td>2</td></tr><tr><td>point</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>4</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:25%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>latitude</span><div class='bar-track'><div class='bar-fill' style='width:25%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>longitude</span><div class='bar-track'><div class='bar-fill' style='width:25%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>point</span><div class='bar-track'><div class='bar-fill' style='width:25%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>4</td></tr><tr><td>borough_code</td><td>1</td></tr><tr><td>latitude</td><td>1</td></tr><tr><td>longitude</td><td>1</td></tr><tr><td>point</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>the_geom</td><td>point</td><td>point</td><td>GeoCoordinates</td><td></td><td>point</td><td>0.9736379981040955</td><td></td></tr><tr><td>boro</td><td>borough_code</td><td>number</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td></td></tr><tr><td>unitid</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td></td></tr><tr><td>point_x</td><td>Float</td><td>number</td><td>Float</td><td></td><td></td><td></td><td></td></tr><tr><td>point_y</td><td>Float</td><td>number</td><td>Float</td><td></td><td></td><td></td><td></td></tr><tr><td>cb</td><td>Integer</td><td>text</td><td>Integer</td><td></td><td></td><td></td><td></td></tr><tr><td>latitude</td><td>latitude</td><td>number</td><td>Float</td><td>latitude</td><td>latitude</td><td>0.6021340489387512</td><td></td></tr><tr><td>longitude</td><td>longitude</td><td>number</td><td>Float</td><td>longitude</td><td>longitude</td><td>0.9541847109794617</td><td></td></tr></tbody></table></div><h2>Files</h2><table><tr><th>Raw Data</th><td><a href='../../../data/hydrants.csv'>Raw CSV</a></td></tr><tr><th>Final Metadata</th><td><a href='../../../output/metadata_hydrants_wrapped.json'>Final metadata JSON</a></td></tr><tr><th>Final Geo Results</th><td><a href='../../../output/geo_classifier_results_hydrants_wrapped.csv'>Final geo results CSV</a></td></tr><tr><th>Summary</th><td><a href='../../tables/hydrants/summary.json'>Summary JSON</a></td></tr></table><script>
+function toggleLakePanel(id) {
+  const node = document.getElementById(id);
+  if (!node) return;
+  node.classList.toggle('is-hidden');
+}
+</script></body></html>

@@ -1,0 +1,16 @@
+{
+  "dataset_name": "wifi_hotspots",
+  "row_count": 3319,
+  "column_count": 29,
+  "geo_labels_wrapped": [
+    "address",
+    "borough_code",
+    "city",
+    "latitude",
+    "longitude",
+    "x_coord",
+    "y_coord",
+    "zip5"
+  ],
+  "wrapper_changed_count": 8
+}

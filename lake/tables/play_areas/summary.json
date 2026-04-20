@@ -1,0 +1,12 @@
+{
+  "dataset_name": "play_areas",
+  "row_count": 300,
+  "column_count": 14,
+  "geo_labels_wrapped": [
+    "address",
+    "borough_code",
+    "multi-polygon",
+    "zip5"
+  ],
+  "wrapper_changed_count": 4
+}

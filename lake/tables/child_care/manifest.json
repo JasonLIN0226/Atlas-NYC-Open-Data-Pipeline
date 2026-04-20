@@ -1,0 +1,14 @@
+{
+  "dataset_name": "child_care",
+  "source_metadata_path": "source_metadata/nyc_open_data/child_care.json",
+  "raw_data_path": "data/child_care.csv",
+  "metadata_raw_path": "output/metadata_child_care_raw.json",
+  "metadata_wrapped_path": "output/metadata_child_care_wrapped.json",
+  "geo_results_wrapped_path": "output/geo_classifier_results_child_care_wrapped.csv",
+  "sample_path": "lake/tables/child_care/sample.csv",
+  "nb_rows": 2734,
+  "nb_columns": 20,
+  "has_wrapped_metadata": true,
+  "has_raw_metadata": true,
+  "has_source_metadata": true
+}

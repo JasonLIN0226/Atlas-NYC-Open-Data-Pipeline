@@ -1,0 +1,11 @@
+{
+  "dataset_name": "commonplace",
+  "row_count": 5000,
+  "column_count": 21,
+  "geo_labels_wrapped": [
+    "bin",
+    "borough_code",
+    "point"
+  ],
+  "wrapper_changed_count": 4
+}

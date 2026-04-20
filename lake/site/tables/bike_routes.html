@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas Lake - bike_routes</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 32px;
+      line-height: 1.45;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 12px 0 24px;
+    }
+    th, td {
+      border: 1px solid #d1d5db;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f3f4f6;
+    }
+    .muted {
+      color: #6b7280;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    .hero-stats {
+      display: grid;
+      gap: 12px;
+    }
+    .stat-box, .metric-chip {
+      border: 1px solid #d1d5db;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .stat-box .label, .metric-chip .label, .link-list .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .stat-box .value, .metric-chip .value {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111827;
+    }
+    .section {
+      margin-top: 24px;
+    }
+    .section-copy, .lead, .subtle {
+      color: #4b5563;
+    }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: #0f766e;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    h1, h2, h3, h4 {
+      color: #111827;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .dataset-card {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .card-top {
+      margin-bottom: 14px;
+    }
+    .card-top h3 {
+      margin: 0 0 4px;
+    }
+    .subtle {
+      margin: 0;
+      font-size: 13px;
+      word-break: break-all;
+    }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .card-section {
+      margin-top: 14px;
+    }
+    .card-section p {
+      margin: 0;
+    }
+    .card-section h4 {
+      margin: 0 0 8px;
+      font-size: 14px;
+    }
+    .link-list, .geo-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .link-list li, .geo-list li {
+      margin: 6px 0;
+    }
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      background: #f3f4f6;
+      padding: 8px 10px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 0;
+    }
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .compact-meta {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background: #f8fafc;
+      padding: 10px 12px;
+    }
+    .compact-meta .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .compact-meta .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .card-action {
+      margin-top: 16px;
+      font-weight: 600;
+    }
+    .action-panel {
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+    .action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .action-button {
+      border: 0;
+      border-radius: 999px;
+      background: #0f766e;
+      color: #ffffff;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .action-button:hover {
+      background: #115e59;
+    }
+    .action-detail {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .status-card {
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .status-card .label {
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #6b7280;
+      margin-bottom: 6px;
+    }
+    .status-card .value {
+      color: #111827;
+      font-size: 14px;
+      word-break: break-word;
+    }
+    .inline-report {
+      margin-top: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      background: #ffffff;
+      padding: 12px 14px;
+    }
+    .inline-report summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #111827;
+    }
+    .is-hidden {
+      display: none;
+    }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 1.2fr) minmax(240px, 0.8fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .bar-chart {
+      display: grid;
+      gap: 10px;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 180px) minmax(140px, 1fr) 56px;
+      gap: 10px;
+      align-items: center;
+    }
+    .bar-label, .bar-value {
+      font-size: 13px;
+      color: #374151;
+    }
+    .bar-track {
+      background: #e5e7eb;
+      border-radius: 999px;
+      height: 10px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      background: #0f766e;
+      height: 100%;
+      border-radius: 999px;
+    }
+    a {
+      color: #0f766e;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .analysis-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<p><a href='../index.html'>&larr; Back to index</a></p><h1>bike_routes</h1><h2>Basic Info</h2><table><tr><th>Dataset</th><td>bike_routes</td></tr><tr><th>Source Title</th><td>New York City Bike Routes</td></tr><tr><th>Source Dataset ID</th><td>mzxg-pwib</td></tr><tr><th>Rows</th><td>5000</td></tr><tr><th>Columns</th><td>25</td></tr><tr><th>Description</th><td>The New York City Department of Transportation (NYC DOT) builds and manages bicycle facilities across the five boroughs, alongside other City agencies, New York State, and external partners. This dataset contain records of the current and historic network of designated bicycle routes and facilities, including bicycle facility type and relevant street information represented as line segments. Additional information about NYC DOT&#x27;s commitment to safe all-ages and abilities bicycling, along with data about the growth of bicycling in NYC and PDF maps of the current network can be found at: https://www.nyc.gov/html/dot/html/bicyclists/bicyclists.shtml</td></tr><tr><th>Rows Updated</th><td>2025-08-18 11:46:02</td></tr><tr><th>View Modified</th><td>2025-08-18 11:46:20</td></tr><tr><th>Contains</th><td>multi-line, borough_code, address</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>5000</td></tr><tr><th>Profiled Rows</th><td>3473</td></tr><tr><th>Columns</th><td>25</td></tr><tr><th>Spatial Columns</th><td>3</td></tr><tr><th>Temporal Columns</th><td>2</td></tr><tr><th>Categorical Columns</th><td>11</td></tr><tr><th>Numerical Columns</th><td>4</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial, temporal</td></tr><tr><th>Attribute Keywords</th><td>the_geom, the, geom, segmentid, bikeid, prevbikeid, status, boro, street, fromstreet, tostreet, onoffst</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>the_geom</th><th>segmentid</th><th>bikeid</th><th>prevbikeid</th><th>status</th><th>boro</th><th>street</th><th>fromstreet</th><th>tostreet</th><th>onoffst</th><th>facilitycl</th><th>allclasses</th><th>bikedir</th><th>lanecount</th><th>ft_facilit</th><th>tf_facilit</th><th>ft2facilit</th><th>tf2facilit</th><th>instdate</th><th>ret_date</th><th>grnwy</th><th>gwsystem</th><th>gwsys2</th><th>spur</th><th>gwyjuris</th></tr></thead><tbody><tr><td>MULTILINESTRING ((-74.192429667502 40.521741493622734, -74.1951900846669 40.519998791664904))</td><td>2579.0</td><td>6562.0</td><td>NA</td><td>Current</td><td>5</td><td>HYLAN BLVD</td><td>HOLTEN AV</td><td>LUTEN AV</td><td>ON</td><td>II</td><td>II</td><td>2</td><td>2</td><td>Curbside Buffered</td><td>Curbside Buffered</td><td></td><td></td><td>2007-10-01T00:00:00.000</td><td></td><td>Greenway</td><td>Staten Island Waterfront</td><td></td><td>Main Alignment</td><td>NYCDOT</td></tr><tr><td>MULTILINESTRING ((-74.16031384424598 40.589027527481505, -74.16126386213497 40.58807622459019))</td><td>5033.0</td><td>4272.0</td><td></td><td>Current</td><td>5</td><td>MERRYMOUNT ST</td><td>RICHMOND HILL RD</td><td>ROCKLAND AV</td><td>ON</td><td>II</td><td>II</td><td>2</td><td>2</td><td>Conventional Buffered</td><td>Conventional Buffered</td><td></td><td></td><td>2021-08-12T00:00:00.000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>MULTILINESTRING ((-74.12631986979562 40.635252327237055, -74.12595665955017 40.63385870272121))</td><td>10186.0</td><td>2107.0</td><td>NA</td><td>Current</td><td>5</td><td>CLOVE ROAD</td><td>RICHMOND TERR</td><td>FOREST AVE</td><td>ON</td><td>III</td><td>III</td><td>2</td><td>2</td><td>Shared</td><td>Shared</td><td></td><td></td><td>2015-09-11T00:00:00.000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>MULTILINESTRING ((-74.00973537112554 40.64566683581713, -74.01031893929684 40.645106662743515))</td><td>20716.0</td><td>942.0</td><td>NA</td><td>Current</td><td>3</td><td>5 AV</td><td>23 ST</td><td>50 ST</td><td>ON</td><td>III</td><td>III</td><td>2</td><td>2</td><td>Shared</td><td>Shared</td><td></td><td></td><td>2013-07-02T00:00:00.000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>MULTILINESTRING ((-74.02089492413252 40.62654299227484, -74.02098508259608 40.626323879369245))</td><td>126857.0</td><td>951.0</td><td>NA</td><td>Current</td><td>3</td><td>6 AVENUE</td><td>67 ST</td><td>FT HAMILTON PKWY</td><td>ON</td><td>III</td><td>III</td><td>2</td><td>2</td><td>Shared</td><td>Shared</td><td></td><td></td><td>2015-06-29T00:00:00.000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>MULTILINESTRING ((-73.82393140603143 40.617240411111595, -73.8238304161413 40.61710686648486, -73.82365215910158 40.61692686777038, -73.82357130837005 40.616842497121716, -73.8232792516581 40.61649663865359, -73.82252246340727 40.61561088569937, -73.82252062110807 40.615610882854945))</td><td>235096.0</td><td>1821.0</td><td>NA</td><td>Current</td><td>4</td><td>CROSS BAY BLVD GREENWAY</td><td>CHANNEL BR</td><td>CROSS BAY BLVD</td><td>OFF</td><td>I</td><td>I</td><td>2</td><td>2</td><td>Protected</td><td>Protected</td><td></td><td></td><td>2006-01-01T00:00:00.000</td><td></td><td>Greenway</td><td>Jamaica Bay</td><td></td><td>Main Alignment</td><td>NPS</td></tr><tr><td>MULTILINESTRING ((-73.93214331495858 40.82829368077881, -73.93163292871641 40.8283324149012, -73.93162906807261 40.82833305556602, -73.93162526651865 40.828333876364795, -73.93162153946963 40.82833487370473, -73.93161790115518 40.82833604399221, -73.9316143646195 40.82833738363308, -73.93161094409504 40.82833888633227, -73.93160765262778 40.82834054669457, -73.93160450207913 40.82834235842354, -73.93160150549711 40.82834431432303, -73.93159867237298 40.82834640719466, -73.93159601694022 40.82834862984295, -73.93159354632196 40.82835097236664, -73.93159127119603 40.828353426667654))</td><td>241492.0</td><td>3037.0</td><td>NA</td><td>Current</td><td>2</td><td>MACOMBS DAM BR</td><td>BRONX BOROUGH BOUNDARY</td><td>E 161 ST</td><td>OFF</td><td>L</td><td>L</td><td>2</td><td>0</td><td>Link</td><td>Link</td><td></td><td></td><td>2002-06-01T00:00:00.000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>MULTILINESTRING ((-73.93119598604675 40.82841807759464, -73.93100801338996 40.82845319176629))</td><td>241528.0</td><td>3037.0</td><td>NA</td><td>Current</td><td>2</td><td>MACOMBS DAM BR</td><td>BRONX BOROUGH BOUNDARY</td><td>E 161 ST</td><td>OFF</td><td>L</td><td>L</td><td>2</td><td>0</td><td>Link</td><td>Link</td><td></td><td></td><td>2002-06-01T00:00:00.000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>MULTILINESTRING ((-73.9298279575857 40.78500914341205, -73.9298303026912 40.784987282462886, -73.92983243574152 40.784965409678016, -73.92983435910725 40.784943524158294, -73.92983607160005 40.78492162950511, -73.92983757322014 40.784899725718404, -73.92983886396576 40.78487781459921, -73.92983994265258 40.784855896146844, -73.92984081164816 40.78483397216373, -73.92984146858144 40.7848120444494, -73.92984191582111 40.784790113905856, -73.92984215099801 40.784768180531636, -73.92984217410942 40.78474624702823, -73.92984198752406 40.784724314297605, -73.9298415888727 40.78470238233829))</td><td>245184.0</td><td>3025.0</td><td>NA</td><td>Current</td><td>1</td><td>RFK BR</td><td>MN QN BOUNDARY</td><td>HELL GATE CR</td><td>OFF</td><td>L</td><td>L</td><td>2</td><td>0</td><td>Link</td><td>Link</td><td></td><td></td><td>1936-07-11T00:00:00.000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>MULTILINESTRING ((-73.96727126729671 40.763480237585505, -73.9656695988094 40.762804555298516))</td><td>36279.0</td><td>4376.0</td><td></td><td>Current</td><td>1</td><td>E 61 ST</td><td>1 AV</td><td>5 AV</td><td>ON</td><td>I</td><td>I</td><td>L</td><td>1</td><td></td><td>Protected</td><td></td><td></td><td>1900-01-01T00:00:00.000</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>18</span></div><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:22%'></div></div><span class='bar-value'>4</span></div><div class='bar-row'><span class='bar-label'>calendar_date</span><div class='bar-track'><div class='bar-fill' style='width:11%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>multiline</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>text</td><td>18</td></tr><tr><td>number</td><td>4</td></tr><tr><td>calendar_date</td><td>2</td></tr><tr><td>multiline</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>22</span></div><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>multi-line</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>22</td></tr><tr><td>address</td><td>1</td></tr><tr><td>borough_code</td><td>1</td></tr><tr><td>multi-line</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>the_geom</td><td>multi-line</td><td>multiline</td><td>GeoShape</td><td></td><td>multi-line</td><td>0.9182242751121521</td><td>Geometry column used for mapping</td></tr><tr><td>segmentid</td><td>Integer</td><td>number</td><td>Integer</td><td>identifier</td><td></td><td></td><td>From LION 23C. A number of up to seven digits that identifies each segment of a street or a non-street feature represented in the LION file. Nonstandard Segment IDs reflect a difference in geometry from LION 23C and existing conditions.</td></tr><tr><td>bikeid</td><td>Integer</td><td>number</td><td>Integer</td><td>identifier</td><td></td><td></td><td>A unique number that corresponds to one or more LION segments that share all other attributes.</td></tr><tr><td>prevbikeid</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>A unique number that identifies the related record of a Bike ID that has been superseded.</td></tr><tr><td>status</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Indicates whether a record represents a current (i.e. existing) bicycle facility or a retired (i.e. historic) one.</td></tr><tr><td>boro</td><td>borough_code</td><td>number</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td>A 1-digit code identifying the borough in which the left side of the street segment is located.</td></tr><tr><td>street</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.7772088646888733</td><td>Name of the street or facility.</td></tr><tr><td>fromstreet</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>The street, when available, or where no street is present a park, waterfront line, land mark, or nearest street adjacent to the beginning of the facility route.</td></tr><tr><td>tostreet</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>The street, when available, or where no street is present a park, waterfront line, land mark, or nearest street adjacent to the end of the facility route.</td></tr><tr><td>onoffst</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Indicates whether a bicycle facility is on-street or off-street.</td></tr><tr><td>facilitycl</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>The HIGHEST facility class found along a segment.</td></tr><tr><td>allclasses</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Lists ALL bicycle facility classes (separated by commas) that are present on a given segment.</td></tr><tr><td>bikedir</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Travel direction based on LION geometry.</td></tr><tr><td>lanecount</td><td>Integer</td><td>number</td><td>Integer</td><td></td><td></td><td></td><td>The number of bike lanes on a segment in any direction.</td></tr><tr><td>ft_facilit</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>From-To Facility. Type of bicycle facility in the direction of the STARTpoint TO ENDpoint of the segment.</td></tr><tr><td>tf_facilit</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>To-From Facility. Type of bicycle facility in the direction of the ENDpoint TO STARTpoint of the segment.</td></tr><tr><td>ft2facilit</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>From-To Facility 2. (On segments with lane counts of 3 or greater, or multiple parallel bicycle facilities) Type of bicycle facility in the direction of the STARTpoint TO ENDpoint of the segment.</td></tr><tr><td>tf2facilit</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>To-From Facility 2. (On segments with lane counts of 3 or greater, or multiple parallel bicycle facilities) Type of bicycle facility in the direction of the ENDpoint TO STARTpoint of the segment.</td></tr><tr><td>instdate</td><td>Text</td><td>calendar_date</td><td>Text</td><td>DateTime</td><td></td><td></td><td>Install Date. The approximate or exact date when the installation or modification of a bicycle facility was completed.</td></tr><tr><td>ret_date</td><td>Text</td><td>calendar_date</td><td>Text</td><td>DateTime</td><td></td><td></td><td>Retired Date. The date when a BIKE ID or a bike facility was removed or superseded by a new facility or Bike ID.</td></tr><tr><td>grnwy</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Greenway. Indicates the presence of a greenway alignment.
+</td></tr><tr><td>gwsystem</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>Greenway System Name</td></tr><tr><td>gwsys2</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>Secondary Greenway System Name, if an alignment includes two greenway systems.
+</td></tr><tr><td>spur</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Greenway Spur Name, if the bikeway includes a secondary alignment.
+</td></tr><tr><td>gwyjuris</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Greenway Jurisdiction
+</td></tr></tbody></table></div><h2>Files</h2><table><tr><th>Raw Data</th><td><a href='../../../data/bike_routes.csv'>Raw CSV</a></td></tr><tr><th>Final Metadata</th><td><a href='../../../output/metadata_bike_routes_wrapped.json'>Final metadata JSON</a></td></tr><tr><th>Final Geo Results</th><td><a href='../../../output/geo_classifier_results_bike_routes_wrapped.csv'>Final geo results CSV</a></td></tr><tr><th>Summary</th><td><a href='../../tables/bike_routes/summary.json'>Summary JSON</a></td></tr></table><script>
+function toggleLakePanel(id) {
+  const node = document.getElementById(id);
+  if (!node) return;
+  node.classList.toggle('is-hidden');
+}
+</script></body></html>

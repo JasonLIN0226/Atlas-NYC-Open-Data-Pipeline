@@ -1,0 +1,14 @@
+{
+  "dataset_name": "farmers_markets",
+  "source_metadata_path": "source_metadata/nyc_open_data/farmers_markets.json",
+  "raw_data_path": "data/farmers_markets.csv",
+  "metadata_raw_path": "output/metadata_farmers_markets_raw.json",
+  "metadata_wrapped_path": "output/metadata_farmers_markets_wrapped.json",
+  "geo_results_wrapped_path": "output/geo_classifier_results_farmers_markets_wrapped.csv",
+  "sample_path": "lake/tables/farmers_markets/sample.csv",
+  "nb_rows": 2115,
+  "nb_columns": 13,
+  "has_wrapped_metadata": true,
+  "has_raw_metadata": true,
+  "has_source_metadata": true
+}

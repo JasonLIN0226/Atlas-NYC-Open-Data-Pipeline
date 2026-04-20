@@ -1,0 +1,15 @@
+dataset_name,name,label,confidence,wrapper_reason
+street_trees,address,address,0.9289531111717224,
+street_trees,zipcode,zip5,0.99,zip_name_and_pattern
+street_trees,zip_city,city,0.95,city_name_and_values
+street_trees,borocode,borough_code,0.7853758335113525,
+street_trees,boroname,borough_code,0.95,admin_name_and_values
+street_trees,nta,borough_code,0.95,admin_name_and_values
+street_trees,nta_name,borough_code,0.95,admin_name_and_values
+street_trees,longitude,longitude,0.9556649327278137,
+street_trees,x_sp,x_coord,0.8954465985298157,
+street_trees,y_sp,y_coord,0.95,y_coord_name_and_range
+street_trees,council_district,borough_code,0.95,admin_name_and_values
+street_trees,census_tract,borough_code,0.95,admin_name_and_values
+street_trees,bin,bin,0.99,bin_name_and_pattern
+street_trees,bbl,bbl,0.99,bbl_name_and_pattern

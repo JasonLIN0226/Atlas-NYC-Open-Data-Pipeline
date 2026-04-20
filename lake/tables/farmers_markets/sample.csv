@@ -1,0 +1,11 @@
+year,marketname,borough,streetaddress,community_district,latitude,longitude,daysoperation,hoursoperations,season_begin,accepts_ebt,open_year_round,nyc_dept_of_health_cooking
+2025,175th Street Greenmarket,Manhattan,W. 175th St. bet. Wadsworth Ave. & Broadway,112,40.845948,-73.937811,Thursday,8 a.m. - 4p.m.,,Yes,No,No
+2025,4th Ave Sunset Park Greenmarket,Brooklyn,4th Ave. 60th St.,307,40.647975,-74.003744,Saturday,8 a.m. - 3 p.m.,,Yes,No,No
+2025,57th Street Greenmarket,Manhattan,57th St. & 10th Ave.,104,40.769117,-73.988559,Saturday,8 a.m. - 3 p.m.,,Yes,No,No
+2025,79th Street Greenmarket,Manhattan,79th St. & Columbus Ave.,107,40.782295,-73.975244,Sunday,9 a.m. - 4 p.m,,Yes,Yes,No
+2025,7th Ave Sunset Park Greenmarket,Brooklyn,7th Ave. & 44th St.,307,40.645841,-74.002402,Saturday,8 a.m. - 3 p.m.,,Yes,Yes,No
+2025,82nd Street Greenmarket,Manhattan,82nd St. bet. 1st & York Aves,108,40.774292,-73.951262,Saturday,9 a.m. - 2:30 p.m.,,Yes,Yes,No
+2025,97th Street Greenmarket,Manhattan,97th St. bet. Columbus & Amsterdam Aves,107,40.794003,-73.96807,Friday,8 a.m. - 2 p.m.,,Yes,Yes,No
+2025,Abingdon Square Park Greenmarket,Manhattan,Hudson St. & W 12th St.,102,40.737553,-74.005687,Saturday,8 a.m. - 2 p.m.,,Yes,Yes,No
+2025,Bartel-Pritchard Square Greenmarket,Brooklyn,Prospect Park W at 15th St.,355,40.661354,-73.96968,Wednesday & Sunday (starting 5/5),8 a.m. - 2 p.m. (W); 9 a.m. - 2 p.m. (SU),,Yes,Yes (Wednesday),No
+2025,Bay Ridge Greenmarket,Brooklyn,3rd Ave. & 95th St.,310,40.61781,-74.03338,Saturday,8 a.m. - 3 p.m.,,Yes,No,No

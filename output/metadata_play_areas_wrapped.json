@@ -1,0 +1,369 @@
+{
+  "size": 186219,
+  "nb_rows": 300,
+  "nb_profiled_rows": 300,
+  "nb_columns": 14,
+  "columns": [
+    {
+      "name": "acres",
+      "structural_type": "http://schema.org/Float",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "mean": 0.7054050708,
+      "stddev": 0.3934998532240016,
+      "coverage": [
+        {
+          "range": {
+            "gte": 0.10300949,
+            "lte": 0.62547312
+          }
+        },
+        {
+          "range": {
+            "gte": 0.65767633,
+            "lte": 1.28651372
+          }
+        }
+      ]
+    },
+    {
+      "name": "address",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/address"
+      ],
+      "geo_classifier": {
+        "label": "address",
+        "confidence": 0.9416104555130005,
+        "source": "ml"
+      }
+    },
+    {
+      "name": "borough",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/Enumeration",
+        "http://schema.org/AdministrativeArea"
+      ],
+      "missing_values_ratio": 0.0033333333333333335,
+      "num_distinct_values": 6,
+      "geo_classifier": {
+        "label": "borough_code",
+        "confidence": 0.95,
+        "source": "wrapper"
+      },
+      "wrapper_reason": "admin_name_and_values"
+    },
+    {
+      "name": "communityboard",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/AdministrativeArea"
+      ],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 55,
+      "mean": 325.33666666666664,
+      "stddev": 110.17714519001758,
+      "coverage": [
+        {
+          "range": {
+            "gte": 103.0,
+            "lte": 212.0
+          }
+        },
+        {
+          "range": {
+            "gte": 302.0,
+            "lte": 318.0
+          }
+        },
+        {
+          "range": {
+            "gte": 402.0,
+            "lte": 503.0
+          }
+        }
+      ],
+      "geo_classifier": {
+        "label": "borough_code",
+        "confidence": 0.95,
+        "source": "wrapper"
+      },
+      "wrapper_reason": "admin_name_and_values"
+    },
+    {
+      "name": "councildistrict",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/AdministrativeArea"
+      ],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 48,
+      "mean": 30.673333333333332,
+      "stddev": 13.763476627977717,
+      "coverage": [
+        {
+          "range": {
+            "gte": 1.0,
+            "lte": 20.0
+          }
+        },
+        {
+          "range": {
+            "gte": 23.0,
+            "lte": 37.0
+          }
+        },
+        {
+          "range": {
+            "gte": 38.0,
+            "lte": 51.0
+          }
+        }
+      ],
+      "geo_classifier": {
+        "label": "borough_code",
+        "confidence": 0.95,
+        "source": "wrapper"
+      },
+      "wrapper_reason": "admin_name_and_values"
+    },
+    {
+      "name": "dsfbldgcode",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [],
+      "num_distinct_values": 300
+    },
+    {
+      "name": "gispropnum",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [],
+      "num_distinct_values": 300
+    },
+    {
+      "name": "jurisdiction",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/Enumeration"
+      ],
+      "num_distinct_values": 1
+    },
+    {
+      "name": "location",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/address"
+      ],
+      "geo_classifier": {
+        "label": "address",
+        "confidence": 0.9389908313751221,
+        "source": "ml"
+      }
+    },
+    {
+      "name": "nys_assembly",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 64,
+      "mean": 51.86666666666667,
+      "stddev": 18.05128496503473,
+      "coverage": [
+        {
+          "range": {
+            "gte": 24.0,
+            "lte": 44.0
+          }
+        },
+        {
+          "range": {
+            "gte": 46.0,
+            "lte": 65.0
+          }
+        },
+        {
+          "range": {
+            "gte": 70.0,
+            "lte": 87.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "nys_senate",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 29,
+      "mean": 21.946666666666665,
+      "stddev": 8.721075366923252,
+      "coverage": [
+        {
+          "range": {
+            "gte": 10.0,
+            "lte": 18.0
+          }
+        },
+        {
+          "range": {
+            "gte": 19.0,
+            "lte": 27.0
+          }
+        },
+        {
+          "range": {
+            "gte": 30.0,
+            "lte": 59.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "us_congress",
+      "structural_type": "http://schema.org/Integer",
+      "semantic_types": [],
+      "unclean_values_ratio": 0.0,
+      "num_distinct_values": 14,
+      "mean": 9.33,
+      "stddev": 3.1918281073182304,
+      "coverage": [
+        {
+          "range": {
+            "gte": 3.0,
+            "lte": 7.0
+          }
+        },
+        {
+          "range": {
+            "gte": 8.0,
+            "lte": 11.0
+          }
+        },
+        {
+          "range": {
+            "gte": 12.0,
+            "lte": 15.0
+          }
+        }
+      ]
+    },
+    {
+      "name": "zipcode",
+      "structural_type": "http://schema.org/Text",
+      "semantic_types": [
+        "http://schema.org/address"
+      ],
+      "unclean_values_ratio": 0.0,
+      "missing_values_ratio": 0.0033333333333333335,
+      "num_distinct_values": 121,
+      "mean": 10929.207357859532,
+      "stddev": 753.4997345582188,
+      "coverage": [
+        {
+          "range": {
+            "gte": 10002.0,
+            "lte": 10472.0
+          }
+        },
+        {
+          "range": {
+            "gte": 11203.0,
+            "lte": 11433.0
+          }
+        }
+      ],
+      "geo_classifier": {
+        "label": "zip5",
+        "confidence": 0.99,
+        "source": "wrapper"
+      },
+      "wrapper_reason": "zip_name_and_pattern"
+    },
+    {
+      "name": "multipolygon",
+      "structural_type": "http://schema.org/GeoShape",
+      "semantic_types": [],
+      "geo_classifier": {
+        "label": "multi-polygon",
+        "confidence": 0.9170850515365601,
+        "source": "ml+validated"
+      }
+    }
+  ],
+  "nb_spatial_columns": 3,
+  "nb_categorical_columns": 2,
+  "nb_numerical_columns": 7,
+  "types": [
+    "categorical",
+    "numerical",
+    "spatial"
+  ],
+  "attribute_keywords": [
+    "acres",
+    "address",
+    "borough",
+    "communityboard",
+    "councildistrict",
+    "dsfbldgcode",
+    "gispropnum",
+    "jurisdiction",
+    "location",
+    "nys_assembly",
+    "nys",
+    "assembly",
+    "nys_senate",
+    "nys",
+    "senate",
+    "us_congress",
+    "us",
+    "congress",
+    "zipcode",
+    "multipolygon"
+  ],
+  "_profiling_times": {
+    "steps": {
+      "1_load_data": 0.007606083992868662,
+      "2_geo_batch_predict": 0.22696783300489187,
+      "3_process_columns": 0.128089957870543,
+      "4_latlong_pairing": 3.0667055398225784e-05,
+      "5_spatial_coverage": 5.000270903110504e-06,
+      "6_temporal_coverage": 1.4579854905605316e-06
+    },
+    "total": 3.0360894170589745
+  },
+  "_wrapper_summary": {
+    "changed_count": 4,
+    "changes": [
+      {
+        "name": "borough",
+        "action": "set",
+        "old_label": null,
+        "new_label": "borough_code",
+        "reason": "admin_name_and_values"
+      },
+      {
+        "name": "communityboard",
+        "action": "set",
+        "old_label": null,
+        "new_label": "borough_code",
+        "reason": "admin_name_and_values"
+      },
+      {
+        "name": "councildistrict",
+        "action": "set",
+        "old_label": null,
+        "new_label": "borough_code",
+        "reason": "admin_name_and_values"
+      },
+      {
+        "name": "zipcode",
+        "action": "set",
+        "old_label": null,
+        "new_label": "zip5",
+        "reason": "zip_name_and_pattern"
+      }
+    ]
+  },
+  "dataset_name": "play_areas",
+  "output_mode": "wrapped"
+}

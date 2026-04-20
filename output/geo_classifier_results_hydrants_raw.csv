@@ -1,0 +1,4 @@
+dataset_name,name,label,confidence,wrapper_reason
+hydrants,the_geom,point,0.9736379981040955,
+hydrants,latitude,latitude,0.6021340489387512,
+hydrants,longitude,longitude,0.9541847109794617,

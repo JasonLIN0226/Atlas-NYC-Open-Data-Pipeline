@@ -1,0 +1,7 @@
+dataset_name,name,label,confidence,wrapper_reason
+child_care,address,address,0.9551912546157837,
+child_care,borough,borough,0.7691224813461304,
+child_care,bin,x_coord,0.631073534488678,
+child_care,council_district,borough_code,0.6179280281066895,
+child_care,nta_code,borough_code,0.6818498969078064,
+child_care,longitude,longitude,0.9568421244621277,

@@ -1,0 +1,12 @@
+{
+  "dataset_name": "farmers_markets",
+  "row_count": 2115,
+  "column_count": 13,
+  "geo_labels_wrapped": [
+    "address",
+    "borough",
+    "borough_code",
+    "longitude"
+  ],
+  "wrapper_changed_count": 1
+}

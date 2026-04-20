@@ -1,0 +1,1012 @@
+{
+  "id": "5bgh-vtsn",
+  "name": "Hydrants",
+  "assetType": "dataset",
+  "attribution": "Department of Environmental Protection (DEP)",
+  "averageRating": 0,
+  "category": "Environment",
+  "createdAt": 1495559866,
+  "description": "NYCDEP Citywide Hydrants",
+  "diciBackend": false,
+  "displayType": "table",
+  "downloadCount": 1986,
+  "hideFromCatalog": false,
+  "hideFromDataJson": false,
+  "locked": false,
+  "newBackend": true,
+  "numberOfComments": 0,
+  "oid": 39133148,
+  "provenance": "official",
+  "publicationAppendEnabled": false,
+  "publicationDate": 1671138058,
+  "publicationGroup": 14227484,
+  "publicationStage": "published",
+  "rowsUpdatedAt": 1766071828,
+  "rowsUpdatedBy": "d2qk-x9en",
+  "tableId": 18992353,
+  "totalTimesRated": 0,
+  "viewCount": 1898,
+  "viewLastModified": 1766071809,
+  "viewType": "tabular",
+  "approvals": [
+    {
+      "reviewedAt": 1672596826,
+      "reviewedAutomatically": true,
+      "state": "approved",
+      "submissionId": 6639967,
+      "submissionObject": "public_audience_request",
+      "submissionOutcome": "change_audience",
+      "submittedAt": 1672596826,
+      "targetAudience": "public",
+      "workflowId": 2285,
+      "submissionDetails": {
+        "permissionType": "READ"
+      },
+      "submissionOutcomeApplication": {
+        "endedAt": 1672596826,
+        "failureCount": 0,
+        "startedAt": 1672596826,
+        "status": "success"
+      },
+      "submitter": {
+        "id": "tesm-mkng",
+        "displayName": "sympah"
+      }
+    }
+  ],
+  "clientContext": {
+    "clientContextVariables": [],
+    "inheritedVariables": {}
+  },
+  "columns": [
+    {
+      "id": 569146934,
+      "name": "the_geom",
+      "dataTypeName": "point",
+      "description": "",
+      "fieldName": "the_geom",
+      "position": 1,
+      "renderTypeName": "point",
+      "tableColumnId": 124719178,
+      "cachedContents": {
+        "non_null": "109725",
+        "null": "0",
+        "top": [
+          {
+            "item": {
+              "coordinates": [
+                -73.93461839992058,
+                40.6348749726156
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.92080876651255,
+                40.778857561034116
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.9387295268939,
+                40.66304283632509
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.91471356882094,
+                40.771280095817104
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.80378772886766,
+                40.589623374670104
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.94650941374094,
+                40.691226519612506
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.94372795620782,
+                40.83609642550701
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -74.1557886691125,
+                40.532846614041354
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -74.17287018102729,
+                40.59686859442352
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.9693498051531,
+                40.763172879477764
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -74.08503348725034,
+                40.61352558884696
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.91400470425542,
+                40.70251341810029
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.91382692961739,
+                40.7061736928854
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -74.14009662277664,
+                40.5636346891749
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.83116875907106,
+                40.787272820039014
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.92772460996207,
+                40.74732029304702
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.9698341622186,
+                40.675515342354586
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.95287677889416,
+                40.64482996508273
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.85258777189696,
+                40.869516522264064
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          },
+          {
+            "item": {
+              "coordinates": [
+                -73.9580235696954,
+                40.698863886940835
+              ],
+              "type": "Point"
+            },
+            "count": "1"
+          }
+        ],
+        "count": "109725",
+        "cardinality": "109725"
+      },
+      "format": {}
+    },
+    {
+      "id": 569146936,
+      "name": "BORO",
+      "dataTypeName": "number",
+      "description": "",
+      "fieldName": "boro",
+      "position": 2,
+      "renderTypeName": "number",
+      "tableColumnId": 124719180,
+      "cachedContents": {
+        "non_null": "109725",
+        "largest": "6",
+        "null": "0",
+        "top": [
+          {
+            "item": "4",
+            "count": "35009"
+          },
+          {
+            "item": "3",
+            "count": "31249"
+          },
+          {
+            "item": "2",
+            "count": "15261"
+          },
+          {
+            "item": "5",
+            "count": "14846"
+          },
+          {
+            "item": "1",
+            "count": "13348"
+          },
+          {
+            "item": "6",
+            "count": "12"
+          }
+        ],
+        "smallest": "1",
+        "count": "109725",
+        "cardinality": "109725"
+      },
+      "format": {}
+    },
+    {
+      "id": 569146937,
+      "name": "UNITID",
+      "dataTypeName": "text",
+      "description": "",
+      "fieldName": "unitid",
+      "position": 3,
+      "renderTypeName": "text",
+      "tableColumnId": 124719179,
+      "cachedContents": {
+        "non_null": "109725",
+        "largest": "H600055",
+        "null": "0",
+        "top": [
+          {
+            "item": "H206048",
+            "count": "1"
+          },
+          {
+            "item": "H429526",
+            "count": "1"
+          },
+          {
+            "item": "H503917",
+            "count": "1"
+          },
+          {
+            "item": "H332722",
+            "count": "1"
+          },
+          {
+            "item": "H211199",
+            "count": "1"
+          },
+          {
+            "item": "H502134",
+            "count": "1"
+          },
+          {
+            "item": "H111483",
+            "count": "1"
+          },
+          {
+            "item": "H318600",
+            "count": "1"
+          },
+          {
+            "item": "H203484",
+            "count": "1"
+          },
+          {
+            "item": "H438678",
+            "count": "1"
+          },
+          {
+            "item": "H101578",
+            "count": "1"
+          },
+          {
+            "item": "H324888",
+            "count": "1"
+          },
+          {
+            "item": "H514894",
+            "count": "1"
+          },
+          {
+            "item": "H315120",
+            "count": "1"
+          },
+          {
+            "item": "H101837",
+            "count": "1"
+          },
+          {
+            "item": "H445849",
+            "count": "1"
+          },
+          {
+            "item": "H100181",
+            "count": "1"
+          },
+          {
+            "item": "H326164",
+            "count": "1"
+          },
+          {
+            "item": "H432640",
+            "count": "1"
+          },
+          {
+            "item": "H404622",
+            "count": "1"
+          }
+        ],
+        "smallest": "H100001",
+        "count": "109725",
+        "cardinality": "109725"
+      },
+      "format": {}
+    },
+    {
+      "id": 569146938,
+      "name": "POINT_X",
+      "dataTypeName": "number",
+      "description": "",
+      "fieldName": "point_x",
+      "position": 4,
+      "renderTypeName": "number",
+      "tableColumnId": 124719181,
+      "cachedContents": {
+        "non_null": "109725",
+        "largest": "1067259.086",
+        "null": "0",
+        "top": [
+          {
+            "item": "1012048.584",
+            "count": "3"
+          },
+          {
+            "item": "1011260.74",
+            "count": "2"
+          },
+          {
+            "item": "1003996.527",
+            "count": "2"
+          },
+          {
+            "item": "955276.289",
+            "count": "2"
+          },
+          {
+            "item": "1015462.138",
+            "count": "2"
+          },
+          {
+            "item": "1029507.301",
+            "count": "2"
+          },
+          {
+            "item": "1015365.739",
+            "count": "2"
+          },
+          {
+            "item": "1008093.944",
+            "count": "2"
+          },
+          {
+            "item": "1033552.044",
+            "count": "2"
+          },
+          {
+            "item": "1028754.244",
+            "count": "2"
+          },
+          {
+            "item": "985482.111",
+            "count": "2"
+          },
+          {
+            "item": "992204.348",
+            "count": "2"
+          },
+          {
+            "item": "1032985.061",
+            "count": "2"
+          },
+          {
+            "item": "999062.894",
+            "count": "2"
+          },
+          {
+            "item": "996524.637",
+            "count": "2"
+          },
+          {
+            "item": "992435.81",
+            "count": "2"
+          },
+          {
+            "item": "989875.318",
+            "count": "2"
+          },
+          {
+            "item": "1002584.968",
+            "count": "2"
+          },
+          {
+            "item": "1004181.554",
+            "count": "2"
+          },
+          {
+            "item": "989740.227",
+            "count": "2"
+          }
+        ],
+        "smallest": "913407.59575",
+        "count": "109725",
+        "cardinality": "109725"
+      },
+      "format": {}
+    },
+    {
+      "id": 569146939,
+      "name": "POINT_Y",
+      "dataTypeName": "number",
+      "description": "",
+      "fieldName": "point_y",
+      "position": 5,
+      "renderTypeName": "number",
+      "tableColumnId": 124719182,
+      "cachedContents": {
+        "non_null": "109725",
+        "largest": "271895.365",
+        "null": "0",
+        "top": [
+          {
+            "item": "167506.06",
+            "count": "2"
+          },
+          {
+            "item": "198697.859",
+            "count": "2"
+          },
+          {
+            "item": "172446.243",
+            "count": "2"
+          },
+          {
+            "item": "144659.731",
+            "count": "2"
+          },
+          {
+            "item": "186582.028",
+            "count": "2"
+          },
+          {
+            "item": "147056.014",
+            "count": "2"
+          },
+          {
+            "item": "168395.945",
+            "count": "2"
+          },
+          {
+            "item": "221460.643",
+            "count": "2"
+          },
+          {
+            "item": "220343.339",
+            "count": "2"
+          },
+          {
+            "item": "188939.569",
+            "count": "2"
+          },
+          {
+            "item": "170996.792",
+            "count": "2"
+          },
+          {
+            "item": "166954.683",
+            "count": "2"
+          },
+          {
+            "item": "137381.411",
+            "count": "2"
+          },
+          {
+            "item": "200839.98575",
+            "count": "2"
+          },
+          {
+            "item": "248348.741",
+            "count": "2"
+          },
+          {
+            "item": "177871.871",
+            "count": "2"
+          },
+          {
+            "item": "196934.623",
+            "count": "2"
+          },
+          {
+            "item": "185205.484",
+            "count": "2"
+          },
+          {
+            "item": "161034.198",
+            "count": "2"
+          },
+          {
+            "item": "168817.555",
+            "count": "2"
+          }
+        ],
+        "smallest": "120826.591",
+        "count": "109725",
+        "cardinality": "109725"
+      },
+      "format": {}
+    },
+    {
+      "id": 569146940,
+      "name": "CB",
+      "dataTypeName": "text",
+      "description": "",
+      "fieldName": "cb",
+      "position": 6,
+      "renderTypeName": "text",
+      "tableColumnId": 124719183,
+      "cachedContents": {
+        "non_null": "109715",
+        "largest": "595",
+        "null": "10",
+        "top": [
+          {
+            "item": "503",
+            "count": "5650"
+          },
+          {
+            "item": "501",
+            "count": "4777"
+          },
+          {
+            "item": "413",
+            "count": "4457"
+          },
+          {
+            "item": "502",
+            "count": "4385"
+          },
+          {
+            "item": "407",
+            "count": "4100"
+          },
+          {
+            "item": "412",
+            "count": "3875"
+          },
+          {
+            "item": "411",
+            "count": "3324"
+          },
+          {
+            "item": "318",
+            "count": "3126"
+          },
+          {
+            "item": "301",
+            "count": "2698"
+          },
+          {
+            "item": "305",
+            "count": "2673"
+          },
+          {
+            "item": "405",
+            "count": "2537"
+          },
+          {
+            "item": "315",
+            "count": "2532"
+          },
+          {
+            "item": "408",
+            "count": "2514"
+          },
+          {
+            "item": "414",
+            "count": "2244"
+          },
+          {
+            "item": "410",
+            "count": "2197"
+          },
+          {
+            "item": "212",
+            "count": "2184"
+          },
+          {
+            "item": "401",
+            "count": "2181"
+          },
+          {
+            "item": "210",
+            "count": "2034"
+          },
+          {
+            "item": "311",
+            "count": "1941"
+          },
+          {
+            "item": "312",
+            "count": "1938"
+          }
+        ],
+        "smallest": "101",
+        "count": "109725",
+        "cardinality": "109725"
+      },
+      "format": {}
+    },
+    {
+      "id": 569146941,
+      "name": "LATITUDE",
+      "dataTypeName": "number",
+      "description": "",
+      "fieldName": "latitude",
+      "position": 7,
+      "renderTypeName": "number",
+      "tableColumnId": 124719184,
+      "cachedContents": {
+        "non_null": "109725",
+        "largest": "40.91292191",
+        "null": "0",
+        "top": [
+          {
+            "item": "40.67649841",
+            "count": "9"
+          },
+          {
+            "item": "40.69606018",
+            "count": "8"
+          },
+          {
+            "item": "40.60956192",
+            "count": "8"
+          },
+          {
+            "item": "40.6690979",
+            "count": "8"
+          },
+          {
+            "item": "40.73796463",
+            "count": "8"
+          },
+          {
+            "item": "40.74869156",
+            "count": "8"
+          },
+          {
+            "item": "40.63472366",
+            "count": "7"
+          },
+          {
+            "item": "40.63770294",
+            "count": "7"
+          },
+          {
+            "item": "40.71564102",
+            "count": "7"
+          },
+          {
+            "item": "40.67749023",
+            "count": "7"
+          },
+          {
+            "item": "40.72706604",
+            "count": "7"
+          },
+          {
+            "item": "40.61131287",
+            "count": "7"
+          },
+          {
+            "item": "40.60590744",
+            "count": "7"
+          },
+          {
+            "item": "40.71714401",
+            "count": "7"
+          },
+          {
+            "item": "40.73183823",
+            "count": "7"
+          },
+          {
+            "item": "40.77865219",
+            "count": "7"
+          },
+          {
+            "item": "40.61727142",
+            "count": "7"
+          },
+          {
+            "item": "40.60379791",
+            "count": "7"
+          },
+          {
+            "item": "40.70230865",
+            "count": "7"
+          },
+          {
+            "item": "40.82073593",
+            "count": "7"
+          }
+        ],
+        "smallest": "40.49804688",
+        "count": "109725",
+        "cardinality": "109725"
+      },
+      "format": {}
+    },
+    {
+      "id": 569146942,
+      "name": "LONGITUDE",
+      "dataTypeName": "number",
+      "description": "",
+      "fieldName": "longitude",
+      "position": 8,
+      "renderTypeName": "number",
+      "tableColumnId": 124719185,
+      "cachedContents": {
+        "non_null": "109725",
+        "largest": "-73.70044708",
+        "null": "0",
+        "top": [
+          {
+            "item": "-73.94019318",
+            "count": "13"
+          },
+          {
+            "item": "-73.90210724",
+            "count": "12"
+          },
+          {
+            "item": "-73.89430237",
+            "count": "12"
+          },
+          {
+            "item": "-73.92260742",
+            "count": "11"
+          },
+          {
+            "item": "-73.96148682",
+            "count": "11"
+          },
+          {
+            "item": "-73.91069031",
+            "count": "11"
+          },
+          {
+            "item": "-73.98061371",
+            "count": "11"
+          },
+          {
+            "item": "-73.94480133",
+            "count": "11"
+          },
+          {
+            "item": "-73.98468018",
+            "count": "10"
+          },
+          {
+            "item": "-73.92800903",
+            "count": "10"
+          },
+          {
+            "item": "-73.92560577",
+            "count": "10"
+          },
+          {
+            "item": "-73.93468475",
+            "count": "10"
+          },
+          {
+            "item": "-73.93569183",
+            "count": "10"
+          },
+          {
+            "item": "-73.90937805",
+            "count": "10"
+          },
+          {
+            "item": "-73.94031525",
+            "count": "10"
+          },
+          {
+            "item": "-73.90206146",
+            "count": "10"
+          },
+          {
+            "item": "-73.9484024",
+            "count": "10"
+          },
+          {
+            "item": "-73.98240662",
+            "count": "10"
+          },
+          {
+            "item": "-73.94274902",
+            "count": "10"
+          },
+          {
+            "item": "-73.91312408",
+            "count": "10"
+          }
+        ],
+        "smallest": "-74.25475554",
+        "count": "109725",
+        "cardinality": "109725"
+      },
+      "format": {}
+    }
+  ],
+  "grants": [
+    {
+      "inherited": false,
+      "type": "viewer",
+      "flags": [
+        "public"
+      ]
+    }
+  ],
+  "metadata": {
+    "attachments": [
+      {
+        "filename": "DEP_Hydrants_Data_Dictionary.xlsx",
+        "assetId": "155ffeb1-e93e-4d03-b6ea-0c64ce703b4c",
+        "name": "DEP_Hydrants_Data_Dictionary.xlsx"
+      },
+      {
+        "filename": "DEPHYDRANTS.zip",
+        "assetId": "504e7b2f-2cc8-4eab-8122-73e683233c7d",
+        "name": "DEPHYDRANTS.zip"
+      }
+    ],
+    "custom_fields": {
+      "Update": {
+        "Automation": "Yes",
+        "Date Made Public": "8/17/2017",
+        "Update Frequency": "Annually"
+      },
+      "Dataset Information": {
+        "Agency": "Department of Environmental Protection (DEP)"
+      }
+    },
+    "availableDisplayTypes": [
+      "table",
+      "fatrow",
+      "page"
+    ]
+  },
+  "owner": {
+    "id": "5fuc-pqz2",
+    "displayName": "NYC OpenData",
+    "profileImageUrlLarge": "/api/users/5fuc-pqz2/profile_images/LARGE",
+    "profileImageUrlMedium": "/api/users/5fuc-pqz2/profile_images/THUMB",
+    "profileImageUrlSmall": "/api/users/5fuc-pqz2/profile_images/TINY",
+    "screenName": "NYC OpenData",
+    "type": "interactive",
+    "flags": [
+      "acceptedEula",
+      "mayBeStoriesCoOwner"
+    ]
+  },
+  "query": {},
+  "rights": [
+    "read"
+  ],
+  "tableAuthor": {
+    "id": "5fuc-pqz2",
+    "displayName": "NYC OpenData",
+    "profileImageUrlLarge": "/api/users/5fuc-pqz2/profile_images/LARGE",
+    "profileImageUrlMedium": "/api/users/5fuc-pqz2/profile_images/THUMB",
+    "profileImageUrlSmall": "/api/users/5fuc-pqz2/profile_images/TINY",
+    "screenName": "NYC OpenData",
+    "type": "interactive",
+    "flags": [
+      "acceptedEula",
+      "mayBeStoriesCoOwner"
+    ]
+  },
+  "tags": [
+    "2018od4a-video"
+  ],
+  "flags": [
+    "default",
+    "ownerMayBeContacted",
+    "restorable",
+    "restorePossibleForType"
+  ],
+  "_requested_view_id": "6pui-xhxz",
+  "_resolved_view_id": "5bgh-vtsn"
+}

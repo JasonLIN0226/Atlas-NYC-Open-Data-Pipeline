@@ -1,0 +1,11 @@
+dataset_name,name,label,confidence,wrapper_reason
+child_care,address,address,0.9551912546157837,
+child_care,borough,borough,0.7691224813461304,
+child_care,zipcode,zip5,0.99,zip_name_and_pattern
+child_care,bin,bin,0.99,bin_name_and_pattern
+child_care,bbl,bbl,0.99,bbl_name_and_pattern
+child_care,community_board,borough_code,0.95,admin_name_and_values
+child_care,council_district,borough_code,0.6179280281066895,
+child_care,census_tract,borough_code,0.95,admin_name_and_values
+child_care,nta_code,borough_code,0.6818498969078064,
+child_care,longitude,longitude,0.9568421244621277,

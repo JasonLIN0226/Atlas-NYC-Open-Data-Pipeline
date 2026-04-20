@@ -1,0 +1,86 @@
+{
+  "dataset_name": "hydrants",
+  "status": "missing_local_files",
+  "action": "refresh_data_and_reprofile",
+  "changes_vs_local": [
+    "missing_local_metadata",
+    "missing_raw_csv",
+    "missing_final_metadata",
+    "missing_final_geo_results",
+    "rows_updated_at",
+    "view_last_modified",
+    "schema",
+    "source_metadata"
+  ],
+  "data_change": {
+    "rows_updated_at_changed": null,
+    "csv_hash_changed": true,
+    "previous_csv": null,
+    "current_csv": {
+      "size_bytes": 5001,
+      "sha256": "8a1b817f5825bb7463690b791387e1c99e47dd824fc2eba82a23871244f9e4dc",
+      "row_count": 5000
+    }
+  },
+  "source_metadata_change": {
+    "top_level_fields_changed": [
+      {
+        "field": "name",
+        "before": null,
+        "after": "NYCDEP Citywide Hydrants"
+      },
+      {
+        "field": "description",
+        "before": null,
+        "after": "NYCDEP Citywide Hydrants"
+      },
+      {
+        "field": "category",
+        "before": null,
+        "after": "Environment"
+      },
+      {
+        "field": "tags",
+        "before": null,
+        "after": [
+          "2018od4a-video"
+        ]
+      },
+      {
+        "field": "rowsUpdatedAt",
+        "before": null,
+        "after": 1766071828
+      },
+      {
+        "field": "viewLastModified",
+        "before": null,
+        "after": 1733171607
+      },
+      {
+        "field": "displayType",
+        "before": null,
+        "after": "visualization_canvas_map"
+      },
+      {
+        "field": "assetType",
+        "before": null,
+        "after": "map"
+      },
+      {
+        "field": "publicationDate",
+        "before": null,
+        "after": 1495556614
+      },
+      {
+        "field": "publicationStage",
+        "before": null,
+        "after": "published"
+      }
+    ],
+    "schema": {
+      "added_columns": [],
+      "removed_columns": [],
+      "changed_columns": []
+    }
+  }
+}

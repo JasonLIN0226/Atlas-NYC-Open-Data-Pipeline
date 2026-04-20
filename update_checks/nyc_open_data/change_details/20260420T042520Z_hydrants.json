@@ -1,0 +1,69 @@
+{
+  "dataset_name": "hydrants",
+  "status": "missing_local_files",
+  "action": "refresh_data_and_reprofile",
+  "changes_vs_local": [
+    "missing_final_metadata",
+    "missing_final_geo_results",
+    "view_last_modified",
+    "schema",
+    "source_metadata"
+  ],
+  "data_change": {
+    "rows_updated_at_changed": false,
+    "csv_hash_changed": true,
+    "previous_csv": {
+      "size_bytes": 5001,
+      "sha256": "8a1b817f5825bb7463690b791387e1c99e47dd824fc2eba82a23871244f9e4dc",
+      "row_count": 5000
+    },
+    "current_csv": {
+      "size_bytes": 613742,
+      "sha256": "18ee50e13e2e9fce6ba6dd77aab8c92a6365cddd340e165e91d659eed4894e72",
+      "row_count": 5000
+    }
+  },
+  "source_metadata_change": {
+    "top_level_fields_changed": [
+      {
+        "field": "name",
+        "before": "NYCDEP Citywide Hydrants",
+        "after": "Hydrants"
+      },
+      {
+        "field": "viewLastModified",
+        "before": 1733171607,
+        "after": 1766071809
+      },
+      {
+        "field": "displayType",
+        "before": "visualization_canvas_map",
+        "after": "table"
+      },
+      {
+        "field": "assetType",
+        "before": "map",
+        "after": "dataset"
+      },
+      {
+        "field": "publicationDate",
+        "before": 1495556614,
+        "after": 1671138058
+      }
+    ],
+    "schema": {
+      "added_columns": [
+        "boro",
+        "cb",
+        "latitude",
+        "longitude",
+        "point_x",
+        "point_y",
+        "the_geom",
+        "unitid"
+      ],
+      "removed_columns": [],
+      "changed_columns": []
+    }
+  }
+}

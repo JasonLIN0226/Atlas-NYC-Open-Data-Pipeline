@@ -1,0 +1,11 @@
+{
+  "dataset_name": "ped_counts",
+  "row_count": 114,
+  "column_count": 113,
+  "geo_labels_wrapped": [
+    "address",
+    "borough",
+    "point"
+  ],
+  "wrapper_changed_count": 0
+}

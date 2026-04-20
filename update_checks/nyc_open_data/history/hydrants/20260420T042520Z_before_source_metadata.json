@@ -1,0 +1,207 @@
+{
+  "id": "6pui-xhxz",
+  "name": "NYCDEP Citywide Hydrants",
+  "assetType": "map",
+  "attribution": "Department of Environmental Protection (DEP)",
+  "averageRating": 0,
+  "category": "Environment",
+  "createdAt": 1495556614,
+  "description": "NYCDEP Citywide Hydrants",
+  "diciBackend": false,
+  "displayType": "visualization_canvas_map",
+  "downloadCount": 15090,
+  "hideFromCatalog": false,
+  "hideFromDataJson": false,
+  "indexUpdatedAt": 1536849203,
+  "locked": false,
+  "modifyingViewUid": "5bgh-vtsn",
+  "newBackend": true,
+  "numberOfComments": 0,
+  "oid": 26045469,
+  "provenance": "official",
+  "publicationAppendEnabled": false,
+  "publicationDate": 1495556614,
+  "publicationGroup": 14227484,
+  "publicationStage": "published",
+  "rowsUpdatedAt": 1766071828,
+  "rowsUpdatedBy": "d2qk-x9en",
+  "tableId": 18992353,
+  "totalTimesRated": 0,
+  "viewCount": 83226,
+  "viewLastModified": 1733171607,
+  "viewType": "tabular",
+  "approvals": [
+    {
+      "reviewedAt": 1502999070,
+      "reviewedAutomatically": true,
+      "state": "approved",
+      "submissionId": 1067663,
+      "submissionObject": "public_audience_request",
+      "submissionOutcome": "change_audience",
+      "submittedAt": 1502999070,
+      "targetAudience": "public",
+      "workflowId": 2285,
+      "submissionDetails": {
+        "permissionType": "READ"
+      },
+      "submissionOutcomeApplication": {
+        "failureCount": 0,
+        "status": "success"
+      },
+      "submitter": {
+        "id": "5fuc-pqz2",
+        "displayName": "NYC OpenData"
+      }
+    }
+  ],
+  "clientContext": {
+    "clientContextVariables": [],
+    "inheritedVariables": {}
+  },
+  "columns": [],
+  "displayFormat": {
+    "visualizationCanvasMetadata": {
+      "vifs": [
+        {
+          "configuration": {
+            "viewSourceDataLink": true,
+            "mapCenterAndZoom": {
+              "center": {
+                "lng": -73.97760115626365,
+                "lat": 40.705483734789766
+              },
+              "zoom": 8
+            },
+            "basemapOptions": {
+              "searchBoundaryLowerRightLongitude": -73.70044677749237,
+              "searchBoundaryUpperLeftLongitude": -74.25475553503492,
+              "searchBoundaryUpperLeftLatitude": 40.91292180155698,
+              "navigationControl": true,
+              "basemapStyle": "mapbox://styles/mapbox/basic-v9",
+              "geoCoderControl": true,
+              "geoLocateControl": true,
+              "searchBoundaryLowerRightLatitude": 40.498045668022556
+            },
+            "mapPitchAndBearing": {
+              "bearing": 0,
+              "pitch": 0
+            },
+            "datasetMetadata": false,
+            "panAndZoom": true,
+            "locateUser": false
+          },
+          "series": [
+            {
+              "visible": true,
+              "color": {
+                "primary": "#eb6900"
+              },
+              "mapOptions": {
+                "mapFlyoutTitleColumnName": "boro",
+                "mapType": "pointMap",
+                "additionalFlyoutColumns": [
+                  "unitid",
+                  "point_x",
+                  "point_y",
+                  "cb",
+                  "latitude",
+                  "longitude"
+                ]
+              },
+              "showLegend": true,
+              "type": "map",
+              "dataSource": {
+                "measure": {
+                  "aggregationFunction": "count"
+                },
+                "domain": "data.cityofnewyork.us",
+                "name": "Hydrants",
+                "source": "Hydrants",
+                "type": "socrata.soql",
+                "datasetUid": "5bgh-vtsn",
+                "dimension": {
+                  "columnName": "the_geom"
+                }
+              },
+              "primary": true
+            }
+          ],
+          "origin": {
+            "type": "visualization_canvas",
+            "url": "https://data.cityofnewyork.us/d/6pui-xhxz"
+          },
+          "format": {
+            "type": "visualization_interchange_format",
+            "version": 3
+          },
+          "description": "",
+          "id": "d85a46fc-62b9-485e-92e8-762f8285b3df",
+          "title": ""
+        }
+      ],
+      "version": 1
+    }
+  },
+  "grants": [
+    {
+      "inherited": false,
+      "type": "viewer",
+      "flags": [
+        "public"
+      ]
+    }
+  ],
+  "metadata": {
+    "custom_fields": {
+      "Update": {
+        "Automation": "Yes",
+        "Date Made Public": "8/17/2017",
+        "Update Frequency": "Annually"
+      },
+      "Dataset Information": {
+        "Agency": "Department of Environmental Protection (DEP)"
+      }
+    },
+    "availableDisplayTypes": [
+      "visualization"
+    ]
+  },
+  "owner": {
+    "id": "5fuc-pqz2",
+    "displayName": "NYC OpenData",
+    "profileImageUrlLarge": "/api/users/5fuc-pqz2/profile_images/LARGE",
+    "profileImageUrlMedium": "/api/users/5fuc-pqz2/profile_images/THUMB",
+    "profileImageUrlSmall": "/api/users/5fuc-pqz2/profile_images/TINY",
+    "screenName": "NYC OpenData",
+    "type": "interactive",
+    "flags": [
+      "acceptedEula",
+      "mayBeStoriesCoOwner"
+    ]
+  },
+  "query": {},
+  "rights": [
+    "read"
+  ],
+  "tableAuthor": {
+    "id": "5fuc-pqz2",
+    "displayName": "NYC OpenData",
+    "profileImageUrlLarge": "/api/users/5fuc-pqz2/profile_images/LARGE",
+    "profileImageUrlMedium": "/api/users/5fuc-pqz2/profile_images/THUMB",
+    "profileImageUrlSmall": "/api/users/5fuc-pqz2/profile_images/TINY",
+    "screenName": "NYC OpenData",
+    "type": "interactive",
+    "flags": [
+      "acceptedEula",
+      "mayBeStoriesCoOwner"
+    ]
+  },
+  "tags": [
+    "2018od4a-video"
+  ],
+  "flags": [
+    "ownerMayBeContacted",
+    "restorable",
+    "restorePossibleForType"
+  ]
+}

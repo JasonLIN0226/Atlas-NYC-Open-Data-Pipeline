@@ -1,0 +1,12 @@
+dataset_name,name,label,confidence,wrapper_reason
+libraries,the_geom,point,0.9762949347496033,
+libraries,name,address,0.8409149646759033,
+libraries,streetname,address,0.8029259443283081,
+libraries,city,city,0.95,city_name_and_values
+libraries,zip,zip5,0.99,zip_name_and_pattern
+libraries,url,address,0.6851733326911926,
+libraries,bin,bin,0.99,bin_name_and_pattern
+libraries,bbl,bbl,0.99,bbl_name_and_pattern
+libraries,x,x_coord,0.95,x_coord_xy_pair
+libraries,y,y_coord,0.95,y_coord_xy_pair
+libraries,borocode,borough_code,0.7537620067596436,

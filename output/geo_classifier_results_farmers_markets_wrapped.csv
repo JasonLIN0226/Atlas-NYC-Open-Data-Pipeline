@@ -1,0 +1,6 @@
+dataset_name,name,label,confidence,wrapper_reason
+farmers_markets,marketname,address,0.8787002563476562,
+farmers_markets,borough,borough,0.7746084332466125,
+farmers_markets,streetaddress,address,0.9543495774269104,
+farmers_markets,community_district,borough_code,0.95,admin_name_and_values
+farmers_markets,longitude,longitude,0.9568933248519897,

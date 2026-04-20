@@ -1,0 +1,8 @@
+dataset_name,name,label,confidence,wrapper_reason
+play_areas,address,address,0.9416104555130005,
+play_areas,borough,borough_code,0.95,admin_name_and_values
+play_areas,communityboard,borough_code,0.95,admin_name_and_values
+play_areas,councildistrict,borough_code,0.95,admin_name_and_values
+play_areas,location,address,0.9389908313751221,
+play_areas,zipcode,zip5,0.99,zip_name_and_pattern
+play_areas,multipolygon,multi-polygon,0.9170850515365601,
