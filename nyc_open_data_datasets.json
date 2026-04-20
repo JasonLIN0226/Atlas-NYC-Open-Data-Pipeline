@@ -1,0 +1,13 @@
+[
+  {"name": "commonplace", "resource_id": "t95h-5fsr"},
+  {"name": "nyc311", "resource_id": "76ig-c548"},
+  {"name": "ped_counts", "resource_id": "cqsj-cfgu"},
+  {"name": "play_areas", "resource_id": "bbtf-6p3c"},
+  {"name": "street_trees", "resource_id": "uvpi-gqnh"},
+  {"name": "wifi_hotspots", "resource_id": "yjub-udmw"},
+  {"name": "farmers_markets", "resource_id": "8vwk-6iz2"},
+  {"name": "bike_routes", "resource_id": "mzxg-pwib"},
+  {"name": "child_care", "resource_id": "gy3q-4tzp"},
+  {"name": "libraries", "resource_id": "feuq-due4"},
+  {"name": "hydrants", "resource_id": "6pui-xhxz"}
+]
