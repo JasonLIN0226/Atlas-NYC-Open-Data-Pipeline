@@ -19,7 +19,7 @@
     "source_title": "Active NYC Health Code Regulated Child Care Programs",
     "source_id": "gy3q-4tzp",
     "source_rows_updated_at": 1776553209,
-    "source_view_last_modified": 1776639603,
+    "source_view_last_modified": 1776726004,
     "raw_data_path": "data/child_care.csv",
     "source_metadata_path": "source_metadata/nyc_open_data/child_care.json",
     "metadata_wrapped_path": "output/metadata_child_care_wrapped.json",

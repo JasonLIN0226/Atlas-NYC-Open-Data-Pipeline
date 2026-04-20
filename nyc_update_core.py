@@ -20,18 +20,15 @@ SOURCE_COLUMN_FIELDS = (
     "position",
     "description",
 )
-TIMESTAMP_CHANGE_FIELDS = (
-    ("rows_updated_at", "rows_updated_at"),
-    ("view_last_modified", "view_last_modified"),
-    ("columns", "schema"),
+RAW_DATA_CHANGE_FIELDS = ("rows_updated_at", "columns")
+METADATA_CHANGE_FIELDS = (
+    "title",
+    "description",
+    "category",
+    "tags",
+    "view_last_modified",
 )
-SOURCE_METADATA_FIELDS = ("title", "description", "category", "tags")
-
-# Expected inputs passed in from the project adapter.
-PREVIOUS_REMOTE_STATE_KEY = "previous_remote"
-LOCAL_METADATA_KEY = "local_metadata"
-LOCAL_METADATA_EXISTS_KEY = "local_metadata_exists"
-MISSING_LOCAL_FILES_KEY = "missing_local_files"
+NEW_DATASET_RAW_FILE_KEY = "raw_csv"
 
 
 # Keep only the source fields used for update checks.
@@ -53,54 +50,62 @@ def summarize_source_metadata(metadata: dict | None) -> dict:
     }
 
 
-# Convert state differences into refresh triggers.
-def compare_states(
-    old: dict,
-    new: dict,
-    *,
-    local_missing: bool = False,
-    missing: list[str] | None = None,
-) -> list[str]:
-    changes = []
-    if local_missing:
-        changes.append("missing_local_metadata")
-
-    for name in missing or []:
-        changes.append(f"missing_{name}")
-
-    for field, label in TIMESTAMP_CHANGE_FIELDS:
-        if old.get(field) != new.get(field):
-            changes.append(label)
-
-    if any(old.get(field) != new.get(field) for field in SOURCE_METADATA_FIELDS):
-        changes.append("source_metadata")
-
-    return changes
+# Find which expected local files are missing.
+def find_missing_local_files(paths: dict[str, Path]) -> list[str]:
+    missing = []
+    for name, path in paths.items():
+        if name != "source_metadata" and not path.exists():
+            missing.append(name)
+    return missing
 
 
-# Map refresh triggers to a status label.
-def classify_status(changes: list[str]) -> str:
-    if not changes:
-        return "unchanged"
-    if any(change.startswith("missing_") for change in changes):
-        return "missing_local_files"
-    if "schema" in changes:
-        return "schema_changed"
-    if "rows_updated_at" in changes:
-        return "data_changed"
-    return "metadata_changed"
+# Detect a newly added dataset with no local source files.
+def is_new_dataset_case(local_metadata_exists: bool, missing_local_files: list[str]) -> bool:
+    return (not local_metadata_exists) and (NEW_DATASET_RAW_FILE_KEY in missing_local_files)
 
 
-# Map refresh triggers to a pipeline action.
-def classify_action(changes: list[str]) -> str:
-    if not changes:
-        return "no_action"
+# Build one refresh decision from local and remote metadata.
+def decide_refresh(local: dict, remote: dict, *, local_metadata_exists: bool, missing_local_files: list[str]) -> dict:
+    raw_reasons = []
+    metadata_reasons = []
 
-    has_missing_files = any(change.startswith("missing_") for change in changes)
-    if "schema" in changes or "rows_updated_at" in changes or has_missing_files:
-        return "refresh_data_and_reprofile"
+    if is_new_dataset_case(local_metadata_exists, missing_local_files):
+        raw_reasons.append("new_dataset")
+    elif not local_metadata_exists:
+        raw_reasons.append("local_metadata_missing")
+    for name in missing_local_files:
+        raw_reasons.append(f"missing_{name}")
 
-    return "refresh_source_metadata_and_rebuild_lake"
+    for field in RAW_DATA_CHANGE_FIELDS:
+        if local.get(field) != remote.get(field):
+            raw_reasons.append(field)
+
+    for field in METADATA_CHANGE_FIELDS:
+        if local.get(field) != remote.get(field):
+            metadata_reasons.append(field)
+
+    if raw_reasons:
+        return {
+            "status": "raw_data_changed",
+            "action": "refresh_raw_data",
+            "needs_refresh": True,
+            "changes_vs_local": raw_reasons,
+        }
+
+    if metadata_reasons:
+        return {
+            "status": "metadata_changed",
+            "action": "refresh_metadata",
+            "needs_refresh": True,
+            "changes_vs_local": metadata_reasons,
+        }
+
+    return {
+        "status": "unchanged",
+        "action": "no_action",
+        "needs_refresh": False,
+        "changes_vs_local": [],
+    }
 
 
 # Count datasets by status.
@@ -113,17 +118,18 @@ def summarize_results(results: list[dict]) -> dict:
 
 # Add readable time strings to report rows.
 def add_readable_times(results: list[dict]) -> list[dict]:
+    time_fields = ("rows_updated_at", "view_last_modified")
+    sources = ("local", "remote")
     updated = []
+
     for item in results:
         row = dict(item)
-        for prefix in ("local", "remote"):
-            row[f"{prefix}_rows_updated_at_readable"] = format_epoch(
-                row.get(f"{prefix}_rows_updated_at")
-            )
-            row[f"{prefix}_view_last_modified_readable"] = format_epoch(
-                row.get(f"{prefix}_view_last_modified")
-            )
+        for source in sources:
+            for field in time_fields:
+                key = f"{source}_{field}"
+                row[f"{key}_readable"] = format_epoch(row.get(key))
         updated.append(row)
+
     return updated
 
 
@@ -131,7 +137,6 @@ def add_readable_times(results: list[dict]) -> list[dict]:
 def check_dataset(
     *,
     dataset: dict,
-    previous_remote: dict,
     local_metadata: dict | None,
     local_metadata_exists: bool,
     missing_local_files: list[str],
@@ -139,47 +144,54 @@ def check_dataset(
 ) -> dict:
     dataset_name = dataset[DATASET_NAME_KEY]
     local = summarize_source_metadata(local_metadata)
+    new_dataset = is_new_dataset_case(local_metadata_exists, missing_local_files)
 
     try:
         remote_raw = metadata_fetcher(dataset[DATASET_RESOURCE_ID_KEY])
         remote = summarize_source_metadata(remote_raw)
         error = None
     except Exception as exc:
+        remote_raw = {}
         remote = {}
         error = str(exc)
 
     if error:
-        changes_vs_local = []
-        changes_since_last_check = []
+        decision = {
+            "status": "error",
+            "action": "retry_check",
+            "needs_refresh": False,
+            "changes_vs_local": [],
+        }
     else:
-        changes_vs_local = compare_states(
+        decision = decide_refresh(
             local,
             remote,
-            local_missing=not local_metadata_exists,
-            missing=missing_local_files,
+            local_metadata_exists=local_metadata_exists,
+            missing_local_files=missing_local_files,
         )
-        changes_since_last_check = compare_states(previous_remote or {}, remote)
 
-    result = {
+    return {
         "dataset_name": dataset_name,
         "resource_id": dataset[DATASET_RESOURCE_ID_KEY],
-        "status": "error" if error else classify_status(changes_vs_local),
-        "action": "retry_check" if error else classify_action(changes_vs_local),
-        "changes_vs_local": changes_vs_local,
-        "changes_since_last_check": changes_since_last_check,
+        "status": decision["status"],
+        "action": decision["action"],
+        "needs_refresh": decision["needs_refresh"],
+        "changes_vs_local": decision["changes_vs_local"],
         "missing_local_files": missing_local_files,
+        "is_new_dataset": new_dataset,
         "error": error,
-        "remote_state": remote,
+        "local_rows_updated_at": local.get("rows_updated_at"),
+        "remote_rows_updated_at": remote.get("rows_updated_at"),
+        "local_view_last_modified": local.get("view_last_modified"),
+        "remote_view_last_modified": remote.get("view_last_modified"),
+        "local_column_count": local.get("column_count"),
+        "remote_column_count": remote.get("column_count"),
+        "local_title": local.get("title"),
+        "remote_title": remote.get("title"),
+        "local_description": local.get("description"),
+        "remote_description": remote.get("description"),
+        "remote_metadata": remote_raw,
     }
-
-    for prefix, state in [("local", local), ("remote", remote)]:
-        result[f"{prefix}_rows_updated_at"] = state.get("rows_updated_at")
-        result[f"{prefix}_view_last_modified"] = state.get("view_last_modified")
-        result[f"{prefix}_column_count"] = state.get("column_count")
-        result[f"{prefix}_title"] = state.get("title")
-        result[f"{prefix}_description_hash"] = state.get("description")
-
-    return result
 
 
 # Build a Markdown report from check results.
@@ -190,25 +202,17 @@ def build_markdown_report(checked_at: str, results: list[dict]) -> str:
         f"- Checked at: `{checked_at}`",
         f"- Datasets: `{len(results)}`",
         "",
-        "| Dataset | Status | Action | Changes vs Local | Changes Since Last Check |",
-        "| --- | --- | --- | --- | --- |",
+        "| Dataset | Status | Action | Needs Refresh | New Dataset | Changes vs Local |",
+        "| --- | --- | --- | --- | --- | --- |",
     ]
     for item in results:
         lines.append(
             f"| {item['dataset_name']} | {item['status']} | {item['action']} | "
-            f"{', '.join(item['changes_vs_local']) or 'none'} | "
-            f"{', '.join(item['changes_since_last_check']) or 'none'} |"
+            f"{item['needs_refresh']} | "
+            f"{item['is_new_dataset']} | "
+            f"{', '.join(item['changes_vs_local']) or 'none'} |"
         )
     return "\n".join(lines) + "\n"
-
-
-# Find which expected local files are missing.
-def find_missing_local_files(paths: dict[str, Path]) -> list[str]:
-    missing = []
-    for name, path in paths.items():
-        if name != "source_metadata" and not path.exists():
-            missing.append(name)
-    return missing
 
 
 # Write the update report as CSV.
@@ -220,8 +224,9 @@ def write_report_csv(path: Path, results: list[dict]) -> None:
         "resource_id",
         "status",
         "action",
+        "needs_refresh",
+        "is_new_dataset",
         "changes_vs_local",
-        "changes_since_last_check",
         "local_rows_updated_at",
         "remote_rows_updated_at",
         "local_view_last_modified",
@@ -240,9 +245,6 @@ def write_report_csv(path: Path, results: list[dict]) -> None:
         for item in results:
             row = dict(item)
             row["changes_vs_local"] = ",".join(item["changes_vs_local"])
-            row["changes_since_last_check"] = ",".join(
-                item["changes_since_last_check"]
-            )
             writer.writerow({field: row.get(field) for field in fields})
 
 
@@ -250,25 +252,20 @@ def write_report_csv(path: Path, results: list[dict]) -> None:
 def run_update_check(
     datasets: list[dict],
     *,
-    state_path: Path,
     report_json_path: Path | None = None,
     report_csv_path: Path | None = None,
     report_md_path: Path | None = None,
     paths_builder=output_paths,
     metadata_fetcher=fetch_dataset_metadata,
 ) -> dict:
-    previous_state = read_json(state_path, {})
-    previous_remote = previous_state.get("remote_state", {})
     results = []
 
     for dataset in datasets:
         paths = paths_builder(dataset[DATASET_NAME_KEY])
         local_metadata = read_json(paths["source_metadata"])
-        previous_dataset_state = previous_remote.get(dataset[DATASET_NAME_KEY], {})
         results.append(
             check_dataset(
                 dataset=dataset,
-                previous_remote=previous_dataset_state,
                 local_metadata=local_metadata,
                 local_metadata_exists=paths["source_metadata"].exists(),
                 missing_local_files=find_missing_local_files(paths),
@@ -295,14 +292,4 @@ def run_update_check(
             encoding="utf-8",
         )
 
-    write_json(
-        state_path,
-        {
-            "checked_at": checked_at,
-            "remote_state": {
-                item["dataset_name"]: item["remote_state"]
-                for item in results
-            },
-        },
-    )
     return payload

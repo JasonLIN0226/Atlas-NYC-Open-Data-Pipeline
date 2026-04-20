@@ -7,7 +7,7 @@ If you only want to use this project you mainly need:
 - `python refresh_nyc_datalake.py`
 - `open lake/site/index.html`
 
-You can ignore the two core files unless you want to reuse the update logic in another project.
+You can ignore the core files unless you want to reuse the update logic in another project.
 
 ## Quick Start
 
@@ -29,7 +29,7 @@ This command:
 
 1. checks all configured NYC Open Data datasets
 2. refreshes only the datasets that changed
-3. reruns Atlas plus the wrapper when needed
+3. reruns Atlas plus the wrapper through `nyc_atlas_core.py` when needed
 4. rebuilds the web data lake
 
 You do not need to run `build_lake.py` after this.
@@ -81,7 +81,6 @@ python test.py
 At the top of `test.py` you can change:
 
 - `RUN_ALL_DATASETS`
-- `USE_WRAPPER`
 - `GEO_THRESHOLD`
 - `DATA_PATH`
 
@@ -126,7 +125,9 @@ Main entry file:
 - `build_lake.py`
   - rebuilds the web UI
 - `test.py`
-  - runs Atlas
+  - runs `nyc_atlas_core.py` manually
+- `nyc_atlas_core.py`
+  - runs Atlas plus the wrapper and writes output files
 - `atlas_wrapper.py`
   - improves final Atlas labels
 - `nyc_open_data_datasets.json`
@@ -138,14 +139,19 @@ Main entry file:
 
 ## How This Project Updates Data
 
-This project uses three steps:
+This project uses four steps:
 
 1. `nyc_update_core.py`
    - checks what changed
 2. `nyc_refresh_core.py`
    - updates local source metadata and local raw CSV files
-3. `refresh_nyc_datalake.py`
+3. `nyc_atlas_core.py`
    - reruns Atlas plus wrapper
+   - writes raw and wrapped output files
+4. `refresh_nyc_datalake.py`
+   - calls the update core
+   - calls the refresh core
+   - calls the Atlas core
    - writes refresh artifacts
    - rebuilds the web data lake
 
@@ -155,12 +161,13 @@ The main update cases are:
   - nothing important changed
 - `metadata_changed`
   - only source metadata changed
-- `data_changed`
-  - table rows changed
-- `schema_changed`
-  - table columns changed
-- `missing_local_files`
-  - some local source files or output files are missing
+- `raw_data_changed`
+  - raw rows changed
+  - schema changed
+  - or local source files are missing
+  - this also covers a newly added dataset with no local files yet
+- `error`
+  - the remote metadata check failed
 
 ## Final Output
 
@@ -171,6 +178,22 @@ For each dataset the main final files are:
 - `output/metadata_<dataset>_wrapped.json`
 - `output/geo_classifier_results_<dataset>_wrapped.csv`
 - `lake/site/tables/<dataset>.html`
+
+## Atlas Processing Core
+
+`nyc_atlas_core.py` is the only file that runs Atlas plus the wrapper and writes results into `output/`.
+
+It writes these files for each dataset:
+
+- `output/metadata_<dataset>_raw.json`
+- `output/geo_classifier_results_<dataset>_raw.csv`
+- `output/metadata_<dataset>_wrapped.json`
+- `output/geo_classifier_results_<dataset>_wrapped.csv`
+
+You can use it in two ways:
+
+- manual use through `python test.py`
+- automatic use through `python refresh_nyc_datalake.py`
 
 ## Advanced Use
 
@@ -204,8 +227,8 @@ Important settings at the top of the file:
 | `DATASET_NAME_KEY` | `"name"` | dataset name key in the config |
 | `DATASET_RESOURCE_ID_KEY` | `"resource_id"` | dataset id key in the config |
 | `SOURCE_COLUMN_FIELDS` | `("fieldName", "name", "dataTypeName", "position", "description")` | schema comparison fields |
-| `TIMESTAMP_CHANGE_FIELDS` | `(("rows_updated_at", "rows_updated_at"), ("view_last_modified", "view_last_modified"), ("columns", "schema"))` | mapping remote state fields to change labels |
-| `SOURCE_METADATA_FIELDS` | `("title", "description", "category", "tags")` | source metadata fields used for metadata change detection |
+| `RAW_DATA_CHANGE_FIELDS` | `("rows_updated_at", "columns")` | fields used to detect raw data changes |
+| `METADATA_CHANGE_FIELDS` | `("title", "description", "category", "tags", "view_last_modified")` | fields used to detect metadata only changes |
 
 Example:
 
@@ -219,7 +242,6 @@ datasets = [
 
 report = run_update_check(
     datasets,
-    state_path=Path("state.json"),
     report_json_path=Path("latest_report.json"),
     report_csv_path=Path("latest_report.csv"),
     report_md_path=Path("latest_report.md"),
@@ -240,8 +262,9 @@ The result looks like:
             "resource_id": "76ig-c548",
             "status": "unchanged",
             "action": "no_action",
+            "needs_refresh": False,
+            "is_new_dataset": False,
             "changes_vs_local": [],
-            "changes_since_last_check": [],
             "missing_local_files": [],
         }
     ],
@@ -252,17 +275,22 @@ Possible `status` values:
 
 - `unchanged`
 - `metadata_changed`
-- `data_changed`
-- `schema_changed`
-- `missing_local_files`
+- `raw_data_changed`
 - `error`
 
 Possible `action` values:
 
 - `no_action`
-- `refresh_source_metadata_and_rebuild_lake`
-- `refresh_data_and_reprofile`
+- `refresh_metadata`
+- `refresh_raw_data`
 - `retry_check`
+
+If you add a new dataset to `nyc_open_data_datasets.json` and there are no local files yet then:
+
+- `status` will be `raw_data_changed`
+- `action` will be `refresh_raw_data`
+- `is_new_dataset` will be `True`
+- `changes_vs_local` will include `new_dataset`
 
 ### `nyc_refresh_core.py`
 
@@ -399,8 +427,6 @@ If the dataset had a data or schema change:
 Another project can reuse the two cores like this:
 
 ```python
-from pathlib import Path
-
 from nyc_update_core import run_update_check
 from nyc_refresh_core import refresh_changed_datasets
 
@@ -410,7 +436,6 @@ datasets = [
 
 report = run_update_check(
     datasets,
-    state_path=Path("state.json"),
 )
 
 refreshed = refresh_changed_datasets(datasets, report)

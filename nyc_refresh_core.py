@@ -59,7 +59,7 @@ def refresh_source_assets(
     write_json(paths[SOURCE_METADATA_PATH_KEY], remote_metadata)
 
     csv_limit = None
-    if report_item["action"] == "refresh_data_and_reprofile":
+    if report_item["action"] == "refresh_raw_data":
         csv_limit = infer_csv_limit(paths[RAW_CSV_PATH_KEY], default_limit)
         csv_bytes = fetch_dataset_csv(remote_metadata["_resolved_view_id"], csv_limit)
         paths[RAW_CSV_PATH_KEY].write_bytes(csv_bytes)
@@ -84,7 +84,7 @@ def split_refresh_targets(report: dict) -> tuple[list[dict], list[str]]:
         status = item.get("status")
         if status == "error":
             errored.append(item["dataset_name"])
-        elif status != "unchanged":
+        elif item.get("needs_refresh"):
             pending.append(item)
     return pending, errored
 
