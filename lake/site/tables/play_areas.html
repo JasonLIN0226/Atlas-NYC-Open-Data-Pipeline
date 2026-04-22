@@ -158,6 +158,27 @@
       font-size: 14px;
       word-break: break-word;
     }
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .search-field {
+      display: grid;
+      gap: 6px;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .search-field input {
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+      background: #ffffff;
+      color: #111827;
+    }
     .card-action {
       margin-top: 16px;
       font-weight: 600;
@@ -188,6 +209,12 @@
     }
     .action-button:hover {
       background: #115e59;
+    }
+    .secondary-button {
+      background: #475569;
+    }
+    .secondary-button:hover {
+      background: #334155;
     }
     .action-detail {
       margin-top: 14px;
@@ -297,10 +324,103 @@ Each record in this dataset represents a participating DOE Schoolyard at the tim
  
 This dataset may be updated throughout the year as school&#x27;s join or exit the program.
 
-Data Dictionary: https://docs.google.com/spreadsheets/d/10yVRhmdIAS1g8c3L0jC4XxSTptdIf5wESL5ks1e6Gto/edit?usp=sharing</td></tr><tr><th>Rows Updated</th><td>2026-04-18 10:00:05</td></tr><tr><th>View Modified</th><td>2026-04-18 10:00:04</td></tr><tr><th>Contains</th><td>address, borough_code, zip5, multi-polygon</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>300</td></tr><tr><th>Profiled Rows</th><td>300</td></tr><tr><th>Columns</th><td>14</td></tr><tr><th>Spatial Columns</th><td>3</td></tr><tr><th>Categorical Columns</th><td>2</td></tr><tr><th>Numerical Columns</th><td>7</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial</td></tr><tr><th>Attribute Keywords</th><td>acres, address, borough, communityboard, councildistrict, dsfbldgcode, gispropnum, jurisdiction, location, nys_assembly, nys, assembly</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>acres</th><th>address</th><th>borough</th><th>communityboard</th><th>councildistrict</th><th>dsfbldgcode</th><th>gispropnum</th><th>jurisdiction</th><th>location</th><th>nys_assembly</th><th>nys_senate</th><th>us_congress</th><th>zipcode</th><th>multipolygon</th></tr></thead><tbody><tr><td>0.29665657</td><td>2781 Pitkin Ave.</td><td>B</td><td>305</td><td>42</td><td>K159</td><td>BS116</td><td>DOE</td><td>Hemlock St. bet. Gelnmore Ave. and Pitkin Ave.</td><td>54</td><td>19</td><td>7</td><td>11208</td><td>MULTIPOLYGON (((-73.87008742266957 40.67613119607209, -73.87007432121518 40.676078189527786, -73.86934430300663 40.676183396774704, -73.8694076372941 40.67643813903446, -73.86982764364568 40.676376956676066, -73.86977522382294 40.67617915400547, -73.87008742266957 40.67613119607209)))</td></tr><tr><td>1.08704398</td><td>45-10 94 STREET</td><td>Q</td><td>404</td><td>25</td><td>Q744</td><td>QS085</td><td>DOE</td><td>94 St. bet. 46 Ave. and Alstyne Ave.</td><td>39</td><td>13</td><td>6</td><td>11373</td><td>MULTIPOLYGON (((-73.87052757641499 40.74282358006543, -73.87063018224065 40.743294365599404, -73.87079965142733 40.74325752965445, -73.87085437719355 40.74323760516228, -73.87086357063417 40.74325787149346, -73.87108286415213 40.74319346520755, -73.87112118859744 40.74317325207644, -73.87113429860827 40.743203377025694, -73.87142425607612 40.74311408705682, -73.87143254651927 40.743130554893185, -73.87159465601194 40.743083469888205, -73.87163046268853 40.74316116959752, -73.87211026812409 40.74302587348524, -73.87207732159274 40.74296043661461, -73.87203762980313 40.742962907640084, -73.87204110209466 40.74287738846775, -73.87052757641499 40.74282358006543)))</td></tr><tr><td>0.18425263</td><td>1654 BENSON AVENUE</td><td>B</td><td>311</td><td>47</td><td>K163</td><td>BS111</td><td>DOE</td><td>17 Ave. bet. Benson Ave. and Rutherford Pl.</td><td>10</td><td>3</td><td>4</td><td>11214</td><td>MULTIPOLYGON (((-74.00745001682682 40.60680094265964, -74.00757241009426 40.60669388424657, -74.00722538893282 40.606490014967996, -74.00706095144639 40.60664786052479, -74.00722298835178 40.606755337623916, -74.00726537529157 40.60671821724995, -74.00738565665392 40.6067979967044, -74.00740996617195 40.606776707707965, -74.00745001682682 40.60680094265964)))</td></tr><tr><td>1.89666706</td><td>48-10 31 AVENUE</td><td>Q</td><td>401</td><td>26</td><td>Q445</td><td>QS084</td><td>DOE</td><td>Broadway, Newtown Rd. bet. 48 St. and 49 St.</td><td>34</td><td>12</td><td>7</td><td>11103</td><td>MULTIPOLYGON (((-73.91109861856829 40.756636692109936, -73.91098927929856 40.75677133411436, -73.91160023502975 40.75705821845921, -73.91160497614686 40.75705238141865, -73.91210502607458 40.756436599427154, -73.91226313548773 40.75624189557169, -73.91206216390542 40.75583867870825, -73.91183370959595 40.75573147628258, -73.91109861856829 40.756636692109936)))</td></tr><tr><td>0.28203609</td><td>610 EAST 12 STREET</td><td>M</td><td>103</td><td>2</td><td>M061</td><td>MS023</td><td>DOE</td><td>E. 12 St. bet. Ave. B and Ave. C</td><td>74</td><td>27</td><td>10</td><td>10009</td><td>MULTIPOLYGON (((-73.97763035957115 40.727438796678825, -73.97800291051152 40.727595906386995, -73.97818444532368 40.72734533651867, -73.97781164769816 40.7271890224941, -73.97763035957115 40.727438796678825)))</td></tr><tr><td>0.46995628</td><td>525 EAST HOUSTON STREET</td><td>M</td><td>103</td><td>2</td><td>M092</td><td>MS027</td><td>DOE</td><td>E. Houston St. bet. Baruch Pl. and Mangin St.</td><td>74</td><td>27</td><td>10</td><td>10002</td><td>MULTIPOLYGON (((-73.97578695189935 40.71849100028038, -73.97562323051146 40.718809241957054, -73.97633795404663 40.718953388903444, -73.97643721155062 40.71875925302435, -73.97609423314417 40.71864995947163, -73.97612387088614 40.71859234829562, -73.97578695189935 40.71849100028038)))</td></tr><tr><td>0.48497169</td><td>730 EAST 12 STREET</td><td>M</td><td>103</td><td>2</td><td>M034</td><td>MS026</td><td>DOE</td><td>Ave D between E 12 St. and E. 10 St.</td><td>74</td><td>27</td><td>10</td><td>10009</td><td>MULTIPOLYGON (((-73.9748227125527 40.72556967890546, -73.97466179114882 40.72579116253218, -73.97502750655117 40.72594555546123, -73.97496353134156 40.7260332628542, -73.97521909724671 40.726141153194504, -73.97544447506056 40.725832164791754, -73.9748227125527 40.72556967890546)))</td></tr><tr><td>0.71903318</td><td>370 W. 120 St.</td><td>M</td><td>110</td><td>9</td><td>M180</td><td>MS013</td><td>DOE</td><td>Manhattan Ave., Morningside Ave., W. 119 St., and W. 120 St.</td><td>70</td><td>30</td><td>13</td><td>10026</td><td>MULTIPOLYGON (((-73.95512300121526 40.80758532098713, -73.95544626766164 40.80772184933349, -73.95581488673827 40.80722317913276, -73.95548837952943 40.80708478742633, -73.95512300121526 40.80758532098713)), ((-73.95613162357283 40.807766714736736, -73.95637597099825 40.80786748405059, -73.95660148912019 40.80755657492058, -73.95636483366465 40.807456271847116, -73.95613162357283 40.807766714736736)))</td></tr><tr><td>0.15264453</td><td>5105 Fort Hamilton Parkway</td><td>B</td><td>312</td><td>44</td><td>K160</td><td>BS117</td><td>DOE</td><td>51 St. bet. Ft. Hamilton Parkway and 11 Ave.</td><td>48</td><td>22</td><td>10</td><td>11219</td><td>MULTIPOLYGON (((-73.99848141206897 40.63694814860354, -73.99869976796461 40.63708056176622, -73.99881537352488 40.6369691922509, -73.99876782411387 40.63694054804839, -73.99886557227269 40.63684638089951, -73.99869420805268 40.636743149904795, -73.99848141206897 40.63694814860354)))</td></tr><tr><td>1.12380846</td><td>616 Quincy Street</td><td>B</td><td>303</td><td>36</td><td>K308</td><td>BS119</td><td>DOE</td><td>Quincy St. bet. Lewis Ave. and Stuyvesant Ave.</td><td>56</td><td>25</td><td>8</td><td>11221</td><td>MULTIPOLYGON (((-73.93396916395689 40.68878850007447, -73.93482519116226 40.688691693880294, -73.93471033738062 40.688128109841614, -73.93388096575215 40.688226041736506, -73.93393436487968 40.68849896046517, -73.93391300662782 40.68850148314739, -73.93396916395689 40.68878850007447)))</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>7</span></div><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:86%'></div></div><span class='bar-value'>6</span></div><div class='bar-row'><span class='bar-label'>multipolygon</span><div class='bar-track'><div class='bar-fill' style='width:14%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>number</td><td>7</td></tr><tr><td>text</td><td>6</td></tr><tr><td>multipolygon</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>7</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:43%'></div></div><span class='bar-value'>3</span></div><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:29%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>multi-polygon</span><div class='bar-track'><div class='bar-fill' style='width:14%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>zip_code</span><div class='bar-track'><div class='bar-fill' style='width:14%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>7</td></tr><tr><td>borough_code</td><td>3</td></tr><tr><td>address</td><td>2</td></tr><tr><td>multi-polygon</td><td>1</td></tr><tr><td>zip_code</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>acres</td><td>Float</td><td>number</td><td>Float</td><td></td><td></td><td></td><td></td></tr><tr><td>address</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.9416104555130005</td><td></td></tr><tr><td>borough</td><td>borough_code</td><td>text</td><td>Text</td><td>Enumeration, AdministrativeArea</td><td>borough_code</td><td>0.95</td><td></td></tr><tr><td>communityboard</td><td>borough_code</td><td>number</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td></td></tr><tr><td>councildistrict</td><td>borough_code</td><td>number</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td></td></tr><tr><td>dsfbldgcode</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td></td></tr><tr><td>gispropnum</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td></td></tr><tr><td>jurisdiction</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td></td></tr><tr><td>location</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.9389908313751221</td><td></td></tr><tr><td>nys_assembly</td><td>Integer</td><td>number</td><td>Integer</td><td></td><td></td><td></td><td></td></tr><tr><td>nys_senate</td><td>Integer</td><td>number</td><td>Integer</td><td></td><td></td><td></td><td></td></tr><tr><td>us_congress</td><td>Integer</td><td>number</td><td>Integer</td><td></td><td></td><td></td><td></td></tr><tr><td>zipcode</td><td>zip5</td><td>number</td><td>Text</td><td>address</td><td>zip5</td><td>0.99</td><td></td></tr><tr><td>multipolygon</td><td>multi-polygon</td><td>multipolygon</td><td>GeoShape</td><td></td><td>multi-polygon</td><td>0.9170850515365601</td><td></td></tr></tbody></table></div><h2>Files</h2><table><tr><th>Raw Data</th><td><a href='../../../data/play_areas.csv'>Raw CSV</a></td></tr><tr><th>Final Metadata</th><td><a href='../../../output/metadata_play_areas_wrapped.json'>Final metadata JSON</a></td></tr><tr><th>Final Geo Results</th><td><a href='../../../output/geo_classifier_results_play_areas_wrapped.csv'>Final geo results CSV</a></td></tr><tr><th>Summary</th><td><a href='../../tables/play_areas/summary.json'>Summary JSON</a></td></tr></table><script>
+Data Dictionary: https://docs.google.com/spreadsheets/d/10yVRhmdIAS1g8c3L0jC4XxSTptdIf5wESL5ks1e6Gto/edit?usp=sharing</td></tr><tr><th>Rows Updated</th><td>2026-04-18 10:00:05</td></tr><tr><th>View Modified</th><td>2026-04-18 10:00:04</td></tr><tr><th>Contains</th><td>address, borough_code, zip5, multi-polygon</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>300</td></tr><tr><th>Profiled Rows</th><td>300</td></tr><tr><th>Columns</th><td>14</td></tr><tr><th>Spatial Columns</th><td>3</td></tr><tr><th>Categorical Columns</th><td>2</td></tr><tr><th>Numerical Columns</th><td>7</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial</td></tr><tr><th>Attribute Keywords</th><td>acres, address, borough, communityboard, councildistrict, dsfbldgcode, gispropnum, jurisdiction, location, nys_assembly, nys, assembly</td></tr><tr><th>Has Temporal Data</th><td>False</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>acres</th><th>address</th><th>borough</th><th>communityboard</th><th>councildistrict</th><th>dsfbldgcode</th><th>gispropnum</th><th>jurisdiction</th><th>location</th><th>nys_assembly</th><th>nys_senate</th><th>us_congress</th><th>zipcode</th><th>multipolygon</th></tr></thead><tbody><tr><td>0.29665657</td><td>2781 Pitkin Ave.</td><td>B</td><td>305</td><td>42</td><td>K159</td><td>BS116</td><td>DOE</td><td>Hemlock St. bet. Gelnmore Ave. and Pitkin Ave.</td><td>54</td><td>19</td><td>7</td><td>11208</td><td>MULTIPOLYGON (((-73.87008742266957 40.67613119607209, -73.87007432121518 40.676078189527786, -73.86934430300663 40.676183396774704, -73.8694076372941 40.67643813903446, -73.86982764364568 40.676376956676066, -73.86977522382294 40.67617915400547, -73.87008742266957 40.67613119607209)))</td></tr><tr><td>1.08704398</td><td>45-10 94 STREET</td><td>Q</td><td>404</td><td>25</td><td>Q744</td><td>QS085</td><td>DOE</td><td>94 St. bet. 46 Ave. and Alstyne Ave.</td><td>39</td><td>13</td><td>6</td><td>11373</td><td>MULTIPOLYGON (((-73.87052757641499 40.74282358006543, -73.87063018224065 40.743294365599404, -73.87079965142733 40.74325752965445, -73.87085437719355 40.74323760516228, -73.87086357063417 40.74325787149346, -73.87108286415213 40.74319346520755, -73.87112118859744 40.74317325207644, -73.87113429860827 40.743203377025694, -73.87142425607612 40.74311408705682, -73.87143254651927 40.743130554893185, -73.87159465601194 40.743083469888205, -73.87163046268853 40.74316116959752, -73.87211026812409 40.74302587348524, -73.87207732159274 40.74296043661461, -73.87203762980313 40.742962907640084, -73.87204110209466 40.74287738846775, -73.87052757641499 40.74282358006543)))</td></tr><tr><td>0.18425263</td><td>1654 BENSON AVENUE</td><td>B</td><td>311</td><td>47</td><td>K163</td><td>BS111</td><td>DOE</td><td>17 Ave. bet. Benson Ave. and Rutherford Pl.</td><td>10</td><td>3</td><td>4</td><td>11214</td><td>MULTIPOLYGON (((-74.00745001682682 40.60680094265964, -74.00757241009426 40.60669388424657, -74.00722538893282 40.606490014967996, -74.00706095144639 40.60664786052479, -74.00722298835178 40.606755337623916, -74.00726537529157 40.60671821724995, -74.00738565665392 40.6067979967044, -74.00740996617195 40.606776707707965, -74.00745001682682 40.60680094265964)))</td></tr><tr><td>1.89666706</td><td>48-10 31 AVENUE</td><td>Q</td><td>401</td><td>26</td><td>Q445</td><td>QS084</td><td>DOE</td><td>Broadway, Newtown Rd. bet. 48 St. and 49 St.</td><td>34</td><td>12</td><td>7</td><td>11103</td><td>MULTIPOLYGON (((-73.91109861856829 40.756636692109936, -73.91098927929856 40.75677133411436, -73.91160023502975 40.75705821845921, -73.91160497614686 40.75705238141865, -73.91210502607458 40.756436599427154, -73.91226313548773 40.75624189557169, -73.91206216390542 40.75583867870825, -73.91183370959595 40.75573147628258, -73.91109861856829 40.756636692109936)))</td></tr><tr><td>0.28203609</td><td>610 EAST 12 STREET</td><td>M</td><td>103</td><td>2</td><td>M061</td><td>MS023</td><td>DOE</td><td>E. 12 St. bet. Ave. B and Ave. C</td><td>74</td><td>27</td><td>10</td><td>10009</td><td>MULTIPOLYGON (((-73.97763035957115 40.727438796678825, -73.97800291051152 40.727595906386995, -73.97818444532368 40.72734533651867, -73.97781164769816 40.7271890224941, -73.97763035957115 40.727438796678825)))</td></tr><tr><td>0.46995628</td><td>525 EAST HOUSTON STREET</td><td>M</td><td>103</td><td>2</td><td>M092</td><td>MS027</td><td>DOE</td><td>E. Houston St. bet. Baruch Pl. and Mangin St.</td><td>74</td><td>27</td><td>10</td><td>10002</td><td>MULTIPOLYGON (((-73.97578695189935 40.71849100028038, -73.97562323051146 40.718809241957054, -73.97633795404663 40.718953388903444, -73.97643721155062 40.71875925302435, -73.97609423314417 40.71864995947163, -73.97612387088614 40.71859234829562, -73.97578695189935 40.71849100028038)))</td></tr><tr><td>0.48497169</td><td>730 EAST 12 STREET</td><td>M</td><td>103</td><td>2</td><td>M034</td><td>MS026</td><td>DOE</td><td>Ave D between E 12 St. and E. 10 St.</td><td>74</td><td>27</td><td>10</td><td>10009</td><td>MULTIPOLYGON (((-73.9748227125527 40.72556967890546, -73.97466179114882 40.72579116253218, -73.97502750655117 40.72594555546123, -73.97496353134156 40.7260332628542, -73.97521909724671 40.726141153194504, -73.97544447506056 40.725832164791754, -73.9748227125527 40.72556967890546)))</td></tr><tr><td>0.71903318</td><td>370 W. 120 St.</td><td>M</td><td>110</td><td>9</td><td>M180</td><td>MS013</td><td>DOE</td><td>Manhattan Ave., Morningside Ave., W. 119 St., and W. 120 St.</td><td>70</td><td>30</td><td>13</td><td>10026</td><td>MULTIPOLYGON (((-73.95512300121526 40.80758532098713, -73.95544626766164 40.80772184933349, -73.95581488673827 40.80722317913276, -73.95548837952943 40.80708478742633, -73.95512300121526 40.80758532098713)), ((-73.95613162357283 40.807766714736736, -73.95637597099825 40.80786748405059, -73.95660148912019 40.80755657492058, -73.95636483366465 40.807456271847116, -73.95613162357283 40.807766714736736)))</td></tr><tr><td>0.15264453</td><td>5105 Fort Hamilton Parkway</td><td>B</td><td>312</td><td>44</td><td>K160</td><td>BS117</td><td>DOE</td><td>51 St. bet. Ft. Hamilton Parkway and 11 Ave.</td><td>48</td><td>22</td><td>10</td><td>11219</td><td>MULTIPOLYGON (((-73.99848141206897 40.63694814860354, -73.99869976796461 40.63708056176622, -73.99881537352488 40.6369691922509, -73.99876782411387 40.63694054804839, -73.99886557227269 40.63684638089951, -73.99869420805268 40.636743149904795, -73.99848141206897 40.63694814860354)))</td></tr><tr><td>1.12380846</td><td>616 Quincy Street</td><td>B</td><td>303</td><td>36</td><td>K308</td><td>BS119</td><td>DOE</td><td>Quincy St. bet. Lewis Ave. and Stuyvesant Ave.</td><td>56</td><td>25</td><td>8</td><td>11221</td><td>MULTIPOLYGON (((-73.93396916395689 40.68878850007447, -73.93482519116226 40.688691693880294, -73.93471033738062 40.688128109841614, -73.93388096575215 40.688226041736506, -73.93393436487968 40.68849896046517, -73.93391300662782 40.68850148314739, -73.93396916395689 40.68878850007447)))</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>7</span></div><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:86%'></div></div><span class='bar-value'>6</span></div><div class='bar-row'><span class='bar-label'>multipolygon</span><div class='bar-track'><div class='bar-fill' style='width:14%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>number</td><td>7</td></tr><tr><td>text</td><td>6</td></tr><tr><td>multipolygon</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>7</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:43%'></div></div><span class='bar-value'>3</span></div><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:29%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>multi-polygon</span><div class='bar-track'><div class='bar-fill' style='width:14%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>zip_code</span><div class='bar-track'><div class='bar-fill' style='width:14%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>7</td></tr><tr><td>borough_code</td><td>3</td></tr><tr><td>address</td><td>2</td></tr><tr><td>multi-polygon</td><td>1</td></tr><tr><td>zip_code</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>acres</td><td>Float</td><td>number</td><td>Float</td><td></td><td></td><td></td><td></td></tr><tr><td>address</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.9416104555130005</td><td></td></tr><tr><td>borough</td><td>borough_code</td><td>text</td><td>Text</td><td>Enumeration, AdministrativeArea</td><td>borough_code</td><td>0.95</td><td></td></tr><tr><td>communityboard</td><td>borough_code</td><td>number</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td></td></tr><tr><td>councildistrict</td><td>borough_code</td><td>number</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td></td></tr><tr><td>dsfbldgcode</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td></td></tr><tr><td>gispropnum</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td></td></tr><tr><td>jurisdiction</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td></td></tr><tr><td>location</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.9389908313751221</td><td></td></tr><tr><td>nys_assembly</td><td>Integer</td><td>number</td><td>Integer</td><td></td><td></td><td></td><td></td></tr><tr><td>nys_senate</td><td>Integer</td><td>number</td><td>Integer</td><td></td><td></td><td></td><td></td></tr><tr><td>us_congress</td><td>Integer</td><td>number</td><td>Integer</td><td></td><td></td><td></td><td></td></tr><tr><td>zipcode</td><td>zip5</td><td>number</td><td>Text</td><td>address</td><td>zip5</td><td>0.99</td><td></td></tr><tr><td>multipolygon</td><td>multi-polygon</td><td>multipolygon</td><td>GeoShape</td><td></td><td>multi-polygon</td><td>0.9170850515365601</td><td></td></tr></tbody></table></div><h2>Files</h2><table><tr><th>Raw Data</th><td><a href='../../../data/play_areas.csv'>Raw CSV</a></td></tr><tr><th>Final Metadata</th><td><a href='../../../output/metadata_play_areas_wrapped.json'>Final metadata JSON</a></td></tr><tr><th>Final Geo Results</th><td><a href='../../../output/geo_classifier_results_play_areas_wrapped.csv'>Final geo results CSV</a></td></tr><tr><th>Summary</th><td><a href='../../tables/play_areas/summary.json'>Summary JSON</a></td></tr></table><script>
 function toggleLakePanel(id) {
   const node = document.getElementById(id);
   if (!node) return;
   node.classList.toggle('is-hidden');
+}
+
+function monthKeysInRange(startValue, endValue) {
+  const monthKeys = [];
+  const start = new Date(startValue + 'T00:00:00');
+  const end = new Date(endValue + 'T00:00:00');
+  let year = start.getFullYear();
+  let month = start.getMonth() + 1;
+  const endYear = end.getFullYear();
+  const endMonth = end.getMonth() + 1;
+
+  while (year < endYear || (year === endYear && month <= endMonth)) {
+    monthKeys.push(String(year) + '-' + String(month).padStart(2, '0'));
+    month += 1;
+    if (month > 12) {
+      month = 1;
+      year += 1;
+    }
+  }
+
+  return monthKeys;
+}
+
+function runTemporalSearch() {
+  const startNode = document.getElementById('temporal-start-date');
+  const endNode = document.getElementById('temporal-end-date');
+  const statusNode = document.getElementById('temporal-search-status');
+  const cards = document.querySelectorAll('.dataset-card');
+
+  const startValue = startNode ? startNode.value : '';
+  const endValue = endNode ? endNode.value : '';
+
+  if (!startValue || !endValue) {
+    if (statusNode) {
+      statusNode.textContent = 'Enter both a start date and an end date.';
+    }
+    return;
+  }
+
+  if (startValue > endValue) {
+    if (statusNode) {
+      statusNode.textContent = 'Start date must be on or before end date.';
+    }
+    return;
+  }
+
+  const queryStart = new Date(startValue + 'T00:00:00');
+  const queryEnd = new Date(endValue + 'T23:59:59');
+  const queryMonths = monthKeysInRange(startValue, endValue);
+  let shownCount = 0;
+
+  cards.forEach((card) => {
+    const hasTemporal = card.dataset.hasTemporal === 'true';
+    const startText = card.dataset.temporalStart;
+    const endText = card.dataset.temporalEnd;
+    const datasetMonths = new Set((card.dataset.temporalMonths || '').split('|').filter(Boolean));
+    let showCard = false;
+
+    if (hasTemporal && startText && endText) {
+      const datasetStart = new Date(startText);
+      const datasetEnd = new Date(endText);
+      const overlapsRange = datasetStart <= queryEnd && datasetEnd >= queryStart;
+      const hasMonthInRange = queryMonths.some((monthKey) => datasetMonths.has(monthKey));
+      showCard = overlapsRange && hasMonthInRange;
+    }
+
+    card.style.display = showCard ? '' : 'none';
+    if (showCard) {
+      shownCount += 1;
+    }
+  });
+
+  if (statusNode) {
+    statusNode.textContent = 'Showing ' + shownCount + ' dataset(s) with data in ' + startValue + ' to ' + endValue + '.';
+  }
+}
+
+function clearTemporalSearch() {
+  const startNode = document.getElementById('temporal-start-date');
+  const endNode = document.getElementById('temporal-end-date');
+  const statusNode = document.getElementById('temporal-search-status');
+  const cards = document.querySelectorAll('.dataset-card');
+
+  if (startNode) startNode.value = '';
+  if (endNode) endNode.value = '';
+
+  cards.forEach((card) => {
+    card.style.display = '';
+  });
+
+  if (statusNode) {
+    statusNode.textContent = 'No time range filter is active.';
+  }
 }
 </script></body></html>

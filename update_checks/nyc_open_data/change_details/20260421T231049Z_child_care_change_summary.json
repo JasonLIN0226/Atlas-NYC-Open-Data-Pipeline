@@ -1,0 +1,30 @@
+{
+  "dataset_name": "child_care",
+  "status": "raw_data_changed",
+  "action": "refresh_raw_data",
+  "changes_vs_local": [
+    "rows_updated_at"
+  ],
+  "data_change": {
+    "rows_updated_at_changed": true,
+    "csv_hash_changed": true,
+    "previous_csv": {
+      "size_bytes": 662522,
+      "sha256": "c99ed47d49ba63529c5c1c51b69ce979df228de14805b351f0634382bc70c54a",
+      "row_count": 2734
+    },
+    "current_csv": {
+      "size_bytes": 662509,
+      "sha256": "1b4bce2b88fe7e6e8688b1fe0435b88aed57145ca4e6eb4392122e51ec50109a",
+      "row_count": 2734
+    }
+  },
+  "metadata_change": {
+    "changed_fields": [
+      "rowsUpdatedAt",
+      "viewLastModified"
+    ],
+    "added_columns": [],
+    "removed_columns": []
+  }
+}

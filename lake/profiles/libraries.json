@@ -1,0 +1,590 @@
+{
+  "dataset_name": "libraries",
+  "source_metadata": {
+    "title": "LIBRARY",
+    "id": "feuq-due4",
+    "rows_updated_at": 1466610774,
+    "view_last_modified": 1706899543,
+    "description": "Library",
+    "columns": [
+      {
+        "name": "the_geom",
+        "field_name": "the_geom",
+        "description": null,
+        "source_type": "point",
+        "position": 1
+      },
+      {
+        "name": "NAME",
+        "field_name": "name",
+        "description": null,
+        "source_type": "text",
+        "position": 2
+      },
+      {
+        "name": "STREETNAME",
+        "field_name": "streetname",
+        "description": null,
+        "source_type": "text",
+        "position": 3
+      },
+      {
+        "name": "HOUSENUM",
+        "field_name": "housenum",
+        "description": null,
+        "source_type": "text",
+        "position": 4
+      },
+      {
+        "name": "CITY",
+        "field_name": "city",
+        "description": null,
+        "source_type": "text",
+        "position": 5
+      },
+      {
+        "name": "ZIP",
+        "field_name": "zip",
+        "description": null,
+        "source_type": "text",
+        "position": 6
+      },
+      {
+        "name": "URL",
+        "field_name": "url",
+        "description": null,
+        "source_type": "text",
+        "position": 7
+      },
+      {
+        "name": "BIN",
+        "field_name": "bin",
+        "description": null,
+        "source_type": "number",
+        "position": 8
+      },
+      {
+        "name": "BBL",
+        "field_name": "bbl",
+        "description": null,
+        "source_type": "text",
+        "position": 9
+      },
+      {
+        "name": "X",
+        "field_name": "x",
+        "description": null,
+        "source_type": "number",
+        "position": 10
+      },
+      {
+        "name": "Y",
+        "field_name": "y",
+        "description": null,
+        "source_type": "number",
+        "position": 11
+      },
+      {
+        "name": "SYSTEM",
+        "field_name": "system",
+        "description": null,
+        "source_type": "text",
+        "position": 12
+      },
+      {
+        "name": "BOROCODE",
+        "field_name": "borocode",
+        "description": null,
+        "source_type": "number",
+        "position": 13
+      }
+    ]
+  },
+  "atlas_metadata": {
+    "row_count": 216,
+    "profiled_rows": 216,
+    "column_count": 13,
+    "wrapped_geo_column_count": 11,
+    "geo_labels_wrapped": [
+      "address",
+      "bbl",
+      "bin",
+      "borough_code",
+      "city",
+      "point",
+      "x_coord",
+      "y_coord",
+      "zip5"
+    ],
+    "wrapper_changed_count": 6,
+    "dataset_metadata_overview": [
+      [
+        "Rows",
+        "216"
+      ],
+      [
+        "Profiled Rows",
+        "216"
+      ],
+      [
+        "Columns",
+        "13"
+      ],
+      [
+        "Spatial Columns",
+        "6"
+      ],
+      [
+        "Categorical Columns",
+        "1"
+      ],
+      [
+        "Numerical Columns",
+        "4"
+      ],
+      [
+        "Dataset Types",
+        "categorical, numerical, spatial"
+      ],
+      [
+        "Attribute Keywords",
+        "the_geom, the, geom, name, streetname, housenum, city, zip, url, bin, bbl, x"
+      ]
+    ],
+    "combined_column_metadata_rows": [
+      {
+        "name": "the_geom",
+        "final_type": "point",
+        "source_type": "point",
+        "source_description": null,
+        "structural_type": "GeoCoordinates",
+        "semantic_types": "",
+        "geo_label": "point",
+        "confidence": 0.9762949347496033
+      },
+      {
+        "name": "name",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.8409149646759033
+      },
+      {
+        "name": "streetname",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.8029259443283081
+      },
+      {
+        "name": "housenum",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "city",
+        "final_type": "city",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "city",
+        "confidence": 0.95
+      },
+      {
+        "name": "zip",
+        "final_type": "zip5",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "zip5",
+        "confidence": 0.99
+      },
+      {
+        "name": "url",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.6851733326911926
+      },
+      {
+        "name": "bin",
+        "final_type": "bin",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": "bin",
+        "confidence": 0.99
+      },
+      {
+        "name": "bbl",
+        "final_type": "bbl",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": "bbl",
+        "confidence": 0.99
+      },
+      {
+        "name": "x",
+        "final_type": "x_coord",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Float",
+        "semantic_types": "",
+        "geo_label": "x_coord",
+        "confidence": 0.95
+      },
+      {
+        "name": "y",
+        "final_type": "y_coord",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Float",
+        "semantic_types": "",
+        "geo_label": "y_coord",
+        "confidence": 0.95
+      },
+      {
+        "name": "system",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "borocode",
+        "final_type": "borough_code",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.7537620067596436
+      }
+    ],
+    "source_type_breakdown_rows": [
+      {
+        "type": "text",
+        "count": 8
+      },
+      {
+        "type": "number",
+        "count": 4
+      },
+      {
+        "type": "point",
+        "count": 1
+      }
+    ],
+    "atlas_type_breakdown_rows": [
+      {
+        "type": "address",
+        "count": 3
+      },
+      {
+        "type": "non_spatial",
+        "count": 2
+      },
+      {
+        "type": "bbl",
+        "count": 1
+      },
+      {
+        "type": "bin",
+        "count": 1
+      },
+      {
+        "type": "borough_code",
+        "count": 1
+      },
+      {
+        "type": "city",
+        "count": 1
+      },
+      {
+        "type": "point",
+        "count": 1
+      },
+      {
+        "type": "x_coord",
+        "count": 1
+      },
+      {
+        "type": "y_coord",
+        "count": 1
+      },
+      {
+        "type": "zip_code",
+        "count": 1
+      }
+    ],
+    "content_summary": "point, address, city, zip5, bin, bbl, x_coord, y_coord",
+    "final_columns": [
+      {
+        "name": "the_geom",
+        "structural_type": "http://schema.org/GeoCoordinates",
+        "semantic_types": [],
+        "geo_classifier": {
+          "label": "point",
+          "confidence": 0.9762949347496033,
+          "source": "ml+validated"
+        }
+      },
+      {
+        "name": "name",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.8409149646759033,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "streetname",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.8029259443283081,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "housenum",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [],
+        "missing_values_ratio": 0.004629629629629629,
+        "num_distinct_values": 207
+      },
+      {
+        "name": "city",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "num_distinct_values": 44,
+        "geo_classifier": {
+          "label": "city",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "city_name_and_values"
+      },
+      {
+        "name": "zip",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "zip5",
+          "confidence": 0.99,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "zip_name_and_pattern"
+      },
+      {
+        "name": "url",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.6851733326911926,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "bin",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 216,
+        "mean": 2975553.8842592593,
+        "stddev": 1284036.9689240665,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1004070.0,
+              "lte": 2097466.0
+            }
+          },
+          {
+            "range": {
+              "gte": 3008650.0,
+              "lte": 3327822.0
+            }
+          },
+          {
+            "range": {
+              "gte": 4011018.0,
+              "lte": 5083401.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "bin",
+          "confidence": 0.99,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "bin_name_and_pattern"
+      },
+      {
+        "name": "bbl",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 216,
+        "mean": 2895777812.8703704,
+        "stddev": 1239838465.1120777,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1003110031.0,
+              "lte": 2056440007.0
+            }
+          },
+          {
+            "range": {
+              "gte": 3005770029.0,
+              "lte": 3083630009.0
+            }
+          },
+          {
+            "range": {
+              "gte": 4003630001.0,
+              "lte": 5044700001.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "bbl",
+          "confidence": 0.99,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "bbl_name_and_pattern"
+      },
+      {
+        "name": "x",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "mean": 1007265.1406391072,
+        "stddev": 25604.268599444145,
+        "coverage": [
+          {
+            "range": {
+              "gte": 981381.0,
+              "lte": 1013878.04539
+            }
+          },
+          {
+            "range": {
+              "gte": 1018066.11458,
+              "lte": 1056759.56921
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "x_coord",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "x_coord_xy_pair"
+      },
+      {
+        "name": "y",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "mean": 203133.59457313904,
+        "stddev": 31302.098088545845,
+        "coverage": [
+          {
+            "range": {
+              "gte": 145709.109879,
+              "lte": 182732.887634
+            }
+          },
+          {
+            "range": {
+              "gte": 185336.410217,
+              "lte": 220682.0
+            }
+          },
+          {
+            "range": {
+              "gte": 225626.905751,
+              "lte": 263955.410459
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "y_coord",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "y_coord_xy_pair"
+      },
+      {
+        "name": "system",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 3
+      },
+      {
+        "name": "borocode",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.7537620067596436,
+          "source": "ml+validated"
+        }
+      }
+    ]
+  },
+  "temporal_metadata": {
+    "has_temporal_data": false,
+    "temporal_columns": [],
+    "temporal_start": null,
+    "temporal_end": null,
+    "column_ranges": [],
+    "month_coverage": {}
+  }
+}

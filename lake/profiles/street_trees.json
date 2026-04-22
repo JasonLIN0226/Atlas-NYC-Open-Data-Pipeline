@@ -1,0 +1,1759 @@
+{
+  "dataset_name": "street_trees",
+  "source_metadata": {
+    "title": "2015 Street Tree Census - Tree Data",
+    "id": "uvpi-gqnh",
+    "rows_updated_at": 1507124486,
+    "view_last_modified": 1731421699,
+    "description": "Street tree data from the TreesCount! 2015 Street Tree Census, conducted by volunteers and staff organized by NYC Parks & Recreation and partner organizations. Tree data collected includes tree species, diameter and perception of health. Accompanying blockface data is available indicating status of data collection and data release citywide.\n\nThe 2015 tree census was the third decadal street tree census and largest citizen science initiative in NYC Parks’ history. Data collection ran from May 2015 to October 2016 and the results of the census show that there are 666,134 trees planted along NYC's streets. The data collected as part of the census represents a snapshot in time of trees under NYC Parks' jurisdiction.\n\nThe census data formed the basis of our operational database, the Forestry Management System (ForMS) which is used daily by our foresters and other staff for inventory and asset management: https://data.cityofnewyork.us/browse?sortBy=most_accessed&utf8=%E2%9C%93&Data-Collection_Data-Collection=Forestry+Management+System+%28ForMS%29\n\nTo learn more about the data collected and managed in ForMS, please refer to this user guide:\nhttps://docs.google.com/document/d/1PVPWFi-WExkG3rvnagQDoBbqfsGzxCKNmR6n678nUeU/edit. For information on the city's current tree population, use the ForMS datasets.",
+    "columns": [
+      {
+        "name": "tree_id",
+        "field_name": "tree_id",
+        "description": "Unique identification number for each tree point.",
+        "source_type": "number",
+        "position": 1
+      },
+      {
+        "name": "block_id",
+        "field_name": "block_id",
+        "description": "Identifier linking each tree to the block in the blockface table/shapefile that it is mapped on.",
+        "source_type": "number",
+        "position": 2
+      },
+      {
+        "name": "created_at",
+        "field_name": "created_at",
+        "description": "The date tree points were collected in the census software.",
+        "source_type": "calendar_date",
+        "position": 3
+      },
+      {
+        "name": "tree_dbh",
+        "field_name": "tree_dbh",
+        "description": "Diameter of the tree, measured at approximately 54\" / 137cm above the ground. Data was collected for both living and dead trees; for stumps, use stump_diam",
+        "source_type": "number",
+        "position": 4
+      },
+      {
+        "name": "stump_diam",
+        "field_name": "stump_diam",
+        "description": "Diameter of stump measured through the center, rounded to the nearest inch.",
+        "source_type": "number",
+        "position": 5
+      },
+      {
+        "name": "curb_loc",
+        "field_name": "curb_loc",
+        "description": "Location of tree bed in relationship to the curb; trees are either along the curb (OnCurb) or offset from the curb (OffsetFromCurb)",
+        "source_type": "text",
+        "position": 6
+      },
+      {
+        "name": "status",
+        "field_name": "status",
+        "description": "Indicates whether the tree is alive, standing dead, or a stump.",
+        "source_type": "text",
+        "position": 7
+      },
+      {
+        "name": "health",
+        "field_name": "health",
+        "description": "Indicates the user's perception of tree health.",
+        "source_type": "text",
+        "position": 8
+      },
+      {
+        "name": "spc_latin",
+        "field_name": "spc_latin",
+        "description": "Scientific name for species, e.g. \"Acer rubrum\"",
+        "source_type": "text",
+        "position": 9
+      },
+      {
+        "name": "spc_common",
+        "field_name": "spc_common",
+        "description": "Common name for species, e.g. \"red maple\"",
+        "source_type": "text",
+        "position": 10
+      },
+      {
+        "name": "steward",
+        "field_name": "steward",
+        "description": "Indicates the number of unique signs of stewardship observed for this tree. Not recorded for stumps or dead trees.",
+        "source_type": "text",
+        "position": 11
+      },
+      {
+        "name": "guards",
+        "field_name": "guards",
+        "description": "Indicates whether a guard is present, and if the user felt it was a helpful or harmful guard. Not recorded for dead trees and stumps.",
+        "source_type": "text",
+        "position": 12
+      },
+      {
+        "name": "sidewalk",
+        "field_name": "sidewalk",
+        "description": "Indicates whether one of the sidewalk flags immediately adjacent to the tree was damaged, cracked, or lifted. Not recorded for dead trees and stumps.",
+        "source_type": "text",
+        "position": 13
+      },
+      {
+        "name": "user_type",
+        "field_name": "user_type",
+        "description": "This field describes the category of user who collected this tree point's data.",
+        "source_type": "text",
+        "position": 14
+      },
+      {
+        "name": "problems",
+        "field_name": "problems",
+        "description": null,
+        "source_type": "text",
+        "position": 15
+      },
+      {
+        "name": "root_stone",
+        "field_name": "root_stone",
+        "description": "Indicates the presence of a root problem caused by paving stones in tree bed",
+        "source_type": "text",
+        "position": 16
+      },
+      {
+        "name": "root_grate",
+        "field_name": "root_grate",
+        "description": "Indicates the presence of a root problem caused by metal grates in tree bed",
+        "source_type": "text",
+        "position": 17
+      },
+      {
+        "name": "root_other",
+        "field_name": "root_other",
+        "description": "Indicates the presence of other root problems",
+        "source_type": "text",
+        "position": 18
+      },
+      {
+        "name": "trunk_wire",
+        "field_name": "trunk_wire",
+        "description": "Indicates the presence of a trunk problem caused by wires or rope wrapped around the trunk",
+        "source_type": "text",
+        "position": 19
+      },
+      {
+        "name": "trnk_light",
+        "field_name": "trnk_light",
+        "description": "Indicates the presence of a trunk problem caused by lighting installed on the tree",
+        "source_type": "text",
+        "position": 20
+      },
+      {
+        "name": "trnk_other",
+        "field_name": "trnk_other",
+        "description": "Indicates the presence of other trunk problems",
+        "source_type": "text",
+        "position": 21
+      },
+      {
+        "name": "brch_light",
+        "field_name": "brch_light",
+        "description": "Indicates the presence of a branch problem caused by lights (usually string lights) or wires in the branches",
+        "source_type": "text",
+        "position": 22
+      },
+      {
+        "name": "brch_shoe",
+        "field_name": "brch_shoe",
+        "description": "Indicates the presence of a branch problem caused by sneakers in the branches",
+        "source_type": "text",
+        "position": 23
+      },
+      {
+        "name": "brch_other",
+        "field_name": "brch_other",
+        "description": "Indicates the presence of other branch problems",
+        "source_type": "text",
+        "position": 24
+      },
+      {
+        "name": "address",
+        "field_name": "address",
+        "description": "Nearest estimated address to tree",
+        "source_type": "text",
+        "position": 25
+      },
+      {
+        "name": "postcode",
+        "field_name": "zipcode",
+        "description": "Five-digit zipcode in which tree is located",
+        "source_type": "number",
+        "position": 26
+      },
+      {
+        "name": "zip_city",
+        "field_name": "zip_city",
+        "description": "City as derived from zipcode. This is often (but not always) the same as borough.",
+        "source_type": "text",
+        "position": 27
+      },
+      {
+        "name": "community board",
+        "field_name": "cb_num",
+        "description": "Community board in which tree point is located",
+        "source_type": "number",
+        "position": 28
+      },
+      {
+        "name": "borocode",
+        "field_name": "borocode",
+        "description": "Code for borough in which tree point is located:\n1 (Manhattan), 2 (Bronx), 3 (Brooklyn), 4 (Queens), 5 (Staten Island)\n",
+        "source_type": "number",
+        "position": 29
+      },
+      {
+        "name": "borough",
+        "field_name": "boroname",
+        "description": "Name of borough in which tree point is located",
+        "source_type": "text",
+        "position": 30
+      },
+      {
+        "name": "cncldist",
+        "field_name": "cncldist",
+        "description": "Council district in which tree point is located",
+        "source_type": "number",
+        "position": 31
+      },
+      {
+        "name": "st_assem",
+        "field_name": "st_assem",
+        "description": "State Assembly District in which tree point is located",
+        "source_type": "number",
+        "position": 32
+      },
+      {
+        "name": "st_senate",
+        "field_name": "st_senate",
+        "description": "State Senate District in which tree point is located",
+        "source_type": "number",
+        "position": 33
+      },
+      {
+        "name": "nta",
+        "field_name": "nta",
+        "description": "This is the NTA Code corresponding to the neighborhood tabulation area from the 2010 US Census that the tree point falls into.",
+        "source_type": "text",
+        "position": 34
+      },
+      {
+        "name": "nta_name",
+        "field_name": "nta_name",
+        "description": "This is the NTA name corresponding to the neighborhood tabulation area from the 2010 US Census that the tree point falls into.",
+        "source_type": "text",
+        "position": 35
+      },
+      {
+        "name": "boro_ct",
+        "field_name": "boro_ct",
+        "description": "This is the boro_ct identifyer for the census tract that the tree point falls into.",
+        "source_type": "number",
+        "position": 36
+      },
+      {
+        "name": "state",
+        "field_name": "state",
+        "description": "All features given value 'New York'",
+        "source_type": "text",
+        "position": 37
+      },
+      {
+        "name": "latitude",
+        "field_name": "latitude",
+        "description": "Latitude of point, in decimal degrees",
+        "source_type": "number",
+        "position": 38
+      },
+      {
+        "name": "longitude",
+        "field_name": "longitude",
+        "description": "Longitude of point, in decimal degrees",
+        "source_type": "number",
+        "position": 39
+      },
+      {
+        "name": "x_sp",
+        "field_name": "x_sp",
+        "description": "X coordinate, in state plane. Units are feet.",
+        "source_type": "number",
+        "position": 40
+      },
+      {
+        "name": "y_sp",
+        "field_name": "y_sp",
+        "description": "Y coordinate, in state plane. Units are feet",
+        "source_type": "number",
+        "position": 41
+      },
+      {
+        "name": "council district",
+        "field_name": "council_district",
+        "description": null,
+        "source_type": "number",
+        "position": 42
+      },
+      {
+        "name": "census tract",
+        "field_name": "census_tract",
+        "description": null,
+        "source_type": "number",
+        "position": 43
+      },
+      {
+        "name": "bin",
+        "field_name": "bin",
+        "description": null,
+        "source_type": "number",
+        "position": 44
+      },
+      {
+        "name": "bbl",
+        "field_name": "bbl",
+        "description": null,
+        "source_type": "number",
+        "position": 45
+      }
+    ]
+  },
+  "atlas_metadata": {
+    "row_count": 5000,
+    "profiled_rows": 2006,
+    "column_count": 45,
+    "wrapped_geo_column_count": 14,
+    "geo_labels_wrapped": [
+      "address",
+      "bbl",
+      "bin",
+      "borough_code",
+      "city",
+      "longitude",
+      "state",
+      "x_coord",
+      "y_coord",
+      "zip5"
+    ],
+    "wrapper_changed_count": 11,
+    "dataset_metadata_overview": [
+      [
+        "Rows",
+        "5000"
+      ],
+      [
+        "Profiled Rows",
+        "2006"
+      ],
+      [
+        "Columns",
+        "45"
+      ],
+      [
+        "Spatial Columns",
+        "4"
+      ],
+      [
+        "Temporal Columns",
+        "1"
+      ],
+      [
+        "Categorical Columns",
+        "24"
+      ],
+      [
+        "Numerical Columns",
+        "16"
+      ],
+      [
+        "Dataset Types",
+        "categorical, numerical, spatial, temporal"
+      ],
+      [
+        "Attribute Keywords",
+        "tree_id, tree, id, block_id, block, id, created_at, created, at, tree_dbh, tree, dbh"
+      ]
+    ],
+    "combined_column_metadata_rows": [
+      {
+        "name": "tree_id",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "Unique identification number for each tree point.",
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "block_id",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "Identifier linking each tree to the block in the blockface table/shapefile that it is mapped on.",
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "created_at",
+        "final_type": "Text",
+        "source_type": "calendar_date",
+        "source_description": "The date tree points were collected in the census software.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration, DateTime",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "tree_dbh",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "Diameter of the tree, measured at approximately 54\" / 137cm above the ground. Data was collected for both living and dead trees; for stumps, use stump_diam",
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "stump_diam",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "Diameter of stump measured through the center, rounded to the nearest inch.",
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "curb_loc",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Location of tree bed in relationship to the curb; trees are either along the curb (OnCurb) or offset from the curb (OffsetFromCurb)",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "status",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates whether the tree is alive, standing dead, or a stump.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "health",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the user's perception of tree health.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "spc_latin",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Scientific name for species, e.g. \"Acer rubrum\"",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "spc_common",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Common name for species, e.g. \"red maple\"",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "steward",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the number of unique signs of stewardship observed for this tree. Not recorded for stumps or dead trees.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "guards",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates whether a guard is present, and if the user felt it was a helpful or harmful guard. Not recorded for dead trees and stumps.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "sidewalk",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates whether one of the sidewalk flags immediately adjacent to the tree was damaged, cracked, or lifted. Not recorded for dead trees and stumps.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "user_type",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "This field describes the category of user who collected this tree point's data.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "problems",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "root_stone",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the presence of a root problem caused by paving stones in tree bed",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "root_grate",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the presence of a root problem caused by metal grates in tree bed",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "root_other",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the presence of other root problems",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "trunk_wire",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the presence of a trunk problem caused by wires or rope wrapped around the trunk",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "trnk_light",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the presence of a trunk problem caused by lighting installed on the tree",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "trnk_other",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the presence of other trunk problems",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "brch_light",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the presence of a branch problem caused by lights (usually string lights) or wires in the branches",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "brch_shoe",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the presence of a branch problem caused by sneakers in the branches",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "brch_other",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates the presence of other branch problems",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "address",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "Nearest estimated address to tree",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.9289531111717224
+      },
+      {
+        "name": "zipcode",
+        "final_type": "zip5",
+        "source_type": "number",
+        "source_description": "Five-digit zipcode in which tree is located",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "zip5",
+        "confidence": 0.99
+      },
+      {
+        "name": "zip_city",
+        "final_type": "city",
+        "source_type": "text",
+        "source_description": "City as derived from zipcode. This is often (but not always) the same as borough.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration, AdministrativeArea",
+        "geo_label": "city",
+        "confidence": 0.95
+      },
+      {
+        "name": "cb_num",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "Community board in which tree point is located",
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "borocode",
+        "final_type": "borough_code",
+        "source_type": "number",
+        "source_description": "Code for borough in which tree point is located:\n1 (Manhattan), 2 (Bronx), 3 (Brooklyn), 4 (Queens), 5 (Staten Island)\n",
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.7853758335113525
+      },
+      {
+        "name": "boroname",
+        "final_type": "borough_code",
+        "source_type": "text",
+        "source_description": "Name of borough in which tree point is located",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration, AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.95
+      },
+      {
+        "name": "cncldist",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "Council district in which tree point is located",
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "st_assem",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "State Assembly District in which tree point is located",
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "st_senate",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "State Senate District in which tree point is located",
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "nta",
+        "final_type": "borough_code",
+        "source_type": "text",
+        "source_description": "This is the NTA Code corresponding to the neighborhood tabulation area from the 2010 US Census that the tree point falls into.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration, AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.95
+      },
+      {
+        "name": "nta_name",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "This is the NTA name corresponding to the neighborhood tabulation area from the 2010 US Census that the tree point falls into.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "boro_ct",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "This is the boro_ct identifyer for the census tract that the tree point falls into.",
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "state",
+        "final_type": "state",
+        "source_type": "text",
+        "source_description": "All features given value 'New York'",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration, AdministrativeArea",
+        "geo_label": "state",
+        "confidence": 0.95
+      },
+      {
+        "name": "latitude",
+        "final_type": "Float",
+        "source_type": "number",
+        "source_description": "Latitude of point, in decimal degrees",
+        "structural_type": "Float",
+        "semantic_types": "latitude",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "longitude",
+        "final_type": "longitude",
+        "source_type": "number",
+        "source_description": "Longitude of point, in decimal degrees",
+        "structural_type": "Float",
+        "semantic_types": "longitude",
+        "geo_label": "longitude",
+        "confidence": 0.9556649327278137
+      },
+      {
+        "name": "x_sp",
+        "final_type": "x_coord",
+        "source_type": "number",
+        "source_description": "X coordinate, in state plane. Units are feet.",
+        "structural_type": "Float",
+        "semantic_types": "",
+        "geo_label": "x_coord",
+        "confidence": 0.8954465985298157
+      },
+      {
+        "name": "y_sp",
+        "final_type": "y_coord",
+        "source_type": "number",
+        "source_description": "Y coordinate, in state plane. Units are feet",
+        "structural_type": "Float",
+        "semantic_types": "",
+        "geo_label": "y_coord",
+        "confidence": 0.95
+      },
+      {
+        "name": "council_district",
+        "final_type": "borough_code",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.95
+      },
+      {
+        "name": "census_tract",
+        "final_type": "borough_code",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.95
+      },
+      {
+        "name": "bin",
+        "final_type": "bin",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": "bin",
+        "confidence": 0.99
+      },
+      {
+        "name": "bbl",
+        "final_type": "bbl",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": "bbl",
+        "confidence": 0.99
+      }
+    ],
+    "source_type_breakdown_rows": [
+      {
+        "type": "text",
+        "count": 25
+      },
+      {
+        "type": "number",
+        "count": 19
+      },
+      {
+        "type": "calendar_date",
+        "count": 1
+      }
+    ],
+    "atlas_type_breakdown_rows": [
+      {
+        "type": "non_spatial",
+        "count": 31
+      },
+      {
+        "type": "borough_code",
+        "count": 5
+      },
+      {
+        "type": "address",
+        "count": 1
+      },
+      {
+        "type": "bbl",
+        "count": 1
+      },
+      {
+        "type": "bin",
+        "count": 1
+      },
+      {
+        "type": "city",
+        "count": 1
+      },
+      {
+        "type": "longitude",
+        "count": 1
+      },
+      {
+        "type": "state",
+        "count": 1
+      },
+      {
+        "type": "x_coord",
+        "count": 1
+      },
+      {
+        "type": "y_coord",
+        "count": 1
+      },
+      {
+        "type": "zip_code",
+        "count": 1
+      }
+    ],
+    "content_summary": "address, zip5, city, borough_code, state, longitude, x_coord, y_coord",
+    "final_columns": [
+      {
+        "name": "tree_id",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 5000,
+        "mean": 180732.2218344965,
+        "stddev": 30955.92933966439,
+        "coverage": [
+          {
+            "range": {
+              "gte": 129566.0,
+              "lte": 175742.0
+            }
+          },
+          {
+            "range": {
+              "gte": 179668.0,
+              "lte": 209416.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "block_id",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 2488,
+        "mean": 282576.73778664006,
+        "stddev": 116743.61183059767,
+        "coverage": [
+          {
+            "range": {
+              "gte": 102134.0,
+              "lte": 111443.0
+            }
+          },
+          {
+            "range": {
+              "gte": 206857.0,
+              "lte": 348237.0
+            }
+          },
+          {
+            "range": {
+              "gte": 405674.0,
+              "lte": 509334.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "created_at",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration",
+          "http://schema.org/DateTime"
+        ],
+        "num_distinct_values": 97
+      },
+      {
+        "name": "tree_dbh",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 49,
+        "mean": 10.532901296111666,
+        "stddev": 11.951282975603071,
+        "coverage": [
+          {
+            "range": {
+              "gte": 2.0,
+              "lte": 13.0
+            }
+          },
+          {
+            "range": {
+              "gte": 15.0,
+              "lte": 32.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "stump_diam",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 35,
+        "mean": 0.42073778664007977,
+        "stddev": 2.906905288956151,
+        "coverage": [
+          {
+            "range": {
+              "gte": 0.0,
+              "lte": 0.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "curb_loc",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 2
+      },
+      {
+        "name": "status",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 3
+      },
+      {
+        "name": "health",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.05134596211365902,
+        "num_distinct_values": 4
+      },
+      {
+        "name": "spc_latin",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.05134596211365902,
+        "num_distinct_values": 95
+      },
+      {
+        "name": "spc_common",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.05134596211365902,
+        "num_distinct_values": 95
+      },
+      {
+        "name": "steward",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.05134596211365902,
+        "num_distinct_values": 5
+      },
+      {
+        "name": "guards",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.05134596211365902,
+        "num_distinct_values": 5
+      },
+      {
+        "name": "sidewalk",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.05134596211365902,
+        "num_distinct_values": 3
+      },
+      {
+        "name": "user_type",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 3
+      },
+      {
+        "name": "problems",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.05134596211365902,
+        "num_distinct_values": 71
+      },
+      {
+        "name": "root_stone",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 2
+      },
+      {
+        "name": "root_grate",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 2
+      },
+      {
+        "name": "root_other",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 2
+      },
+      {
+        "name": "trunk_wire",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 2
+      },
+      {
+        "name": "trnk_light",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 2
+      },
+      {
+        "name": "trnk_other",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 2
+      },
+      {
+        "name": "brch_light",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 2
+      },
+      {
+        "name": "brch_shoe",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 2
+      },
+      {
+        "name": "brch_other",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 2
+      },
+      {
+        "name": "address",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.9289531111717224,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "zipcode",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 157,
+        "mean": 10880.516949152543,
+        "stddev": 597.4995033407032,
+        "coverage": [
+          {
+            "range": {
+              "gte": 10009.0,
+              "lte": 10461.0
+            }
+          },
+          {
+            "range": {
+              "gte": 11105.0,
+              "lte": 11691.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "zip5",
+          "confidence": 0.99,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "zip_name_and_pattern"
+      },
+      {
+        "name": "zip_city",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration",
+          "http://schema.org/AdministrativeArea"
+        ],
+        "num_distinct_values": 41,
+        "geo_classifier": {
+          "label": "city",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "city_name_and_values"
+      },
+      {
+        "name": "cb_num",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 59,
+        "mean": 319.33898305084745,
+        "stddev": 124.37623728253371,
+        "coverage": [
+          {
+            "range": {
+              "gte": 102.0,
+              "lte": 209.0
+            }
+          },
+          {
+            "range": {
+              "gte": 301.0,
+              "lte": 317.0
+            }
+          },
+          {
+            "range": {
+              "gte": 401.0,
+              "lte": 503.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "borocode",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.7853758335113525,
+          "source": "ml+validated"
+        }
+      },
+      {
+        "name": "boroname",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration",
+          "http://schema.org/AdministrativeArea"
+        ],
+        "num_distinct_values": 5,
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "admin_name_and_values"
+      },
+      {
+        "name": "cncldist",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 50,
+        "mean": 27.981555333998006,
+        "stddev": 14.995617797021136,
+        "coverage": [
+          {
+            "range": {
+              "gte": 2.0,
+              "lte": 22.0
+            }
+          },
+          {
+            "range": {
+              "gte": 24.0,
+              "lte": 40.0
+            }
+          },
+          {
+            "range": {
+              "gte": 43.0,
+              "lte": 51.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "st_assem",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 64,
+        "mean": 51.61066799601196,
+        "stddev": 17.823451953363048,
+        "coverage": [
+          {
+            "range": {
+              "gte": 23.0,
+              "lte": 44.0
+            }
+          },
+          {
+            "range": {
+              "gte": 48.0,
+              "lte": 67.0
+            }
+          },
+          {
+            "range": {
+              "gte": 69.0,
+              "lte": 86.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "st_senate",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 26,
+        "mean": 21.107676969092722,
+        "stddev": 6.868322163332173,
+        "coverage": [
+          {
+            "range": {
+              "gte": 10.0,
+              "lte": 16.0
+            }
+          },
+          {
+            "range": {
+              "gte": 17.0,
+              "lte": 23.0
+            }
+          },
+          {
+            "range": {
+              "gte": 24.0,
+              "lte": 33.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "nta",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration",
+          "http://schema.org/AdministrativeArea"
+        ],
+        "num_distinct_values": 175,
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "admin_name_and_values"
+      },
+      {
+        "name": "nta_name",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 175
+      },
+      {
+        "name": "boro_ct",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "mean": 3165310.6939182454,
+        "stddev": 1260044.8254685374,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1002201.0,
+              "lte": 1021800.0
+            }
+          },
+          {
+            "range": {
+              "gte": 2021800.0,
+              "lte": 3079801.0
+            }
+          },
+          {
+            "range": {
+              "gte": 4009700.0,
+              "lte": 5027301.0
+            }
+          }
+        ],
+        "wrapper_reason": "clear_coord_on_code_like_values"
+      },
+      {
+        "name": "state",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration",
+          "http://schema.org/AdministrativeArea"
+        ],
+        "num_distinct_values": 1,
+        "geo_classifier": {
+          "label": "state",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "state_name_and_values"
+      },
+      {
+        "name": "latitude",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [
+          "http://schema.org/latitude"
+        ],
+        "unclean_values_ratio": 0.0,
+        "mean": 40.70506165154545,
+        "stddev": 0.08552387290265986,
+        "coverage": [
+          {
+            "range": {
+              "gte": 40.53981815,
+              "lte": 40.64328817
+            }
+          },
+          {
+            "range": {
+              "gte": 40.6630967,
+              "lte": 40.74817384
+            }
+          },
+          {
+            "range": {
+              "gte": 40.75765083,
+              "lte": 40.85909696
+            }
+          }
+        ]
+      },
+      {
+        "name": "longitude",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [
+          "http://schema.org/longitude"
+        ],
+        "geo_classifier": {
+          "label": "longitude",
+          "confidence": 0.9556649327278137,
+          "source": "ml+validated"
+        },
+        "mean": -73.94228319389342,
+        "stddev": 0.09754167701415228,
+        "coverage": [
+          {
+            "range": {
+              "gte": -74.19388903,
+              "lte": -74.07728282
+            }
+          },
+          {
+            "range": {
+              "gte": -74.00058177,
+              "lte": -73.89101204
+            }
+          },
+          {
+            "range": {
+              "gte": -73.88298499,
+              "lte": -73.74664284
+            }
+          }
+        ]
+      },
+      {
+        "name": "x_sp",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [],
+        "geo_classifier": {
+          "label": "x_coord",
+          "confidence": 0.8954465985298157,
+          "source": "ml+validated"
+        },
+        "mean": 1000235.7872609176,
+        "stddev": 27062.630728990298,
+        "coverage": [
+          {
+            "range": {
+              "gte": 930371.1573,
+              "lte": 962787.6315
+            }
+          },
+          {
+            "range": {
+              "gte": 984088.3812,
+              "lte": 1014518.643
+            }
+          },
+          {
+            "range": {
+              "gte": 1016990.828,
+              "lte": 1054568.385
+            }
+          }
+        ]
+      },
+      {
+        "name": "y_sp",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "mean": 196169.95541510434,
+        "stddev": 31155.282189444264,
+        "coverage": [
+          {
+            "range": {
+              "gte": 136007.7887,
+              "lte": 173646.0284
+            }
+          },
+          {
+            "range": {
+              "gte": 180904.8869,
+              "lte": 211868.0953
+            }
+          },
+          {
+            "range": {
+              "gte": 215309.7879,
+              "lte": 252287.9879
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "y_coord",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "y_coord_name_and_range"
+      },
+      {
+        "name": "council_district",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.00847457627118644,
+        "num_distinct_values": 51,
+        "mean": 27.975867269984917,
+        "stddev": 14.971648111478428,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1.0,
+              "lte": 15.0
+            }
+          },
+          {
+            "range": {
+              "gte": 19.0,
+              "lte": 35.0
+            }
+          },
+          {
+            "range": {
+              "gte": 38.0,
+              "lte": 51.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "admin_name_and_values"
+      },
+      {
+        "name": "census_tract",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.00847457627118644,
+        "num_distinct_values": 639,
+        "mean": 9393.068376068377,
+        "stddev": 24336.77196500331,
+        "coverage": [
+          {
+            "range": {
+              "gte": 51.0,
+              "lte": 1447.0
+            }
+          },
+          {
+            "range": {
+              "gte": 14607.0,
+              "lte": 51002.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "admin_name_and_values"
+      },
+      {
+        "name": "bin",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.010967098703888335,
+        "num_distinct_values": 4003,
+        "mean": 3242880.2202620967,
+        "stddev": 1284611.1083178215,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1004965.0,
+              "lte": 2090403.0
+            }
+          },
+          {
+            "range": {
+              "gte": 3016509.0,
+              "lte": 3339499.0
+            }
+          },
+          {
+            "range": {
+              "gte": 4012555.0,
+              "lte": 5113825.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "bin",
+          "confidence": 0.99,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "bin_name_and_pattern"
+      },
+      {
+        "name": "bbl",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.010967098703888335,
+        "num_distinct_values": 3916,
+        "mean": 3165454097.608367,
+        "stddev": 1259333036.347754,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1003500057.0,
+              "lte": 2039190020.0
+            }
+          },
+          {
+            "range": {
+              "gte": 3010590036.0,
+              "lte": 4157687501.0
+            }
+          },
+          {
+            "range": {
+              "gte": 5012227501.0,
+              "lte": 5064530004.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "bbl",
+          "confidence": 0.99,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "bbl_name_and_pattern"
+      }
+    ]
+  },
+  "temporal_metadata": {
+    "has_temporal_data": true,
+    "temporal_columns": [
+      "created_at"
+    ],
+    "temporal_start": "2015-05-19T00:00:00",
+    "temporal_end": "2015-09-17T00:00:00",
+    "column_ranges": [
+      {
+        "name": "created_at",
+        "start": "2015-05-19T00:00:00",
+        "end": "2015-09-17T00:00:00",
+        "month_coverage": {
+          "2015": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        }
+      }
+    ],
+    "month_coverage": {
+      "2015": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    }
+  }
+}

@@ -8,5 +8,13 @@
     "longitude",
     "point"
   ],
-  "wrapper_changed_count": 1
+  "wrapper_changed_count": 1,
+  "temporal_metadata": {
+    "has_temporal_data": false,
+    "temporal_columns": [],
+    "temporal_start": null,
+    "temporal_end": null,
+    "column_ranges": [],
+    "month_coverage": {}
+  }
 }

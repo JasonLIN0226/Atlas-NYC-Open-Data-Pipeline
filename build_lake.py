@@ -1,10 +1,12 @@
 import csv
+import json
 import os
 import shutil
 from datetime import datetime
 from html import escape
 from pathlib import Path
 
+from nyc_temporal_core import build_temporal_metadata
 from nyc_open_data_utils import (
     DATA_DIR,
     ROOT,
@@ -19,6 +21,7 @@ LATEST_UPDATE_REPORT = UPDATE_CHECK_DIR / "latest_report.json"
 LATEST_REFRESH_LOG = UPDATE_CHECK_DIR / "latest_refresh_log.json"
 LAKE_DIR = ROOT / "lake"
 CATALOG_DIR = LAKE_DIR / "catalog"
+PROFILES_DIR = LAKE_DIR / "profiles"
 TABLES_DIR = LAKE_DIR / "tables"
 SITE_DIR = LAKE_DIR / "site"
 SITE_TABLES_DIR = SITE_DIR / "tables"
@@ -40,11 +43,17 @@ SUMMARY_JSON_LABEL = "Summary JSON"
 # Rebuild the static lake site.
 def main() -> None:
     reset_lake_dirs()
-    datasets = []
+    profile_paths = []
     for data_path in sorted(DATA_DIR.glob("*.csv")):
         dataset_name = data_path.stem
-        entry = build_dataset_entry(dataset_name, data_path)
-        datasets.append(entry)
+        profile_paths.append(build_dataset_profile(dataset_name, data_path))
+
+    datasets = []
+    for profile_path in sorted(profile_paths):
+        profile = load_json(profile_path, {})
+        if not profile:
+            continue
+        datasets.append(build_dataset_entry(profile))
 
     write_catalog(datasets)
     write_site(datasets)
@@ -56,22 +65,43 @@ def main() -> None:
 def reset_lake_dirs() -> None:
     if LAKE_DIR.exists():
         shutil.rmtree(LAKE_DIR)
-    for path in [CATALOG_DIR, TABLES_DIR, SITE_TABLES_DIR]:
+    for path in [CATALOG_DIR, PROFILES_DIR, TABLES_DIR, SITE_TABLES_DIR]:
         path.mkdir(parents=True, exist_ok=True)
 
 
-# Build one dataset entry for the lake.
-def build_dataset_entry(dataset_name: str, data_path: Path) -> dict:
+# Build one metadata only profile for one dataset.
+def build_dataset_profile(dataset_name: str, data_path: Path) -> Path:
     paths = output_paths(dataset_name)
     source_metadata_path = paths["source_metadata"]
     raw_metadata_path = paths["raw_metadata"]
     wrapped_metadata_path = paths["final_metadata"]
-    wrapped_geo_path = paths["final_geo_results"]
 
     source_metadata = load_json(source_metadata_path)
     raw_metadata = load_json(raw_metadata_path)
     wrapped_metadata = load_json(wrapped_metadata_path)
+    chosen_metadata = wrapped_metadata or raw_metadata or {}
+    header = read_csv_header(data_path)
+    wrapped_geo_columns = extract_geo_columns(wrapped_metadata)
+    combined_columns = combined_column_metadata_rows(source_metadata, chosen_metadata, header)
+    temporal_metadata = build_temporal_metadata(data_path, chosen_metadata)
 
+    profile = {
+        "dataset_name": dataset_name,
+        "source_metadata": source_profile(source_metadata),
+        "atlas_metadata": atlas_profile(chosen_metadata, wrapped_metadata, wrapped_geo_columns, combined_columns),
+        "temporal_metadata": temporal_metadata,
+    }
+
+    profile_path = PROFILES_DIR / f"{dataset_name}.json"
+    write_json(profile_path, profile)
+    return profile_path
+
+
+# Build one lake entry from one saved profile.
+def build_dataset_entry(profile: dict) -> dict:
+    dataset_name = profile["dataset_name"]
+    data_path = DATA_DIR / f"{dataset_name}.csv"
+    paths = output_paths(dataset_name)
     header, sample_rows = read_sample_rows(data_path, SAMPLE_ROWS)
     table_dir = TABLES_DIR / dataset_name
     table_dir.mkdir(parents=True, exist_ok=True)
@@ -79,41 +109,41 @@ def build_dataset_entry(dataset_name: str, data_path: Path) -> dict:
     sample_path = table_dir / "sample.csv"
     write_sample_csv(sample_path, header, sample_rows)
 
-    source_summary = summarize_source_metadata(source_metadata)
-    chosen_metadata = wrapped_metadata or raw_metadata or {}
-    row_count = chosen_metadata.get("nb_rows", count_rows(data_path))
-    column_count = chosen_metadata.get("nb_columns", len(header))
-    wrapper_summary = (wrapped_metadata or {}).get("_wrapper_summary", {})
-    wrapped_geo_columns = extract_geo_columns(wrapped_metadata)
-    combined_columns = combined_column_metadata_rows(source_metadata, chosen_metadata, header)
+    source_meta = profile.get("source_metadata", {})
+    atlas_meta = profile.get("atlas_metadata", {})
+    temporal_meta = profile.get("temporal_metadata", {})
 
+    row_count = atlas_meta.get("row_count", count_rows(data_path))
+    column_count = atlas_meta.get("column_count", len(header))
     summary = {
         "dataset_name": dataset_name,
         "row_count": row_count,
         "column_count": column_count,
-        "geo_labels_wrapped": sorted({item["label"] for item in wrapped_geo_columns}),
-        "wrapper_changed_count": wrapper_summary.get("changed_count", 0),
+        "geo_labels_wrapped": atlas_meta.get("geo_labels_wrapped", []),
+        "wrapper_changed_count": atlas_meta.get("wrapper_changed_count", 0),
+        "temporal_metadata": temporal_meta,
     }
-
     manifest = {
         "dataset_name": dataset_name,
-        "source_metadata_path": rel_repo_path(source_metadata_path)
-        if source_metadata
+        "source_metadata_path": rel_repo_path(paths["source_metadata"])
+        if source_meta
         else None,
         "raw_data_path": rel_repo_path(data_path),
-        "metadata_raw_path": rel_repo_path(raw_metadata_path) if raw_metadata else None,
-        "metadata_wrapped_path": rel_repo_path(wrapped_metadata_path)
-        if wrapped_metadata
+        "metadata_raw_path": rel_repo_path(paths["raw_metadata"])
+        if paths["raw_metadata"].exists()
         else None,
-        "geo_results_wrapped_path": rel_repo_path(wrapped_geo_path)
-        if wrapped_geo_path.exists()
+        "metadata_wrapped_path": rel_repo_path(paths["final_metadata"])
+        if paths["final_metadata"].exists()
+        else None,
+        "geo_results_wrapped_path": rel_repo_path(paths["final_geo_results"])
+        if paths["final_geo_results"].exists()
         else None,
         "sample_path": rel_repo_path(sample_path),
         "nb_rows": row_count,
         "nb_columns": column_count,
-        "has_wrapped_metadata": wrapped_metadata is not None,
-        "has_raw_metadata": raw_metadata is not None,
-        "has_source_metadata": source_metadata is not None,
+        "has_wrapped_metadata": paths["final_metadata"].exists(),
+        "has_raw_metadata": paths["raw_metadata"].exists(),
+        "has_source_metadata": bool(source_meta),
     }
 
     summary_path = table_dir / "summary.json"
@@ -123,35 +153,36 @@ def build_dataset_entry(dataset_name: str, data_path: Path) -> dict:
 
     entry = {
         "dataset_name": dataset_name,
-        "source_title": source_summary["title"],
-        "source_id": source_summary["id"],
-        "source_rows_updated_at": source_summary["rows_updated_at"],
-        "source_view_last_modified": source_summary["view_last_modified"],
-        "source_description": source_summary["description"],
-        "raw_data_path": manifest["raw_data_path"],
-        "source_metadata_path": manifest["source_metadata_path"],
-        "metadata_wrapped_path": manifest["metadata_wrapped_path"],
-        "geo_results_wrapped_path": manifest["geo_results_wrapped_path"],
+        "source_title": source_meta.get("title"),
+        "source_id": source_meta.get("id"),
+        "source_rows_updated_at": source_meta.get("rows_updated_at"),
+        "source_view_last_modified": source_meta.get("view_last_modified"),
+        "source_description": source_meta.get("description"),
+        "raw_data_path": rel_repo_path(data_path),
+        "source_metadata_path": rel_repo_path(paths["source_metadata"]) if source_meta else None,
+        "metadata_wrapped_path": rel_repo_path(paths["final_metadata"]) if paths["final_metadata"].exists() else None,
+        "geo_results_wrapped_path": rel_repo_path(paths["final_geo_results"]) if paths["final_geo_results"].exists() else None,
         "row_count": row_count,
         "column_count": column_count,
-        "wrapper_changed_count": wrapper_summary.get("changed_count", 0),
-        "wrapped_geo_column_count": len(wrapped_geo_columns),
+        "wrapper_changed_count": atlas_meta.get("wrapper_changed_count", 0),
+        "wrapped_geo_column_count": atlas_meta.get("wrapped_geo_column_count", 0),
         "summary_path": rel_repo_path(summary_path),
         "sample_header": header,
         "sample_rows": sample_rows,
-        "dataset_metadata_overview": dataset_metadata_overview(chosen_metadata),
-        "combined_column_metadata_rows": combined_columns,
-        "source_type_breakdown_rows": source_type_breakdown_rows(combined_columns),
-        "atlas_type_breakdown_rows": atlas_type_breakdown_rows(combined_columns),
-        "content_summary": content_summary(chosen_metadata, wrapped_geo_columns),
+        "dataset_metadata_overview": dataset_metadata_overview(atlas_meta, temporal_meta),
+        "combined_column_metadata_rows": atlas_meta.get("combined_column_metadata_rows", []),
+        "source_type_breakdown_rows": atlas_meta.get("source_type_breakdown_rows", []),
+        "atlas_type_breakdown_rows": atlas_meta.get("atlas_type_breakdown_rows", []),
+        "content_summary": atlas_meta.get("content_summary"),
+        "temporal_metadata": temporal_meta,
     }
 
     write_dataset_page(entry)
     return entry
 
 
-# Summarize source metadata for one dataset.
-def summarize_source_metadata(source_metadata: dict | None) -> dict:
+# Build source metadata for one dataset profile.
+def source_profile(source_metadata: dict | None) -> dict:
     if not source_metadata:
         return {
             "title": None,
@@ -159,18 +190,50 @@ def summarize_source_metadata(source_metadata: dict | None) -> dict:
             "rows_updated_at": None,
             "view_last_modified": None,
             "description": None,
+            "columns": [],
         }
+    columns = []
+    for column in source_metadata.get("columns", []):
+        columns.append(
+            {
+                "name": column.get("name"),
+                "field_name": column.get("fieldName"),
+                "description": column.get("description"),
+                "source_type": pretty_type(column.get("dataTypeName")),
+                "position": column.get("position"),
+            }
+        )
     return {
         "title": source_metadata.get("name"),
         "id": source_metadata.get("id"),
         "rows_updated_at": source_metadata.get("rowsUpdatedAt"),
         "view_last_modified": source_metadata.get("viewLastModified"),
         "description": source_metadata.get("description"),
+        "columns": columns,
     }
 
 
-# Build dataset level metadata rows.
-def dataset_metadata_overview(metadata: dict) -> list[tuple[str, str]]:
+# Build Atlas metadata for one dataset profile.
+def atlas_profile(metadata: dict, wrapped_metadata: dict | None, wrapped_geo_columns: list[dict], combined_columns: list[dict]) -> dict:
+    wrapper_summary = (wrapped_metadata or {}).get("_wrapper_summary", {})
+    return {
+        "row_count": metadata.get("nb_rows"),
+        "profiled_rows": metadata.get("nb_profiled_rows"),
+        "column_count": metadata.get("nb_columns"),
+        "wrapped_geo_column_count": len(wrapped_geo_columns),
+        "geo_labels_wrapped": sorted({item["label"] for item in wrapped_geo_columns}),
+        "wrapper_changed_count": wrapper_summary.get("changed_count", 0),
+        "dataset_metadata_overview": base_dataset_metadata_overview(metadata),
+        "combined_column_metadata_rows": combined_columns,
+        "source_type_breakdown_rows": source_type_breakdown_rows(combined_columns),
+        "atlas_type_breakdown_rows": atlas_type_breakdown_rows(combined_columns),
+        "content_summary": content_summary(metadata, wrapped_geo_columns),
+        "final_columns": metadata.get("columns", []),
+    }
+
+
+# Build base dataset metadata rows from Atlas metadata.
+def base_dataset_metadata_overview(metadata: dict) -> list[tuple[str, str]]:
     fields = [
         ("Rows", metadata.get("nb_rows")),
         ("Profiled Rows", metadata.get("nb_profiled_rows")),
@@ -190,6 +253,19 @@ def dataset_metadata_overview(metadata: dict) -> list[tuple[str, str]]:
     keywords = metadata.get("attribute_keywords")
     if keywords:
         rows.append(("Attribute Keywords", ", ".join(map(str, keywords[:12]))))
+    return rows
+
+
+# Build full dataset metadata rows for the detail page.
+def dataset_metadata_overview(atlas_metadata: dict, temporal_metadata: dict) -> list[tuple[str, str]]:
+    rows = list(atlas_metadata.get("dataset_metadata_overview", []))
+    rows.append(("Has Temporal Data", str(temporal_metadata.get("has_temporal_data", False))))
+    if temporal_metadata.get("temporal_columns"):
+        rows.append(("Temporal Columns", ", ".join(temporal_metadata["temporal_columns"])))
+    if temporal_metadata.get("temporal_start"):
+        rows.append(("Temporal Start", temporal_metadata["temporal_start"]))
+    if temporal_metadata.get("temporal_end"):
+        rows.append(("Temporal End", temporal_metadata["temporal_end"]))
     return rows
 
 
@@ -316,11 +392,18 @@ def content_summary(metadata: dict, wrapped_geo_columns: list[dict]) -> str:
     return NO_CONTENT_SUMMARY
 
 
+# Read only the CSV header.
+def read_csv_header(path: Path) -> list[str]:
+    with path.open("r", encoding="utf-8", errors="replace", newline="") as f:
+        reader = csv.reader(f)
+        return next(reader, [])
+
+
 # Read sample rows from a CSV file.
 def read_sample_rows(path: Path, limit: int) -> tuple[list[str], list[list[str]]]:
     with path.open("r", encoding="utf-8", errors="replace", newline="") as f:
         reader = csv.reader(f)
-        header = next(reader)
+        header = next(reader, [])
         rows = []
         for idx, row in enumerate(reader):
             if idx >= limit:
@@ -377,6 +460,11 @@ def write_catalog(datasets: list[dict]) -> None:
                 "column_count": item["column_count"],
                 "wrapper_changed_count": item["wrapper_changed_count"],
                 "wrapped_geo_column_count": item["wrapped_geo_column_count"],
+                "has_temporal_data": item["temporal_metadata"].get("has_temporal_data"),
+                "temporal_columns": ", ".join(item["temporal_metadata"].get("temporal_columns", [])),
+                "temporal_start": item["temporal_metadata"].get("temporal_start"),
+                "temporal_end": item["temporal_metadata"].get("temporal_end"),
+                "temporal_month_coverage": item["temporal_metadata"].get("month_coverage", {}),
             }
         )
 
@@ -399,10 +487,21 @@ def write_catalog(datasets: list[dict]) -> None:
                 "column_count",
                 "wrapper_changed_count",
                 "wrapped_geo_column_count",
+                "has_temporal_data",
+                "temporal_columns",
+                "temporal_start",
+                "temporal_end",
+                "temporal_month_coverage",
             ],
         )
         writer.writeheader()
-        writer.writerows(catalog_json)
+        for row in catalog_json:
+            csv_row = dict(row)
+            csv_row["temporal_month_coverage"] = json.dumps(
+                row.get("temporal_month_coverage", {}),
+                sort_keys=True,
+            )
+            writer.writerow(csv_row)
 
 
 # Write the lake site files.
@@ -430,10 +529,11 @@ def write_site(datasets: list[dict]) -> None:
         + "</div>"
         + "</section>"
         + render_update_panel(latest_report, latest_refresh_log)
+        + render_temporal_search_panel(datasets)
         + "<section class='section'>"
         + "<h2>Dataset Catalog</h2>"
         + "<p class='section-copy'>Each card shows the core table facts, metadata access points, and the main geo fields currently captured in wrapped output.</p>"
-        + "<div class='card-grid'>"
+        + "<div class='card-grid' id='dataset-card-grid'>"
         + "".join(cards)
         + "</div>"
         + "</section>"
@@ -446,9 +546,24 @@ def write_site(datasets: list[dict]) -> None:
 def render_index_card(item: dict) -> str:
     page_href = f"tables/{escape(item['dataset_name'])}.html"
     description = truncate_text(item.get("source_description") or "", 180)
+    temporal = item.get("temporal_metadata", {})
+    has_temporal = temporal.get("has_temporal_data", False)
+    temporal_start = temporal.get("temporal_start") or ""
+    temporal_end = temporal.get("temporal_end") or ""
+    temporal_columns = ", ".join(temporal.get("temporal_columns", []))
+    temporal_months = flatten_month_keys(temporal.get("month_coverage", {}))
+    card_open = (
+        "<article class='dataset-card'"
+        + f" data-dataset-name='{escape(item['dataset_name'])}'"
+        + f" data-has-temporal='{str(has_temporal).lower()}'"
+        + f" data-temporal-start='{escape(temporal_start)}'"
+        + f" data-temporal-end='{escape(temporal_end)}'"
+        + f" data-temporal-months='{escape(temporal_months)}'"
+        + ">"
+    )
 
     return (
-        "<article class='dataset-card'>"
+        card_open
         + f"<div class='card-top'><h3><a href='{page_href}'>{escape(item['dataset_name'])}</a></h3>"
         + f"<p class='subtle'>{escape(item.get('source_title') or item['raw_data_path'])}</p>"
         + "</div>"
@@ -463,9 +578,47 @@ def render_index_card(item: dict) -> str:
         + compact_meta("View Modified", format_timestamp(item.get("source_view_last_modified")))
         + compact_meta("Contains", item.get("content_summary"))
         + "</div></div>"
+        + "<div class='card-section'><h4>Temporal Coverage</h4><div class='compact-grid'>"
+        + compact_meta("Has Time Data", "Yes" if has_temporal else "No")
+        + compact_meta("Time Columns", temporal_columns or MISSING)
+        + compact_meta("Start", temporal_start or MISSING)
+        + compact_meta("End", temporal_end or MISSING)
+        + "</div></div>"
         + f"<p class='card-action'><a href='{page_href}'>Open details</a></p>"
         + "</article>"
     )
+
+
+# Render the temporal search panel on the index page.
+def render_temporal_search_panel(datasets: list[dict]) -> str:
+    temporal_count = sum(
+        1 for item in datasets if item.get("temporal_metadata", {}).get("has_temporal_data")
+    )
+    return (
+        "<section class='section action-panel'>"
+        + "<h2>Time Range Search</h2>"
+        + "<p class='section-copy'>This search is month based and returns datasets that have at least one month with data in the requested date range.</p>"
+        + "<div class='search-grid'>"
+        + "<label class='search-field'><span>Start Date</span><input id='temporal-start-date' type='date'></label>"
+        + "<label class='search-field'><span>End Date</span><input id='temporal-end-date' type='date'></label>"
+        + "</div>"
+        + "<div class='action-row'>"
+        + "<button class='action-button' type='button' onclick='runTemporalSearch()'>Search</button>"
+        + "<button class='action-button secondary-button' type='button' onclick='clearTemporalSearch()'>Clear</button>"
+        + "</div>"
+        + f"<p class='section-copy'>Datasets with temporal coverage: {temporal_count}</p>"
+        + "<p id='temporal-search-status' class='section-copy'>No time range filter is active.</p>"
+        + "</section>"
+    )
+
+
+# Flatten month coverage into month keys for the search UI.
+def flatten_month_keys(month_coverage: dict) -> str:
+    month_keys = []
+    for year in sorted(month_coverage, key=int):
+        for month in month_coverage[year]:
+            month_keys.append(f"{year}-{int(month):02d}")
+    return "|".join(month_keys)
 
 
 # Render one metric chip.
@@ -970,6 +1123,27 @@ def html_head(title: str) -> str:
       font-size: 14px;
       word-break: break-word;
     }}
+    .search-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }}
+    .search-field {{
+      display: grid;
+      gap: 6px;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }}
+    .search-field input {{
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+      background: #ffffff;
+      color: #111827;
+    }}
     .card-action {{
       margin-top: 16px;
       font-weight: 600;
@@ -1000,6 +1174,12 @@ def html_head(title: str) -> str:
     }}
     .action-button:hover {{
       background: #115e59;
+    }}
+    .secondary-button {{
+      background: #475569;
+    }}
+    .secondary-button:hover {{
+      background: #334155;
     }}
     .action-detail {{
       margin-top: 14px;
@@ -1107,6 +1287,99 @@ function toggleLakePanel(id) {
   const node = document.getElementById(id);
   if (!node) return;
   node.classList.toggle('is-hidden');
+}
+
+function monthKeysInRange(startValue, endValue) {
+  const monthKeys = [];
+  const start = new Date(startValue + 'T00:00:00');
+  const end = new Date(endValue + 'T00:00:00');
+  let year = start.getFullYear();
+  let month = start.getMonth() + 1;
+  const endYear = end.getFullYear();
+  const endMonth = end.getMonth() + 1;
+
+  while (year < endYear || (year === endYear && month <= endMonth)) {
+    monthKeys.push(String(year) + '-' + String(month).padStart(2, '0'));
+    month += 1;
+    if (month > 12) {
+      month = 1;
+      year += 1;
+    }
+  }
+
+  return monthKeys;
+}
+
+function runTemporalSearch() {
+  const startNode = document.getElementById('temporal-start-date');
+  const endNode = document.getElementById('temporal-end-date');
+  const statusNode = document.getElementById('temporal-search-status');
+  const cards = document.querySelectorAll('.dataset-card');
+
+  const startValue = startNode ? startNode.value : '';
+  const endValue = endNode ? endNode.value : '';
+
+  if (!startValue || !endValue) {
+    if (statusNode) {
+      statusNode.textContent = 'Enter both a start date and an end date.';
+    }
+    return;
+  }
+
+  if (startValue > endValue) {
+    if (statusNode) {
+      statusNode.textContent = 'Start date must be on or before end date.';
+    }
+    return;
+  }
+
+  const queryStart = new Date(startValue + 'T00:00:00');
+  const queryEnd = new Date(endValue + 'T23:59:59');
+  const queryMonths = monthKeysInRange(startValue, endValue);
+  let shownCount = 0;
+
+  cards.forEach((card) => {
+    const hasTemporal = card.dataset.hasTemporal === 'true';
+    const startText = card.dataset.temporalStart;
+    const endText = card.dataset.temporalEnd;
+    const datasetMonths = new Set((card.dataset.temporalMonths || '').split('|').filter(Boolean));
+    let showCard = false;
+
+    if (hasTemporal && startText && endText) {
+      const datasetStart = new Date(startText);
+      const datasetEnd = new Date(endText);
+      const overlapsRange = datasetStart <= queryEnd && datasetEnd >= queryStart;
+      const hasMonthInRange = queryMonths.some((monthKey) => datasetMonths.has(monthKey));
+      showCard = overlapsRange && hasMonthInRange;
+    }
+
+    card.style.display = showCard ? '' : 'none';
+    if (showCard) {
+      shownCount += 1;
+    }
+  });
+
+  if (statusNode) {
+    statusNode.textContent = 'Showing ' + shownCount + ' dataset(s) with data in ' + startValue + ' to ' + endValue + '.';
+  }
+}
+
+function clearTemporalSearch() {
+  const startNode = document.getElementById('temporal-start-date');
+  const endNode = document.getElementById('temporal-end-date');
+  const statusNode = document.getElementById('temporal-search-status');
+  const cards = document.querySelectorAll('.dataset-card');
+
+  if (startNode) startNode.value = '';
+  if (endNode) endNode.value = '';
+
+  cards.forEach((card) => {
+    card.style.display = '';
+  });
+
+  if (statusNode) {
+    statusNode.textContent = 'No time range filter is active.';
+  }
 }
 </script></body></html>
 """

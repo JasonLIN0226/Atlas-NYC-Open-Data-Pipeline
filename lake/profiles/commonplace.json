@@ -1,0 +1,1473 @@
+{
+  "dataset_name": "commonplace",
+  "source_metadata": {
+    "title": "CommonPlace",
+    "id": "t95h-5fsr",
+    "rows_updated_at": 1775909624,
+    "view_last_modified": 1747151565,
+    "description": "The Points Of Interest points are a compilation of what the different city agencies consider to be a Common Place or Place/Point of Interest.\r\n\r\nPreviously posted versions of the data are retained to comply with Local Law 106 of 2015 and can be provided upon request made to Open Data.",
+    "columns": [
+      {
+        "name": "the_geom",
+        "field_name": "the_geom",
+        "description": "",
+        "source_type": "point",
+        "position": 1
+      },
+      {
+        "name": "SEGMENTID",
+        "field_name": "segmentid",
+        "description": "",
+        "source_type": "number",
+        "position": 2
+      },
+      {
+        "name": "COMPLEXID",
+        "field_name": "complexid",
+        "description": "",
+        "source_type": "number",
+        "position": 3
+      },
+      {
+        "name": "SAFTYPE",
+        "field_name": "saftype",
+        "description": "",
+        "source_type": "text",
+        "position": 4
+      },
+      {
+        "name": "PLACEID",
+        "field_name": "placeid",
+        "description": "",
+        "source_type": "number",
+        "position": 6
+      },
+      {
+        "name": "BIN",
+        "field_name": "bin",
+        "description": "",
+        "source_type": "number",
+        "position": 8
+      },
+      {
+        "name": "SOURCE",
+        "field_name": "source",
+        "description": "",
+        "source_type": "text",
+        "position": 13
+      },
+      {
+        "name": "OBJECTID",
+        "field_name": "objectid",
+        "description": null,
+        "source_type": "number",
+        "position": 14
+      },
+      {
+        "name": "SOS INDICATOR",
+        "field_name": "sosindicator",
+        "description": null,
+        "source_type": "text",
+        "position": 15
+      },
+      {
+        "name": "FACILITY DOMAINS",
+        "field_name": "facility_domains",
+        "description": null,
+        "source_type": "text",
+        "position": 16
+      },
+      {
+        "name": "BOROUGH CODE",
+        "field_name": "boroughcode",
+        "description": null,
+        "source_type": "text",
+        "position": 17
+      },
+      {
+        "name": "SOURCE ID",
+        "field_name": "sourceid",
+        "description": null,
+        "source_type": "text",
+        "position": 18
+      },
+      {
+        "name": "CREATED_BY",
+        "field_name": "created_by",
+        "description": null,
+        "source_type": "text",
+        "position": 19
+      },
+      {
+        "name": "CREATED_DATE",
+        "field_name": "created_date",
+        "description": null,
+        "source_type": "date",
+        "position": 20
+      },
+      {
+        "name": "MODIFIED_BY",
+        "field_name": "modified_by",
+        "description": null,
+        "source_type": "text",
+        "position": 21
+      },
+      {
+        "name": "MODIFIED_DATE",
+        "field_name": "modified_date",
+        "description": null,
+        "source_type": "date",
+        "position": 22
+      },
+      {
+        "name": "FACILITY TYPE",
+        "field_name": "facility_type",
+        "description": null,
+        "source_type": "number",
+        "position": 23
+      },
+      {
+        "name": "B7SC",
+        "field_name": "b7sc",
+        "description": null,
+        "source_type": "text",
+        "position": 24
+      },
+      {
+        "name": "PRIMARY ADDRESS POINT ID",
+        "field_name": "primaryaddresspointid",
+        "description": null,
+        "source_type": "number",
+        "position": 25
+      },
+      {
+        "name": "FEATURE NAME",
+        "field_name": "feature_name",
+        "description": null,
+        "source_type": "text",
+        "position": 26
+      },
+      {
+        "name": "SECURITY LEVEL",
+        "field_name": "security_level",
+        "description": null,
+        "source_type": "number",
+        "position": 27
+      }
+    ]
+  },
+  "atlas_metadata": {
+    "row_count": 5000,
+    "profiled_rows": 4224,
+    "column_count": 21,
+    "wrapped_geo_column_count": 3,
+    "geo_labels_wrapped": [
+      "bin",
+      "borough_code",
+      "point"
+    ],
+    "wrapper_changed_count": 4,
+    "dataset_metadata_overview": [
+      [
+        "Rows",
+        "5000"
+      ],
+      [
+        "Profiled Rows",
+        "4224"
+      ],
+      [
+        "Columns",
+        "21"
+      ],
+      [
+        "Spatial Columns",
+        "4"
+      ],
+      [
+        "Temporal Columns",
+        "2"
+      ],
+      [
+        "Categorical Columns",
+        "3"
+      ],
+      [
+        "Numerical Columns",
+        "10"
+      ],
+      [
+        "Dataset Types",
+        "categorical, numerical, spatial, temporal"
+      ],
+      [
+        "Attribute Keywords",
+        "the_geom, the, geom, segmentid, complexid, saftype, placeid, bin, source, objectid, sosindicator, facility_domains"
+      ]
+    ],
+    "combined_column_metadata_rows": [
+      {
+        "name": "the_geom",
+        "final_type": "point",
+        "source_type": "point",
+        "source_description": "",
+        "structural_type": "GeoCoordinates",
+        "semantic_types": "",
+        "geo_label": "point",
+        "confidence": 0.9726014733314514
+      },
+      {
+        "name": "segmentid",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "",
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "complexid",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "",
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "saftype",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "placeid",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": "",
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "bin",
+        "final_type": "bin",
+        "source_type": "number",
+        "source_description": "",
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": "bin",
+        "confidence": 0.99
+      },
+      {
+        "name": "source",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "objectid",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "sosindicator",
+        "final_type": "Integer",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "facility_domains",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "boroughcode",
+        "final_type": "borough_code",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.7457291483879089
+      },
+      {
+        "name": "sourceid",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "created_by",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "created_date",
+        "final_type": "Text",
+        "source_type": "date",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "DateTime",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "modified_by",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "modified_date",
+        "final_type": "Text",
+        "source_type": "date",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "DateTime",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "facility_type",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "b7sc",
+        "final_type": "Integer",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "primaryaddresspointid",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "feature_name",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": null,
+        "structural_type": "Text",
+        "semantic_types": "Text",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "security_level",
+        "final_type": "Integer",
+        "source_type": "number",
+        "source_description": null,
+        "structural_type": "Integer",
+        "semantic_types": "Boolean",
+        "geo_label": null,
+        "confidence": null
+      }
+    ],
+    "source_type_breakdown_rows": [
+      {
+        "type": "text",
+        "count": 10
+      },
+      {
+        "type": "number",
+        "count": 8
+      },
+      {
+        "type": "date",
+        "count": 2
+      },
+      {
+        "type": "point",
+        "count": 1
+      }
+    ],
+    "atlas_type_breakdown_rows": [
+      {
+        "type": "non_spatial",
+        "count": 18
+      },
+      {
+        "type": "bin",
+        "count": 1
+      },
+      {
+        "type": "borough_code",
+        "count": 1
+      },
+      {
+        "type": "point",
+        "count": 1
+      }
+    ],
+    "content_summary": "point, bin, borough_code",
+    "final_columns": [
+      {
+        "name": "the_geom",
+        "structural_type": "http://schema.org/GeoCoordinates",
+        "semantic_types": [],
+        "geo_classifier": {
+          "label": "point",
+          "confidence": 0.9726014733314514,
+          "source": "ml+validated"
+        }
+      },
+      {
+        "name": "segmentid",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 4453,
+        "mean": 1488470.9933712122,
+        "stddev": 3203788.7683312134,
+        "coverage": [
+          {
+            "range": {
+              "gte": 16631.0,
+              "lte": 163652.0
+            }
+          },
+          {
+            "range": {
+              "gte": 180273.0,
+              "lte": 345056.0
+            }
+          },
+          {
+            "range": {
+              "gte": 9000355.0,
+              "lte": 9009440.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "complexid",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.6323390151515151,
+        "num_distinct_values": 648,
+        "mean": 1546.22601416613,
+        "stddev": 1984.9008301793083,
+        "coverage": [
+          {
+            "range": {
+              "gte": 65.0,
+              "lte": 522.0
+            }
+          },
+          {
+            "range": {
+              "gte": 2178.0,
+              "lte": 4278.0
+            }
+          },
+          {
+            "range": {
+              "gte": 4618.0,
+              "lte": 6658.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "saftype",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.4552556818181818,
+        "num_distinct_values": 4
+      },
+      {
+        "name": "placeid",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 5000,
+        "mean": 421665.3274147727,
+        "stddev": 498849.68953655247,
+        "coverage": [
+          {
+            "range": {
+              "gte": 467.0,
+              "lte": 10308.0
+            }
+          },
+          {
+            "range": {
+              "gte": 11404.0,
+              "lte": 19570.0
+            }
+          },
+          {
+            "range": {
+              "gte": 1004624.0,
+              "lte": 1036726.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "bin",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "geo_classifier": {
+          "label": "bin",
+          "confidence": 0.99,
+          "source": "wrapper"
+        },
+        "mean": 2653784.5321576763,
+        "stddev": 1333547.818941234,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1008811.0,
+              "lte": 2116006.0
+            }
+          },
+          {
+            "range": {
+              "gte": 3011043.0,
+              "lte": 3397861.0
+            }
+          },
+          {
+            "range": {
+              "gte": 4015334.0,
+              "lte": 5114906.0
+            }
+          }
+        ],
+        "wrapper_reason": "bin_name_and_pattern"
+      },
+      {
+        "name": "source",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 10
+      },
+      {
+        "name": "objectid",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 5000,
+        "mean": 10438.986505681818,
+        "stddev": 6026.433058507506,
+        "coverage": [
+          {
+            "range": {
+              "gte": 378.0,
+              "lte": 6769.0
+            }
+          },
+          {
+            "range": {
+              "gte": 7496.0,
+              "lte": 13752.0
+            }
+          },
+          {
+            "range": {
+              "gte": 14600.0,
+              "lte": 20815.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "sosindicator",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.026515151515151516,
+        "num_distinct_values": 3,
+        "mean": 1.5116731517509727,
+        "stddev": 0.49986371895565546,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1.0,
+              "lte": 1.0
+            }
+          },
+          {
+            "range": {
+              "gte": 2.0,
+              "lte": 2.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "facility_domains",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [],
+        "wrapper_reason": "clear_false_admin_like"
+      },
+      {
+        "name": "boroughcode",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.7457291483879089,
+          "source": "ml+validated"
+        }
+      },
+      {
+        "name": "sourceid",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [],
+        "missing_values_ratio": 0.7142518939393939,
+        "num_distinct_values": 1419
+      },
+      {
+        "name": "created_by",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.953125,
+        "num_distinct_values": 11
+      },
+      {
+        "name": "created_date",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/DateTime"
+        ],
+        "num_distinct_values": 1760
+      },
+      {
+        "name": "modified_by",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [],
+        "wrapper_reason": "clear_false_admin_like"
+      },
+      {
+        "name": "modified_date",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/DateTime"
+        ],
+        "missing_values_ratio": 0.07007575757575757,
+        "num_distinct_values": 3744
+      },
+      {
+        "name": "facility_type",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 13,
+        "mean": 4.9680397727272725,
+        "stddev": 3.336788646006086,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1.0,
+              "lte": 3.0
+            }
+          },
+          {
+            "range": {
+              "gte": 4.0,
+              "lte": 7.0
+            }
+          },
+          {
+            "range": {
+              "gte": 8.0,
+              "lte": 13.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "b7sc",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.4552556818181818,
+        "num_distinct_values": 2707,
+        "mean": 28160867.477183834,
+        "stddev": 12428343.455362042,
+        "coverage": [
+          {
+            "range": {
+              "gte": 10030601.0,
+              "lte": 23391001.0
+            }
+          },
+          {
+            "range": {
+              "gte": 26381009.0,
+              "lte": 41421001.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "primaryaddresspointid",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "mean": 2847169.4382693027,
+        "stddev": 2242376.571875555,
+        "coverage": [
+          {
+            "range": {
+              "gte": 59166.0,
+              "lte": 3253275.0
+            }
+          },
+          {
+            "range": {
+              "gte": 5010676.0,
+              "lte": 5205434.0
+            }
+          }
+        ],
+        "wrapper_reason": "clear_coord_on_code_like_values"
+      },
+      {
+        "name": "feature_name",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Text"
+        ]
+      },
+      {
+        "name": "security_level",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/Boolean"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 1,
+        "mean": 1.0,
+        "stddev": 0.0,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1.0,
+              "lte": 1.0
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "temporal_metadata": {
+    "has_temporal_data": true,
+    "temporal_columns": [
+      "created_date",
+      "modified_date"
+    ],
+    "temporal_start": "2008-03-15T00:00:00+00:00",
+    "temporal_end": "2025-05-02T16:13:42+00:00",
+    "column_ranges": [
+      {
+        "name": "created_date",
+        "start": "2008-03-15T00:00:00+00:00",
+        "end": "2025-05-02T16:13:42+00:00",
+        "month_coverage": {
+          "2008": [
+            3,
+            6,
+            9,
+            12
+          ],
+          "2009": [
+            5
+          ],
+          "2010": [
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2011": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2012": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2013": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2014": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2015": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2016": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2017": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2018": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2019": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2020": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2021": [
+            1,
+            2,
+            3,
+            4,
+            8,
+            9,
+            10
+          ],
+          "2022": [
+            4,
+            5,
+            6,
+            7,
+            9,
+            12
+          ],
+          "2023": [
+            2,
+            4,
+            5,
+            7,
+            9
+          ],
+          "2024": [
+            2,
+            3,
+            6,
+            7,
+            8,
+            9,
+            11,
+            12
+          ],
+          "2025": [
+            1,
+            2,
+            3,
+            5
+          ]
+        }
+      },
+      {
+        "name": "modified_date",
+        "start": "2010-10-25T12:03:43+00:00",
+        "end": "2025-04-29T13:48:07+00:00",
+        "month_coverage": {
+          "2010": [
+            10,
+            11,
+            12
+          ],
+          "2011": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2012": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2013": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2014": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2015": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12
+          ],
+          "2016": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2017": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2018": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2019": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2020": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2021": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2022": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2023": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "2024": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "2025": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      }
+    ],
+    "month_coverage": {
+      "2008": [
+        3,
+        6,
+        9,
+        12
+      ],
+      "2009": [
+        5
+      ],
+      "2010": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2011": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2012": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2013": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2014": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2015": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2016": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2017": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2018": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2019": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2020": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2021": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2022": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2023": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "2024": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "2025": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  }
+}

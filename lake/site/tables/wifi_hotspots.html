@@ -158,6 +158,27 @@
       font-size: 14px;
       word-break: break-word;
     }
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .search-field {
+      display: grid;
+      gap: 6px;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .search-field input {
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+      background: #ffffff;
+      color: #111827;
+    }
     .card-action {
       margin-top: 16px;
       font-weight: 600;
@@ -188,6 +209,12 @@
     }
     .action-button:hover {
       background: #115e59;
+    }
+    .secondary-button {
+      background: #475569;
+    }
+    .secondary-button:hover {
+      background: #334155;
     }
     .action-detail {
       margin-top: 14px;
@@ -314,7 +341,7 @@ Connecting to the Library&#x27;s Wireless Network
 Limitations and Disclaimers Regarding Wireless Access 
 •The Library&#x27;s wireless network is not secure. Information sent from or to your laptop can be captured by anyone else with a wireless device and the appropriate software, within three hundred feet. 
 •Library staff is not able to provide technical assistance and no guarantee can be provided that you will be able to make a wireless connection. 
-•The Library assumes no responsibility for the safety of equipment or for laptop configurations, security, or data files resulting from connection to the Library&#x27;s network</td></tr><tr><th>Rows Updated</th><td>2019-09-26 12:24:40</td></tr><tr><th>View Modified</th><td>2022-09-23 15:23:07</td></tr><tr><th>Contains</th><td>borough_code, address, latitude, longitude, x_coord, y_coord, city, zip5</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>3319</td></tr><tr><th>Profiled Rows</th><td>2756</td></tr><tr><th>Columns</th><td>29</td></tr><tr><th>Spatial Columns</th><td>5</td></tr><tr><th>Temporal Columns</th><td>1</td></tr><tr><th>Categorical Columns</th><td>8</td></tr><tr><th>Numerical Columns</th><td>12</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial, temporal</td></tr><tr><th>Attribute Keywords</th><td>objectid, borough, type, provider, name, location, latitude, longitude, x, y, location_t, location</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>objectid</th><th>borough</th><th>type</th><th>provider</th><th>name</th><th>location</th><th>latitude</th><th>longitude</th><th>x</th><th>y</th><th>location_t</th><th>remarks</th><th>city</th><th>ssid</th><th>sourceid</th><th>activated</th><th>borocode</th><th>boroname</th><th>ntacode</th><th>ntaname</th><th>coundist</th><th>zip</th><th>borocd</th><th>ct2010</th><th>bctcb2010</th><th>bin</th><th>bbl</th><th>doitt_id</th><th>location_lat_long</th></tr></thead><tbody><tr><td>10604</td><td>4</td><td>Limited Free</td><td>SPECTRUM</td><td>Baisley Pond Park</td><td>Park Perimeter</td><td>40.67485999990</td><td>-73.78412000050</td><td>1044131.89696000000</td><td>185219.89207700000</td><td>Outdoor TWC Aerial</td><td>3 free 10 min sessions</td><td>Queens</td><td>GuestWiFi</td><td>0</td><td>9999-09-09T00:00:00.000</td><td>4</td><td>Queens</td><td>QN02</td><td>Springfield Gardens North</td><td>28.00000000000</td><td>11434</td><td>412.00000000000</td><td>294.00000000000</td><td>294.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>1408</td><td>(40.6748599999, -73.7841200005)</td></tr><tr><td>10555</td><td>4</td><td>Limited Free</td><td>SPECTRUM</td><td>Kissena Park</td><td>Park Perimeter</td><td>40.74755999960</td><td>-73.81814999970</td><td>1034637.51076000000</td><td>211685.21775500000</td><td>Outdoor TWC Aerial</td><td>3 free 10 min sessions</td><td>Queens</td><td>GuestWiFi</td><td>0</td><td>9999-09-09T00:00:00.000</td><td>4</td><td>Queens</td><td>QN22</td><td>Flushing</td><td>20.00000000000</td><td>11355</td><td>407.00000000000</td><td>845.00000000000</td><td>845.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>1359</td><td>(40.7475599996, -73.8181499997)</td></tr><tr><td>12370</td><td>3</td><td>Free</td><td>Transit Wireless</td><td>Grand St (L)</td><td>Grand St (L)</td><td>40.71192599970</td><td>-73.94066999940</td><td>1000698.12752000000</td><td>198655.90884000000</td><td>Subway Station</td><td>SN 123</td><td>Brooklyn</td><td>TransitWirelessWiFi</td><td></td><td>9999-09-09T00:00:00.000</td><td>3</td><td>Brooklyn</td><td>BK90</td><td>East Williamsburg</td><td>34.00000000000</td><td>11206</td><td>301.00000000000</td><td>495.00000000000</td><td>495.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>1699</td><td>(40.7119259997, -73.9406699994)</td></tr><tr><td>9893</td><td>3</td><td>Free</td><td>Downtown Brooklyn</td><td></td><td>125 Court St.</td><td>40.68998500010</td><td>-73.99199500040</td><td>986469.96634900000</td><td>190656.68041600000</td><td>Outdoor</td><td></td><td>Brooklyn</td><td>Downtown Brooklyn WiFi</td><td></td><td>9999-09-09T00:00:00.000</td><td>3</td><td>Brooklyn</td><td>BK09</td><td>Brooklyn Heights-Cobble Hill</td><td>33.00000000000</td><td>11201</td><td>302.00000000000</td><td>9.00000000000</td><td>9.00000000000</td><td>3388736.00000000000</td><td>3002777501.00000000000</td><td>298</td><td>(40.6899850001, -73.9919950004)</td></tr><tr><td>10169</td><td>1</td><td>Free</td><td>Transit Wireless</td><td>Lexington Av-63 St (F)</td><td>Lexington Av-63 St (F)</td><td>40.76463000020</td><td>-73.96611500010</td><td>993636.55208100000</td><td>217853.88816100000</td><td>Subway Station</td><td>SN 223</td><td>New York</td><td>TransitWirelessWiFi</td><td></td><td>9999-09-09T00:00:00.000</td><td>1</td><td>Manhattan</td><td>MN40</td><td>Upper East Side-Carnegie Hill</td><td>4.00000000000</td><td>10065</td><td>108.00000000000</td><td>120.00000000000</td><td>120.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>599</td><td>(40.7646300002, -73.9661150001)</td></tr><tr><td>10880</td><td>4</td><td>Limited Free</td><td>SPECTRUM</td><td>Kissena Park</td><td>Park Perimeter</td><td>40.74243000030</td><td>-73.81151000030</td><td>1036481.35944000000</td><td>209820.08861200000</td><td>Outdoor TWC Aerial</td><td>3 free 10 min sessions</td><td>Queens</td><td>GuestWiFi</td><td>0</td><td>9999-09-09T00:00:00.000</td><td>4</td><td>Queens</td><td>QN62</td><td>Queensboro Hill</td><td>20.00000000000</td><td>11355</td><td>407.00000000000</td><td>1215.00000000000</td><td>1215.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>1347</td><td>(40.7424300003, -73.8115100003)</td></tr><tr><td>10953</td><td>1</td><td>Free</td><td>Harlem</td><td></td><td>Pole 94 - LenWS1N133</td><td>40.81294400000</td><td>-73.94169299960</td><td>1000390.02217000000</td><td>235459.89330300000</td><td>Outdoor</td><td></td><td>New York</td><td>Harlem Wi-Fi</td><td></td><td>9999-09-09T00:00:00.000</td><td>1</td><td>Manhattan</td><td>MN03</td><td>Central Harlem North-Polo Grounds</td><td>9.00000000000</td><td>10037</td><td>110.00000000000</td><td>212.00000000000</td><td>212.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>787</td><td>(40.812944, -73.9416929996)</td></tr><tr><td>11018</td><td>3</td><td>Free</td><td>BPL</td><td>Clinton Hill - Brooklyn Public Library</td><td>380 WASHINGTON AVENUE</td><td>40.68737909410</td><td>-73.96603066600</td><td>993670.82793100000</td><td>189708.99792800000</td><td>Library</td><td></td><td>Brooklyn</td><td>BPLUNWIRED</td><td></td><td>9999-09-09T00:00:00.000</td><td>3</td><td>Brooklyn</td><td>BK69</td><td>Clinton Hill</td><td>35.00000000000</td><td>11238</td><td>302.00000000000</td><td>197.00000000000</td><td>197.00000000000</td><td>3055495.00000000000</td><td>3019450036.00000000000</td><td>53</td><td>(40.6873790941, -73.966030666)</td></tr><tr><td>12375</td><td>4</td><td>Free</td><td>Transit Wireless</td><td>Halsey St (L)</td><td>Halsey St (L)</td><td>40.69560200010</td><td>-73.90408400040</td><td>1010847.41694000000</td><td>192717.57885400000</td><td>Subway Station</td><td>SN 129</td><td>Brooklyn</td><td>TransitWirelessWiFi</td><td></td><td>9999-09-09T00:00:00.000</td><td>4</td><td>Queens</td><td>QN20</td><td>Ridgewood</td><td>34.00000000000</td><td>11385</td><td>405.00000000000</td><td>555.00000000000</td><td>555.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>1704</td><td>(40.6956020001, -73.9040840004)</td></tr><tr><td>12607</td><td>3</td><td>Free</td><td>Transit Wireless</td><td>Broadway Junction (A,C,J,L,Z)</td><td>Broadway Junction (A,C,J,L,Z)</td><td>40.67833400020</td><td>-73.90531600010</td><td>1010512.58493000000</td><td>186425.97529500000</td><td>Subway Station</td><td>SN 184</td><td>Brooklyn</td><td>TransitWirelessWiFi</td><td></td><td>9999-09-09T00:00:00.000</td><td>3</td><td>Brooklyn</td><td>BK79</td><td>Ocean Hill</td><td>37.00000000000</td><td>11233</td><td>316.00000000000</td><td>367.00000000000</td><td>367.00000000000</td><td>0.00000000000</td><td>3015460001.00000000000</td><td>1718</td><td>(40.6783340002, -73.9053160001)</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>14</span></div><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:93%'></div></div><span class='bar-value'>13</span></div><div class='bar-row'><span class='bar-label'>calendar_date</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>location</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>number</td><td>14</td></tr><tr><td>text</td><td>13</td></tr><tr><td>calendar_date</td><td>1</td></tr><tr><td>location</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>15</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:47%'></div></div><span class='bar-value'>7</span></div><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>city</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>latitude</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>longitude</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>x_coord</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>y_coord</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>zip_code</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>15</td></tr><tr><td>borough_code</td><td>7</td></tr><tr><td>address</td><td>1</td></tr><tr><td>city</td><td>1</td></tr><tr><td>latitude</td><td>1</td></tr><tr><td>longitude</td><td>1</td></tr><tr><td>x_coord</td><td>1</td></tr><tr><td>y_coord</td><td>1</td></tr><tr><td>zip_code</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>objectid</td><td>Integer</td><td>number</td><td>Integer</td><td>identifier</td><td></td><td></td><td>Identification number automatically generated by map software ArcMap.
+•The Library assumes no responsibility for the safety of equipment or for laptop configurations, security, or data files resulting from connection to the Library&#x27;s network</td></tr><tr><th>Rows Updated</th><td>2019-09-26 12:24:40</td></tr><tr><th>View Modified</th><td>2022-09-23 15:23:07</td></tr><tr><th>Contains</th><td>borough_code, address, latitude, longitude, x_coord, y_coord, city, zip5</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>3319</td></tr><tr><th>Profiled Rows</th><td>2756</td></tr><tr><th>Columns</th><td>29</td></tr><tr><th>Spatial Columns</th><td>5</td></tr><tr><th>Temporal Columns</th><td>1</td></tr><tr><th>Categorical Columns</th><td>8</td></tr><tr><th>Numerical Columns</th><td>12</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial, temporal</td></tr><tr><th>Attribute Keywords</th><td>objectid, borough, type, provider, name, location, latitude, longitude, x, y, location_t, location</td></tr><tr><th>Has Temporal Data</th><td>True</td></tr><tr><th>Temporal Columns</th><td>activated</td></tr><tr><th>Temporal Start</th><td>2016-01-19T00:00:00</td></tr><tr><th>Temporal End</th><td>9999-09-09T00:00:00</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>objectid</th><th>borough</th><th>type</th><th>provider</th><th>name</th><th>location</th><th>latitude</th><th>longitude</th><th>x</th><th>y</th><th>location_t</th><th>remarks</th><th>city</th><th>ssid</th><th>sourceid</th><th>activated</th><th>borocode</th><th>boroname</th><th>ntacode</th><th>ntaname</th><th>coundist</th><th>zip</th><th>borocd</th><th>ct2010</th><th>bctcb2010</th><th>bin</th><th>bbl</th><th>doitt_id</th><th>location_lat_long</th></tr></thead><tbody><tr><td>10604</td><td>4</td><td>Limited Free</td><td>SPECTRUM</td><td>Baisley Pond Park</td><td>Park Perimeter</td><td>40.67485999990</td><td>-73.78412000050</td><td>1044131.89696000000</td><td>185219.89207700000</td><td>Outdoor TWC Aerial</td><td>3 free 10 min sessions</td><td>Queens</td><td>GuestWiFi</td><td>0</td><td>9999-09-09T00:00:00.000</td><td>4</td><td>Queens</td><td>QN02</td><td>Springfield Gardens North</td><td>28.00000000000</td><td>11434</td><td>412.00000000000</td><td>294.00000000000</td><td>294.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>1408</td><td>(40.6748599999, -73.7841200005)</td></tr><tr><td>10555</td><td>4</td><td>Limited Free</td><td>SPECTRUM</td><td>Kissena Park</td><td>Park Perimeter</td><td>40.74755999960</td><td>-73.81814999970</td><td>1034637.51076000000</td><td>211685.21775500000</td><td>Outdoor TWC Aerial</td><td>3 free 10 min sessions</td><td>Queens</td><td>GuestWiFi</td><td>0</td><td>9999-09-09T00:00:00.000</td><td>4</td><td>Queens</td><td>QN22</td><td>Flushing</td><td>20.00000000000</td><td>11355</td><td>407.00000000000</td><td>845.00000000000</td><td>845.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>1359</td><td>(40.7475599996, -73.8181499997)</td></tr><tr><td>12370</td><td>3</td><td>Free</td><td>Transit Wireless</td><td>Grand St (L)</td><td>Grand St (L)</td><td>40.71192599970</td><td>-73.94066999940</td><td>1000698.12752000000</td><td>198655.90884000000</td><td>Subway Station</td><td>SN 123</td><td>Brooklyn</td><td>TransitWirelessWiFi</td><td></td><td>9999-09-09T00:00:00.000</td><td>3</td><td>Brooklyn</td><td>BK90</td><td>East Williamsburg</td><td>34.00000000000</td><td>11206</td><td>301.00000000000</td><td>495.00000000000</td><td>495.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>1699</td><td>(40.7119259997, -73.9406699994)</td></tr><tr><td>9893</td><td>3</td><td>Free</td><td>Downtown Brooklyn</td><td></td><td>125 Court St.</td><td>40.68998500010</td><td>-73.99199500040</td><td>986469.96634900000</td><td>190656.68041600000</td><td>Outdoor</td><td></td><td>Brooklyn</td><td>Downtown Brooklyn WiFi</td><td></td><td>9999-09-09T00:00:00.000</td><td>3</td><td>Brooklyn</td><td>BK09</td><td>Brooklyn Heights-Cobble Hill</td><td>33.00000000000</td><td>11201</td><td>302.00000000000</td><td>9.00000000000</td><td>9.00000000000</td><td>3388736.00000000000</td><td>3002777501.00000000000</td><td>298</td><td>(40.6899850001, -73.9919950004)</td></tr><tr><td>10169</td><td>1</td><td>Free</td><td>Transit Wireless</td><td>Lexington Av-63 St (F)</td><td>Lexington Av-63 St (F)</td><td>40.76463000020</td><td>-73.96611500010</td><td>993636.55208100000</td><td>217853.88816100000</td><td>Subway Station</td><td>SN 223</td><td>New York</td><td>TransitWirelessWiFi</td><td></td><td>9999-09-09T00:00:00.000</td><td>1</td><td>Manhattan</td><td>MN40</td><td>Upper East Side-Carnegie Hill</td><td>4.00000000000</td><td>10065</td><td>108.00000000000</td><td>120.00000000000</td><td>120.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>599</td><td>(40.7646300002, -73.9661150001)</td></tr><tr><td>10880</td><td>4</td><td>Limited Free</td><td>SPECTRUM</td><td>Kissena Park</td><td>Park Perimeter</td><td>40.74243000030</td><td>-73.81151000030</td><td>1036481.35944000000</td><td>209820.08861200000</td><td>Outdoor TWC Aerial</td><td>3 free 10 min sessions</td><td>Queens</td><td>GuestWiFi</td><td>0</td><td>9999-09-09T00:00:00.000</td><td>4</td><td>Queens</td><td>QN62</td><td>Queensboro Hill</td><td>20.00000000000</td><td>11355</td><td>407.00000000000</td><td>1215.00000000000</td><td>1215.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>1347</td><td>(40.7424300003, -73.8115100003)</td></tr><tr><td>10953</td><td>1</td><td>Free</td><td>Harlem</td><td></td><td>Pole 94 - LenWS1N133</td><td>40.81294400000</td><td>-73.94169299960</td><td>1000390.02217000000</td><td>235459.89330300000</td><td>Outdoor</td><td></td><td>New York</td><td>Harlem Wi-Fi</td><td></td><td>9999-09-09T00:00:00.000</td><td>1</td><td>Manhattan</td><td>MN03</td><td>Central Harlem North-Polo Grounds</td><td>9.00000000000</td><td>10037</td><td>110.00000000000</td><td>212.00000000000</td><td>212.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>787</td><td>(40.812944, -73.9416929996)</td></tr><tr><td>11018</td><td>3</td><td>Free</td><td>BPL</td><td>Clinton Hill - Brooklyn Public Library</td><td>380 WASHINGTON AVENUE</td><td>40.68737909410</td><td>-73.96603066600</td><td>993670.82793100000</td><td>189708.99792800000</td><td>Library</td><td></td><td>Brooklyn</td><td>BPLUNWIRED</td><td></td><td>9999-09-09T00:00:00.000</td><td>3</td><td>Brooklyn</td><td>BK69</td><td>Clinton Hill</td><td>35.00000000000</td><td>11238</td><td>302.00000000000</td><td>197.00000000000</td><td>197.00000000000</td><td>3055495.00000000000</td><td>3019450036.00000000000</td><td>53</td><td>(40.6873790941, -73.966030666)</td></tr><tr><td>12375</td><td>4</td><td>Free</td><td>Transit Wireless</td><td>Halsey St (L)</td><td>Halsey St (L)</td><td>40.69560200010</td><td>-73.90408400040</td><td>1010847.41694000000</td><td>192717.57885400000</td><td>Subway Station</td><td>SN 129</td><td>Brooklyn</td><td>TransitWirelessWiFi</td><td></td><td>9999-09-09T00:00:00.000</td><td>4</td><td>Queens</td><td>QN20</td><td>Ridgewood</td><td>34.00000000000</td><td>11385</td><td>405.00000000000</td><td>555.00000000000</td><td>555.00000000000</td><td>0.00000000000</td><td>0.00000000000</td><td>1704</td><td>(40.6956020001, -73.9040840004)</td></tr><tr><td>12607</td><td>3</td><td>Free</td><td>Transit Wireless</td><td>Broadway Junction (A,C,J,L,Z)</td><td>Broadway Junction (A,C,J,L,Z)</td><td>40.67833400020</td><td>-73.90531600010</td><td>1010512.58493000000</td><td>186425.97529500000</td><td>Subway Station</td><td>SN 184</td><td>Brooklyn</td><td>TransitWirelessWiFi</td><td></td><td>9999-09-09T00:00:00.000</td><td>3</td><td>Brooklyn</td><td>BK79</td><td>Ocean Hill</td><td>37.00000000000</td><td>11233</td><td>316.00000000000</td><td>367.00000000000</td><td>367.00000000000</td><td>0.00000000000</td><td>3015460001.00000000000</td><td>1718</td><td>(40.6783340002, -73.9053160001)</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>14</span></div><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:93%'></div></div><span class='bar-value'>13</span></div><div class='bar-row'><span class='bar-label'>calendar_date</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>location</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>number</td><td>14</td></tr><tr><td>text</td><td>13</td></tr><tr><td>calendar_date</td><td>1</td></tr><tr><td>location</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>15</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:47%'></div></div><span class='bar-value'>7</span></div><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>city</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>latitude</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>longitude</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>x_coord</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>y_coord</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div><div class='bar-row'><span class='bar-label'>zip_code</span><div class='bar-track'><div class='bar-fill' style='width:8%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>15</td></tr><tr><td>borough_code</td><td>7</td></tr><tr><td>address</td><td>1</td></tr><tr><td>city</td><td>1</td></tr><tr><td>latitude</td><td>1</td></tr><tr><td>longitude</td><td>1</td></tr><tr><td>x_coord</td><td>1</td></tr><tr><td>y_coord</td><td>1</td></tr><tr><td>zip_code</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>objectid</td><td>Integer</td><td>number</td><td>Integer</td><td>identifier</td><td></td><td></td><td>Identification number automatically generated by map software ArcMap.
 </td></tr><tr><td>borough</td><td>borough_code</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.6277474761009216</td><td>Borough of New York City.                MN = Manhattan                                  BX = Bronx                                           BK = Brooklyn                                     QU = Queens                                       SI = Staten Island
 </td></tr><tr><td>type</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Type of WiFi provided by franchise.
 </td></tr><tr><td>provider</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Franchise who is providing the Wifi connection.
@@ -346,5 +373,98 @@ function toggleLakePanel(id) {
   const node = document.getElementById(id);
   if (!node) return;
   node.classList.toggle('is-hidden');
+}
+
+function monthKeysInRange(startValue, endValue) {
+  const monthKeys = [];
+  const start = new Date(startValue + 'T00:00:00');
+  const end = new Date(endValue + 'T00:00:00');
+  let year = start.getFullYear();
+  let month = start.getMonth() + 1;
+  const endYear = end.getFullYear();
+  const endMonth = end.getMonth() + 1;
+
+  while (year < endYear || (year === endYear && month <= endMonth)) {
+    monthKeys.push(String(year) + '-' + String(month).padStart(2, '0'));
+    month += 1;
+    if (month > 12) {
+      month = 1;
+      year += 1;
+    }
+  }
+
+  return monthKeys;
+}
+
+function runTemporalSearch() {
+  const startNode = document.getElementById('temporal-start-date');
+  const endNode = document.getElementById('temporal-end-date');
+  const statusNode = document.getElementById('temporal-search-status');
+  const cards = document.querySelectorAll('.dataset-card');
+
+  const startValue = startNode ? startNode.value : '';
+  const endValue = endNode ? endNode.value : '';
+
+  if (!startValue || !endValue) {
+    if (statusNode) {
+      statusNode.textContent = 'Enter both a start date and an end date.';
+    }
+    return;
+  }
+
+  if (startValue > endValue) {
+    if (statusNode) {
+      statusNode.textContent = 'Start date must be on or before end date.';
+    }
+    return;
+  }
+
+  const queryStart = new Date(startValue + 'T00:00:00');
+  const queryEnd = new Date(endValue + 'T23:59:59');
+  const queryMonths = monthKeysInRange(startValue, endValue);
+  let shownCount = 0;
+
+  cards.forEach((card) => {
+    const hasTemporal = card.dataset.hasTemporal === 'true';
+    const startText = card.dataset.temporalStart;
+    const endText = card.dataset.temporalEnd;
+    const datasetMonths = new Set((card.dataset.temporalMonths || '').split('|').filter(Boolean));
+    let showCard = false;
+
+    if (hasTemporal && startText && endText) {
+      const datasetStart = new Date(startText);
+      const datasetEnd = new Date(endText);
+      const overlapsRange = datasetStart <= queryEnd && datasetEnd >= queryStart;
+      const hasMonthInRange = queryMonths.some((monthKey) => datasetMonths.has(monthKey));
+      showCard = overlapsRange && hasMonthInRange;
+    }
+
+    card.style.display = showCard ? '' : 'none';
+    if (showCard) {
+      shownCount += 1;
+    }
+  });
+
+  if (statusNode) {
+    statusNode.textContent = 'Showing ' + shownCount + ' dataset(s) with data in ' + startValue + ' to ' + endValue + '.';
+  }
+}
+
+function clearTemporalSearch() {
+  const startNode = document.getElementById('temporal-start-date');
+  const endNode = document.getElementById('temporal-end-date');
+  const statusNode = document.getElementById('temporal-search-status');
+  const cards = document.querySelectorAll('.dataset-card');
+
+  if (startNode) startNode.value = '';
+  if (endNode) endNode.value = '';
+
+  cards.forEach((card) => {
+    card.style.display = '';
+  });
+
+  if (statusNode) {
+    statusNode.textContent = 'No time range filter is active.';
+  }
 }
 </script></body></html>

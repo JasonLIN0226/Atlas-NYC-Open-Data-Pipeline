@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-04-21T22:20:51+00:00",
+  "checked_at": "2026-04-22T00:08:27+00:00",
   "summary": {
     "unchanged": 11
   },
@@ -31,7 +31,7 @@
         "description": "The New York City Department of Transportation (NYC DOT) builds and manages bicycle facilities across the five boroughs, alongside other City agencies, New York State, and external partners. This dataset contain records of the current and historic network of designated bicycle routes and facilities, including bicycle facility type and relevant street information represented as line segments. Additional information about NYC DOT's commitment to safe all-ages and abilities bicycling, along with data about the growth of bicycling in NYC and PDF maps of the current network can be found at: https://www.nyc.gov/html/dot/html/bicyclists/bicyclists.shtml",
         "diciBackend": false,
         "displayType": "table",
-        "downloadCount": 6906,
+        "downloadCount": 6907,
         "hideFromCatalog": false,
         "hideFromDataJson": false,
         "locked": false,
@@ -47,7 +47,7 @@
         "rowsUpdatedBy": "d5dp-fses",
         "tableId": 20016502,
         "totalTimesRated": 0,
-        "viewCount": 17381,
+        "viewCount": 17384,
         "viewLastModified": 1755531980,
         "viewType": "tabular",
         "approvals": [
@@ -1870,10 +1870,10 @@
       "missing_local_files": [],
       "is_new_dataset": false,
       "error": null,
-      "local_rows_updated_at": 1776553209,
-      "remote_rows_updated_at": 1776553209,
-      "local_view_last_modified": 1776726004,
-      "remote_view_last_modified": 1776726004,
+      "local_rows_updated_at": 1776812410,
+      "remote_rows_updated_at": 1776812410,
+      "local_view_last_modified": 1776812403,
+      "remote_view_last_modified": 1776812403,
       "local_column_count": 20,
       "remote_column_count": 20,
       "remote_metadata": {
@@ -1888,7 +1888,7 @@
         "description": "This is an official NYC Health Department dataset. the Health Department does not endorse datasets using this data that may be created by others.\n\nThis dataset lists active child care programs regulated under NYC Health Code Article 47 (Group Day Care) and Article 43 (School-based Child Care). \n\nHealth Code Article 47: https://www.nyc.gov/assets/doh/downloads/pdf/about/healthcode/health-code-article47.pdf\n\nHealth Code Article 43: https://www.nyc.gov/assets/doh/downloads/pdf/about/healthcode/health-code-article43.pdf\n\nThese data can be used to map NYC Health Code regulated child care programs and filter by attributes, such as location, ages served, facility type. It can also be used to answer questions such as how many group child care (GCC) programs are in a specific ZIP code.\n\nOnly active group child care (GCC) and school-based child care (SBCC) programs are displayed in this dataset. Child care programs with a 'preliminary', 'suspended', or 'closed' status are not included.",
         "diciBackend": false,
         "displayType": "table",
-        "downloadCount": 15472,
+        "downloadCount": 15483,
         "hideFromCatalog": false,
         "hideFromDataJson": false,
         "licenseId": "PUBLIC_DOMAIN",
@@ -1901,12 +1901,12 @@
         "publicationDate": 1769092006,
         "publicationGroup": 19349463,
         "publicationStage": "published",
-        "rowsUpdatedAt": 1776553209,
+        "rowsUpdatedAt": 1776812410,
         "rowsUpdatedBy": "5fuc-pqz2",
         "tableId": 20241061,
         "totalTimesRated": 0,
-        "viewCount": 2724,
-        "viewLastModified": 1776726004,
+        "viewCount": 2728,
+        "viewLastModified": 1776812403,
         "viewType": "tabular",
         "approvals": [
           {
@@ -2291,11 +2291,11 @@
               "top": [
                 {
                   "item": "PRESCHOOL",
-                  "count": "2163"
+                  "count": "2162"
                 },
                 {
                   "item": "INFANT TODDLER",
-                  "count": "571"
+                  "count": "572"
                 }
               ],
               "smallest": "INFANT TODDLER",
@@ -2323,7 +2323,7 @@
                   "count": "4"
                 },
                 {
-                  "item": "101 WEST END AVENUE",
+                  "item": "1462 62 STREET",
                   "count": "3"
                 },
                 {
@@ -2335,7 +2335,7 @@
                   "count": "3"
                 },
                 {
-                  "item": "1462 62 STREET",
+                  "item": "101 WEST END AVENUE",
                   "count": "3"
                 },
                 {
@@ -2359,15 +2359,15 @@
                   "count": "2"
                 },
                 {
-                  "item": "110 RIDGE STREET",
-                  "count": "2"
-                },
-                {
                   "item": "11-02 CLINTONVILLE STREET",
                   "count": "2"
                 },
                 {
                   "item": "100 CHURCH STREET",
+                  "count": "2"
+                },
+                {
+                  "item": "110 RIDGE STREET",
                   "count": "2"
                 },
                 {
@@ -2383,11 +2383,11 @@
                   "count": "2"
                 },
                 {
-                  "item": "101-09 WOODHAVEN BOULEVARD",
+                  "item": "104 WEST END AVENUE",
                   "count": "2"
                 },
                 {
-                  "item": "10023 SEAVIEW   AVENUE",
+                  "item": "1054 43 STREET",
                   "count": "2"
                 },
                 {
@@ -2395,7 +2395,7 @@
                   "count": "2"
                 },
                 {
-                  "item": "100 WEST 89TH STREET",
+                  "item": "101-09 WOODHAVEN BOULEVARD",
                   "count": "2"
                 }
               ],
@@ -2425,11 +2425,11 @@
                 },
                 {
                   "item": "MANHATTAN",
-                  "count": "585"
+                  "count": "586"
                 },
                 {
                   "item": "QUEENS",
-                  "count": "553"
+                  "count": "552"
                 },
                 {
                   "item": "BRONX",
@@ -2521,15 +2521,15 @@
                   "count": "34"
                 },
                 {
+                  "item": "10002",
+                  "count": "33"
+                },
+                {
                   "item": "11230",
                   "count": "32"
                 },
                 {
                   "item": "11101",
-                  "count": "32"
-                },
-                {
-                  "item": "10002",
                   "count": "32"
                 },
                 {
@@ -2667,11 +2667,11 @@
               "top": [
                 {
                   "item": "2 YEARS - 5 YEARS",
-                  "count": "1742"
+                  "count": "1741"
                 },
                 {
                   "item": "0 YEARS - 2 YEARS",
-                  "count": "562"
+                  "count": "563"
                 },
                 {
                   "item": "3 YEARS - 5 YEARS",
@@ -2712,15 +2712,15 @@
                 },
                 {
                   "item": "40",
-                  "count": "70"
-                },
-                {
-                  "item": "20",
-                  "count": "65"
+                  "count": "71"
                 },
                 {
                   "item": "30",
-                  "count": "63"
+                  "count": "64"
+                },
+                {
+                  "item": "20",
+                  "count": "64"
                 },
                 {
                   "item": "36",
@@ -2732,7 +2732,7 @@
                 },
                 {
                   "item": "10",
-                  "count": "50"
+                  "count": "51"
                 },
                 {
                   "item": "60",
@@ -2751,15 +2751,15 @@
                   "count": "38"
                 },
                 {
+                  "item": "38",
+                  "count": "35"
+                },
+                {
                   "item": "27",
                   "count": "35"
                 },
                 {
                   "item": "26",
-                  "count": "34"
-                },
-                {
-                  "item": "38",
                   "count": "34"
                 },
                 {
@@ -2805,11 +2805,11 @@
               "top": [
                 {
                   "item": "No",
-                  "count": "2588"
+                  "count": "2587"
                 },
                 {
                   "item": "Yes",
-                  "count": "146"
+                  "count": "147"
                 }
               ],
               "smallest": "No",
@@ -3158,7 +3158,7 @@
                 },
                 {
                   "item": "01",
-                  "count": "84"
+                  "count": "85"
                 },
                 {
                   "item": "43",
@@ -3261,7 +3261,7 @@
                   "count": "18"
                 },
                 {
-                  "item": "015100",
+                  "item": "003300",
                   "count": "17"
                 },
                 {
@@ -3273,11 +3273,11 @@
                   "count": "17"
                 },
                 {
-                  "item": "018100",
+                  "item": "015100",
                   "count": "17"
                 },
                 {
-                  "item": "003300",
+                  "item": "018100",
                   "count": "17"
                 },
                 {
@@ -3293,6 +3293,10 @@
                   "count": "13"
                 },
                 {
+                  "item": "017900",
+                  "count": "12"
+                },
+                {
                   "item": "014900",
                   "count": "12"
                 },
@@ -3301,11 +3305,11 @@
                   "count": "12"
                 },
                 {
-                  "item": "017300",
+                  "item": "053700",
                   "count": "12"
                 },
                 {
-                  "item": "017900",
+                  "item": "017300",
                   "count": "12"
                 },
                 {
@@ -3313,15 +3317,11 @@
                   "count": "12"
                 },
                 {
-                  "item": "053700",
-                  "count": "12"
-                },
-                {
-                  "item": "009900",
+                  "item": "009200",
                   "count": "11"
                 },
                 {
-                  "item": "009200",
+                  "item": "009900",
                   "count": "11"
                 },
                 {
@@ -3728,10 +3728,10 @@
         "_requested_view_id": "gy3q-4tzp",
         "_resolved_view_id": "gy3q-4tzp"
       },
-      "local_rows_updated_at_readable": "2026-04-18T23:00:09+00:00",
-      "remote_rows_updated_at_readable": "2026-04-18T23:00:09+00:00",
-      "local_view_last_modified_readable": "2026-04-20T23:00:04+00:00",
-      "remote_view_last_modified_readable": "2026-04-20T23:00:04+00:00"
+      "local_rows_updated_at_readable": "2026-04-21T23:00:10+00:00",
+      "remote_rows_updated_at_readable": "2026-04-21T23:00:10+00:00",
+      "local_view_last_modified_readable": "2026-04-21T23:00:03+00:00",
+      "remote_view_last_modified_readable": "2026-04-21T23:00:03+00:00"
     },
     {
       "dataset_name": "commonplace",
@@ -3760,7 +3760,7 @@
         "description": "The Points Of Interest points are a compilation of what the different city agencies consider to be a Common Place or Place/Point of Interest.\r\n\r\nPreviously posted versions of the data are retained to comply with Local Law 106 of 2015 and can be provided upon request made to Open Data.",
         "diciBackend": false,
         "displayType": "table",
-        "downloadCount": 6416,
+        "downloadCount": 6428,
         "hideFromCatalog": false,
         "hideFromDataJson": false,
         "locked": false,
@@ -5826,7 +5826,7 @@
         "rowsUpdatedBy": "d5dp-fses",
         "tableId": 20292219,
         "totalTimesRated": 0,
-        "viewCount": 14311,
+        "viewCount": 14312,
         "viewLastModified": 1772134244,
         "viewType": "tabular",
         "approvals": [
@@ -8029,7 +8029,7 @@
         "rowsUpdatedAt": 1466610774,
         "tableId": 11483684,
         "totalTimesRated": 0,
-        "viewCount": 2918,
+        "viewCount": 2920,
         "viewLastModified": 1706899543,
         "viewType": "tabular",
         "approvals": [
@@ -9480,7 +9480,7 @@
         "rowsUpdatedBy": "5fuc-pqz2",
         "tableId": 20219292,
         "totalTimesRated": 0,
-        "viewCount": 5041,
+        "viewCount": 5048,
         "viewLastModified": 1766778501,
         "viewType": "tabular",
         "approvals": [
@@ -13816,7 +13816,7 @@
         "rowsUpdatedBy": "8xiq-st2k",
         "tableId": 20351699,
         "totalTimesRated": 0,
-        "viewCount": 5353,
+        "viewCount": 5354,
         "viewLastModified": 1776780710,
         "viewType": "tabular",
         "approvals": [
@@ -26967,7 +26967,7 @@
         "description": "Street tree data from the TreesCount! 2015 Street Tree Census, conducted by volunteers and staff organized by NYC Parks & Recreation and partner organizations. Tree data collected includes tree species, diameter and perception of health. Accompanying blockface data is available indicating status of data collection and data release citywide.\n\nThe 2015 tree census was the third decadal street tree census and largest citizen science initiative in NYC Parks’ history. Data collection ran from May 2015 to October 2016 and the results of the census show that there are 666,134 trees planted along NYC's streets. The data collected as part of the census represents a snapshot in time of trees under NYC Parks' jurisdiction.\n\nThe census data formed the basis of our operational database, the Forestry Management System (ForMS) which is used daily by our foresters and other staff for inventory and asset management: https://data.cityofnewyork.us/browse?sortBy=most_accessed&utf8=%E2%9C%93&Data-Collection_Data-Collection=Forestry+Management+System+%28ForMS%29\n\nTo learn more about the data collected and managed in ForMS, please refer to this user guide:\nhttps://docs.google.com/document/d/1PVPWFi-WExkG3rvnagQDoBbqfsGzxCKNmR6n678nUeU/edit. For information on the city's current tree population, use the ForMS datasets.",
         "diciBackend": false,
         "displayType": "table",
-        "downloadCount": 54955,
+        "downloadCount": 54956,
         "hideFromCatalog": false,
         "hideFromDataJson": false,
         "indexUpdatedAt": 1536847042,
@@ -26984,7 +26984,7 @@
         "rowsUpdatedAt": 1507124486,
         "tableId": 14506999,
         "totalTimesRated": 0,
-        "viewCount": 132117,
+        "viewCount": 132141,
         "viewLastModified": 1731421699,
         "viewType": "tabular",
         "approvals": [
@@ -30584,7 +30584,7 @@
         "description": "NYC Wi-Fi Hotspot Locations Wi-Fi Providers: \r\nCityBridge, LLC (Free Beta): LinkNYC 1 gigabyte (GB), Free Wi-Fi Internet Kiosks\r\nSpot On Networks (Free) NYC HOUSING AUTHORITY (NYCHA) Properties\r\nFiberless (Free): Wi-Fi access on Governors Island Free - up to 5 Mbps for users as the part of Governors Island Trust Governors Island Connectivity Challenge\r\nAT&T (Free): Wi-Fi access is free for all users at all times. \r\nPartners: In several parks, the NYC partner organizations provide publicly accessible Wi-Fi. Visit these parks to learn more information about their Wi-Fi service and how to connect. \r\nCable (Limited-Free): In NYC Parks provided by NYC DoITT Cable television franchisees. \r\nALTICEUSA previously known as “Cablevision” and SPECTRUM previously known as “Time Warner Cable” (Limited Free) Connect for 3 free 10 minute sessions every 30 days or purchase a 99 cent day pass through midnight. Wi-Fi service is free at all times to Cablevision’s Optimum Online and Time Warner Cable broadband subscribers. \r\nWi-Fi Provider: Chelsea Wi-Fi (Free) Wi-Fi access is free for all users at all times. \r\nChelsea Improvement Company has partnered with Google to provide Wi-Fi a free wireless Internet zone, a broadband region bounded by West 19th Street, Gansevoort Street, Eighth Avenue, and the High Line Park. \r\nWi-Fi Provider: Downtown Brooklyn Wi-Fi (Free) \r\nThe Downtown Brooklyn Partnership - the New York City Economic Development Corporation to provide Wi-Fi to the area bordered by Schermerhorn Street, Cadman Plaza West, Flatbush Avenue, and Tillary Street, along with select public spaces in the NYCHA Ingersoll and Whitman Houses. \r\nWi-Fi Provider: Manhattan Downtown Alliance Wi-Fi (Free) \r\nLower Manhattan Several public spaces all along Water Street, Front Street and the East River Esplanade south of Fulton Street and in several other locations throughout Lower Manhattan. \r\nWi-Fi Provider: Harlem Wi-Fi (Free) \r\nThe network will extend 95 city blocks, from 110th to 138th Streets between Frederick Douglass Boulevard and Madison Avenue is the free outdoor public wireless network. \r\nWi-Fi Provider: Transit Wireless (Free) \r\nWi-Fi Services in the New York City subway system is available in certain underground stations. For more information visit http://www.transitwireless.com/stations/. \r\nWi-Fi Provider: Public Pay Telephone Franchisees (Free) \r\nUsing existing payphone infrastructure, the City of New York has teamed up with private partners to provide free Wi-Fi service at public payphone kiosks across the five boroughs at no cost to taxpayers. \r\nWi-Fi Provider: New York Public Library \r\nUsing Wireless Internet Access (Wi-Fi): All Library locations offer free wireless access (Wi-Fi) in public areas at all times the libraries are open. \r\nConnecting to the Library's Wireless Network \r\n•You must have a computer or other device equipped with an 802.11b-compatible wireless card. \r\n•Using your computer's network utilities, look for the wireless network named \"NYPL.\" \r\n•The \"NYPL\" wireless network does not require a password to connect. \r\nLimitations and Disclaimers Regarding Wireless Access \r\n•The Library's wireless network is not secure. Information sent from or to your laptop can be captured by anyone else with a wireless device and the appropriate software, within three hundred feet. \r\n•Library staff is not able to provide technical assistance and no guarantee can be provided that you will be able to make a wireless connection. \r\n•The Library assumes no responsibility for the safety of equipment or for laptop configurations, security, or data files resulting from connection to the Library's network",
         "diciBackend": false,
         "displayType": "table",
-        "downloadCount": 11380,
+        "downloadCount": 11381,
         "hideFromCatalog": false,
         "hideFromDataJson": false,
         "indexUpdatedAt": 1554388231,

@@ -14,5 +14,130 @@
     "y_coord",
     "zip5"
   ],
-  "wrapper_changed_count": 8
+  "wrapper_changed_count": 8,
+  "temporal_metadata": {
+    "has_temporal_data": true,
+    "temporal_columns": [
+      "created_date",
+      "closed_date",
+      "due_date",
+      "resolution_action_updated_date"
+    ],
+    "temporal_start": "2019-12-31T18:52:55",
+    "temporal_end": "2024-06-04T04:55:51",
+    "column_ranges": [
+      {
+        "name": "created_date",
+        "start": "2019-12-31T18:52:55",
+        "end": "2019-12-31T23:59:11",
+        "month_coverage": {
+          "2019": [
+            12
+          ]
+        }
+      },
+      {
+        "name": "closed_date",
+        "start": "2019-12-31T18:56:00",
+        "end": "2024-06-04T04:55:49",
+        "month_coverage": {
+          "2019": [
+            12
+          ],
+          "2020": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            12
+          ],
+          "2021": [
+            8
+          ],
+          "2022": [
+            2,
+            5
+          ],
+          "2023": [
+            6
+          ],
+          "2024": [
+            6
+          ]
+        }
+      },
+      {
+        "name": "due_date",
+        "start": "2020-02-12T10:20:59",
+        "end": "2021-06-12T09:40:37",
+        "month_coverage": {
+          "2020": [
+            2
+          ],
+          "2021": [
+            6
+          ]
+        }
+      },
+      {
+        "name": "resolution_action_updated_date",
+        "start": "2019-12-31T19:14:00",
+        "end": "2024-06-04T04:55:51",
+        "month_coverage": {
+          "2019": [
+            12
+          ],
+          "2020": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "2021": [
+            8
+          ],
+          "2022": [
+            2,
+            6
+          ],
+          "2023": [
+            6
+          ],
+          "2024": [
+            6
+          ]
+        }
+      }
+    ],
+    "month_coverage": {
+      "2019": [
+        12
+      ],
+      "2020": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12
+      ],
+      "2021": [
+        6,
+        8
+      ],
+      "2022": [
+        2,
+        5,
+        6
+      ],
+      "2023": [
+        6
+      ],
+      "2024": [
+        6
+      ]
+    }
+  }
 }

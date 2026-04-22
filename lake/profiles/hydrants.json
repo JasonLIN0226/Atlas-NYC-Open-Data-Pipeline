@@ -1,0 +1,446 @@
+{
+  "dataset_name": "hydrants",
+  "source_metadata": {
+    "title": "Hydrants",
+    "id": "5bgh-vtsn",
+    "rows_updated_at": 1766071828,
+    "view_last_modified": 1766071809,
+    "description": "NYCDEP Citywide Hydrants",
+    "columns": [
+      {
+        "name": "the_geom",
+        "field_name": "the_geom",
+        "description": "",
+        "source_type": "point",
+        "position": 1
+      },
+      {
+        "name": "BORO",
+        "field_name": "boro",
+        "description": "",
+        "source_type": "number",
+        "position": 2
+      },
+      {
+        "name": "UNITID",
+        "field_name": "unitid",
+        "description": "",
+        "source_type": "text",
+        "position": 3
+      },
+      {
+        "name": "POINT_X",
+        "field_name": "point_x",
+        "description": "",
+        "source_type": "number",
+        "position": 4
+      },
+      {
+        "name": "POINT_Y",
+        "field_name": "point_y",
+        "description": "",
+        "source_type": "number",
+        "position": 5
+      },
+      {
+        "name": "CB",
+        "field_name": "cb",
+        "description": "",
+        "source_type": "text",
+        "position": 6
+      },
+      {
+        "name": "LATITUDE",
+        "field_name": "latitude",
+        "description": "",
+        "source_type": "number",
+        "position": 7
+      },
+      {
+        "name": "LONGITUDE",
+        "field_name": "longitude",
+        "description": "",
+        "source_type": "number",
+        "position": 8
+      }
+    ]
+  },
+  "atlas_metadata": {
+    "row_count": 5000,
+    "profiled_rows": 5000,
+    "column_count": 8,
+    "wrapped_geo_column_count": 4,
+    "geo_labels_wrapped": [
+      "borough_code",
+      "latitude",
+      "longitude",
+      "point"
+    ],
+    "wrapper_changed_count": 1,
+    "dataset_metadata_overview": [
+      [
+        "Rows",
+        "5000"
+      ],
+      [
+        "Profiled Rows",
+        "5000"
+      ],
+      [
+        "Columns",
+        "8"
+      ],
+      [
+        "Spatial Columns",
+        "3"
+      ],
+      [
+        "Numerical Columns",
+        "4"
+      ],
+      [
+        "Dataset Types",
+        "numerical, spatial"
+      ],
+      [
+        "Attribute Keywords",
+        "the_geom, the, geom, boro, unitid, point_x, point, x, point_y, point, y, cb"
+      ]
+    ],
+    "combined_column_metadata_rows": [
+      {
+        "name": "the_geom",
+        "final_type": "point",
+        "source_type": "point",
+        "source_description": "",
+        "structural_type": "GeoCoordinates",
+        "semantic_types": "",
+        "geo_label": "point",
+        "confidence": 0.9736379981040955
+      },
+      {
+        "name": "boro",
+        "final_type": "borough_code",
+        "source_type": "number",
+        "source_description": "",
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.95
+      },
+      {
+        "name": "unitid",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "",
+        "structural_type": "Text",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "point_x",
+        "final_type": "Float",
+        "source_type": "number",
+        "source_description": "",
+        "structural_type": "Float",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "point_y",
+        "final_type": "Float",
+        "source_type": "number",
+        "source_description": "",
+        "structural_type": "Float",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "cb",
+        "final_type": "Integer",
+        "source_type": "text",
+        "source_description": "",
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "latitude",
+        "final_type": "latitude",
+        "source_type": "number",
+        "source_description": "",
+        "structural_type": "Float",
+        "semantic_types": "latitude",
+        "geo_label": "latitude",
+        "confidence": 0.6021340489387512
+      },
+      {
+        "name": "longitude",
+        "final_type": "longitude",
+        "source_type": "number",
+        "source_description": "",
+        "structural_type": "Float",
+        "semantic_types": "longitude",
+        "geo_label": "longitude",
+        "confidence": 0.9541847109794617
+      }
+    ],
+    "source_type_breakdown_rows": [
+      {
+        "type": "number",
+        "count": 5
+      },
+      {
+        "type": "text",
+        "count": 2
+      },
+      {
+        "type": "point",
+        "count": 1
+      }
+    ],
+    "atlas_type_breakdown_rows": [
+      {
+        "type": "non_spatial",
+        "count": 4
+      },
+      {
+        "type": "borough_code",
+        "count": 1
+      },
+      {
+        "type": "latitude",
+        "count": 1
+      },
+      {
+        "type": "longitude",
+        "count": 1
+      },
+      {
+        "type": "point",
+        "count": 1
+      }
+    ],
+    "content_summary": "point, borough_code, latitude, longitude",
+    "final_columns": [
+      {
+        "name": "the_geom",
+        "structural_type": "http://schema.org/GeoCoordinates",
+        "semantic_types": [],
+        "geo_classifier": {
+          "label": "point",
+          "confidence": 0.9736379981040955,
+          "source": "ml+validated"
+        }
+      },
+      {
+        "name": "boro",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 5,
+        "mean": 3.4924,
+        "stddev": 0.9365587221311831,
+        "coverage": [
+          {
+            "range": {
+              "gte": 2.0,
+              "lte": 3.0
+            }
+          },
+          {
+            "range": {
+              "gte": 4.0,
+              "lte": 4.0
+            }
+          },
+          {
+            "range": {
+              "gte": 5.0,
+              "lte": 5.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "admin_name_and_values"
+      },
+      {
+        "name": "unitid",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [],
+        "num_distinct_values": 5000
+      },
+      {
+        "name": "point_x",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "mean": 1005862.7950390526,
+        "stddev": 32553.639925294887,
+        "coverage": [
+          {
+            "range": {
+              "gte": 922907.269,
+              "lte": 963942.009
+            }
+          },
+          {
+            "range": {
+              "gte": 982938.668,
+              "lte": 1017591.016
+            }
+          },
+          {
+            "range": {
+              "gte": 1021339.451,
+              "lte": 1058330.085
+            }
+          }
+        ]
+      },
+      {
+        "name": "point_y",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "mean": 192856.47479065013,
+        "stddev": 32920.98901274231,
+        "coverage": [
+          {
+            "range": {
+              "gte": 134185.078,
+              "lte": 178147.938
+            }
+          },
+          {
+            "range": {
+              "gte": 182107.03,
+              "lte": 219831.374
+            }
+          },
+          {
+            "range": {
+              "gte": 226105.8465,
+              "lte": 265817.484
+            }
+          }
+        ]
+      },
+      {
+        "name": "cb",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 56,
+        "mean": 357.4584,
+        "stddev": 92.20115546694812,
+        "coverage": [
+          {
+            "range": {
+              "gte": 201.0,
+              "lte": 212.0
+            }
+          },
+          {
+            "range": {
+              "gte": 301.0,
+              "lte": 318.0
+            }
+          },
+          {
+            "range": {
+              "gte": 402.0,
+              "lte": 503.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "latitude",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [
+          "http://schema.org/latitude"
+        ],
+        "geo_classifier": {
+          "label": "latitude",
+          "confidence": 0.6021340489387512,
+          "source": "ml+validated"
+        },
+        "mean": 40.695936351058066,
+        "stddev": 0.09035292019683139,
+        "coverage": [
+          {
+            "range": {
+              "gte": 40.53487396,
+              "lte": 40.65550613
+            }
+          },
+          {
+            "range": {
+              "gte": 40.66639709,
+              "lte": 40.76988602
+            }
+          },
+          {
+            "range": {
+              "gte": 40.78715897,
+              "lte": 40.89619446
+            }
+          }
+        ]
+      },
+      {
+        "name": "longitude",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [
+          "http://schema.org/longitude"
+        ],
+        "geo_classifier": {
+          "label": "longitude",
+          "confidence": 0.9541847109794617,
+          "source": "ml+validated"
+        },
+        "mean": -73.92196618361362,
+        "stddev": 0.11735383706157523,
+        "coverage": [
+          {
+            "range": {
+              "gte": -74.22072601,
+              "lte": -74.07315063
+            }
+          },
+          {
+            "range": {
+              "gte": -74.00471497,
+              "lte": -73.87963867
+            }
+          },
+          {
+            "range": {
+              "gte": -73.86602783,
+              "lte": -73.73280334
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "temporal_metadata": {
+    "has_temporal_data": false,
+    "temporal_columns": [],
+    "temporal_start": null,
+    "temporal_end": null,
+    "column_ranges": [],
+    "month_coverage": {}
+  }
+}

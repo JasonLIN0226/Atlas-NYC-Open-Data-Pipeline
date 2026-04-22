@@ -1,0 +1,1659 @@
+{
+  "dataset_name": "nyc311",
+  "source_metadata": {
+    "title": "311 Service Requests from 2010 to 2019",
+    "id": "76ig-c548",
+    "rows_updated_at": 1766600348,
+    "view_last_modified": 1766778501,
+    "description": "311 responds to thousands of inquiries, comments and requests from customers every single day. This dataset represents only service requests that can be directed to specific agencies.  \n\nThis dataset is updated daily and expected values for many fields will change over time.  The lists of expected values associated with each column are not exhaustive.\n\nEach row of data contains information about the service request, including complaint type, responding agency, and geographic location.  However the data does not reveal any personally identifying information about the customer who made the request.\n\nFor data from 2020-present see: https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2020-to-Present/erm2-nwe9/about_data",
+    "columns": [
+      {
+        "name": "Unique Key",
+        "field_name": "unique_key",
+        "description": "Unique identifier of a Service Request (SR) in the open data set.",
+        "source_type": "text",
+        "position": 1
+      },
+      {
+        "name": "Created Date",
+        "field_name": "created_date",
+        "description": "The date and time that a Customer submits a Service Request. ",
+        "source_type": "calendar_date",
+        "position": 2
+      },
+      {
+        "name": "Closed Date",
+        "field_name": "closed_date",
+        "description": "The date and time that an Agency closes a Service Request. ",
+        "source_type": "calendar_date",
+        "position": 3
+      },
+      {
+        "name": "Agency",
+        "field_name": "agency",
+        "description": "Acronym of responding City Government Agency or entity responding to 311 Service Request. ",
+        "source_type": "text",
+        "position": 4
+      },
+      {
+        "name": "Agency Name",
+        "field_name": "agency_name",
+        "description": "Full agency name of responding City Government Agency, or entity responding to 311 service request. ",
+        "source_type": "text",
+        "position": 5
+      },
+      {
+        "name": "Problem (formerly Complaint Type)",
+        "field_name": "complaint_type",
+        "description": "This is the first level of a hierarchy identifying the topic of the incident or condition.",
+        "source_type": "text",
+        "position": 6
+      },
+      {
+        "name": "Problem Detail (formerly Descriptor)",
+        "field_name": "descriptor",
+        "description": "A second level of detail about the Problem (formerly Complaint Type), and provides further detail on the incident or condition. ",
+        "source_type": "text",
+        "position": 7
+      },
+      {
+        "name": "Additional Details",
+        "field_name": "descriptor_2",
+        "description": "A third level of detail about the Problem (formerly Complaint Type) beyond the Problem Detail (formerly Descriptor). ",
+        "source_type": "text",
+        "position": 8
+      },
+      {
+        "name": "Location Type",
+        "field_name": "location_type",
+        "description": "Describes the type of location used in the address information",
+        "source_type": "text",
+        "position": 9
+      },
+      {
+        "name": "Incident Zip",
+        "field_name": "incident_zip",
+        "description": "Zip code of the incident address",
+        "source_type": "text",
+        "position": 10
+      },
+      {
+        "name": "Incident Address",
+        "field_name": "incident_address",
+        "description": "House number and street name of incident address",
+        "source_type": "text",
+        "position": 11
+      },
+      {
+        "name": "Street Name",
+        "field_name": "street_name",
+        "description": "Street name of incident address ",
+        "source_type": "text",
+        "position": 12
+      },
+      {
+        "name": "Cross Street 1",
+        "field_name": "cross_street_1",
+        "description": "First Cross street based on the geo validated incident location.",
+        "source_type": "text",
+        "position": 13
+      },
+      {
+        "name": "Cross Street 2",
+        "field_name": "cross_street_2",
+        "description": "Second Cross Street based on the geo validated incident location",
+        "source_type": "text",
+        "position": 14
+      },
+      {
+        "name": "Intersection Street 1",
+        "field_name": "intersection_street_1",
+        "description": "First intersecting street based on geo validated incident location",
+        "source_type": "text",
+        "position": 15
+      },
+      {
+        "name": "Intersection Street 2",
+        "field_name": "intersection_street_2",
+        "description": "Second intersecting street based on geo validated incident location",
+        "source_type": "text",
+        "position": 16
+      },
+      {
+        "name": "Address Type",
+        "field_name": "address_type",
+        "description": "Type of information available about the incident location. ",
+        "source_type": "text",
+        "position": 17
+      },
+      {
+        "name": "City",
+        "field_name": "city",
+        "description": "Second intersecting street based on geo validated incident location",
+        "source_type": "text",
+        "position": 18
+      },
+      {
+        "name": "Landmark",
+        "field_name": "landmark",
+        "description": "If the incident location is identified as a Landmark the name of the landmark will display here",
+        "source_type": "text",
+        "position": 19
+      },
+      {
+        "name": "Facility Type",
+        "field_name": "facility_type",
+        "description": "If applicable, this field describes the type of city facility associated to the service request",
+        "source_type": "text",
+        "position": 20
+      },
+      {
+        "name": "Status",
+        "field_name": "status",
+        "description": "Current status of the service request submitted",
+        "source_type": "text",
+        "position": 21
+      },
+      {
+        "name": "Due Date",
+        "field_name": "due_date",
+        "description": "Date when responding agency is expected to update the SR.  This is based on the Complaint Type and internal Service Level Agreements (SLAs).",
+        "source_type": "calendar_date",
+        "position": 22
+      },
+      {
+        "name": "Resolution Description",
+        "field_name": "resolution_description",
+        "description": "Describes the last action taken on the service request by the responding agency. May describe next or future steps.",
+        "source_type": "text",
+        "position": 23
+      },
+      {
+        "name": "Resolution Action Updated Date",
+        "field_name": "resolution_action_updated_date",
+        "description": "Date when responding agency last updated the service request.",
+        "source_type": "calendar_date",
+        "position": 24
+      },
+      {
+        "name": "Community Board",
+        "field_name": "community_board",
+        "description": "Community boards are local representative bodies. There are 59 community boards throughout the City, each representing a distinct geography. ",
+        "source_type": "text",
+        "position": 25
+      },
+      {
+        "name": "Council District",
+        "field_name": "council_district",
+        "description": "The City Council district where the service request is located.",
+        "source_type": "text",
+        "position": 26
+      },
+      {
+        "name": "Police Precinct",
+        "field_name": "police_precinct",
+        "description": "The NYPD precinct where the service request is located",
+        "source_type": "text",
+        "position": 27
+      },
+      {
+        "name": "BBL",
+        "field_name": "bbl",
+        "description": "Parcel number that identifies the location of the building or property associated with the service request",
+        "source_type": "text",
+        "position": 28
+      },
+      {
+        "name": "Borough",
+        "field_name": "borough",
+        "description": "One of New York City's five boroughs",
+        "source_type": "text",
+        "position": 29
+      },
+      {
+        "name": "X Coordinate (State Plane)",
+        "field_name": "x_coordinate_state_plane",
+        "description": "Geo validated,  Y coordinate of the incident location.",
+        "source_type": "number",
+        "position": 30
+      },
+      {
+        "name": "Y Coordinate (State Plane)",
+        "field_name": "y_coordinate_state_plane",
+        "description": "Geo validated,  Y coordinate of the incident location.",
+        "source_type": "number",
+        "position": 31
+      },
+      {
+        "name": "Open Data Channel Type",
+        "field_name": "open_data_channel_type",
+        "description": "Indicates how the service request was submitted to 311.  ",
+        "source_type": "text",
+        "position": 32
+      },
+      {
+        "name": "Park Facility Name",
+        "field_name": "park_facility_name",
+        "description": "If the incident location is a Parks Dept facility and service requests pertains to a facility managed by NYC Parks (DPR), the name of the facility will appear here",
+        "source_type": "text",
+        "position": 33
+      },
+      {
+        "name": "Park Borough",
+        "field_name": "park_borough",
+        "description": "The borough of incident if the service request is pertaining to a NYC Parks Dept facility (DPR)",
+        "source_type": "text",
+        "position": 34
+      },
+      {
+        "name": "Vehicle Type",
+        "field_name": "vehicle_type",
+        "description": "\"Data provided if service request pertains to a vehicle managed by the Taxi and Limousine Commision (TLC).  \"",
+        "source_type": "text",
+        "position": 35
+      },
+      {
+        "name": "Taxi Company Borough",
+        "field_name": "taxi_company_borough",
+        "description": "Data provided if service request pertains to a vehicle managed by the Taxi and Limousine Commision (TLC). ",
+        "source_type": "text",
+        "position": 36
+      },
+      {
+        "name": "Taxi Pick Up Location",
+        "field_name": "taxi_pick_up_location",
+        "description": "If the incident pertains a vehicle managed by the Taxi and Limousine Commision (TLC), this field displays the taxi pick up location",
+        "source_type": "text",
+        "position": 37
+      },
+      {
+        "name": "Bridge Highway Name",
+        "field_name": "bridge_highway_name",
+        "description": "\"If the incident is identified as a Bridge/Highway, the name will be displayed here.  \"",
+        "source_type": "text",
+        "position": 38
+      },
+      {
+        "name": "Bridge Highway Direction",
+        "field_name": "bridge_highway_direction",
+        "description": "If the incident is identified as a Bridge/Highway, the direction where the issue took place would be displayed here.",
+        "source_type": "text",
+        "position": 39
+      },
+      {
+        "name": "Road Ramp",
+        "field_name": "road_ramp",
+        "description": "If the incident location was Bridge/Highway this column differentiates if the issue was on the Road or the Ramp.",
+        "source_type": "text",
+        "position": 40
+      },
+      {
+        "name": "Bridge Highway Segment",
+        "field_name": "bridge_highway_segment",
+        "description": "Additional information on the section of the Bridge/Highway were the incident took place.",
+        "source_type": "text",
+        "position": 41
+      },
+      {
+        "name": "Latitude",
+        "field_name": "latitude",
+        "description": "Geo based Latitude of the incident location in decimal degrees.",
+        "source_type": "number",
+        "position": 42
+      },
+      {
+        "name": "Longitude",
+        "field_name": "longitude",
+        "description": "Geo based Longitude of the incident location in decimal degrees. ",
+        "source_type": "number",
+        "position": 43
+      },
+      {
+        "name": "Location",
+        "field_name": "location",
+        "description": "The combined geo-based latitude & longitude of the incident location. ",
+        "source_type": "point",
+        "position": 44
+      },
+      {
+        "name": "Community Districts",
+        "field_name": ":@computed_region_f5dn_yrer",
+        "description": "This column was automatically created in order to record in what polygon from the dataset 'Community Districts' (f5dn-yrer) the point in column 'location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+        "source_type": "number",
+        "position": 45
+      },
+      {
+        "name": "Borough Boundaries",
+        "field_name": ":@computed_region_yeji_bk3q",
+        "description": "This column was automatically created in order to record in what polygon from the dataset 'Borough Boundaries' (yeji-bk3q) the point in column 'location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+        "source_type": "number",
+        "position": 46
+      },
+      {
+        "name": "Police Precincts",
+        "field_name": ":@computed_region_sbqj_enih",
+        "description": "This column was automatically created in order to record in what polygon from the dataset 'Police Precincts' (sbqj-enih) the point in column 'location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+        "source_type": "number",
+        "position": 47
+      },
+      {
+        "name": "City Council Districts",
+        "field_name": ":@computed_region_92fq_4b7q",
+        "description": "This column was automatically created in order to record in what polygon from the dataset 'City Council Districts' (92fq-4b7q) the point in column 'location' is located.  This enables the creation of region maps (choropleths) in the visualization canvas and data lens.",
+        "source_type": "number",
+        "position": 48
+      }
+    ]
+  },
+  "atlas_metadata": {
+    "row_count": 1000,
+    "profiled_rows": 1000,
+    "column_count": 44,
+    "wrapped_geo_column_count": 21,
+    "geo_labels_wrapped": [
+      "address",
+      "bbl",
+      "borough",
+      "borough_code",
+      "city",
+      "longitude",
+      "point",
+      "x_coord",
+      "y_coord",
+      "zip5"
+    ],
+    "wrapper_changed_count": 8,
+    "dataset_metadata_overview": [
+      [
+        "Rows",
+        "1000"
+      ],
+      [
+        "Profiled Rows",
+        "1000"
+      ],
+      [
+        "Columns",
+        "44"
+      ],
+      [
+        "Spatial Columns",
+        "13"
+      ],
+      [
+        "Temporal Columns",
+        "4"
+      ],
+      [
+        "Categorical Columns",
+        "11"
+      ],
+      [
+        "Numerical Columns",
+        "6"
+      ],
+      [
+        "Dataset Types",
+        "categorical, numerical, spatial, temporal"
+      ],
+      [
+        "Attribute Keywords",
+        "unique_key, unique, key, created_date, created, date, closed_date, closed, date, agency, agency_name, agency"
+      ]
+    ],
+    "combined_column_metadata_rows": [
+      {
+        "name": "unique_key",
+        "final_type": "Integer",
+        "source_type": "text",
+        "source_description": "Unique identifier of a Service Request (SR) in the open data set.",
+        "structural_type": "Integer",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "created_date",
+        "final_type": "Text",
+        "source_type": "calendar_date",
+        "source_description": "The date and time that a Customer submits a Service Request. ",
+        "structural_type": "Text",
+        "semantic_types": "DateTime",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "closed_date",
+        "final_type": "Text",
+        "source_type": "calendar_date",
+        "source_description": "The date and time that an Agency closes a Service Request. ",
+        "structural_type": "Text",
+        "semantic_types": "DateTime",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "agency",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Acronym of responding City Government Agency or entity responding to 311 Service Request. ",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "agency_name",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Full agency name of responding City Government Agency, or entity responding to 311 service request. ",
+        "structural_type": "Text",
+        "semantic_types": "Text",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "complaint_type",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "This is the first level of a hierarchy identifying the topic of the incident or condition.",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "descriptor",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "A second level of detail about the Problem (formerly Complaint Type), and provides further detail on the incident or condition. ",
+        "structural_type": "Text",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "descriptor_2",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "A third level of detail about the Problem (formerly Complaint Type) beyond the Problem Detail (formerly Descriptor). ",
+        "structural_type": "Text",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "location_type",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Describes the type of location used in the address information",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "incident_zip",
+        "final_type": "zip5",
+        "source_type": "text",
+        "source_description": "Zip code of the incident address",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "zip5",
+        "confidence": 0.99
+      },
+      {
+        "name": "incident_address",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "House number and street name of incident address",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.9414817690849304
+      },
+      {
+        "name": "street_name",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "Street name of incident address ",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.7451354265213013
+      },
+      {
+        "name": "cross_street_1",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "First Cross street based on the geo validated incident location.",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.855475127696991
+      },
+      {
+        "name": "cross_street_2",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "Second Cross Street based on the geo validated incident location",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.8448694348335266
+      },
+      {
+        "name": "intersection_street_1",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "First intersecting street based on geo validated incident location",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.7906873822212219
+      },
+      {
+        "name": "intersection_street_2",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "Second intersecting street based on geo validated incident location",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.7583731412887573
+      },
+      {
+        "name": "address_type",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Type of information available about the incident location. ",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "city",
+        "final_type": "city",
+        "source_type": "text",
+        "source_description": "Second intersecting street based on geo validated incident location",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration, AdministrativeArea",
+        "geo_label": "city",
+        "confidence": 0.95
+      },
+      {
+        "name": "landmark",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "If the incident location is identified as a Landmark the name of the landmark will display here",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.7142277359962463
+      },
+      {
+        "name": "facility_type",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "If applicable, this field describes the type of city facility associated to the service request",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "status",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Current status of the service request submitted",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "due_date",
+        "final_type": "Text",
+        "source_type": "calendar_date",
+        "source_description": "Date when responding agency is expected to update the SR.  This is based on the Complaint Type and internal Service Level Agreements (SLAs).",
+        "structural_type": "Text",
+        "semantic_types": "DateTime",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "resolution_description",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Describes the last action taken on the service request by the responding agency. May describe next or future steps.",
+        "structural_type": "Text",
+        "semantic_types": "Text",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "resolution_action_updated_date",
+        "final_type": "Text",
+        "source_type": "calendar_date",
+        "source_description": "Date when responding agency last updated the service request.",
+        "structural_type": "Text",
+        "semantic_types": "DateTime",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "community_board",
+        "final_type": "borough_code",
+        "source_type": "text",
+        "source_description": "Community boards are local representative bodies. There are 59 community boards throughout the City, each representing a distinct geography. ",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration, AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.95
+      },
+      {
+        "name": "council_district",
+        "final_type": "borough_code",
+        "source_type": "text",
+        "source_description": "The City Council district where the service request is located.",
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.95
+      },
+      {
+        "name": "police_precinct",
+        "final_type": "borough_code",
+        "source_type": "text",
+        "source_description": "The NYPD precinct where the service request is located",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration, AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.95
+      },
+      {
+        "name": "bbl",
+        "final_type": "bbl",
+        "source_type": "text",
+        "source_description": "Parcel number that identifies the location of the building or property associated with the service request",
+        "structural_type": "Integer",
+        "semantic_types": "identifier",
+        "geo_label": "bbl",
+        "confidence": 0.99
+      },
+      {
+        "name": "borough",
+        "final_type": "borough",
+        "source_type": "text",
+        "source_description": "One of New York City's five boroughs",
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough",
+        "confidence": 0.7024458050727844
+      },
+      {
+        "name": "x_coordinate_state_plane",
+        "final_type": "x_coord",
+        "source_type": "number",
+        "source_description": "Geo validated,  Y coordinate of the incident location.",
+        "structural_type": "Float",
+        "semantic_types": "",
+        "geo_label": "x_coord",
+        "confidence": 0.9541614651679993
+      },
+      {
+        "name": "y_coordinate_state_plane",
+        "final_type": "y_coord",
+        "source_type": "number",
+        "source_description": "Geo validated,  Y coordinate of the incident location.",
+        "structural_type": "Float",
+        "semantic_types": "",
+        "geo_label": "y_coord",
+        "confidence": 0.95
+      },
+      {
+        "name": "open_data_channel_type",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Indicates how the service request was submitted to 311.  ",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "park_facility_name",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "If the incident location is a Parks Dept facility and service requests pertains to a facility managed by NYC Parks (DPR), the name of the facility will appear here",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "park_borough",
+        "final_type": "borough",
+        "source_type": "text",
+        "source_description": "The borough of incident if the service request is pertaining to a NYC Parks Dept facility (DPR)",
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough",
+        "confidence": 0.6036695837974548
+      },
+      {
+        "name": "vehicle_type",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "\"Data provided if service request pertains to a vehicle managed by the Taxi and Limousine Commision (TLC).  \"",
+        "structural_type": "Text",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "taxi_company_borough",
+        "final_type": "borough_code",
+        "source_type": "text",
+        "source_description": "Data provided if service request pertains to a vehicle managed by the Taxi and Limousine Commision (TLC). ",
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.95
+      },
+      {
+        "name": "taxi_pick_up_location",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "If the incident pertains a vehicle managed by the Taxi and Limousine Commision (TLC), this field displays the taxi pick up location",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.8870421648025513
+      },
+      {
+        "name": "bridge_highway_name",
+        "final_type": "MissingData",
+        "source_type": "text",
+        "source_description": "\"If the incident is identified as a Bridge/Highway, the name will be displayed here.  \"",
+        "structural_type": "MissingData",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "bridge_highway_direction",
+        "final_type": "MissingData",
+        "source_type": "text",
+        "source_description": "If the incident is identified as a Bridge/Highway, the direction where the issue took place would be displayed here.",
+        "structural_type": "MissingData",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "road_ramp",
+        "final_type": "MissingData",
+        "source_type": "text",
+        "source_description": "If the incident location was Bridge/Highway this column differentiates if the issue was on the Road or the Ramp.",
+        "structural_type": "MissingData",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "bridge_highway_segment",
+        "final_type": "MissingData",
+        "source_type": "text",
+        "source_description": "Additional information on the section of the Bridge/Highway were the incident took place.",
+        "structural_type": "MissingData",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "latitude",
+        "final_type": "Float",
+        "source_type": "number",
+        "source_description": "Geo based Latitude of the incident location in decimal degrees.",
+        "structural_type": "Float",
+        "semantic_types": "latitude",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "longitude",
+        "final_type": "longitude",
+        "source_type": "number",
+        "source_description": "Geo based Longitude of the incident location in decimal degrees. ",
+        "structural_type": "Float",
+        "semantic_types": "longitude",
+        "geo_label": "longitude",
+        "confidence": 0.9483489394187927
+      },
+      {
+        "name": "location",
+        "final_type": "point",
+        "source_type": "point",
+        "source_description": "The combined geo-based latitude & longitude of the incident location. ",
+        "structural_type": "GeoCoordinates",
+        "semantic_types": "",
+        "geo_label": "point",
+        "confidence": 0.9752859473228455
+      }
+    ],
+    "source_type_breakdown_rows": [
+      {
+        "type": "text",
+        "count": 35
+      },
+      {
+        "type": "calendar_date",
+        "count": 4
+      },
+      {
+        "type": "number",
+        "count": 4
+      },
+      {
+        "type": "point",
+        "count": 1
+      }
+    ],
+    "atlas_type_breakdown_rows": [
+      {
+        "type": "non_spatial",
+        "count": 23
+      },
+      {
+        "type": "address",
+        "count": 8
+      },
+      {
+        "type": "borough_code",
+        "count": 6
+      },
+      {
+        "type": "bbl",
+        "count": 1
+      },
+      {
+        "type": "city",
+        "count": 1
+      },
+      {
+        "type": "longitude",
+        "count": 1
+      },
+      {
+        "type": "point",
+        "count": 1
+      },
+      {
+        "type": "x_coord",
+        "count": 1
+      },
+      {
+        "type": "y_coord",
+        "count": 1
+      },
+      {
+        "type": "zip_code",
+        "count": 1
+      }
+    ],
+    "content_summary": "zip5, address, city, borough_code, bbl, borough, x_coord, y_coord",
+    "final_columns": [
+      {
+        "name": "unique_key",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 1000,
+        "mean": 45281522.13,
+        "stddev": 2446.8615553602535,
+        "coverage": [
+          {
+            "range": {
+              "gte": 45277801.0,
+              "lte": 45280299.0
+            }
+          },
+          {
+            "range": {
+              "gte": 45280502.0,
+              "lte": 45283026.0
+            }
+          },
+          {
+            "range": {
+              "gte": 45283365.0,
+              "lte": 45287953.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "created_date",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/DateTime"
+        ],
+        "num_distinct_values": 934
+      },
+      {
+        "name": "closed_date",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/DateTime"
+        ],
+        "missing_values_ratio": 0.002,
+        "num_distinct_values": 894
+      },
+      {
+        "name": "agency",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 11
+      },
+      {
+        "name": "agency_name",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Text"
+        ]
+      },
+      {
+        "name": "complaint_type",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 64
+      },
+      {
+        "name": "descriptor",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [],
+        "num_distinct_values": 119
+      },
+      {
+        "name": "descriptor_2",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [],
+        "missing_values_ratio": 0.734,
+        "num_distinct_values": 83
+      },
+      {
+        "name": "location_type",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.215,
+        "num_distinct_values": 20
+      },
+      {
+        "name": "incident_zip",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.007,
+        "num_distinct_values": 160,
+        "mean": 10876.539778449143,
+        "stddev": 539.3351625862756,
+        "coverage": [
+          {
+            "range": {
+              "gte": 10002.0,
+              "lte": 10075.0
+            }
+          },
+          {
+            "range": {
+              "gte": 10308.0,
+              "lte": 10472.0
+            }
+          },
+          {
+            "range": {
+              "gte": 11203.0,
+              "lte": 11434.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "zip5",
+          "confidence": 0.99,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "zip_name_and_pattern"
+      },
+      {
+        "name": "incident_address",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.9414817690849304,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "street_name",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.7451354265213013,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "cross_street_1",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.855475127696991,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "cross_street_2",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.8448694348335266,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "intersection_street_1",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.7906873822212219,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "intersection_street_2",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.7583731412887573,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "address_type",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.691,
+        "num_distinct_values": 5
+      },
+      {
+        "name": "city",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration",
+          "http://schema.org/AdministrativeArea"
+        ],
+        "missing_values_ratio": 0.038,
+        "num_distinct_values": 63,
+        "geo_classifier": {
+          "label": "city",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "city_name_and_values"
+      },
+      {
+        "name": "landmark",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.7142277359962463,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "facility_type",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.958,
+        "num_distinct_values": 3
+      },
+      {
+        "name": "status",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 4
+      },
+      {
+        "name": "due_date",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/DateTime"
+        ],
+        "missing_values_ratio": 0.997,
+        "num_distinct_values": 4
+      },
+      {
+        "name": "resolution_description",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Text"
+        ],
+        "missing_values_ratio": 0.054
+      },
+      {
+        "name": "resolution_action_updated_date",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/DateTime"
+        ],
+        "missing_values_ratio": 0.013,
+        "num_distinct_values": 876
+      },
+      {
+        "name": "community_board",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration",
+          "http://schema.org/AdministrativeArea"
+        ],
+        "num_distinct_values": 66,
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "admin_name_and_values"
+      },
+      {
+        "name": "council_district",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.013,
+        "num_distinct_values": 52,
+        "mean": 25.585612968591693,
+        "stddev": 14.226547230565078,
+        "coverage": [
+          {
+            "range": {
+              "gte": 2.0,
+              "lte": 16.0
+            }
+          },
+          {
+            "range": {
+              "gte": 18.0,
+              "lte": 33.0
+            }
+          },
+          {
+            "range": {
+              "gte": 34.0,
+              "lte": 50.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "admin_name_and_values"
+      },
+      {
+        "name": "police_precinct",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration",
+          "http://schema.org/AdministrativeArea"
+        ],
+        "num_distinct_values": 77,
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "admin_name_and_values"
+      },
+      {
+        "name": "bbl",
+        "structural_type": "http://schema.org/Integer",
+        "semantic_types": [
+          "http://schema.org/identifier"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.08,
+        "num_distinct_values": 740,
+        "mean": 2865859864.318478,
+        "stddev": 1164750270.4750388,
+        "coverage": [
+          {
+            "range": {
+              "gte": 1004060003.0,
+              "lte": 2050580006.0
+            }
+          },
+          {
+            "range": {
+              "gte": 3005380001.0,
+              "lte": 3080260022.0
+            }
+          },
+          {
+            "range": {
+              "gte": 4007620342.0,
+              "lte": 5037300043.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "bbl",
+          "confidence": 0.99,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "bbl_name_and_pattern"
+      },
+      {
+        "name": "borough",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "geo_classifier": {
+          "label": "borough",
+          "confidence": 0.7024458050727844,
+          "source": "ml+validated"
+        }
+      },
+      {
+        "name": "x_coordinate_state_plane",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [],
+        "geo_classifier": {
+          "label": "x_coord",
+          "confidence": 0.9541614651679993,
+          "source": "ml+validated"
+        },
+        "mean": 1007438.9848024317,
+        "stddev": 21552.37534227722,
+        "coverage": [
+          {
+            "range": {
+              "gte": 933649.0,
+              "lte": 991566.0
+            }
+          },
+          {
+            "range": {
+              "gte": 994445.0,
+              "lte": 1016878.0
+            }
+          },
+          {
+            "range": {
+              "gte": 1020390.0,
+              "lte": 1051863.0
+            }
+          }
+        ]
+      },
+      {
+        "name": "y_coordinate_state_plane",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.013,
+        "num_distinct_values": 807,
+        "mean": 205536.96757852077,
+        "stddev": 32025.72286310995,
+        "coverage": [
+          {
+            "range": {
+              "gte": 145844.0,
+              "lte": 182314.0
+            }
+          },
+          {
+            "range": {
+              "gte": 186274.0,
+              "lte": 220317.0
+            }
+          },
+          {
+            "range": {
+              "gte": 227224.0,
+              "lte": 262117.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "y_coord",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "y_coord_name_and_range"
+      },
+      {
+        "name": "open_data_channel_type",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 4
+      },
+      {
+        "name": "park_facility_name",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "num_distinct_values": 1
+      },
+      {
+        "name": "park_borough",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "geo_classifier": {
+          "label": "borough",
+          "confidence": 0.6036695837974548,
+          "source": "ml+validated"
+        }
+      },
+      {
+        "name": "vehicle_type",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [],
+        "missing_values_ratio": 0.999,
+        "num_distinct_values": 2
+      },
+      {
+        "name": "taxi_company_borough",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "missing_values_ratio": 0.997,
+        "num_distinct_values": 3,
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "admin_name_and_values"
+      },
+      {
+        "name": "taxi_pick_up_location",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.8870421648025513,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "bridge_highway_name",
+        "structural_type": "https://metadata.datadrivendiscovery.org/types/MissingData",
+        "semantic_types": []
+      },
+      {
+        "name": "bridge_highway_direction",
+        "structural_type": "https://metadata.datadrivendiscovery.org/types/MissingData",
+        "semantic_types": []
+      },
+      {
+        "name": "road_ramp",
+        "structural_type": "https://metadata.datadrivendiscovery.org/types/MissingData",
+        "semantic_types": []
+      },
+      {
+        "name": "bridge_highway_segment",
+        "structural_type": "https://metadata.datadrivendiscovery.org/types/MissingData",
+        "semantic_types": []
+      },
+      {
+        "name": "latitude",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [
+          "http://schema.org/latitude"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.013,
+        "mean": 40.73077098318974,
+        "stddev": 0.08790332705237466,
+        "coverage": [
+          {
+            "range": {
+              "gte": 40.5668840965186,
+              "lte": 40.66704006664458
+            }
+          },
+          {
+            "range": {
+              "gte": 40.67784708375255,
+              "lte": 40.771394244105096
+            }
+          },
+          {
+            "range": {
+              "gte": 40.790350779660734,
+              "lte": 40.88603740405488
+            }
+          }
+        ]
+      },
+      {
+        "name": "longitude",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [
+          "http://schema.org/longitude"
+        ],
+        "geo_classifier": {
+          "label": "longitude",
+          "confidence": 0.9483489394187927,
+          "source": "ml+validated"
+        },
+        "mean": -73.91629639010863,
+        "stddev": 0.07772318710097988,
+        "coverage": [
+          {
+            "range": {
+              "gte": -74.18205069289722,
+              "lte": -73.97365470256682
+            }
+          },
+          {
+            "range": {
+              "gte": -73.96329835042734,
+              "lte": -73.88243359707043
+            }
+          },
+          {
+            "range": {
+              "gte": -73.8694023023853,
+              "lte": -73.75602472305863
+            }
+          }
+        ]
+      },
+      {
+        "name": "location",
+        "structural_type": "http://schema.org/GeoCoordinates",
+        "semantic_types": [],
+        "geo_classifier": {
+          "label": "point",
+          "confidence": 0.9752859473228455,
+          "source": "ml+validated"
+        }
+      }
+    ]
+  },
+  "temporal_metadata": {
+    "has_temporal_data": true,
+    "temporal_columns": [
+      "created_date",
+      "closed_date",
+      "due_date",
+      "resolution_action_updated_date"
+    ],
+    "temporal_start": "2019-12-31T18:52:55",
+    "temporal_end": "2024-06-04T04:55:51",
+    "column_ranges": [
+      {
+        "name": "created_date",
+        "start": "2019-12-31T18:52:55",
+        "end": "2019-12-31T23:59:11",
+        "month_coverage": {
+          "2019": [
+            12
+          ]
+        }
+      },
+      {
+        "name": "closed_date",
+        "start": "2019-12-31T18:56:00",
+        "end": "2024-06-04T04:55:49",
+        "month_coverage": {
+          "2019": [
+            12
+          ],
+          "2020": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            12
+          ],
+          "2021": [
+            8
+          ],
+          "2022": [
+            2,
+            5
+          ],
+          "2023": [
+            6
+          ],
+          "2024": [
+            6
+          ]
+        }
+      },
+      {
+        "name": "due_date",
+        "start": "2020-02-12T10:20:59",
+        "end": "2021-06-12T09:40:37",
+        "month_coverage": {
+          "2020": [
+            2
+          ],
+          "2021": [
+            6
+          ]
+        }
+      },
+      {
+        "name": "resolution_action_updated_date",
+        "start": "2019-12-31T19:14:00",
+        "end": "2024-06-04T04:55:51",
+        "month_coverage": {
+          "2019": [
+            12
+          ],
+          "2020": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "2021": [
+            8
+          ],
+          "2022": [
+            2,
+            6
+          ],
+          "2023": [
+            6
+          ],
+          "2024": [
+            6
+          ]
+        }
+      }
+    ],
+    "month_coverage": {
+      "2019": [
+        12
+      ],
+      "2020": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        12
+      ],
+      "2021": [
+        6,
+        8
+      ],
+      "2022": [
+        2,
+        5,
+        6
+      ],
+      "2023": [
+        6
+      ],
+      "2024": [
+        6
+      ]
+    }
+  }
+}

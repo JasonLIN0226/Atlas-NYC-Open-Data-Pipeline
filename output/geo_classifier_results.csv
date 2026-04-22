@@ -121,3 +121,15 @@ longitude,"['-73.78412000050', '-73.81814999970', '-73.94066999940']",longitude
 x,"['1044131.89696000000', '1034637.51076000000', '1000698.12752000000']",x_coord
 borocode,"['4', '3', '1']",borough_code
 location_lat_long,"['(40.6748599999, -73.7841200005)', '(40.7475599996, -73.8181499997)', '(40.7119259997, -73.9406699994)']",longitude
+address,"['333 CLASSON AVENUE', '384 SOUTH 4 STREET', '10-24 49 AVENUE']",address
+borough,"['BROOKLYN', 'QUEENS', 'BRONX']",borough
+bin,"['3321871', '3063507', '4436607']",x_coord
+council_district,"['36', '34', '26']",borough_code
+nta_code,"['BK75', 'BK73', 'QN31']",borough_code
+longitude,"['-73.960169193605', '-73.952515190258', '-73.953204552663']",longitude
+address,"['333 CLASSON AVENUE', '384 SOUTH 4 STREET', '10-24 49 AVENUE']",address
+borough,"['BROOKLYN', 'QUEENS', 'BRONX']",borough
+bin,"['3321871', '3063507', '4436607']",x_coord
+council_district,"['36', '34', '26']",borough_code
+nta_code,"['BK75', 'BK73', 'QN31']",borough_code
+longitude,"['-73.960169193605', '-73.952515190258', '-73.953204552663']",longitude

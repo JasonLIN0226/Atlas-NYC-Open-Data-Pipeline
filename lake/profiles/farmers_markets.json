@@ -1,0 +1,552 @@
+{
+  "dataset_name": "farmers_markets",
+  "source_metadata": {
+    "title": "NYC Farmers Markets",
+    "id": "8vwk-6iz2",
+    "rows_updated_at": 1772134228,
+    "view_last_modified": 1772134244,
+    "description": "Annual list of farmers markets across the five boroughs that have varying vendors, products, and EBT acceptance.",
+    "columns": [
+      {
+        "name": "Year",
+        "field_name": "year",
+        "description": "Calendar year of the report",
+        "source_type": "number",
+        "position": 1
+      },
+      {
+        "name": "Market Name",
+        "field_name": "marketname",
+        "description": "Name of the farmers market site",
+        "source_type": "text",
+        "position": 2
+      },
+      {
+        "name": "Borough",
+        "field_name": "borough",
+        "description": "Borough in which site is located",
+        "source_type": "text",
+        "position": 3
+      },
+      {
+        "name": "Street Address",
+        "field_name": "streetaddress",
+        "description": "Site Address ",
+        "source_type": "text",
+        "position": 4
+      },
+      {
+        "name": "Community District",
+        "field_name": "community_district",
+        "description": "Community District where the site is located",
+        "source_type": "text",
+        "position": 5
+      },
+      {
+        "name": "Latitude",
+        "field_name": "latitude",
+        "description": "Site lattitude coordinate",
+        "source_type": "number",
+        "position": 6
+      },
+      {
+        "name": "Longitude",
+        "field_name": "longitude",
+        "description": "Site longitude coordinate",
+        "source_type": "number",
+        "position": 7
+      },
+      {
+        "name": "Days of Operation",
+        "field_name": "daysoperation",
+        "description": "Days of the week when the market is open",
+        "source_type": "text",
+        "position": 8
+      },
+      {
+        "name": "Hours of Operations",
+        "field_name": "hoursoperations",
+        "description": "Hours when the market is open",
+        "source_type": "text",
+        "position": 9
+      },
+      {
+        "name": "Season Dates",
+        "field_name": "season_begin",
+        "description": "Range of dates when the market is open",
+        "source_type": "calendar_date",
+        "position": 10
+      },
+      {
+        "name": "Accepts EBT",
+        "field_name": "accepts_ebt",
+        "description": "Locations accepts EBT (Yes or No)",
+        "source_type": "text",
+        "position": 11
+      },
+      {
+        "name": "Open Year-Round",
+        "field_name": "open_year_round",
+        "description": "Site is Year round (Yes or No)",
+        "source_type": "text",
+        "position": 12
+      },
+      {
+        "name": "Stellar Cooking Demonstrations",
+        "field_name": "nyc_dept_of_health_cooking",
+        "description": "Location offers a nutrition workshop onsite (Yes or No)",
+        "source_type": "text",
+        "position": 13
+      }
+    ]
+  },
+  "atlas_metadata": {
+    "row_count": 2115,
+    "profiled_rows": 2115,
+    "column_count": 13,
+    "wrapped_geo_column_count": 5,
+    "geo_labels_wrapped": [
+      "address",
+      "borough",
+      "borough_code",
+      "longitude"
+    ],
+    "wrapper_changed_count": 1,
+    "dataset_metadata_overview": [
+      [
+        "Rows",
+        "2115"
+      ],
+      [
+        "Profiled Rows",
+        "2115"
+      ],
+      [
+        "Columns",
+        "13"
+      ],
+      [
+        "Spatial Columns",
+        "5"
+      ],
+      [
+        "Temporal Columns",
+        "2"
+      ],
+      [
+        "Categorical Columns",
+        "4"
+      ],
+      [
+        "Numerical Columns",
+        "1"
+      ],
+      [
+        "Dataset Types",
+        "categorical, numerical, spatial, temporal"
+      ],
+      [
+        "Attribute Keywords",
+        "year, marketname, borough, streetaddress, community_district, community, district, latitude, longitude, daysoperation, hoursoperations, season_begin"
+      ]
+    ],
+    "combined_column_metadata_rows": [
+      {
+        "name": "year",
+        "final_type": "Text",
+        "source_type": "number",
+        "source_description": "Calendar year of the report",
+        "structural_type": "Text",
+        "semantic_types": "DateTime",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "marketname",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "Name of the farmers market site",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.8787002563476562
+      },
+      {
+        "name": "borough",
+        "final_type": "borough",
+        "source_type": "text",
+        "source_description": "Borough in which site is located",
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough",
+        "confidence": 0.7746084332466125
+      },
+      {
+        "name": "streetaddress",
+        "final_type": "address",
+        "source_type": "text",
+        "source_description": "Site Address ",
+        "structural_type": "Text",
+        "semantic_types": "address",
+        "geo_label": "address",
+        "confidence": 0.9543495774269104
+      },
+      {
+        "name": "community_district",
+        "final_type": "borough_code",
+        "source_type": "text",
+        "source_description": "Community District where the site is located",
+        "structural_type": "Text",
+        "semantic_types": "AdministrativeArea",
+        "geo_label": "borough_code",
+        "confidence": 0.95
+      },
+      {
+        "name": "latitude",
+        "final_type": "Float",
+        "source_type": "number",
+        "source_description": "Site lattitude coordinate",
+        "structural_type": "Float",
+        "semantic_types": "latitude",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "longitude",
+        "final_type": "longitude",
+        "source_type": "number",
+        "source_description": "Site longitude coordinate",
+        "structural_type": "Float",
+        "semantic_types": "longitude",
+        "geo_label": "longitude",
+        "confidence": 0.9568933248519897
+      },
+      {
+        "name": "daysoperation",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Days of the week when the market is open",
+        "structural_type": "Text",
+        "semantic_types": "Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "hoursoperations",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Hours when the market is open",
+        "structural_type": "Text",
+        "semantic_types": "",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "season_begin",
+        "final_type": "Text",
+        "source_type": "calendar_date",
+        "source_description": "Range of dates when the market is open",
+        "structural_type": "Text",
+        "semantic_types": "DateTime",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "accepts_ebt",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Locations accepts EBT (Yes or No)",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "open_year_round",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Site is Year round (Yes or No)",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      },
+      {
+        "name": "nyc_dept_of_health_cooking",
+        "final_type": "Text",
+        "source_type": "text",
+        "source_description": "Location offers a nutrition workshop onsite (Yes or No)",
+        "structural_type": "Text",
+        "semantic_types": "Boolean, Enumeration",
+        "geo_label": null,
+        "confidence": null
+      }
+    ],
+    "source_type_breakdown_rows": [
+      {
+        "type": "text",
+        "count": 9
+      },
+      {
+        "type": "number",
+        "count": 3
+      },
+      {
+        "type": "calendar_date",
+        "count": 1
+      }
+    ],
+    "atlas_type_breakdown_rows": [
+      {
+        "type": "non_spatial",
+        "count": 8
+      },
+      {
+        "type": "address",
+        "count": 2
+      },
+      {
+        "type": "borough_code",
+        "count": 2
+      },
+      {
+        "type": "longitude",
+        "count": 1
+      }
+    ],
+    "content_summary": "address, borough, borough_code, longitude",
+    "final_columns": [
+      {
+        "name": "year",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/DateTime"
+        ],
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 17
+      },
+      {
+        "name": "marketname",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.8787002563476562,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "borough",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "geo_classifier": {
+          "label": "borough",
+          "confidence": 0.7746084332466125,
+          "source": "ml+validated"
+        }
+      },
+      {
+        "name": "streetaddress",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/address"
+        ],
+        "geo_classifier": {
+          "label": "address",
+          "confidence": 0.9543495774269104,
+          "source": "ml"
+        }
+      },
+      {
+        "name": "community_district",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/AdministrativeArea"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.4033096926713948,
+        "num_distinct_values": 62,
+        "mean": 248.50079239302696,
+        "stddev": 116.4647144594044,
+        "coverage": [
+          {
+            "range": {
+              "gte": 101.0,
+              "lte": 112.0
+            }
+          },
+          {
+            "range": {
+              "gte": 201.0,
+              "lte": 212.0
+            }
+          },
+          {
+            "range": {
+              "gte": 301.0,
+              "lte": 501.0
+            }
+          }
+        ],
+        "geo_classifier": {
+          "label": "borough_code",
+          "confidence": 0.95,
+          "source": "wrapper"
+        },
+        "wrapper_reason": "admin_name_and_values"
+      },
+      {
+        "name": "latitude",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [
+          "http://schema.org/latitude"
+        ],
+        "unclean_values_ratio": 0.0,
+        "missing_values_ratio": 0.40283687943262414,
+        "mean": 14.410406688407294,
+        "stddev": 48.230846249366714,
+        "coverage": [
+          {
+            "range": {
+              "gte": -74.01186697,
+              "lte": -73.8036027959
+            }
+          },
+          {
+            "range": {
+              "gte": 40.593313,
+              "lte": 40.726054
+            }
+          },
+          {
+            "range": {
+              "gte": 40.745293,
+              "lte": 40.884532
+            }
+          }
+        ]
+      },
+      {
+        "name": "longitude",
+        "structural_type": "http://schema.org/Float",
+        "semantic_types": [
+          "http://schema.org/longitude"
+        ],
+        "geo_classifier": {
+          "label": "longitude",
+          "confidence": 0.9568933248519897,
+          "source": "ml+validated"
+        },
+        "mean": -46.98379695887508,
+        "stddev": 48.56204546627953,
+        "coverage": [
+          {
+            "range": {
+              "gte": -74.011631125861,
+              "lte": -73.802314
+            }
+          },
+          {
+            "range": {
+              "gte": 40.61728571,
+              "lte": 40.87887971
+            }
+          }
+        ]
+      },
+      {
+        "name": "daysoperation",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.4033096926713948,
+        "num_distinct_values": 75
+      },
+      {
+        "name": "hoursoperations",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [],
+        "missing_values_ratio": 0.4033096926713948,
+        "num_distinct_values": 226
+      },
+      {
+        "name": "season_begin",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/DateTime"
+        ],
+        "missing_values_ratio": 0.9985815602836879,
+        "num_distinct_values": 4
+      },
+      {
+        "name": "accepts_ebt",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.4033096926713948,
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 4
+      },
+      {
+        "name": "open_year_round",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.4033096926713948,
+        "unclean_values_ratio": 0.0018912529550827422,
+        "num_distinct_values": 9
+      },
+      {
+        "name": "nyc_dept_of_health_cooking",
+        "structural_type": "http://schema.org/Text",
+        "semantic_types": [
+          "http://schema.org/Boolean",
+          "http://schema.org/Enumeration"
+        ],
+        "missing_values_ratio": 0.40283687943262414,
+        "unclean_values_ratio": 0.0,
+        "num_distinct_values": 4
+      }
+    ]
+  },
+  "temporal_metadata": {
+    "has_temporal_data": true,
+    "temporal_columns": [
+      "season_begin"
+    ],
+    "temporal_start": "2020-07-01T00:00:00",
+    "temporal_end": "2022-06-17T00:00:00",
+    "column_ranges": [
+      {
+        "name": "season_begin",
+        "start": "2020-07-01T00:00:00",
+        "end": "2022-06-17T00:00:00",
+        "month_coverage": {
+          "2020": [
+            7
+          ],
+          "2022": [
+            6
+          ]
+        }
+      }
+    ],
+    "month_coverage": {
+      "2020": [
+        7
+      ],
+      "2022": [
+        6
+      ]
+    }
+  }
+}

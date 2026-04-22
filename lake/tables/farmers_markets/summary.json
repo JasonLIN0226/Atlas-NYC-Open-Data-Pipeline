@@ -8,5 +8,36 @@
     "borough_code",
     "longitude"
   ],
-  "wrapper_changed_count": 1
+  "wrapper_changed_count": 1,
+  "temporal_metadata": {
+    "has_temporal_data": true,
+    "temporal_columns": [
+      "season_begin"
+    ],
+    "temporal_start": "2020-07-01T00:00:00",
+    "temporal_end": "2022-06-17T00:00:00",
+    "column_ranges": [
+      {
+        "name": "season_begin",
+        "start": "2020-07-01T00:00:00",
+        "end": "2022-06-17T00:00:00",
+        "month_coverage": {
+          "2020": [
+            7
+          ],
+          "2022": [
+            6
+          ]
+        }
+      }
+    ],
+    "month_coverage": {
+      "2020": [
+        7
+      ],
+      "2022": [
+        6
+      ]
+    }
+  }
 }

@@ -158,6 +158,27 @@
       font-size: 14px;
       word-break: break-word;
     }
+    .search-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .search-field {
+      display: grid;
+      gap: 6px;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .search-field input {
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+      background: #ffffff;
+      color: #111827;
+    }
     .card-action {
       margin-top: 16px;
       font-weight: 600;
@@ -188,6 +209,12 @@
     }
     .action-button:hover {
       background: #115e59;
+    }
+    .secondary-button {
+      background: #475569;
+    }
+    .secondary-button:hover {
+      background: #334155;
     }
     .action-detail {
       margin-top: 14px;
@@ -285,10 +312,103 @@
   </style>
 </head>
 <body>
-<p><a href='../index.html'>&larr; Back to index</a></p><h1>farmers_markets</h1><h2>Basic Info</h2><table><tr><th>Dataset</th><td>farmers_markets</td></tr><tr><th>Source Title</th><td>NYC Farmers Markets</td></tr><tr><th>Source Dataset ID</th><td>8vwk-6iz2</td></tr><tr><th>Rows</th><td>2115</td></tr><tr><th>Columns</th><td>13</td></tr><tr><th>Description</th><td>Annual list of farmers markets across the five boroughs that have varying vendors, products, and EBT acceptance.</td></tr><tr><th>Rows Updated</th><td>2026-02-26 14:30:28</td></tr><tr><th>View Modified</th><td>2026-02-26 14:30:44</td></tr><tr><th>Contains</th><td>address, borough, borough_code, longitude</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>2115</td></tr><tr><th>Profiled Rows</th><td>2115</td></tr><tr><th>Columns</th><td>13</td></tr><tr><th>Spatial Columns</th><td>5</td></tr><tr><th>Temporal Columns</th><td>2</td></tr><tr><th>Categorical Columns</th><td>4</td></tr><tr><th>Numerical Columns</th><td>1</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial, temporal</td></tr><tr><th>Attribute Keywords</th><td>year, marketname, borough, streetaddress, community_district, community, district, latitude, longitude, daysoperation, hoursoperations, season_begin</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>year</th><th>marketname</th><th>borough</th><th>streetaddress</th><th>community_district</th><th>latitude</th><th>longitude</th><th>daysoperation</th><th>hoursoperations</th><th>season_begin</th><th>accepts_ebt</th><th>open_year_round</th><th>nyc_dept_of_health_cooking</th></tr></thead><tbody><tr><td>2025</td><td>175th Street Greenmarket</td><td>Manhattan</td><td>W. 175th St. bet. Wadsworth Ave. &amp; Broadway</td><td>112</td><td>40.845948</td><td>-73.937811</td><td>Thursday</td><td>8 a.m. - 4p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>2025</td><td>4th Ave Sunset Park Greenmarket</td><td>Brooklyn</td><td>4th Ave. 60th St.</td><td>307</td><td>40.647975</td><td>-74.003744</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>2025</td><td>57th Street Greenmarket</td><td>Manhattan</td><td>57th St. &amp; 10th Ave.</td><td>104</td><td>40.769117</td><td>-73.988559</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>2025</td><td>79th Street Greenmarket</td><td>Manhattan</td><td>79th St. &amp; Columbus Ave.</td><td>107</td><td>40.782295</td><td>-73.975244</td><td>Sunday</td><td>9 a.m. - 4 p.m</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>7th Ave Sunset Park Greenmarket</td><td>Brooklyn</td><td>7th Ave. &amp; 44th St.</td><td>307</td><td>40.645841</td><td>-74.002402</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>82nd Street Greenmarket</td><td>Manhattan</td><td>82nd St. bet. 1st &amp; York Aves</td><td>108</td><td>40.774292</td><td>-73.951262</td><td>Saturday</td><td>9 a.m. - 2:30 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>97th Street Greenmarket</td><td>Manhattan</td><td>97th St. bet. Columbus &amp; Amsterdam Aves</td><td>107</td><td>40.794003</td><td>-73.96807</td><td>Friday</td><td>8 a.m. - 2 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>Abingdon Square Park Greenmarket</td><td>Manhattan</td><td>Hudson St. &amp; W 12th St.</td><td>102</td><td>40.737553</td><td>-74.005687</td><td>Saturday</td><td>8 a.m. - 2 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>Bartel-Pritchard Square Greenmarket</td><td>Brooklyn</td><td>Prospect Park W at 15th St.</td><td>355</td><td>40.661354</td><td>-73.96968</td><td>Wednesday &amp; Sunday (starting 5/5)</td><td>8 a.m. - 2 p.m. (W); 9 a.m. - 2 p.m. (SU)</td><td></td><td>Yes</td><td>Yes (Wednesday)</td><td>No</td></tr><tr><td>2025</td><td>Bay Ridge Greenmarket</td><td>Brooklyn</td><td>3rd Ave. &amp; 95th St.</td><td>310</td><td>40.61781</td><td>-74.03338</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>9</span></div><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>3</span></div><div class='bar-row'><span class='bar-label'>calendar_date</span><div class='bar-track'><div class='bar-fill' style='width:11%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>text</td><td>9</td></tr><tr><td>number</td><td>3</td></tr><tr><td>calendar_date</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>8</span></div><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:25%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:25%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>longitude</span><div class='bar-track'><div class='bar-fill' style='width:12%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>8</td></tr><tr><td>address</td><td>2</td></tr><tr><td>borough_code</td><td>2</td></tr><tr><td>longitude</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>year</td><td>Text</td><td>number</td><td>Text</td><td>DateTime</td><td></td><td></td><td>Calendar year of the report</td></tr><tr><td>marketname</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.8787002563476562</td><td>Name of the farmers market site</td></tr><tr><td>borough</td><td>borough</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough</td><td>0.7746084332466125</td><td>Borough in which site is located</td></tr><tr><td>streetaddress</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.9543495774269104</td><td>Site Address </td></tr><tr><td>community_district</td><td>borough_code</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td>Community District where the site is located</td></tr><tr><td>latitude</td><td>Float</td><td>number</td><td>Float</td><td>latitude</td><td></td><td></td><td>Site lattitude coordinate</td></tr><tr><td>longitude</td><td>longitude</td><td>number</td><td>Float</td><td>longitude</td><td>longitude</td><td>0.9568933248519897</td><td>Site longitude coordinate</td></tr><tr><td>daysoperation</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Days of the week when the market is open</td></tr><tr><td>hoursoperations</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>Hours when the market is open</td></tr><tr><td>season_begin</td><td>Text</td><td>calendar_date</td><td>Text</td><td>DateTime</td><td></td><td></td><td>Range of dates when the market is open</td></tr><tr><td>accepts_ebt</td><td>Text</td><td>text</td><td>Text</td><td>Boolean, Enumeration</td><td></td><td></td><td>Locations accepts EBT (Yes or No)</td></tr><tr><td>open_year_round</td><td>Text</td><td>text</td><td>Text</td><td>Boolean, Enumeration</td><td></td><td></td><td>Site is Year round (Yes or No)</td></tr><tr><td>nyc_dept_of_health_cooking</td><td>Text</td><td>text</td><td>Text</td><td>Boolean, Enumeration</td><td></td><td></td><td>Location offers a nutrition workshop onsite (Yes or No)</td></tr></tbody></table></div><h2>Files</h2><table><tr><th>Raw Data</th><td><a href='../../../data/farmers_markets.csv'>Raw CSV</a></td></tr><tr><th>Final Metadata</th><td><a href='../../../output/metadata_farmers_markets_wrapped.json'>Final metadata JSON</a></td></tr><tr><th>Final Geo Results</th><td><a href='../../../output/geo_classifier_results_farmers_markets_wrapped.csv'>Final geo results CSV</a></td></tr><tr><th>Summary</th><td><a href='../../tables/farmers_markets/summary.json'>Summary JSON</a></td></tr></table><script>
+<p><a href='../index.html'>&larr; Back to index</a></p><h1>farmers_markets</h1><h2>Basic Info</h2><table><tr><th>Dataset</th><td>farmers_markets</td></tr><tr><th>Source Title</th><td>NYC Farmers Markets</td></tr><tr><th>Source Dataset ID</th><td>8vwk-6iz2</td></tr><tr><th>Rows</th><td>2115</td></tr><tr><th>Columns</th><td>13</td></tr><tr><th>Description</th><td>Annual list of farmers markets across the five boroughs that have varying vendors, products, and EBT acceptance.</td></tr><tr><th>Rows Updated</th><td>2026-02-26 14:30:28</td></tr><tr><th>View Modified</th><td>2026-02-26 14:30:44</td></tr><tr><th>Contains</th><td>address, borough, borough_code, longitude</td></tr></table><h2>Dataset Metadata</h2><table><tr><th>Rows</th><td>2115</td></tr><tr><th>Profiled Rows</th><td>2115</td></tr><tr><th>Columns</th><td>13</td></tr><tr><th>Spatial Columns</th><td>5</td></tr><tr><th>Temporal Columns</th><td>2</td></tr><tr><th>Categorical Columns</th><td>4</td></tr><tr><th>Numerical Columns</th><td>1</td></tr><tr><th>Dataset Types</th><td>categorical, numerical, spatial, temporal</td></tr><tr><th>Attribute Keywords</th><td>year, marketname, borough, streetaddress, community_district, community, district, latitude, longitude, daysoperation, hoursoperations, season_begin</td></tr><tr><th>Has Temporal Data</th><td>True</td></tr><tr><th>Temporal Columns</th><td>season_begin</td></tr><tr><th>Temporal Start</th><td>2020-07-01T00:00:00</td></tr><tr><th>Temporal End</th><td>2022-06-17T00:00:00</td></tr></table><h2>Sample Data</h2><p>First 10 rows from the full dataset.</p><div class='table-wrap'><table><thead><tr><th>year</th><th>marketname</th><th>borough</th><th>streetaddress</th><th>community_district</th><th>latitude</th><th>longitude</th><th>daysoperation</th><th>hoursoperations</th><th>season_begin</th><th>accepts_ebt</th><th>open_year_round</th><th>nyc_dept_of_health_cooking</th></tr></thead><tbody><tr><td>2025</td><td>175th Street Greenmarket</td><td>Manhattan</td><td>W. 175th St. bet. Wadsworth Ave. &amp; Broadway</td><td>112</td><td>40.845948</td><td>-73.937811</td><td>Thursday</td><td>8 a.m. - 4p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>2025</td><td>4th Ave Sunset Park Greenmarket</td><td>Brooklyn</td><td>4th Ave. 60th St.</td><td>307</td><td>40.647975</td><td>-74.003744</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>2025</td><td>57th Street Greenmarket</td><td>Manhattan</td><td>57th St. &amp; 10th Ave.</td><td>104</td><td>40.769117</td><td>-73.988559</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr><tr><td>2025</td><td>79th Street Greenmarket</td><td>Manhattan</td><td>79th St. &amp; Columbus Ave.</td><td>107</td><td>40.782295</td><td>-73.975244</td><td>Sunday</td><td>9 a.m. - 4 p.m</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>7th Ave Sunset Park Greenmarket</td><td>Brooklyn</td><td>7th Ave. &amp; 44th St.</td><td>307</td><td>40.645841</td><td>-74.002402</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>82nd Street Greenmarket</td><td>Manhattan</td><td>82nd St. bet. 1st &amp; York Aves</td><td>108</td><td>40.774292</td><td>-73.951262</td><td>Saturday</td><td>9 a.m. - 2:30 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>97th Street Greenmarket</td><td>Manhattan</td><td>97th St. bet. Columbus &amp; Amsterdam Aves</td><td>107</td><td>40.794003</td><td>-73.96807</td><td>Friday</td><td>8 a.m. - 2 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>Abingdon Square Park Greenmarket</td><td>Manhattan</td><td>Hudson St. &amp; W 12th St.</td><td>102</td><td>40.737553</td><td>-74.005687</td><td>Saturday</td><td>8 a.m. - 2 p.m.</td><td></td><td>Yes</td><td>Yes</td><td>No</td></tr><tr><td>2025</td><td>Bartel-Pritchard Square Greenmarket</td><td>Brooklyn</td><td>Prospect Park W at 15th St.</td><td>355</td><td>40.661354</td><td>-73.96968</td><td>Wednesday &amp; Sunday (starting 5/5)</td><td>8 a.m. - 2 p.m. (W); 9 a.m. - 2 p.m. (SU)</td><td></td><td>Yes</td><td>Yes (Wednesday)</td><td>No</td></tr><tr><td>2025</td><td>Bay Ridge Greenmarket</td><td>Brooklyn</td><td>3rd Ave. &amp; 95th St.</td><td>310</td><td>40.61781</td><td>-74.03338</td><td>Saturday</td><td>8 a.m. - 3 p.m.</td><td></td><td>Yes</td><td>No</td><td>No</td></tr></tbody></table></div><h2>Analysis</h2><h3>NYC Open Data Column Types</h3><p>This analysis counts each column by the original NYC Open Data source type.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>text</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>9</span></div><div class='bar-row'><span class='bar-label'>number</span><div class='bar-track'><div class='bar-fill' style='width:33%'></div></div><span class='bar-value'>3</span></div><div class='bar-row'><span class='bar-label'>calendar_date</span><div class='bar-track'><div class='bar-fill' style='width:11%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>text</td><td>9</td></tr><tr><td>number</td><td>3</td></tr><tr><td>calendar_date</td><td>1</td></tr></tbody></table></div></div><h3>Atlas + Wrapper Spatial Types</h3><p>This analysis counts each column by the final Atlas + wrapper spatial type. Columns without a final spatial label are counted as <code>non_spatial</code>.</p><div class='analysis-grid'><div><h3>Plot</h3><div class='bar-chart'><div class='bar-row'><span class='bar-label'>non_spatial</span><div class='bar-track'><div class='bar-fill' style='width:100%'></div></div><span class='bar-value'>8</span></div><div class='bar-row'><span class='bar-label'>address</span><div class='bar-track'><div class='bar-fill' style='width:25%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>borough_code</span><div class='bar-track'><div class='bar-fill' style='width:25%'></div></div><span class='bar-value'>2</span></div><div class='bar-row'><span class='bar-label'>longitude</span><div class='bar-track'><div class='bar-fill' style='width:12%'></div></div><span class='bar-value'>1</span></div></div></div><div><h3>Table</h3><table><thead><tr><th>Type</th><th>Columns</th></tr></thead><tbody><tr><td>non_spatial</td><td>8</td></tr><tr><td>address</td><td>2</td></tr><tr><td>borough_code</td><td>2</td></tr><tr><td>longitude</td><td>1</td></tr></tbody></table></div></div><h2>Combined Column Metadata</h2><p>This table combines NYC Open Data column metadata with the final Atlas + wrapper result for every column.</p><div class='table-wrap'><table><thead><tr><th>Column</th><th>Final Type</th><th>NYC Source Type</th><th>Atlas Structural Type</th><th>Semantic Types</th><th>Geo Label</th><th>Confidence</th><th>NYC Source Description</th></tr></thead><tbody><tr><td>year</td><td>Text</td><td>number</td><td>Text</td><td>DateTime</td><td></td><td></td><td>Calendar year of the report</td></tr><tr><td>marketname</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.8787002563476562</td><td>Name of the farmers market site</td></tr><tr><td>borough</td><td>borough</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough</td><td>0.7746084332466125</td><td>Borough in which site is located</td></tr><tr><td>streetaddress</td><td>address</td><td>text</td><td>Text</td><td>address</td><td>address</td><td>0.9543495774269104</td><td>Site Address </td></tr><tr><td>community_district</td><td>borough_code</td><td>text</td><td>Text</td><td>AdministrativeArea</td><td>borough_code</td><td>0.95</td><td>Community District where the site is located</td></tr><tr><td>latitude</td><td>Float</td><td>number</td><td>Float</td><td>latitude</td><td></td><td></td><td>Site lattitude coordinate</td></tr><tr><td>longitude</td><td>longitude</td><td>number</td><td>Float</td><td>longitude</td><td>longitude</td><td>0.9568933248519897</td><td>Site longitude coordinate</td></tr><tr><td>daysoperation</td><td>Text</td><td>text</td><td>Text</td><td>Enumeration</td><td></td><td></td><td>Days of the week when the market is open</td></tr><tr><td>hoursoperations</td><td>Text</td><td>text</td><td>Text</td><td></td><td></td><td></td><td>Hours when the market is open</td></tr><tr><td>season_begin</td><td>Text</td><td>calendar_date</td><td>Text</td><td>DateTime</td><td></td><td></td><td>Range of dates when the market is open</td></tr><tr><td>accepts_ebt</td><td>Text</td><td>text</td><td>Text</td><td>Boolean, Enumeration</td><td></td><td></td><td>Locations accepts EBT (Yes or No)</td></tr><tr><td>open_year_round</td><td>Text</td><td>text</td><td>Text</td><td>Boolean, Enumeration</td><td></td><td></td><td>Site is Year round (Yes or No)</td></tr><tr><td>nyc_dept_of_health_cooking</td><td>Text</td><td>text</td><td>Text</td><td>Boolean, Enumeration</td><td></td><td></td><td>Location offers a nutrition workshop onsite (Yes or No)</td></tr></tbody></table></div><h2>Files</h2><table><tr><th>Raw Data</th><td><a href='../../../data/farmers_markets.csv'>Raw CSV</a></td></tr><tr><th>Final Metadata</th><td><a href='../../../output/metadata_farmers_markets_wrapped.json'>Final metadata JSON</a></td></tr><tr><th>Final Geo Results</th><td><a href='../../../output/geo_classifier_results_farmers_markets_wrapped.csv'>Final geo results CSV</a></td></tr><tr><th>Summary</th><td><a href='../../tables/farmers_markets/summary.json'>Summary JSON</a></td></tr></table><script>
 function toggleLakePanel(id) {
   const node = document.getElementById(id);
   if (!node) return;
   node.classList.toggle('is-hidden');
+}
+
+function monthKeysInRange(startValue, endValue) {
+  const monthKeys = [];
+  const start = new Date(startValue + 'T00:00:00');
+  const end = new Date(endValue + 'T00:00:00');
+  let year = start.getFullYear();
+  let month = start.getMonth() + 1;
+  const endYear = end.getFullYear();
+  const endMonth = end.getMonth() + 1;
+
+  while (year < endYear || (year === endYear && month <= endMonth)) {
+    monthKeys.push(String(year) + '-' + String(month).padStart(2, '0'));
+    month += 1;
+    if (month > 12) {
+      month = 1;
+      year += 1;
+    }
+  }
+
+  return monthKeys;
+}
+
+function runTemporalSearch() {
+  const startNode = document.getElementById('temporal-start-date');
+  const endNode = document.getElementById('temporal-end-date');
+  const statusNode = document.getElementById('temporal-search-status');
+  const cards = document.querySelectorAll('.dataset-card');
+
+  const startValue = startNode ? startNode.value : '';
+  const endValue = endNode ? endNode.value : '';
+
+  if (!startValue || !endValue) {
+    if (statusNode) {
+      statusNode.textContent = 'Enter both a start date and an end date.';
+    }
+    return;
+  }
+
+  if (startValue > endValue) {
+    if (statusNode) {
+      statusNode.textContent = 'Start date must be on or before end date.';
+    }
+    return;
+  }
+
+  const queryStart = new Date(startValue + 'T00:00:00');
+  const queryEnd = new Date(endValue + 'T23:59:59');
+  const queryMonths = monthKeysInRange(startValue, endValue);
+  let shownCount = 0;
+
+  cards.forEach((card) => {
+    const hasTemporal = card.dataset.hasTemporal === 'true';
+    const startText = card.dataset.temporalStart;
+    const endText = card.dataset.temporalEnd;
+    const datasetMonths = new Set((card.dataset.temporalMonths || '').split('|').filter(Boolean));
+    let showCard = false;
+
+    if (hasTemporal && startText && endText) {
+      const datasetStart = new Date(startText);
+      const datasetEnd = new Date(endText);
+      const overlapsRange = datasetStart <= queryEnd && datasetEnd >= queryStart;
+      const hasMonthInRange = queryMonths.some((monthKey) => datasetMonths.has(monthKey));
+      showCard = overlapsRange && hasMonthInRange;
+    }
+
+    card.style.display = showCard ? '' : 'none';
+    if (showCard) {
+      shownCount += 1;
+    }
+  });
+
+  if (statusNode) {
+    statusNode.textContent = 'Showing ' + shownCount + ' dataset(s) with data in ' + startValue + ' to ' + endValue + '.';
+  }
+}
+
+function clearTemporalSearch() {
+  const startNode = document.getElementById('temporal-start-date');
+  const endNode = document.getElementById('temporal-end-date');
+  const statusNode = document.getElementById('temporal-search-status');
+  const cards = document.querySelectorAll('.dataset-card');
+
+  if (startNode) startNode.value = '';
+  if (endNode) endNode.value = '';
+
+  cards.forEach((card) => {
+    card.style.display = '';
+  });
+
+  if (statusNode) {
+    statusNode.textContent = 'No time range filter is active.';
+  }
 }
 </script></body></html>
