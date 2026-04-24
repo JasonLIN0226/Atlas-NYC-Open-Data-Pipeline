@@ -365,24 +365,17 @@ function runTemporalSearch() {
     return;
   }
 
-  const queryStart = new Date(startValue + 'T00:00:00');
-  const queryEnd = new Date(endValue + 'T23:59:59');
   const queryMonths = monthKeysInRange(startValue, endValue);
   let shownCount = 0;
 
   cards.forEach((card) => {
     const hasTemporal = card.dataset.hasTemporal === 'true';
-    const startText = card.dataset.temporalStart;
-    const endText = card.dataset.temporalEnd;
     const datasetMonths = new Set((card.dataset.temporalMonths || '').split('|').filter(Boolean));
     let showCard = false;
 
-    if (hasTemporal && startText && endText) {
-      const datasetStart = new Date(startText);
-      const datasetEnd = new Date(endText);
-      const overlapsRange = datasetStart <= queryEnd && datasetEnd >= queryStart;
+    if (hasTemporal) {
       const hasMonthInRange = queryMonths.some((monthKey) => datasetMonths.has(monthKey));
-      showCard = overlapsRange && hasMonthInRange;
+      showCard = hasMonthInRange;
     }
 
     card.style.display = showCard ? '' : 'none';
